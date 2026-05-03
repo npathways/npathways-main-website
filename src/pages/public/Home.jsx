@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Button from "../../components/common/Button";
 import heroVideo from "../../assets/video/hero.mp4";
@@ -10,6 +10,34 @@ const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [ctaForm, setCtaForm] = useState({
+    name: "",
+    email: "",
+    whatsapp: "",
+    qualification: "",
+    purpose: "Study Abroad",
+    goal: "",
+  });
+
+  const handleCtaChange = (e) => {
+    const { name, value } = e.target;
+    setCtaForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleCtaSubmit = (e) => {
+    e.preventDefault();
+    console.log("CTA Form submitted:", ctaForm);
+    alert("Thank you! We will contact you shortly.");
+    setCtaForm({
+      name: "",
+      email: "",
+      whatsapp: "",
+      qualification: "",
+      purpose: "Study Abroad",
+      goal: "",
+    });
+  };
 
   const destinations = [
     {
@@ -201,23 +229,100 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Teaser: How It Works */}
-      <section className="journey-teaser">
+      {/* CTA: Contact Form Section */}
+      <section className="home-cta-section">
         <div className="container">
-          <div className="teaser-box">
-            <div className="teaser-text">
-              <h2>The 10-Step Clarity Journey</h2>
+          <div className="cta-form-wrapper">
+            <div className="cta-content-info">
+              <span className="badge">Get Started</span>
+              <h2 style={{color: "white"}}>Ready to start your journey?</h2>
               <p>
-                From the first assessment to your first day abroad, we've
-                perfected every step of the process.
+                Fill out the form and our expert mentors will reach out to help
+                you find your perfect global pathway.
               </p>
-              <Link to="/about/how-it-works">
-                <span style={{ color: "#fff" }}>See The Roadmap</span>
-              </Link>
+              <div className="cta-contact-minimal">
+                <span>info@npathways.global</span>
+                <span>+91 98765 43210</span>
+              </div>
             </div>
-            <div className="teaser-visual">
-              <div className="step-blob">10</div>
-              <div className="step-label">Steps to Success</div>
+            <div className="cta-form-box">
+              <form onSubmit={handleCtaSubmit}>
+                <div className="form-row">
+                  <div className="form-field">
+                    <label>Full Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your Name"
+                      value={ctaForm.name}
+                      onChange={handleCtaChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-field">
+                    <label>Email Address</label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="email@example.com"
+                      value={ctaForm.email}
+                      onChange={handleCtaChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="form-row">
+                  <div className="form-field">
+                    <label>WhatsApp Number</label>
+                    <input
+                      type="tel"
+                      name="whatsapp"
+                      placeholder="+91 00000 00000"
+                      value={ctaForm.whatsapp}
+                      onChange={handleCtaChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-field">
+                    <label>Current Qualification</label>
+                    <input
+                      type="text"
+                      name="qualification"
+                      placeholder="e.g. 12th Grade, B.Tech"
+                      value={ctaForm.qualification}
+                      onChange={handleCtaChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="form-field">
+                  <label>Primary Purpose</label>
+                  <select
+                    name="purpose"
+                    value={ctaForm.purpose}
+                    onChange={handleCtaChange}
+                  >
+                    <option value="Study Abroad">Study Abroad</option>
+                    <option value="Career Counseling">Career Counseling</option>
+                    <option value="Bootcamps">Skills & Bootcamps</option>
+                    <option value="Internships">Internships & Research</option>
+                  </select>
+                </div>
+                <div className="form-field">
+                  <label>Long-term Goal</label>
+                  <textarea
+                    name="goal"
+                    placeholder="Tell us about your ultimate career or academic goal..."
+                    value={ctaForm.goal}
+                    onChange={handleCtaChange}
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+                <Button variant="premium" type="submit" fullWidth size="large">
+                  Get Free Consultation
+                </Button>
+              </form>
             </div>
           </div>
         </div>

@@ -7,8 +7,10 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "Sales",
-    message: "",
+    whatsapp: "",
+    qualification: "",
+    purpose: "Study Abroad",
+    goal: "",
   });
 
   const handleChange = (e) => {
@@ -20,7 +22,14 @@ const Contact = () => {
     e.preventDefault();
     console.log("Form submitted:", formData);
     alert("Thank you for contacting us! We will get back to you shortly.");
-    setFormData({ name: "", email: "", subject: "Sales", message: "" });
+    setFormData({
+      name: "",
+      email: "",
+      whatsapp: "",
+      qualification: "",
+      purpose: "Study Abroad",
+      goal: "",
+    });
   };
 
   return (
@@ -101,6 +110,7 @@ const Contact = () => {
                     id="name"
                     name="name"
                     className="form-input"
+                    placeholder="Your Name"
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -114,6 +124,7 @@ const Contact = () => {
                     id="email"
                     name="email"
                     className="form-input"
+                    placeholder="email@example.com"
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -121,40 +132,58 @@ const Contact = () => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="subject">Department</label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    className="form-select"
-                    value={formData.subject}
+                  <label htmlFor="whatsapp">WhatsApp Number</label>
+                  <input
+                    type="tel"
+                    id="whatsapp"
+                    name="whatsapp"
+                    className="form-input"
+                    placeholder="+91 00000 00000"
+                    value={formData.whatsapp}
                     onChange={handleChange}
-                  >
-                    <option value="Sales">
-                      Sales & Inquiries (Pre-purchase)
-                    </option>
-                    <option value="Tech Support">
-                      Tech Support (Link issues)
-                    </option>
-                    <option value="Billing">Billing & Refunds</option>
-                  </select>
-                  <p className="form-help">
-                    {formData.subject === "Sales" &&
-                      "For questions about our services and products."}
-                    {formData.subject === "Tech Support" &&
-                      "If you haven't received your download link or can't open a file."}
-                    {formData.subject === "Billing" &&
-                      "For invoice queries or refund requests."}
-                  </p>
+                    required
+                  />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="message">Message</label>
+                  <label htmlFor="qualification">Current Qualification</label>
+                  <input
+                    type="text"
+                    id="qualification"
+                    name="qualification"
+                    className="form-input"
+                    placeholder="e.g. 12th Grade, B.Tech"
+                    value={formData.qualification}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="purpose">Primary Purpose</label>
+                  <select
+                    id="purpose"
+                    name="purpose"
+                    className="form-select"
+                    value={formData.purpose}
+                    onChange={handleChange}
+                  >
+                    <option value="Study Abroad">Study Abroad</option>
+                    <option value="Career Counseling">Career Counseling</option>
+                    <option value="Bootcamps">Skills & Bootcamps</option>
+                    <option value="Internships">Internships & Research</option>
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="goal">Long-term Goal</label>
                   <textarea
-                    id="message"
-                    name="message"
+                    id="goal"
+                    name="goal"
                     className="form-textarea"
-                    rows="5"
-                    value={formData.message}
+                    placeholder="Tell us about your ultimate career or academic goal..."
+                    rows="4"
+                    value={formData.goal}
                     onChange={handleChange}
                     required
                   ></textarea>

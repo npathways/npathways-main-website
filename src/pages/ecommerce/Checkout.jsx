@@ -14,7 +14,7 @@ const Checkout = () => {
       <div className="container section text-center">
         <h2>Your cart is empty</h2>
         <p className="mb-4">Add some products to your cart before checking out.</p>
-        <Button variant="primary" onClick={() => navigate('/shop')}>Return to Shop</Button>
+        <Button variant="primary" onClick={() => navigate('/products')}>Return to Products</Button>
       </div>
     );
   }

@@ -23,7 +23,7 @@ import Founder from "./pages/public/about/Founder";
 import HowItWorks from "./pages/public/about/HowItWorks";
 
 // E-Commerce Pages
-import Shop from "./pages/ecommerce/Shop";
+import Products from "./pages/ecommerce/Products";
 import AssessmentList from "./pages/ecommerce/categories/AssessmentList";
 import BootcampList from "./pages/ecommerce/categories/BootcampList";
 import ProgramList from "./pages/ecommerce/categories/ProgramList";
@@ -87,7 +87,7 @@ function App() {
             element={<SchoolPrograms />}
           />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/products" element={<Shop />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/products/assessments" element={<AssessmentList />} />
           <Route path="/products/bootcamps" element={<BootcampList />} />
           <Route path="/products/programs" element={<ProgramList />} />

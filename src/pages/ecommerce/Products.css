@@ -1,7 +1,7 @@
-/* Shop Page - Premium Monochromatic Theme */
+/* Products Page - Premium Monochromatic Theme */
 /* Mirroring Services.css architecture */
 
-.shop-page {
+.products-page {
   background: #ffffff;
   color: #000000;
   overflow-x: hidden;
@@ -58,7 +58,7 @@
 .product-card-premium {
   background: #fff;
   border: 1px solid #f0f0f0;
-  border-radius: 2rem;
+  border-radius: 2px;
   padding: 2.5rem;
   position: relative;
   overflow: hidden;
@@ -77,7 +77,7 @@
 .card-image-wrap {
   width: 100%;
   aspect-ratio: 16/10;
-  border-radius: 1.5rem;
+  border-radius: 2px;
   overflow: hidden;
   margin-bottom: 2rem;
   position: relative;
@@ -263,27 +263,8 @@
   }
 }
 
-.shop-page {
-  background: var(--color-bg-primary);
-  min-height: 100vh;
-}
-
-.shop-header {
-  background: linear-gradient(180deg, rgba(10, 30, 63, 0.3), transparent);
-  padding: 5rem 1rem 3rem;
-  margin-bottom: 3rem;
-}
-
-.shop-header h1 {
-  color: var(--color-text-primary);
-}
-
-.shop-header p {
-  color: var(--color-text-secondary);
-}
-
-/* Shop Controls */
-.shop-controls {
+/* Header Controls */
+.products-controls {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -291,132 +272,31 @@
 }
 
 /* Search Bar */
-.search-bar {
+.products-search-bar {
   position: relative;
   max-width: 600px;
   width: 100%;
 }
 
-.search-input {
+.products-search-input {
   width: 100%;
   padding: 1rem 3rem 1rem 1.25rem;
   background: rgba(10, 30, 63, 0.4);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(191, 255, 153, 0.15);
-  border-radius: var(--radius-2xl);
-  color: var(--color-text-primary);
-  font-size: var(--font-size-base);
-  transition: all var(--transition-base);
+  border-radius: 2px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
-.search-input::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.search-input:focus {
+.products-search-input:focus {
   outline: none;
-  border-color: rgba(191, 255, 153, 0.4);
-  background: rgba(10, 30, 63, 0.6);
-  box-shadow: 0 4px 16px rgba(191, 255, 153, 0.1);
-}
-
-.search-icon {
-  position: absolute;
-  right: 1.25rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.25rem;
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-/* Category Filters */
-.category-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.filter-btn {
-  padding: 0.75rem 1.5rem;
-  background: rgba(10, 30, 63, 0.3);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(191, 255, 153, 0.15);
-  border-radius: var(--radius-xl);
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  cursor: pointer;
-  transition: all var(--transition-base);
-}
-
-.filter-btn:hover {
-  background: rgba(10, 30, 63, 0.5);
-  border-color: rgba(191, 255, 153, 0.3);
-  color: var(--color-text-primary);
-}
-
-.filter-btn.active {
-  background: rgba(191, 255, 153, 0.15);
-  border-color: var(--color-brand-primary);
-  color: var(--color-brand-primary);
-}
-
-/* Product Grid */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2.5rem;
-  margin-bottom: 4rem;
-}
-
-/* No Results */
-.no-results {
-  padding: 4rem 1rem;
-  text-align: center;
-}
-
-.no-results h3 {
-  color: var(--color-text-primary);
-  font-size: var(--font-size-2xl);
-  margin-bottom: 1rem;
-}
-
-.no-results p {
-  color: var(--color-text-secondary);
-  margin-bottom: 2rem;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .product-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .shop-header {
-    padding: 4rem 1rem 2rem;
-  }
-
-  .shop-controls {
-    gap: 1.5rem;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .filter-btn {
-    flex: 1;
-    min-width: 120px;
-  }
+  border-color: #fff;
 }
 
 /* CTA Buttons Spacing */
-.shop-cta-buttons {
+.products-cta-buttons {
   display: flex;
   justify-content: center;
   gap: 24px;
@@ -424,13 +304,13 @@
 }
 
 @media (max-width: 600px) {
-  .shop-cta-buttons {
+  .products-cta-buttons {
     flex-direction: column;
     align-items: center;
     gap: 16px;
   }
   
-  .shop-cta-buttons .btn {
+  .products-cta-buttons .btn {
     width: 100%;
     justify-content: center;
   }

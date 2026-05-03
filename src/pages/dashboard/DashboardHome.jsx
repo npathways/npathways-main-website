@@ -60,9 +60,9 @@ const DashboardHome = () => {
               <span className="action-icon">📤</span>
               <span>Upload Document</span>
             </Link>
-            <Link to="/shop" className="quick-action-card">
+            <Link to="/products" className="quick-action-card">
               <span className="action-icon">🛒</span>
-              <span>Browse Shop</span>
+              <span>Browse Products</span>
             </Link>
           </div>
         </div>
