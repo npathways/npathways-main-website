@@ -146,7 +146,7 @@ const Services = () => {
               </div>
             </div>
             <div className="why-visual">
-              <div className="relative border-4 border-white rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative border-4 border-white rounded-[2px] overflow-hidden shadow-2xl">
                 <img
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
                   alt="Team collaboration"
