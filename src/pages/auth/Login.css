@@ -1,10 +1,11 @@
 /* Auth Page Styles - Dark Theme */
 
 .auth-page {
-  min-height: calc(100vh - 200px);
+  min-height: 100vh;
   display: flex;
-  align-items: center;
-  padding: var(--spacing-12) 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--spacing-8) 0;
   background: var(--gradient-radial-hero);
   position: relative;
 }
@@ -114,13 +115,18 @@
   }
 
   .auth-page {
-    padding: var(--spacing-4) 0;
-    min-height: auto; /* Allow content to dictate height on mobile */
-    align-items: flex-start; /* Align to top instead of center on mobile */
+    padding: 0;
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
   
   .auth-page .container {
-    padding-top: var(--spacing-8); /* Add some space from top */
+    padding-top: 0;
+    width: 100%;
   }
 }
 

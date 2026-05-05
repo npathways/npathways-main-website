@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Card from "../../components/common/Card";
 import Button from "../../components/common/Button";
+import faqsData from "../../data/faqs.json";
+import { FiChevronDown } from "react-icons/fi";
 import "./Contact.css";
 
 const Contact = () => {
@@ -12,6 +14,12 @@ const Contact = () => {
     purpose: "Study Abroad",
     goal: "",
   });
+
+  const [activeFaq, setActiveFaq] = useState(null);
+
+  const toggleFaq = (index) => {
+    setActiveFaq(activeFaq === index ? null : index);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -88,14 +96,6 @@ const Contact = () => {
                     Mon-Fri, 9:00 AM - 6:00 PM IST
                   </p>
                 </div>
-              </div>
-
-              <div className="map-placeholder mt-8">
-                <img
-                  src="https://placehold.co/600x300/E2E8F0/64748B?text=Map+Location"
-                  alt="Map"
-                  className="rounded-xl w-full"
-                />
               </div>
             </div>
 
@@ -193,6 +193,34 @@ const Contact = () => {
                 </Button>
               </form>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section bg-gray">
+        <div className="container max-w-3xl">
+          <div className="text-center mb-12">
+            <h2>Frequently Asked <span className="text-primary">Questions</span></h2>
+            <p className="text-gray-600">Quick answers to common queries about our process.</p>
+          </div>
+          
+          <div className="faq-list">
+            {faqsData.map((faq, index) => (
+              <div 
+                key={index} 
+                className={`faq-item ${activeFaq === index ? 'active' : ''}`}
+                onClick={() => toggleFaq(index)}
+              >
+                <div className="faq-question">
+                  <h3>{faq.question}</h3>
+                  <FiChevronDown className="faq-chevron" />
+                </div>
+                <div className="faq-answer">
+                  <p>{faq.answer}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

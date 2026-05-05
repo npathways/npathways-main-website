@@ -55,7 +55,7 @@ const PaymentInfo = () => {
                   <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center font-bold shrink-0">2</div>
                   <div>
                     <h4 className="mb-2">Entitlement Unlock</h4>
-                    <p className="text-sm text-gray-600">Your student dashboard is automatically updated with the new modules or session credits.</p>
+                    <p className="text-sm text-gray-600">Your account dashboard is automatically updated with the new modules or session credits.</p>
                   </div>
                 </div>
                 <div className="step flex gap-6">

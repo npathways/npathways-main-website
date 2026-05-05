@@ -22,7 +22,7 @@ const DashboardHome = () => {
   return (
     <div className="dashboard-home fade-in">
       <div className="welcome-banner">
-        <h1>Welcome back, {user?.name || 'Student'}!</h1>
+        <h1>Welcome back, {user?.name || 'User'}!</h1>
         <p>Here's what's happening with your applications today.</p>
       </div>
 

@@ -90,31 +90,77 @@
   margin-top: var(--spacing-1);
 }
 
-/* Map Placeholder */
-.map-placeholder {
-  margin-top: var(--spacing-8);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  border: 1px solid var(--border-subtle);
-  background: var(--color-bg-card);
-  backdrop-filter: blur(10px);
-  padding: var(--spacing-3);
-  transition: all var(--transition-base);
+/* FAQ Section */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
 }
 
-.map-placeholder:hover {
-  border-color: var(--border-default);
+.faq-item {
+  background: var(--color-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.faq-item:hover {
+  border-color: var(--color-black);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.faq-item.active {
+  border-color: var(--color-black);
   box-shadow: var(--shadow-lg);
 }
 
-.map-placeholder img {
-  border-radius: var(--radius-lg);
-  opacity: 0.8;
-  transition: opacity var(--transition-base);
+.faq-question {
+  padding: var(--spacing-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-4);
 }
 
-.map-placeholder:hover img {
-  opacity: 1;
+.faq-question h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.faq-chevron {
+  font-size: 1.25rem;
+  color: var(--color-text-tertiary);
+  transition: transform var(--transition-base);
+}
+
+.faq-item.active .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--color-black);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #fafafa;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px; /* Large enough to fit content */
+  border-top: 1px solid var(--border-subtle);
+}
+
+.faq-answer p {
+  padding: var(--spacing-6);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  font-size: 1.125rem;
+  margin: 0;
 }
 
 /* Contact Form Card */

@@ -2,6 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Button from "../../components/common/Button";
 import heroVideo from "../../assets/video/hero.mp4";
+
+// Import Data
+import destinationsData from "../../data/destinations.json";
+import ecosystemData from "../../data/ecosystem.json";
+import testimonialsData from "../../data/testimonials.json";
+import trustBadgesData from "../../data/trustBadges.json";
+
 import "./Home.css";
 
 const Home = () => {
@@ -38,34 +45,6 @@ const Home = () => {
       goal: "",
     });
   };
-
-  const destinations = [
-    {
-      name: "United States",
-      img: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=2070&auto=format&fit=crop",
-      size: "large",
-    },
-    {
-      name: "United Kingdom",
-      img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2070&auto=format&fit=crop",
-      size: "small",
-    },
-    {
-      name: "Canada",
-      img: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=2011&auto=format&fit=crop",
-      size: "small",
-    },
-    {
-      name: "Australia",
-      img: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=2030&auto=format&fit=crop",
-      size: "medium",
-    },
-    {
-      name: "Germany",
-      img: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=2070&auto=format&fit=crop",
-      size: "medium",
-    },
-  ];
 
   return (
     <div className="home-redesign">
@@ -123,37 +102,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        {/* Floating Course Finder */}
-        {/* <div className="course-finder-container">
-          <div className="finder-card">
-            <div className="finder-field">
-              <label>Where to?</label>
-              <select>
-                <option>All Destinations</option>
-                <option>USA</option>
-                <option>UK</option>
-                <option>Canada</option>
-              </select>
-            </div>
-            <div className="finder-field">
-              <label>Study Level</label>
-              <select>
-                <option>Bachelors</option>
-                <option>Masters</option>
-                <option>PhD</option>
-              </select>
-            </div>
-            <div className="finder-field">
-              <label>Subject</label>
-              <input type="text" placeholder="e.g. Computer Science" />
-            </div>
-            <button className="finder-submit">Search Pathways</button>
-          </div>
-        </div> */}
       </section>
 
-      {/* Services Highlight - Tour Categories Style */}
+      {/* Services Highlight - Ecosystem */}
       <section className="highlights-section">
         <div className="container">
           <div className="section-header-premium">
@@ -161,34 +112,62 @@ const Home = () => {
             <h2>Complete Student Support</h2>
           </div>
           <div className="highlights-grid">
-            {[
-              {
-                title: "Career Discovery",
-                icon: "01",
-                desc: "Psychometric & Ikigai mapping",
-              },
-              {
-                title: "Admissions",
-                icon: "02",
-                desc: "Expert university shortlisting",
-              },
-              {
-                title: "Visa Success",
-                icon: "03",
-                desc: "98% success rate in filing",
-              },
-              {
-                title: "Support",
-                icon: "04",
-                desc: "Arrival & accommodation help",
-              },
-            ].map((item, i) => (
+            {ecosystemData.map((item, i) => (
               <div key={i} className="highlight-card">
                 <div className="highlight-icon">{item.icon}</div>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="testimonials-section">
+        <div className="container">
+          <div className="section-header-premium">
+            <span className="badge">Success Stories</span>
+            <h2>What Our Global Community Says</h2>
+          </div>
+
+          <div className="trust-badges-wrapper testimonials-trust">
+            {trustBadgesData.map((badge, i) => (
+              <React.Fragment key={i}>
+                <div className="trust-badge">
+                  <div className="trust-platform">
+                    <span className={`${badge.type}-logo`}>{badge.logo}</span> {badge.platform}
+                  </div>
+                  <div className="trust-rating">
+                    {badge.stars && (
+                      <span className="stars">{"★".repeat(badge.stars)}</span>
+                    )}
+                    <span className={badge.stars ? "rating-score" : "rating-text"}>
+                      {badge.rating}
+                    </span>
+                  </div>
+                </div>
+                {i < trustBadgesData.length - 1 && <div className="trust-divider"></div>}
+              </React.Fragment>
+            ))}
+          </div>
+
+          <div className="testimonials-track-container">
+            <div className="testimonials-track">
+              {[...testimonialsData, ...testimonialsData].map((t, i) => (
+                <div key={i} className="testimonial-card">
+                  <div className="testimonial-quote">"</div>
+                  <p className="testimonial-text">{t.quote}</p>
+                  <div className="testimonial-author">
+                    <div className="author-avatar">{t.initial}</div>
+                    <div className="author-info">
+                      <h4>{t.name}</h4>
+                      <span>{t.role}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -201,7 +180,7 @@ const Home = () => {
             <h2>Popular Pathways</h2>
           </div>
           <div className="destinations-masonry">
-            {destinations.map((dest, i) => (
+            {destinationsData.map((dest, i) => (
               <div key={i} className={`dest-card ${dest.size}`}>
                 <img src={dest.img} alt={dest.name} />
                 <div className="dest-overlay">
@@ -219,7 +198,6 @@ const Home = () => {
         <div className="container">
           <h3 className="partners-title">Our University Partners</h3>
           <div className="partners-track">
-            {/* Grayscale placeholders for partner logos */}
             <div className="partner-logo">IVY LEAGUE HUB</div>
             <div className="partner-logo">RUSSELL GROUP</div>
             <div className="partner-logo">GLOBAL TECH U</div>

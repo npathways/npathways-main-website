@@ -6,18 +6,18 @@ const Login = () => {
   return (
     <div className="auth-page fade-in">
       <div className="container">
-        <BackButton label="Home" />
+        <BackButton label="Home" to="/" />
         <div className="auth-layout">
           <div className="auth-illustration">
             {/* We can use an illustration or info here */}
             <div className="illustration-content">
-              <h1>Student Portal</h1>
+              <h1>User Portal</h1>
               <p>
                 Access your dashboard, manage documents, and track your
                 applications.
               </p>
               <img
-                src="https://placehold.co/400x300/00C194/FFFFFF?text=Student+Portal"
+                src="https://placehold.co/400x300/00C194/FFFFFF?text=User+Portal"
                 alt="Login Illustration"
               />
             </div>
