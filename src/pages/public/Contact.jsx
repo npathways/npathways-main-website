@@ -1,26 +1,16 @@
 import { useState } from "react";
 import Card from "../../components/common/Card";
 import Button from "../../components/common/Button";
+import LeadForm from "../../components/common/LeadForm";
+import faqsData from "../../data/faqs.json";
+import { FiChevronDown } from "react-icons/fi";
 import "./Contact.css";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "Sales",
-    message: "",
-  });
+  const [activeFaq, setActiveFaq] = useState(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for contacting us! We will get back to you shortly.");
-    setFormData({ name: "", email: "", subject: "Sales", message: "" });
+  const toggleFaq = (index) => {
+    setActiveFaq(activeFaq === index ? null : index);
   };
 
   return (
@@ -80,90 +70,41 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
-
-              <div className="map-placeholder mt-8">
-                <img
-                  src="https://placehold.co/600x300/E2E8F0/64748B?text=Map+Location"
-                  alt="Map"
-                  className="rounded-xl w-full"
-                />
-              </div>
             </div>
 
             {/* Contact Form */}
             <Card className="contact-form-card">
               <h2>Send a Message</h2>
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="name">Full Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="form-input"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="email">Email Address</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="form-input"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="subject">Department</label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    className="form-select"
-                    value={formData.subject}
-                    onChange={handleChange}
-                  >
-                    <option value="Sales">
-                      Sales & Inquiries (Pre-purchase)
-                    </option>
-                    <option value="Tech Support">
-                      Tech Support (Link issues)
-                    </option>
-                    <option value="Billing">Billing & Refunds</option>
-                  </select>
-                  <p className="form-help">
-                    {formData.subject === "Sales" &&
-                      "For questions about our services and products."}
-                    {formData.subject === "Tech Support" &&
-                      "If you haven't received your download link or can't open a file."}
-                    {formData.subject === "Billing" &&
-                      "For invoice queries or refund requests."}
-                  </p>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    className="form-textarea"
-                    rows="5"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                  ></textarea>
-                </div>
-                <Button variant="premium" type="submit" fullWidth size="large">
-                  Send Message
-                </Button>
-              </form>
+              <LeadForm source="Contact Page" variant="light" />
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section bg-gray">
+        <div className="container max-w-3xl">
+          <div className="text-center mb-12">
+            <h2>Frequently Asked <span className="text-primary">Questions</span></h2>
+            <p className="text-gray-600">Quick answers to common queries about our process.</p>
+          </div>
+          
+          <div className="faq-list">
+            {faqsData.map((faq, index) => (
+              <div 
+                key={index} 
+                className={`faq-item ${activeFaq === index ? 'active' : ''}`}
+                onClick={() => toggleFaq(index)}
+              >
+                <div className="faq-question">
+                  <h3>{faq.question}</h3>
+                  <FiChevronDown className="faq-chevron" />
+                </div>
+                <div className="faq-answer">
+                  <p>{faq.answer}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

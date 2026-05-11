@@ -213,7 +213,7 @@ const Founder = () => {
       {/* Call to Action */}
       <section style={{ padding: "6rem 0", borderTop: "1px solid #eee" }}>
         <div className="about-container" style={{ textAlign: "center" }}>
-          <h3>Want to discuss your career with Rajiv?</h3>
+          <h3>Want to discuss your career with Deepak?</h3>
           <p style={{ color: "#666", marginBottom: "2rem" }}>
             Book a specialized premium consultation session for deep career
             mapping.

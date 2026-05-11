@@ -25,9 +25,9 @@ const DashboardLayout = () => {
              Dashboard
           </div>
           <div className="user-profile-preview">
-            <span className="user-name">{user?.name || 'Student'}</span>
+            <span className="user-name">{user?.name || 'User'}</span>
             <div className="avatar-circle">
-              {user?.name ? user.name.charAt(0).toUpperCase() : 'S'}
+              {user?.name ? user.name.charAt(0).toUpperCase() : 'U'}
             </div>
           </div>
         </header>

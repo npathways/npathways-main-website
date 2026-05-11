@@ -48,7 +48,7 @@ const LoginForm = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
             className="form-input"
-            placeholder="student@npathways.com"
+            placeholder="user@npathways.com"
           />
         </div>
         
@@ -79,7 +79,7 @@ const LoginForm = () => {
       <div className="login-footer">
         <p>Don't have an account? <Link to="/register">Sign up</Link></p>
         <p className="demo-hint">
-          Demo: student@npathways.com / password123
+          Demo: user@npathways.com / password123
         </p>
       </div>
     </div>

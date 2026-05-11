@@ -3,9 +3,8 @@
 [![React](https://img.shields.io/badge/React-19.0-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-7.0-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![React Router](https://img.shields.io/badge/React_Router-7.0-CA4245?logo=react-router&logoColor=white)](https://reactrouter.com/)
-[![Leaflet](https://img.shields.io/badge/Leaflet-1.9-199900?logo=leaflet&logoColor=white)](https://leafletjs.com/)
 
-**NPathways** is a premium, state-of-the-art career guidance and education management platform. It bridge the gap between students, parents, and schools by providing specialized bootcamps, assessments, and structured educational pathways through a minimalist, high-conversion user interface.
+**NPathways** is a premium, state-of-the-art career guidance and education management platform. It bridges the gap between students, parents, and schools by providing specialized bootcamps, assessments, and structured educational pathways through a minimalist, high-conversion user interface.
 
 ---
 
@@ -23,21 +22,22 @@ npathways-website/
 │   │   ├── bootcamp/       # Calendar, Map, and Card components
 │   │   ├── common/         # Buttons, Inputs, Loading screens
 │   │   ├── dashboard/      # Dashboard-specific UI
-│   │   ├── ecommerce/      # Cart, Product cards, Checkout
 │   │   └── layout/         # Header, Footer, Page wrappers
-│   ├── context/            # React Context (Auth, Cart, Theme)
-│   ├── data/               # Mock JSON data and helper functions
+│   ├── context/            # React Context (Auth)
+│   ├── data/               # Service definitions, bootcamps, and helpers
 │   ├── lib/                # Third-party library configurations
 │   ├── pages/              # Page-level components
 │   │   ├── auth/           # Login, Register
 │   │   ├── dashboard/      # User Hub, My Files, Profile
-│   │   ├── ecommerce/      # Shop, Categories, Product Details
 │   │   ├── legal/          # Privacy, Terms, Refunds
-│   │   └── public/         # Home, About, Services, Contact
+│   │   └── public/         # Core Brand Pages
+│   │       ├── about/      # Founder, How it Works
+│   │       ├── services/   # Detail pages, Bootcamp Calendar
+│   │       ├── Home.jsx    # Homepage
+│   │       └── Contact.jsx # Lead Generation Form
 │   ├── styles/             # Global CSS and Design Tokens
 │   ├── App.jsx             # Root Component & Routing
-│   ├── main.jsx            # Entry point
-│   └── routes.jsx          # Route definitions
+│   └── main.jsx            # Entry point
 ├── vite.config.js          # Vite configuration
 └── package.json            # Dependencies and scripts
 ```
@@ -84,36 +84,28 @@ npm run build
 ```
 The output will be generated in the `dist/` directory.
 
-### Deployment Steps (Vercel/Netlify)
-1. Push your code to a GitHub repository.
-2. Connect the repository to your hosting provider.
-3. Set the build command to `npm run build`.
-4. Set the output directory to `dist`.
-5. Deploy!
-
 ---
 
 ## 🌟 Key Features
 
-### 1. **Interactive Bootcamp Hub**
-- **Map View**: Integrated Leaflet map to locate offline bootcamps.
-- **Calendar View**: Visual schedule management using `date-fns`.
-- **Filtering**: Seamlessly toggle between Online and Offline sessions.
+### 1. **Service-Oriented Architecture**
+- **Lead Generation**: High-conversion landing pages for Global Education, Career Guidance, and Visa Assistance.
+- **Inquiry Flow**: All premium service calls are funneled through a centralized contact and consultation system.
 
-### 2. **E-Commerce Engine**
-- **Dynamic Shop**: Browse assessments, programs, and pathways.
-- **Cart System**: Real-time cart management with local persistence.
-- **Secure Checkout**: Multi-step payment information and order summary.
+### 2. **Interactive Bootcamp Calendar**
+- **Real-time Schedule**: Browse upcoming Online and Offline cohorts.
+- **Filtering**: Seamlessly toggle between session types and availability.
+- **Direct Inquiry**: "Enquire for Batch" functionality redirects users to dedicated advisors.
 
-### 3. **Secure Dashboard**
+### 3. **Secure Student Dashboard**
 - **Protected Routes**: Authenticated user area using React Context.
-- **File Management**: Dedicated section for user-specific educational resources.
-- **Profile Hub**: Manage user details and order history.
+- **Resource Hub**: Access to my files and educational assets.
+- **Profile Management**: Manage student details and records.
 
 ### 4. **Modern Design System**
 - **Minimalist Aesthetic**: High-contrast B&W theme for focus and clarity.
 - **Responsive**: Fully optimized for Desktop, Tablet, and Mobile.
-- **Micro-animations**: Smooth transitions and loading states for premium feel.
+- **Micro-animations**: Smooth transitions and loading states for a premium feel.
 
 ---
 
@@ -121,10 +113,9 @@ The output will be generated in the `dist/` directory.
 
 - **Frontend**: React 19, Vite 7
 - **Routing**: React Router 7
-- **Styling**: Vanilla CSS (CSS Modules approach)
-- **Maps**: Leaflet & React Leaflet
-- **Icons**: React Icons (Lucide, FontAwesome)
-- **Utilities**: date-fns, prop-types
+- **Styling**: Vanilla CSS (Focus on design tokens and performance)
+- **Icons**: React Icons (Fi, Fa)
+- **Utilities**: date-fns
 
 ---
 

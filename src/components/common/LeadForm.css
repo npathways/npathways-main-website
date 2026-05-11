@@ -1,0 +1,131 @@
+.lead-form-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.modern-lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+  align-items: end; /* Fixes label/input alignment issues */
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+/* Variant Styling */
+.dark .form-field label {
+  color: #ffffff;
+}
+
+.light .form-field label {
+  color: #000000;
+}
+
+.modern-lead-form input,
+.modern-lead-form select,
+.modern-lead-form textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px; /* Matching the site's 2px radius system */
+  font-size: 1rem;
+  background-color: #ffffff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #111;
+  font-family: inherit;
+}
+
+.modern-lead-form input:hover,
+.modern-lead-form select:hover {
+  border-color: #999;
+}
+
+.modern-lead-form input:focus,
+.modern-lead-form select:focus {
+  outline: none;
+  border-color: #000;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+.phone-input-group {
+  display: flex;
+  gap: 0; /* Removing gap for unified look */
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.phone-input-group:focus-within {
+  border-color: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.phone-input-group select {
+  flex: 0 0 100px;
+  border: none;
+  border-right: 1px solid #e0e0e0;
+  background-color: #fafafa !important;
+  padding-right: 0.5rem;
+}
+
+.phone-input-group input {
+  border: none;
+}
+
+.form-message {
+  padding: 1.25rem;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.form-message.success {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.form-message.error {
+  background-color: #fff;
+  color: #ff0000;
+  border-color: #ff0000;
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .phone-input-group select {
+    flex: 0 0 80px;
+  }
+}

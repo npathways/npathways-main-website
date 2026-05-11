@@ -92,12 +92,7 @@ const BootcampCard = ({ bootcamp, onViewDetails }) => {
           </span>
         </div>
 
-        <div className="bootcamp-card__footer">
-          <div className="bootcamp-card__price">
-            <span className="bootcamp-card__price-amount">
-              {formatCurrency(bootcamp.price)}
-            </span>
-          </div>
+        <div className="bootcamp-card__footer" style={{ justifyContent: 'flex-end' }}>
           <Button
             variant="premium"
             size="medium"

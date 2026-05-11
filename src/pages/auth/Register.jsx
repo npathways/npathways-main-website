@@ -42,7 +42,7 @@ const Register = () => {
   return (
     <div className="auth-page fade-in">
       <div className="container">
-        <BackButton label="Home" />
+        <BackButton label="Home" to="/" />
         <div className="auth-layout">
           <div className="auth-illustration">
             <div className="illustration-content">

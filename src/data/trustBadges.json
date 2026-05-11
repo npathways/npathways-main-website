@@ -1,0 +1,22 @@
+[
+  {
+    "platform": "Google Reviews",
+    "logo": "G",
+    "rating": "4.9/5",
+    "stars": 5,
+    "type": "google"
+  },
+  {
+    "platform": "Trustpilot",
+    "logo": "★",
+    "rating": "4.8/5",
+    "stars": 5,
+    "type": "trustpilot"
+  },
+  {
+    "platform": "Verified Support",
+    "logo": "✓",
+    "rating": "24/7 Mentorship",
+    "type": "verified"
+  }
+]

@@ -30,26 +30,53 @@
 
 /* --- Hero Section --- */
 .about-hero-minimal {
-  background-color: var(--about-bg-secondary);
-  padding: 6rem 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+    url('https://upload.wikimedia.org/wikipedia/commons/c/cd/Stanford_Oval_May_2011_panorama.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 12rem 0;
   text-align: center;
-  border-bottom: 1px solid var(--about-border);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero-minimal .about-container {
+  position: relative;
+  z-index: 2;
 }
 
 .about-hero-minimal .breadcrumbs {
-  font-size: 0.9rem;
-  color: var(--about-text-secondary);
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
+  font-size: 0.75rem;
+  color: #000000;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
   text-transform: uppercase;
+  background: #ffffff;
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  font-weight: 700;
+  border-radius: 2px;
 }
 
 .about-hero-minimal h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  color: var(--about-text-primary);
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 900;
+  color: #ffffff;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1;
+}
+
+.about-hero-minimal h1 span {
+  opacity: 0.7;
+}
+
+.about-hero-minimal p {
+  color: #cccccc;
+  max-width: 650px;
+  margin: 2.5rem auto 0;
+  font-size: 1.25rem;
+  line-height: 1.6;
 }
 
 /* --- Section Headers --- */

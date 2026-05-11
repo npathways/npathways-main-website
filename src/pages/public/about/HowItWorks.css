@@ -1,0 +1,299 @@
+.how-it-works-page {
+  background-color: #ffffff;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+/* --- Hero --- */
+.road-hero {
+  padding: 10rem 0 6rem;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+.road-hero h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 1.5rem 0;
+}
+
+.road-hero h1 span {
+  color: #888;
+}
+
+.hero-desc {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* --- Road Layout --- */
+.road-layout-section {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.road-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.road-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #eee;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.moving-plane {
+  position: absolute;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%) rotate(90deg);
+  z-index: 10;
+  font-size: 5rem;
+  transition: top 0.15s ease-out;
+  pointer-events: none;
+}
+
+.moving-plane svg {
+  filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2));
+  transform: rotate(0deg); /* Adjust if the icon orientation changes */
+}
+
+/* Dashed effect for the road */
+.road-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  border-left: 2px dashed #000;
+  transform: translateX(-50%);
+  opacity: 0.1;
+}
+
+.road-milestone {
+  position: relative;
+  width: 50%;
+  margin-bottom: 8rem;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.road-milestone.left {
+  left: 0;
+  padding-right: 80px;
+  text-align: right;
+  transform: translateX(-50px);
+}
+
+.road-milestone.right {
+  left: 50%;
+  padding-left: 80px;
+  text-align: left;
+  transform: translateX(50px);
+}
+
+.road-milestone.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Milestone Dot (The marker on the road) */
+.milestone-dot {
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 0 0 10px #fff;
+  transition: transform 0.3s ease;
+}
+
+.road-milestone.left .milestone-dot {
+  right: -30px;
+}
+
+.road-milestone.right .milestone-dot {
+  left: -30px;
+}
+
+.milestone-num {
+  color: #fff;
+  font-weight: 900;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Milestone Card */
+.milestone-card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 3rem;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.road-milestone.left .milestone-card {
+  align-items: flex-end;
+}
+
+.road-milestone.right .milestone-card {
+  align-items: flex-start;
+}
+
+.milestone-card:hover {
+  border-color: #000;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.milestone-icon {
+  font-size: 2.5rem;
+  color: #000;
+  background: #f9f9f9;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+
+.milestone-content h3 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.milestone-content p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* --- Philosophy Section --- */
+.philosophy-section {
+  background-color: #000;
+  color: #fff;
+  padding: 10rem 0;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+  align-items: center;
+}
+
+.philosophy-text h2 {
+  font-size: 3.5rem;
+  margin: 2rem 0;
+  color: #ffffff;
+}
+
+.philosophy-text p {
+  font-size: 1.2rem;
+  color: #888;
+  line-height: 1.8;
+}
+
+.philosophy-features {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.feat-item h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.feat-item p {
+  color: #ffffff;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* --- Final CTA --- */
+.road-final-cta {
+  padding: 12rem 0;
+  text-align: center;
+  background: #fafafa;
+}
+
+.road-final-cta h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  margin-bottom: 3rem;
+}
+
+.road-final-cta .btn {
+  margin-bottom: 2rem;
+}
+
+.road-final-cta p {
+  color: #888;
+  font-size: 1.1rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .road-line {
+    left: 40px;
+  }
+  
+  .road-milestone {
+    width: 100%;
+    left: 0 !important;
+    padding-left: 100px !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+    transform: translateX(0) !important;
+    margin-bottom: 4rem;
+  }
+  
+  .road-milestone.left .milestone-dot,
+  .road-milestone.right .milestone-dot {
+    left: 10px;
+    right: auto;
+  }
+  
+  .road-milestone.left .milestone-card,
+  .road-milestone.right .milestone-card {
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}

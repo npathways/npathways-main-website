@@ -7,8 +7,8 @@ const Profile = () => {
   const { user } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
   const [profileData, setProfileData] = useState({
-    name: user?.name || 'Student Name',
-    email: user?.email || 'student@example.com',
+    name: user?.name || 'User Name',
+    email: user?.email || 'user@example.com',
     phone: '+91 98765 43210',
     targetCountry: 'United Kingdom',
     intake: 'Fall 2026'
@@ -37,7 +37,7 @@ const Profile = () => {
           <div className="profile-identity">
             <h2>{profileData.name}</h2>
             <p className="text-gray-500">{profileData.email}</p>
-            <span className="student-badge">Aspiring Student</span>
+            <span className="student-badge">Aspiring Member</span>
           </div>
           <Button variant="outline" onClick={() => setIsEditing(!isEditing)}>
             {isEditing ? 'Cancel Editing' : 'Edit Profile'}
