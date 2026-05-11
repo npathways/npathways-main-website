@@ -2,18 +2,15 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { supportServices } from "../../../data/services";
 import Button from "../../../components/common/Button";
+import ServiceSidebar from "../../../components/common/ServiceSidebar";
 import "./ServiceDetails.css";
 
 const Bootcamps = () => {
   const service = supportServices.find((s) => s.id === "bootcamps");
   const location = useLocation();
-  const [openFaq, setOpenFaq] = useState(null);
 
   if (!service) return null;
 
-  const toggleFaq = (index) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
 
   return (
     <div className="service-detail-page fade-in">
@@ -34,26 +31,7 @@ const Bootcamps = () => {
       <div className="container">
         <div className="service-layout-grid">
           {/* Sidebar */}
-          <aside className="service-sidebar">
-            <div className="sidebar-widget">
-              <h3 className="widget-title">All Services</h3>
-              <ul className="sidebar-nav">
-                {supportServices.map((s) => (
-                  <li key={s.id} className="sidebar-nav-item">
-                    <Link
-                      to={s.link}
-                      className={`sidebar-nav-link ${
-                        location.pathname === s.link ? "active" : ""
-                      }`}
-                    >
-                      {s.name}
-                      <span>→</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </aside>
+          <ServiceSidebar />
 
           {/* Fixed Image Panel */}
           <div className="service-image-panel">
@@ -61,6 +39,16 @@ const Bootcamps = () => {
               src="https://picsum.photos/seed/bootcamp/800/500"
               alt="Accelerated bootcamps"
             />
+            <div className="image-panel-cta">
+              <Button
+                variant="premium"
+                size="large"
+                fullWidth
+                onClick={() => (window.location.href = "/services/bootcamp-calendar")}
+              >
+                View Bootcamp Calendar
+              </Button>
+            </div>
           </div>
 
           {/* Main Content */}
@@ -94,43 +82,8 @@ const Bootcamps = () => {
               </div>
             </section>
 
-            <section className="faq-section">
-              <h3>Bootcamp FAQ</h3>
-              <div className="faq-accordion">
-                {service.faq.map((item, index) => (
-                  <div key={index} className="faq-item">
-                    <div
-                      className="faq-question"
-                      onClick={() => toggleFaq(index)}
-                    >
-                      <span>{item.question}</span>
-                      <span>{openFaq === index ? "−" : "+"}</span>
-                    </div>
-                    {openFaq === index && (
-                      <div className="faq-answer fade-in">{item.answer}</div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </section>
 
             {/* Upcoming Calendars Section - Moved from Sidebar */}
-            <section className="resources-section mb-12">
-              <h3>Upcoming Calendars</h3>
-              <div className="resources-grid">
-                <a
-                  href="#"
-                  className="download-item"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <div className="download-icon">PDF</div>
-                  <div className="download-info">
-                    <span className="download-name">Spring 2024 Schedule</span>
-                    <span className="download-size">PDF (1.8 MB)</span>
-                  </div>
-                </a>
-              </div>
-            </section>
 
             {/* Join a Batch CTA - Moved from Sidebar */}
             <section className="help-cta-section">
@@ -140,9 +93,9 @@ const Bootcamps = () => {
                 <Button
                   variant="premium"
                   size="large"
-                  onClick={() => (window.location.href = "/products/bootcamps")}
+                  onClick={() => (window.location.href = "/services/bootcamp-calendar")}
                 >
-                  View Active Bootcamps
+                  View Calendar
                 </Button>
               </div>
             </section>

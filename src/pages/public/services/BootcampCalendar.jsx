@@ -5,13 +5,10 @@ import {
 } from "../../../data/bootcampHelpers";
 import BootcampCard from "../../../components/bootcamp/BootcampCard";
 import BootcampCalendar from "../../../components/bootcamp/BootcampCalendar";
-import BootcampMap from "../../../components/bootcamp/BootcampMap";
-import ProductSidebar from "./ProductSidebar";
-import "./CategoryPages.css";
-import "./BootcampList.css";
+import "./BootcampCalendar.css";
 
 const BootcampList = () => {
-  const [viewMode, setViewMode] = useState("grid"); // 'grid', 'calendar', 'map'
+  const [viewMode, setViewMode] = useState("grid"); // 'grid', 'calendar'
   const [filterType, setFilterType] = useState("all"); // 'all', 'online', 'offline'
   const [selectedBootcamps, setSelectedBootcamps] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -30,10 +27,6 @@ const BootcampList = () => {
     setShowModal(true);
   };
 
-  const handleMarkerClick = (bootcamp) => {
-    handleViewDetails(bootcamp);
-  };
-
   const closeModal = () => {
     setShowModal(false);
     setSelectedBootcamp(null);
@@ -50,11 +43,11 @@ const BootcampList = () => {
   };
 
   return (
-    <div className="product-category-page bootcamp-list-page fade-in">
+    <div className="bootcamp-calendar-page fade-in">
       {/* Hero */}
-      <section className="bg-gray-50 py-20 text-center border-b border-gray-100">
+      <section className="bg-gray-50 py-20 text-center border-b border-gray-100" style={{ paddingTop: '140px' }}>
         <div className="container">
-          <h1 className="text-5xl font-bold mb-4">Bootcamps</h1>
+          <h1 className="text-5xl font-bold mb-4">Bootcamp Calendar</h1>
           <p className="text-gray-500 max-w-2xl mx-auto">
             Intensive accelerators designed to build specific skills and
             readiness dimensions. Choose from online or offline sessions across
@@ -65,7 +58,6 @@ const BootcampList = () => {
 
       <section className="service-single-layout">
         <div className="container">
-          <ProductSidebar />
 
           <div className="category-content">
             {/* View Controls */}
@@ -115,27 +107,6 @@ const BootcampList = () => {
                     <line x1="3" y1="10" x2="21" y2="10" />
                   </svg>
                   <span>Calendar</span>
-                </button>
-                <button
-                  className={`view-toggle__btn ${
-                    viewMode === "map" ? "view-toggle__btn--active" : ""
-                  }`}
-                  onClick={() => setViewMode("map")}
-                  title="Map View"
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
-                    <line x1="8" y1="2" x2="8" y2="18" />
-                    <line x1="16" y1="6" x2="16" y2="22" />
-                  </svg>
-                  <span>Map</span>
                 </button>
               </div>
 
@@ -200,25 +171,6 @@ const BootcampList = () => {
                   onDateSelect={handleDateSelect}
                   filterType={filterType}
                 />
-              </div>
-            )}
-
-            {/* Map View */}
-            {viewMode === "map" && (
-              <div className="bootcamp-map-view">
-                {filterType === "online" ? (
-                  <div className="bootcamp-map-notice">
-                    <p>Map view is only available for offline bootcamps.</p>
-                    <button
-                      className="btn-link"
-                      onClick={() => setFilterType("offline")}
-                    >
-                      View Offline Bootcamps
-                    </button>
-                  </div>
-                ) : (
-                  <BootcampMap onMarkerClick={handleMarkerClick} />
-                )}
               </div>
             )}
           </div>
@@ -320,21 +272,16 @@ const BootcampList = () => {
                 </div>
 
                 <div className="bootcamp-modal__footer">
-                  <div className="bootcamp-modal__price">
-                    <span className="price-label">Price</span>
-                    <span className="price-amount">
-                      ₹{selectedBootcamp.price.toLocaleString("en-IN")}
-                    </span>
-                  </div>
                   <button
                     className="btn-register"
+                    onClick={() => (window.location.href = "/contact")}
                     disabled={
                       selectedBootcamp.enrolled >= selectedBootcamp.capacity
                     }
                   >
                     {selectedBootcamp.enrolled >= selectedBootcamp.capacity
                       ? "Fully Booked"
-                      : "Register Now"}
+                      : "Enquire for Batch"}
                   </button>
                 </div>
               </div>

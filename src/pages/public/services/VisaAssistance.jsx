@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { supportServices } from "../../../data/services";
+import { consultancyServices, supportServices } from "../../../data/services";
 import Button from "../../../components/common/Button";
 import ServiceSidebar from "../../../components/common/ServiceSidebar";
 import "./ServiceDetails.css";
 
-const ForSchools = () => {
-  const service = supportServices.find((s) => s.id === "for-schools");
+const VisaAssistance = () => {
+  const service = consultancyServices.find((s) => s.id === "visa-assistance");
   const location = useLocation();
 
   if (!service) return null;
 
+
+  // Combine services for sidebar
+  const allServices = [...consultancyServices, ...supportServices];
 
   return (
     <div className="service-detail-page fade-in">
@@ -36,8 +39,9 @@ const ForSchools = () => {
           {/* Fixed Image Panel */}
           <div className="service-image-panel">
             <img
-              src="https://picsum.photos/seed/schools/800/500"
-              alt="School partnership"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+              alt="Visa Assistance"
+              className="grayscale"
             />
             <div className="image-panel-cta">
               <Button
@@ -59,7 +63,7 @@ const ForSchools = () => {
                 {service.longDescription}
               </p>
 
-              <h3>Institutional Features</h3>
+              <h3>Service Features</h3>
               <ul className="check-list space-y-4 mb-10">
                 {service.features.map((f, i) => (
                   <li key={i} className="flex gap-3 items-start">
@@ -71,7 +75,7 @@ const ForSchools = () => {
             </section>
 
             <section className="benefits-section mb-12">
-              <h3>Why Partner With Us?</h3>
+              <h3>Direct Benefits</h3>
               <div className="benefits-grid">
                 {service.benefits.map((b, i) => (
                   <div key={i} className="benefit-card">
@@ -83,21 +87,19 @@ const ForSchools = () => {
             </section>
 
 
-            {/* Partnership Docs Section - Moved from Sidebar */}
-
-            {/* Institutional Relations CTA - Moved from Sidebar */}
-            <section className="help-cta-section">
+            {/* Help Widget */}
+            <section className="help-cta-section mt-12">
               <div className="help-cta-box">
-                <h3>Institutional Relations</h3>
+                <h3>Ready to File?</h3>
                 <p>
-                  Connect with our team to start a partnership with your school.
+                  Ensure your visa application is perfect with our expert review.
                 </p>
                 <Button
                   variant="premium"
                   size="large"
                   onClick={() => (window.location.href = "/contact")}
                 >
-                  Inquire Now
+                  Get Visa Support
                 </Button>
               </div>
             </section>
@@ -108,4 +110,4 @@ const ForSchools = () => {
   );
 };
 
-export default ForSchools;
+export default VisaAssistance;

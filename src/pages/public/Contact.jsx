@@ -169,7 +169,6 @@ const Contact = () => {
                     onChange={handleChange}
                   >
                     <option value="Study Abroad">Study Abroad</option>
-                    <option value="Career Counseling">Career Counseling</option>
                     <option value="Bootcamps">Skills & Bootcamps</option>
                     <option value="Internships">Internships & Research</option>
                   </select>

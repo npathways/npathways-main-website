@@ -9,7 +9,7 @@ export const serviceCategories = [
   {
     id: 'readiness',
     name: 'Readiness & Accelerators',
-    services: ['for-parents', 'for-schools', 'career-assessments', 'bootcamps', 'school-programs']
+    services: ['for-parents', 'for-schools', 'bootcamps', 'school-programs']
   }
 ];
 
@@ -20,6 +20,7 @@ export const consultancyServices = [
     icon: null,
     shortDescription: 'University shortlisting and admission support',
     description: 'We guide students at every stage of their study abroad journey — from selecting the right universities to preparing standout SOPs and LORs, coaching for exams like IELTS, SAT, GRE, and TOEFL, helping secure scholarships, and managing visa applications.',
+    longDescription: 'Our Global Education Consulting is a premium, end-to-end service designed for students aiming for top-tier international universities. We go beyond simple applications by building a strategic profile that highlights your unique strengths and aligns with institutional expectations. From the Ivy League to Russell Group institutions, we help you navigate the complex global admissions landscape with ease.',
     features: [
       'University shortlisting based on profile',
       'Application strategy and planning',
@@ -28,8 +29,17 @@ export const consultancyServices = [
       'Scholarship guidance',
       'Visa application support'
     ],
+    benefits: [
+      { title: 'Strategic Advantage', description: 'Expert insights into what top-tier admissions committees are looking for.' },
+      { title: 'Minimized Stress', description: 'We manage the timelines, documentation, and deadlines for you.' },
+      { title: 'Higher Admit Rates', description: 'Optimized profiles consistently secure seats in prestigious institutions.' }
+    ],
+    faq: [
+      { question: 'When should I start the consulting process?', answer: 'Ideally, you should start 12-18 months before your intended intake to build a strong profile.' },
+      { question: 'Do you guarantee admission?', answer: 'While no one can guarantee admission, our strategic approach significantly improves your chances at target universities.' }
+    ],
     pricing: 'Custom',
-    link: '/contact'
+    link: '/services/education-consulting'
   },
   {
     id: 'career-guidance',
@@ -37,6 +47,7 @@ export const consultancyServices = [
     icon: null,
     shortDescription: '1-on-1 personalized strategy sessions',
     description: 'Personalized career counseling to help you discover your strengths, clarify your goals, and create an actionable roadmap for studying abroad.',
+    longDescription: 'Career Guidance at NPathways is a reflective and analytical process. We help students and professionals identify their core interests and map them to global industry trends. This ensures that your choice of major or master\'s program isn\'t just based on popularity, but on long-term career viability and personal fulfillment.',
     features: [
       'One-on-one counseling sessions',
       'Career pathway analysis',
@@ -44,8 +55,17 @@ export const consultancyServices = [
       'Profile evaluation',
       'Course and university recommendations'
     ],
+    benefits: [
+      { title: 'Path Clarity', description: 'Remove the confusion of multiple options with a data-backed roadmap.' },
+      { title: 'Market Awareness', description: 'Align your education with future job market demands.' },
+      { title: 'Personalized Strategy', description: 'A plan that respects your unique strengths and financial constraints.' }
+    ],
+    faq: [
+      { question: 'Is this only for study abroad?', answer: 'While we specialize in global pathways, our guidance helps with any long-term career planning.' },
+      { question: 'How many sessions will I need?', answer: 'Most students find clarity within 2-3 deep-dive sessions.' }
+    ],
     pricing: 'Custom',
-    link: '/contact'
+    link: '/services/career-guidance'
   },
   {
     id: 'visa-assistance',
@@ -53,6 +73,7 @@ export const consultancyServices = [
     icon: null,
     shortDescription: 'End-to-end documentation and filing support',
     description: 'Complete visa support including documentation review, application filing, interview preparation, and follow-up assistance.',
+    longDescription: 'The visa process is often the most stressful part of the global transition. Our team of experts stays updated on the latest immigration policies and documentation requirements for major destinations including the US, UK, Canada, Australia, and Europe. We ensure your file is meticulous, increasing the probability of a successful outcome.',
     features: [
       'Visa eligibility assessment',
       'Document preparation and review',
@@ -60,8 +81,17 @@ export const consultancyServices = [
       'Interview preparation',
       'Follow-up and tracking'
     ],
+    benefits: [
+      { title: '98% Success Rate', description: 'Our meticulous filing process ensures high approval rates.' },
+      { title: 'Expert Documentation', description: 'Avoiding common pitfalls and technical errors in filing.' },
+      { title: 'Mock Interviews', description: 'Build confidence with simulated visa interviews for relevant countries.' }
+    ],
+    faq: [
+      { question: 'Do you help with financial documentation?', answer: 'Yes, we guide you on how to correctly present your financial records as per embassy requirements.' },
+      { question: 'What if my visa is rejected?', answer: 'We analyze the rejection reason and assist with re-filing or appeals where possible.' }
+    ],
     pricing: 'Custom',
-    link: '/contact'
+    link: '/services/visa-assistance'
   }
 ];
 
@@ -115,31 +145,6 @@ export const supportServices = [
       { question: 'Is there a cost for the school?', answer: 'We offer both subsidized and premium partnership models based on school requirements.' }
     ],
     link: '/services/schools'
-  },
-  {
-    id: 'career-assessments',
-    name: 'Career & Assessments',
-    icon: null,
-    shortDescription: 'Scientific path to career clarity.',
-    description: 'In-depth psychometric tests and cognitive mapping to discover the ideal academic and career path.',
-    longDescription: 'Our scientific assessments go beyond simple tests. We analyze personality traits, cognitive strengths, and interest patterns to map out a personalized success roadmap for students from Grade 8 onwards.',
-    features: [
-      'AI-powered psychometric testing',
-      'One-on-one discovery sessions',
-      'Detailed 20-page strength report',
-      'Parent-student alignment feedback',
-      'Grade-wise academic planning'
-    ],
-    benefits: [
-      { title: 'Scientific Clarity', description: 'Evidence-based career decisions rather than peer pressure.' },
-      { title: 'Minimized Risk', description: 'Reduce the chance of student burnout or course switching later.' },
-      { title: 'Early Identification', description: 'Spot natural talents early to build a competitive edge.' }
-    ],
-    faq: [
-      { question: 'At what age should the test be taken?', answer: 'Ideal for students in Grades 8-12, but useful even for college graduates.' },
-      { question: 'How long does the assessment take?', answer: 'The test takes 45-60 minutes, followed by a 45-minute counseling session.' }
-    ],
-    link: '/services/assessments'
   },
   {
     id: 'bootcamps',

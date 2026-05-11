@@ -1,7 +1,16 @@
-/* Bootcamp List Specific Styles */
+/* Bootcamp Calendar Page Styles */
 
-.bootcamp-list-page {
+.bootcamp-calendar-page {
   min-height: 100vh;
+}
+
+.service-single-layout {
+  padding: 4rem 0;
+  background-color: #fff;
+}
+
+.category-content {
+  width: 100%;
 }
 
 .bootcamp-controls {
@@ -103,51 +112,6 @@
   border: 2px dashed #e5e7eb;
 }
 
-.bootcamp-empty p {
-  font-size: 1.125rem;
-  color: #6b7280;
-}
-
-/* Calendar View */
-.bootcamp-calendar-view {
-  margin-bottom: 40px;
-}
-
-/* Map View */
-.bootcamp-map-view {
-  margin-bottom: 40px;
-}
-
-.bootcamp-map-notice {
-  text-align: center;
-  padding: 60px 20px;
-  background: #fef3c7;
-  border: 2px solid #fbbf24;
-  border-radius: 12px;
-}
-
-.bootcamp-map-notice p {
-  font-size: 1.125rem;
-  color: #92400e;
-  margin-bottom: 16px;
-}
-
-.btn-link {
-  background: #000;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-link:hover {
-  background: #374151;
-  transform: translateY(-2px);
-}
-
 /* Modal Styles */
 .bootcamp-modal-overlay {
   position: fixed;
@@ -165,12 +129,8 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .bootcamp-modal {
@@ -185,14 +145,8 @@
 }
 
 @keyframes slideUp {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .bootcamp-modal__close {
@@ -207,17 +161,9 @@
   font-size: 24px;
   border-radius: 50%;
   cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1;
-}
-
-.bootcamp-modal__close:hover {
-  background: #dc2626;
-  transform: rotate(90deg);
 }
 
 .bootcamp-modal__content {
@@ -237,7 +183,6 @@
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   margin-bottom: 12px;
 }
 
@@ -254,14 +199,7 @@
 .bootcamp-modal__header h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: #000;
   margin-bottom: 12px;
-}
-
-.bootcamp-modal__description {
-  font-size: 1rem;
-  color: #6b7280;
-  line-height: 1.6;
 }
 
 .bootcamp-modal__body {
@@ -274,31 +212,18 @@
 .bootcamp-modal__section h3 {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #000;
   margin-bottom: 12px;
-}
-
-.bootcamp-modal__section p {
-  color: #374151;
-  line-height: 1.6;
-  margin-bottom: 8px;
-}
-
-.bootcamp-modal__section p:last-child {
-  margin-bottom: 0;
 }
 
 .feature-list {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .feature-list li {
   padding: 8px 0;
   padding-left: 28px;
   position: relative;
-  color: #374151;
 }
 
 .feature-list li::before {
@@ -307,7 +232,6 @@
   left: 0;
   color: #22c55e;
   font-weight: 700;
-  font-size: 1.125rem;
 }
 
 .bootcamp-capacity-bar {
@@ -320,64 +244,31 @@
 
 .bootcamp-capacity-fill {
   height: 100%;
-  background: linear-gradient(90deg, #000 0%, #4b5563 100%);
-  transition: width 0.3s ease;
+  background: #000;
 }
 
 .bootcamp-modal__footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   padding-top: 24px;
   border-top: 2px solid #e5e7eb;
-  gap: 20px;
-}
-
-.bootcamp-modal__price {
-  display: flex;
-  flex-direction: column;
-}
-
-.price-label {
-  font-size: 0.875rem;
-  color: #6b7280;
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-
-.price-amount {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #000;
 }
 
 .btn-register {
-  padding: 14px 32px;
+  padding: 14px 48px;
   background: #000;
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  white-space: nowrap;
 }
 
 .btn-register:hover {
   background: #374151;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.btn-register:disabled {
-  background: #9ca3af;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.btn-register:disabled:hover {
-  transform: none;
 }
 
 /* Multiple Bootcamps List in Modal */
@@ -398,32 +289,6 @@
 .bootcamp-list-item:hover {
   border-color: #000;
   background: #f9fafb;
-  transform: translateX(4px);
-}
-
-.bootcamp-list-item__header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 8px;
-}
-
-.bootcamp-badge-small {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  font-size: 1rem;
-  flex-shrink: 0;
-}
-
-.bootcamp-list-item h4 {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #000;
-  margin: 0;
 }
 
 .btn-view-details {
@@ -435,88 +300,14 @@
   border-radius: 6px;
   font-size: 0.875rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-view-details:hover {
-  background: #374151;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .bootcamp-controls {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .view-toggle,
-  .category-filter {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .bootcamp-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-  }
 }
 
 @media (max-width: 768px) {
-  .view-toggle__btn span {
-    display: none;
-  }
-
-  .category-filter {
-    flex-wrap: wrap;
-  }
-
-  .category-filter__btn {
-    flex: 1;
-    min-width: 100px;
-  }
-
-  .bootcamp-grid {
-    grid-template-columns: 1fr;
-  }
-
   .bootcamp-modal__content {
     padding: 24px;
   }
-
-  .bootcamp-modal__header h2 {
-    font-size: 1.5rem;
-  }
-
-  .bootcamp-modal__footer {
+  
+  .bootcamp-controls {
     flex-direction: column;
-    align-items: stretch;
-  }
-
-  .btn-register {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .bootcamp-modal {
-    border-radius: 12px;
-    margin: 10px;
-  }
-
-  .bootcamp-modal__close {
-    top: 12px;
-    right: 12px;
-    width: 32px;
-    height: 32px;
-    font-size: 20px;
-  }
-
-  .bootcamp-modal__content {
-    padding: 20px;
-  }
-
-  .price-amount {
-    font-size: 1.5rem;
   }
 }

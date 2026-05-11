@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
-import { useCart } from "../../context/CartContext";
 import {
-  FiShoppingCart,
   FiUser,
   FiMenu,
   FiX,
@@ -16,7 +14,6 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const { isAuthenticated, user } = useAuth();
-  const { getCartCount, toggleCart } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -110,7 +107,28 @@ const Header = () => {
                   </Link>
                   <div className="dropdown-menu">
                     <div className="dropdown-category">
-                      <span className="category-label">Stakeholder Services</span>
+                      <span className="category-label">Consultancy</span>
+                      <Link
+                        to="/services/education-consulting"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Global Education Consulting
+                      </Link>
+                      <Link
+                        to="/services/career-guidance"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Career Guidance
+                      </Link>
+                      <Link
+                        to="/services/visa-assistance"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Visa Assistance
+                      </Link>
+                    </div>
+                    <div className="dropdown-category">
+                      <span className="category-label">Readiness & Support</span>
                       <Link
                         to="/services/parents"
                         onClick={() => setIsMenuOpen(false)}
@@ -123,88 +141,16 @@ const Header = () => {
                       >
                         For Schools
                       </Link>
-                    </div>
-                    <div className="dropdown-category">
-                      <span className="category-label">Core Offerings</span>
-                      <Link
-                        to="/services/assessments"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Career & Assessments
-                      </Link>
                       <Link
                         to="/services/bootcamps"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Bootcamps
                       </Link>
-                      <Link
-                        to="/services/school-programs"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        School Programs
-                      </Link>
                     </div>
                   </div>
                 </div>
 
-                <div
-                  className={`nav-dropdown ${
-                    activeDropdown === "products" ? "active" : ""
-                  }`}
-                >
-                  <Link
-                    to="/products"
-                    className="nav-link dropdown-toggle"
-                    onClick={(e) => handleDropdownToggle(e, "products")}
-                  >
-                    Products <FiChevronDown className="chevron" />
-                  </Link>
-                  <div className="dropdown-menu">
-                    <div className="dropdown-category">
-                      <span className="category-label">Pathways & Programs</span>
-                      <Link
-                        to="/products/pathways"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Full Pathways
-                      </Link>
-                      <Link
-                        to="/products/programs"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Structured Programs
-                      </Link>
-                      <Link
-                        to="/products/subscriptions"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Subscriptions
-                      </Link>
-                    </div>
-                    <div className="dropdown-category">
-                      <span className="category-label">Readiness Tools</span>
-                      <Link
-                        to="/products/assessments"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Assessments
-                      </Link>
-                      <Link
-                        to="/products/bootcamps"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Bootcamps
-                      </Link>
-                      <Link
-                        to="/products/payments"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Payment Info
-                      </Link>
-                    </div>
-                  </div>
-                </div>
                 <Link
                   to="/contact"
                   className="nav-link"
@@ -217,17 +163,6 @@ const Header = () => {
 
             {/* Actions */}
             <div className="header-actions">
-              {/* Cart Icon */}
-              <button
-                className="cart-button"
-                onClick={toggleCart}
-                aria-label="Shopping Cart"
-              >
-                <FiShoppingCart className="cart-icon" />
-                {getCartCount() > 0 && (
-                  <span className="cart-badge">{getCartCount()}</span>
-                )}
-              </button>
 
               {/* User/Login */}
               {isAuthenticated ? (

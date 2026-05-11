@@ -185,7 +185,7 @@ const Home = () => {
                 <img src={dest.img} alt={dest.name} />
                 <div className="dest-overlay">
                   <h3>{dest.name}</h3>
-                  <Link to="/products/pathways">Explore Programs →</Link>
+                  <Link to="/services">Explore Services →</Link>
                 </div>
               </div>
             ))}
@@ -281,7 +281,6 @@ const Home = () => {
                     onChange={handleCtaChange}
                   >
                     <option value="Study Abroad">Study Abroad</option>
-                    <option value="Career Counseling">Career Counseling</option>
                     <option value="Bootcamps">Skills & Bootcamps</option>
                     <option value="Internships">Internships & Research</option>
                   </select>

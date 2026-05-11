@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Cart from "./components/ecommerce/Cart";
 import LoadingScreen from "./components/common/LoadingScreen";
 import ScrollToTop from "./components/common/ScrollToTop";
 
@@ -15,7 +14,9 @@ import About from "./pages/public/About";
 import Services from "./pages/public/Services";
 import ForParents from "./pages/public/services/ForParents";
 import ForSchools from "./pages/public/services/ForSchools";
-import CareerAssessments from "./pages/public/services/CareerAssessments";
+import EducationConsulting from "./pages/public/services/EducationConsulting";
+import CareerGuidance from "./pages/public/services/CareerGuidance";
+import VisaAssistance from "./pages/public/services/VisaAssistance";
 import Bootcamps from "./pages/public/services/Bootcamps";
 import SchoolPrograms from "./pages/public/services/SchoolPrograms";
 import Contact from "./pages/public/Contact";
@@ -23,15 +24,7 @@ import Founder from "./pages/public/about/Founder";
 import HowItWorks from "./pages/public/about/HowItWorks";
 
 // E-Commerce Pages
-import Products from "./pages/ecommerce/Products";
-import AssessmentList from "./pages/ecommerce/categories/AssessmentList";
-import BootcampList from "./pages/ecommerce/categories/BootcampList";
-import ProgramList from "./pages/ecommerce/categories/ProgramList";
-import PathwayList from "./pages/ecommerce/categories/PathwayList";
-import SubscriptionPreview from "./pages/ecommerce/categories/SubscriptionPreview";
-import PaymentInfo from "./pages/ecommerce/PaymentInfo";
-import ProductDetail from "./pages/ecommerce/ProductDetail";
-import Checkout from "./pages/ecommerce/Checkout";
+import BootcampList from "./pages/public/services/BootcampCalendar";
 
 // Auth Pages
 import Login from "./pages/auth/Login";
@@ -65,7 +58,6 @@ function App() {
     <>
       <ScrollToTop />
       <LoadingScreen />
-      <Cart /> {/* Global Cart Sidebar */}
       <Routes>
         {/* Public Routes */}
         <Route element={<PublicLayout />}>
@@ -76,25 +68,14 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/services/parents" element={<ForParents />} />
           <Route path="/services/schools" element={<ForSchools />} />
-          <Route path="/services/assessments" element={<CareerAssessments />} />
+          <Route path="/services/education-consulting" element={<EducationConsulting />} />
+          <Route path="/services/career-guidance" element={<CareerGuidance />} />
+          <Route path="/services/visa-assistance" element={<VisaAssistance />} />
           <Route path="/services/bootcamps" element={<Bootcamps />} />
-          <Route
-            path="/services/school-programs"
-            element={<SchoolPrograms />}
-          />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/assessments" element={<AssessmentList />} />
-          <Route path="/products/bootcamps" element={<BootcampList />} />
-          <Route path="/products/programs" element={<ProgramList />} />
-          <Route path="/products/pathways" element={<PathwayList />} />
-          <Route
-            path="/products/subscriptions"
-            element={<SubscriptionPreview />}
-          />
-          <Route path="/products/payments" element={<PaymentInfo />} />
-          <Route path="/products/:id" element={<ProductDetail />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/services/bootcamp-calendar" element={<BootcampList />} />
+          <Route path="/products" element={<Navigate to="/services" replace />} />
+          <Route path="/products/*" element={<Navigate to="/services" replace />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 

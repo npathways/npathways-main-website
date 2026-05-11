@@ -181,19 +181,28 @@
   grid-row: 1;
   position: relative;
   top: 0;
-  height: 400px;
+  height: auto; /* Changed from 400px to auto */
   background: #f5f5f5;
   overflow: hidden;
   border-radius: 2px 2px 0 0;
-  margin-right: 2rem; /* Add margin to separate from edge if needed, matching padding */
+  margin-right: 2rem;
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-image-panel img {
   width: 100%;
-  height: 100%;
+  height: 350px; /* Fixed height for image */
   object-fit: cover;
   filter: grayscale(100%);
+}
+
+.image-panel-cta {
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-top: none;
 }
 
 /* MAIN CONTENT - Now Bottom Row of Main Column */
