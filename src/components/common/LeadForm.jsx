@@ -48,7 +48,7 @@ const LeadForm = ({ source = "General", variant = "dark", onSuccess }) => {
     setMessage({ type: "", text: "" });
 
     try {
-      const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || "/api";
       const response = await fetch(`${baseUrl}/leads`, {
         method: "POST",
         headers: {
