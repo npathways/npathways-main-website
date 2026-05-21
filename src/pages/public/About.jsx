@@ -182,11 +182,11 @@ const About = () => {
                     <img
                       src={member.img}
                       alt={member.name}
+                      className="grayscale-image"
                       style={{
                         width: "100%",
                         height: "100%",
                         objectFit: "cover",
-                        filter: "grayscale(100%)",
                       }}
                     />
                   </div>
@@ -259,11 +259,11 @@ const About = () => {
               <img
                 src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
                 alt="Philosophy"
+                className="grayscale-image brightness-low"
                 style={{
                   width: "100%",
                   height: "300px",
                   objectFit: "cover",
-                  filter: "grayscale(100%) brightness(0.7)",
                 }}
               />
               <div style={{ padding: "3rem" }}>

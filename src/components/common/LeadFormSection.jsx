@@ -48,6 +48,7 @@ const LeadFormSection = ({ onSubmitSuccess }) => {
             <h3>Start Your Journey</h3>
             <LeadForm 
               source="Section Unlock" 
+              variant="light"
               onSuccess={() => {
                 localStorage.setItem("npathways_unlocked", "true");
                 if (onSubmitSuccess) onSubmitSuccess();

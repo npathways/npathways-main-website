@@ -1,4 +1,4 @@
-/* Auth Page Styles - Dark Theme */
+/* Auth Page Styles - Black & White Theme */
 
 .auth-page {
   min-height: 100vh;
@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   padding: var(--spacing-8) 0;
-  background: var(--gradient-radial-hero);
+  background: #f9f9f9;
   position: relative;
 }
 
@@ -19,7 +19,7 @@
   height: 500px;
   background: radial-gradient(
     circle,
-    rgba(191, 255, 153, 0.1) 0%,
+    rgba(0, 0, 0, 0.03) 0%,
     transparent 70%
   );
   border-radius: 50%;
@@ -36,7 +36,7 @@
   height: 400px;
   background: radial-gradient(
     circle,
-    rgba(198, 206, 240, 0.08) 0%,
+    rgba(0, 0, 0, 0.02) 0%,
     transparent 70%
   );
   border-radius: 50%;
@@ -70,31 +70,33 @@
 }
 
 .illustration-content h1 {
-  color: var(--color-brand-secondary);
+  color: #000000;
   margin-bottom: var(--spacing-4);
   font-size: var(--font-size-4xl);
-  background: linear-gradient(
-    135deg,
-    var(--color-brand-secondary),
-    var(--color-brand-primary)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
 }
 
 .illustration-content p {
   font-size: var(--font-size-lg);
-  color: var(--color-text-secondary);
+  color: #666666;
   margin-bottom: var(--spacing-8);
   line-height: 1.6;
+  font-weight: 500;
 }
 
 .illustration-content img {
   max-width: 100%;
-  border-radius: var(--radius-2xl);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 1px rgba(191, 255, 153, 0.3);
-  border: 1px solid rgba(191, 255, 153, 0.2);
+  border-radius: 2px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eeeeee;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.illustration-content img:hover {
+  filter: grayscale(0%);
 }
 
 @media (max-width: 900px) {

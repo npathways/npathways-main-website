@@ -42,12 +42,8 @@ const Terms = lazy(() => import("./pages/legal/Terms"));
 const Privacy = lazy(() => import("./pages/legal/Privacy"));
 const Refund = lazy(() => import("./pages/legal/Refund"));
 
-// Placeholder Pages
-const NotFound = () => (
-  <div className="container section text-center">
-    <h1>404 - Page Not Found</h1>
-  </div>
-);
+// 404 Page
+const NotFound = lazy(() => import("./pages/public/NotFound"));
 
 function App() {
   const [isUnlocked, setIsUnlocked] = useState(
@@ -95,9 +91,10 @@ function App() {
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/refund" element={<Refund />} />
-
-            <Route path="*" element={<NotFound />} />
           </Route>
+
+          {/* Standalone 404 Page (No Nav/Footer) */}
+          <Route path="*" element={<NotFound />} />
 
           {/* Protected Dashboard Routes */}
           <Route

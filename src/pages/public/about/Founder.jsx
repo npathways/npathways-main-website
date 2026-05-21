@@ -22,8 +22,8 @@ const Founder = () => {
       {/* Founder Profile Section */}
       <section style={{ padding: "6rem 0" }}>
         <div className="about-container">
-          <div className="about-grid-2">
-            <div className="founder-image-wrapper">
+          <div className="about-grid-2" style={{ alignItems: "flex-start" }}>
+            <div className="founder-image-wrapper" style={{ position: "sticky", top: "120px" }}>
               <div
                 style={{
                   width: "100%",
@@ -38,11 +38,11 @@ const Founder = () => {
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
                   alt="Founder"
+                  className="grayscale-image contrast-high"
                   style={{
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    filter: "grayscale(100%) contrast(1.1)",
                   }}
                 />
                 <div
@@ -58,7 +58,7 @@ const Founder = () => {
                     transform: "rotate(-2deg)",
                   }}
                 >
-                  Deepak
+                  Deepak Rajaa
                 </div>
               </div>
             </div>
@@ -77,25 +77,46 @@ const Founder = () => {
               <div
                 style={{ color: "#555", lineHeight: "1.8", fontSize: "1.1rem" }}
               >
-                <p style={{ marginBottom: "1.5rem" }}>
-                  With over 15 years of experience in international education
-                  and career counseling,
-                  <strong> Deepak</strong> founded NPathways with a single
-                  mission: to provide honest, transparent, and student-first
-                  guidance in an industry often fueled by numbers.
+                <p style={{ marginBottom: "1.5rem", fontWeight: "bold", color: "#000" }}>
+                  To Everyone Who Has Ever Felt Lost Between Potential and Direction,
                 </p>
                 <p style={{ marginBottom: "1.5rem" }}>
-                  His journey began while helping students in smaller towns who
-                  had immense talent but lacked access to quality global
-                  opportunities. He realized that "Study Abroad" shouldn't just
-                  be for the elite, but accessible to every dreamer who has the
-                  grit to work for it.
+                  There comes a point in life where marks, degrees, and expectations stop answering the deeper question: "Who am I becoming?"
                 </p>
                 <p style={{ marginBottom: "1.5rem" }}>
-                  Under his leadership, NPathways has evolved from a small
-                  counseling center into a complete ecosystem that handles
-                  everything from psychometric testing to post-arrival support
-                  across 15+ countries.
+                  For years, education systems have taught people how to pass examinations, but very few have taught them how to understand themselves, build resilience, communicate with confidence, or navigate a rapidly changing world with clarity and purpose.
+                </p>
+                <p style={{ marginBottom: "1.5rem", fontWeight: "600", color: "#000" }}>
+                  That realization became the foundation of NPathways Global.
+                </p>
+                <p style={{ marginBottom: "1.5rem" }}>
+                  This journey did not begin with the ambition to build another study abroad company. It began with a simple but powerful belief: every individual deserves access to quality guidance, meaningful opportunities, and the confidence to pursue a life larger than their circumstances.
+                </p>
+                <p style={{ marginBottom: "1.5rem" }}>
+                  NPathways Global was built for students standing at crossroads. For parents searching for clarity. For young people with ambition but no roadmap. For dreamers who needed structure. And for capable individuals who simply needed someone to help them see what they were truly capable of becoming.
+                </p>
+                <p style={{ marginBottom: "1.5rem" }}>
+                  The mission has always been larger than admissions or visas. It is about building global citizens. It is about helping individuals discover their strengths, develop real-world skills, strengthen emotional resilience, and prepare themselves not just for universities — but for life itself.
+                </p>
+                <p style={{ marginBottom: "1.5rem" }}>
+                  At NPathways, every pathway begins with self-discovery. Before countries, courses, or careers, there must first be clarity. Clarity about strengths. Clarity about goals. Clarity about identity. Because sustainable success is never built on pressure alone — it is built on alignment.
+                </p>
+                <p style={{ marginBottom: "1.5rem" }}>
+                  This is why the vision continues to evolve beyond traditional counseling. From psychometric assessments and career mapping systems to communication training, emotional intelligence development, and AI-powered guidance tools, the goal is to create an ecosystem where education becomes transformational, not transactional.
+                </p>
+                <p style={{ marginBottom: "1.5rem" }}>
+                  The world is changing rapidly. Careers are evolving. Technology is reshaping industries. And young people today require more than information — they require direction, adaptability, confidence, and purpose.
+                </p>
+                <p style={{ marginBottom: "1.5rem" }}>
+                  That is the future NPathways Global hopes to contribute toward. Not by creating dependency, but by creating capable individuals who can stand on their own, think critically, adapt globally, and lead meaningfully.
+                </p>
+                <p style={{ marginBottom: "1.5rem" }}>
+                  To every student, parent, educator, and supporter who believes in growth, possibility, and human potential: thank you for becoming part of this journey.
+                </p>
+                <p style={{ marginBottom: "1.5rem", fontWeight: "600", fontStyle: "italic", color: "#000" }}>
+                  The road ahead is long, but the mission remains clear.<br /><br />
+                  Beyond borders.<br />
+                  Into purpose.
                 </p>
 
                 <div
@@ -105,17 +126,8 @@ const Founder = () => {
                     marginTop: "2rem",
                   }}
                 >
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Signature_of_A._P._J._Abdul_Kalam.png"
-                    alt="Signature"
-                    style={{
-                      height: "60px",
-                      filter: "grayscale(100%) brightness(0)",
-                      marginBottom: "1rem",
-                    }}
-                  />
                   <p style={{ margin: 0, fontWeight: "bold", color: "#000" }}>
-                    Deepak
+                    Deepak Rajaa
                   </p>
                   <p style={{ margin: 0, fontSize: "0.9rem" }}>
                     Founder, NPathways Global

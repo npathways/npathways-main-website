@@ -196,6 +196,11 @@
   height: 350px; /* Fixed height for image */
   object-fit: cover;
   filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.service-image-panel:hover img {
+  filter: grayscale(0%);
 }
 
 .image-panel-cta {
