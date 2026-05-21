@@ -98,7 +98,7 @@
   background: var(--color-bg-card);
   backdrop-filter: blur(10px);
   border: var(--border-thin) solid var(--border-subtle);
-  border-radius: var(--radius-2xl);
+  border-radius: 2px;
   transition: all var(--transition-base);
 }
 
@@ -111,7 +111,7 @@
 /* Pill Button */
 .pill-button {
   padding: 1rem 2rem;
-  border-radius: var(--radius-pill);
+  border-radius: 2px;
   background: var(--color-brand-primary);
   color: var(--color-text-on-accent);
   font-weight: var(--font-weight-semibold);
@@ -127,6 +127,20 @@
   background: var(--color-brand-primary-dark);
   box-shadow: var(--shadow-glow);
   transform: scale(1.05);
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  background-color: var(--color-brand-tertiary);
+  color: var(--color-black);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+  margin-bottom: var(--spacing-4);
 }
 
 /* Radial Glow Background Effect */

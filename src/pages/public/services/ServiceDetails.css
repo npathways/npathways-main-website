@@ -87,7 +87,7 @@
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--color-brand-tertiary);
   display: inline-block;
 }
 
@@ -117,8 +117,8 @@
 
 .sidebar-nav-link:hover, 
 .sidebar-nav-link.active {
-  background: #000;
-  color: #fff;
+  background: var(--color-brand-tertiary);
+  color: var(--color-black);
 }
 
 /* Download Widget */
@@ -136,7 +136,7 @@
 }
 
 .download-item:hover {
-  border-color: #000;
+  border-color: var(--color-brand-tertiary);
 }
 
 .download-icon {
@@ -196,6 +196,11 @@
   height: 350px; /* Fixed height for image */
   object-fit: cover;
   filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.service-image-panel:hover img {
+  filter: grayscale(0%);
 }
 
 .image-panel-cta {
@@ -242,7 +247,7 @@
 .benefit-card {
   padding: 2rem;
   background: #fcfcfc;
-  border-left: 4px solid #000;
+  border-left: 4px solid var(--color-brand-tertiary);
 }
 
 .benefit-card h4 {

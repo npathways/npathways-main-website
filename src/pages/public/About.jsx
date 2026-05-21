@@ -93,6 +93,7 @@ const About = () => {
                   fontSize: "4rem",
                   fontWeight: "800",
                   display: "block",
+                  color: "var(--color-brand-tertiary)"
                 }}
               >
                 30K
@@ -113,6 +114,7 @@ const About = () => {
                   fontSize: "4rem",
                   fontWeight: "800",
                   display: "block",
+                  color: "var(--color-brand-tertiary)"
                 }}
               >
                 100%
@@ -133,6 +135,7 @@ const About = () => {
                   fontSize: "4rem",
                   fontWeight: "800",
                   display: "block",
+                  color: "var(--color-brand-tertiary)"
                 }}
               >
                 18
@@ -170,7 +173,7 @@ const About = () => {
                   <div
                     style={{
                       aspectRatio: "1/1",
-                      borderRadius: "12px",
+                      borderRadius: "2px",
                       overflow: "hidden",
                       marginBottom: "1.5rem",
                       border: "1px solid #eee",
@@ -179,16 +182,16 @@ const About = () => {
                     <img
                       src={member.img}
                       alt={member.name}
+                      className="grayscale-image"
                       style={{
                         width: "100%",
                         height: "100%",
                         objectFit: "cover",
-                        filter: "grayscale(100%)",
                       }}
                     />
                   </div>
                   <div className="team-card-info">
-                    <h4 style={{ margin: "0.5rem 0" }}>{member.name}</h4>
+                    <h4 style={{ margin: "0.5rem 0", color: "var(--color-brand-tertiary)" }}>{member.name}</h4>
                     <p
                       style={{
                         color: "#888",
@@ -204,11 +207,11 @@ const About = () => {
                       <Link
                         to={member.link}
                         style={{
-                          color: "#000",
+                          color: "var(--color-brand-tertiary)",
                           fontSize: "0.8rem",
                           fontWeight: "bold",
                           textDecoration: "none",
-                          borderBottom: "1px solid #000",
+                          borderBottom: "1px solid var(--color-brand-tertiary)",
                         }}
                       >
                         View Bio
@@ -248,7 +251,7 @@ const About = () => {
             <div
               style={{
                 backgroundColor: "#000",
-                borderRadius: "20px",
+                borderRadius: "2px",
                 overflow: "hidden",
                 color: "#fff",
               }}
@@ -256,11 +259,11 @@ const About = () => {
               <img
                 src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
                 alt="Philosophy"
+                className="grayscale-image brightness-low"
                 style={{
                   width: "100%",
                   height: "300px",
                   objectFit: "cover",
-                  filter: "grayscale(100%) brightness(0.7)",
                 }}
               />
               <div style={{ padding: "3rem" }}>
@@ -274,7 +277,7 @@ const About = () => {
             <div
               style={{
                 border: "1px solid #f0f0f0",
-                borderRadius: "20px",
+                borderRadius: "2px",
                 padding: "3rem",
               }}
             >

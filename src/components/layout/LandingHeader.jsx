@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../../assets/logo.png";
 import "./Header.css";
 
 const LandingHeader = () => {
@@ -16,8 +17,7 @@ const LandingHeader = () => {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           {/* Logo */}
           <div className="logo" style={{ cursor: "pointer", margin: 0 }}>
-            <span className="logo-text" style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#000" }}>NPathways</span>
-            <span className="logo-subtitle" style={{ fontSize: "0.8rem", color: "#666" }}>Global</span>
+            <img src={logo} alt="NPathways Logo" style={{ height: "60px" }} />
           </div>
 
           {/* Actions */}
@@ -25,17 +25,17 @@ const LandingHeader = () => {
             <button 
               onClick={scrollToForm}
               style={{
-                backgroundColor: "#000",
-                color: "#fff",
+                backgroundColor: "var(--color-brand-tertiary)",
+                color: "var(--color-black)",
                 padding: "10px 24px",
-                borderRadius: "30px",
+                borderRadius: "2px",
                 fontWeight: "600",
                 border: "none",
                 cursor: "pointer",
                 transition: "all 0.3s ease"
               }}
-              onMouseOver={(e) => (e.target.style.backgroundColor = "#333")}
-              onMouseOut={(e) => (e.target.style.backgroundColor = "#000")}
+              onMouseOver={(e) => (e.target.style.backgroundColor = "var(--color-brand-tertiary-dark)")}
+              onMouseOut={(e) => (e.target.style.backgroundColor = "var(--color-brand-tertiary)")}
             >
               Book a Consultation
             </button>

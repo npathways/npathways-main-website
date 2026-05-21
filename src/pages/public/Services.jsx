@@ -63,7 +63,7 @@ const Services = () => {
             <span className="text-black">Our Services</span>
           </nav>
           <h1>
-            Our <span className="text-black">Services</span>
+            Our <span className="accent-text">Services</span>
           </h1>
         </div>
       </section>

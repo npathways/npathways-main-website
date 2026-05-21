@@ -1,36 +1,20 @@
 /* ============================================
-   FOOTER - Modern Dark Theme
+   FOOTER - Black & White Premium Theme (Light)
    ============================================ */
 
 .footer {
-  background: var(--color-bg-primary);
-  border-top: 1px solid var(--color-gray-200);
-  padding: 4rem 0 2rem;
-  color: var(--color-text-secondary);
+  background: #ffffff;
+  border-top: 1px solid #eeeeee;
+  padding: 6rem 0 3rem;
+  color: #000000;
   position: relative;
-}
-
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, 
-    transparent, 
-    var(--color-gray-400), 
-    var(--color-gray-300),
-    transparent
-  );
-  opacity: 0.5;
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 4rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 /* ==================== BRAND SECTION ==================== */
@@ -41,115 +25,67 @@
 
 .footer-logo {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 2rem;
   text-decoration: none;
   transition: all var(--transition-fast);
 }
 
+.footer-logo img {
+  filter: none !important; /* Original logo colors/black for white bg */
+}
+
 .footer-logo:hover {
-  transform: translateX(4px);
-}
-
-.footer-logo-text {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-heading);
-  color: var(--color-brand-secondary);
-  letter-spacing: -0.02em;
-}
-
-.footer-logo-subtitle {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-tertiary);
-  font-weight: var(--font-weight-medium);
+  transform: scale(1.02);
 }
 
 .footer-description {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+  color: #666666;
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  margin-bottom: 2rem;
 }
 
 /* ==================== SOCIAL LINKS ==================== */
 
 .social-links {
   display: flex;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
+  gap: 1rem;
 }
 
 .social-link {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-lg);
-  background: var(--color-gray-100);
-  border: 1px solid var(--color-gray-200);
+  width: 44px;
+  height: 44px;
+  border-radius: 2px;
+  background: transparent;
+  border: 1px solid #000000;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-text-secondary);
+  color: #000000;
   text-decoration: none;
-  transition: all var(--transition-base);
-  position: relative;
-  overflow: hidden;
-}
-
-.social-link::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--color-gray-200);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.social-link svg {
-  position: relative;
-  z-index: 1;
-  transition: transform var(--transition-base);
-}
-
-.social-link:hover::before {
-  opacity: 0.15;
+  transition: all 0.3s ease;
 }
 
 .social-link:hover {
-  border-color: var(--color-black);
-  color: var(--color-black);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-.social-link:hover svg {
-  transform: scale(1.1) rotate(5deg);
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-5px);
 }
 
 /* ==================== FOOTER COLUMNS ==================== */
 
 .footer-column h4 {
-  color: var(--color-text-primary);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: 1.25rem;
-  font-family: var(--font-heading);
-  position: relative;
+  color: #000000;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
   padding-bottom: 0.75rem;
-}
-
-.footer-column h4::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 32px;
-  height: 2px;
-  background: linear-gradient(90deg, 
-    var(--color-black), 
-    transparent
-  );
+  border-bottom: 1px solid #000000;
+  display: inline-block;
 }
 
 .footer-links {
@@ -159,94 +95,62 @@
 }
 
 .footer-links li {
-  margin-bottom: 0.875rem;
+  margin-bottom: 1rem;
 }
 
 .footer-links a {
-  color: var(--color-text-secondary);
+  color: #666666;
   text-decoration: none;
-  font-size: var(--font-size-sm);
-  transition: all var(--transition-fast);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  position: relative;
-}
-
-.footer-links a::before {
-  content: '→';
-  opacity: 0;
-  transform: translateX(-8px);
-  transition: all var(--transition-base);
-  color: var(--color-black);
-}
-
-.footer-links a:hover::before {
-  opacity: 1;
-  transform: translateX(0);
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .footer-links a:hover {
-  color: var(--color-black);
-  padding-left: 1rem;
+  color: #000000;
+  padding-left: 0.5rem;
 }
 
 /* ==================== FOOTER BOTTOM ==================== */
 
 .footer-bottom {
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-gray-50);
+  padding-top: 3rem;
+  border-top: 1px solid #eeeeee;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .footer-copyright {
-  color: var(--color-text-tertiary);
-  font-size: var(--font-size-sm);
+  color: #999999;
+  font-size: 0.875rem;
   margin: 0;
 }
 
 .footer-copyright strong {
-  color: var(--color-text-secondary);
-  font-weight: var(--font-weight-semibold);
+  color: #000000;
+  font-weight: 700;
 }
 
 .footer-legal {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .footer-legal a {
-  color: var(--color-text-tertiary);
+  color: #999999;
   text-decoration: none;
-  font-size: var(--font-size-sm);
-  transition: all var(--transition-fast);
-  position: relative;
-}
-
-.footer-legal a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-black);
-  transition: width var(--transition-base);
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
 }
 
 .footer-legal a:hover {
-  color: var(--color-black);
-}
-
-.footer-legal a:hover::after {
-  width: 100%;
+  color: #000000;
 }
 
 /* ==================== RESPONSIVE DESIGN ==================== */

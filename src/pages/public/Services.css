@@ -17,6 +17,10 @@
   margin-bottom: 1.5rem;
 }
 
+.services-hero h1 span.accent-text {
+  color: var(--color-brand-tertiary);
+}
+
 .breadcrumb {
   display: flex;
   gap: 0.5rem;
@@ -85,7 +89,7 @@
 .service-card-premium:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-  border-color: #000;
+  border-color: var(--color-brand-tertiary);
 }
 
 .service-card-image-wrap {
@@ -106,19 +110,21 @@
 
 .service-card-premium:hover .service-card-image-wrap img {
   transform: scale(1.1);
+  filter: grayscale(0%);
 }
 
 .card-icon-float {
   width: 60px;
   height: 60px;
-  background: #000;
-  color: #fff;
+  background: var(--color-brand-tertiary);
+  color: var(--color-black);
   border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
 .service-card-premium h3 {
@@ -140,7 +146,7 @@
   font-weight: 700;
   text-transform: uppercase;
   font-size: 0.8rem;
-  color: #000;
+  color: var(--color-brand-tertiary);
   text-decoration: none;
   transition: gap 0.3s;
 }

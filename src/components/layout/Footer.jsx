@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
 import "./Footer.css";
 
 const Footer = () => {
@@ -9,8 +10,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="footer-brand">
             <Link to="/" className="footer-logo">
-              <span className="footer-logo-text">NPathways</span>
-              <span className="footer-logo-subtitle">Global</span>
+              <img src={logo} alt="NPathways Logo" style={{ height: "60px" }} />
             </Link>
             <p className="footer-description">
               Empowering Global Ambitions. We guide students at every stage of
@@ -107,13 +107,29 @@ const Footer = () => {
                 <Link to="/about">About Us</Link>
               </li>
               <li>
-                <Link to="/services">Services</Link>
-              </li>
-              <li>
-                <Link to="/products">Products</Link>
+                <Link to="/services">All Services</Link>
               </li>
               <li>
                 <Link to="/contact">Contact</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div className="footer-column">
+            <h4>Company</h4>
+            <ul className="footer-links">
+              <li>
+                <Link to="/about">Overview</Link>
+              </li>
+              <li>
+                <Link to="/about/founder">About Founder</Link>
+              </li>
+              <li>
+                <Link to="/about/how-it-works">How It Works</Link>
+              </li>
+              <li>
+                <Link to="/terms">Terms of Use</Link>
               </li>
             </ul>
           </div>
@@ -123,34 +139,17 @@ const Footer = () => {
             <h4>Our Services</h4>
             <ul className="footer-links">
               <li>
-                <Link to="/services">Education Consulting</Link>
+                <Link to="/services/education-consulting">Education Consulting</Link>
               </li>
               <li>
-                <Link to="/services">Career Guidance</Link>
+                <Link to="/services/career-guidance">Career Guidance</Link>
               </li>
               <li>
-                <Link to="/services">Visa Assistance</Link>
+                <Link to="/services/visa-assistance">Visa Assistance</Link>
               </li>
               <li>
-                <Link to="/services">Profile Building</Link>
+                <Link to="/services/bootcamps">Bootcamps</Link>
               </li>
-              <li>
-                <Link to="/products">Digital Products</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div className="footer-column">
-            <h4>Get in Touch</h4>
-            <ul className="footer-links">
-              <li>
-                <a href="mailto:info@npathways.global">info@npathways.global</a>
-              </li>
-              <li>
-                <a href="tel:+91XXXXXXXXXX">+91 XXX XXX XXXX</a>
-              </li>
-              <li>India</li>
             </ul>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logo from "../../assets/logo.png";
 import "./LoadingScreen.css";
 
 const LoadingScreen = () => {
@@ -8,7 +9,7 @@ const LoadingScreen = () => {
     // Quick fade out - don't block image loading
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 800);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -19,8 +20,7 @@ const LoadingScreen = () => {
     <div className="loading-screen">
       <div className="loading-content">
         <div className="loading-logo">
-          <span className="logo-text">NPathways</span>
-          <span className="logo-sub">Global</span>
+          <img src={logo} alt="Logo" style={{ height: "100px", marginBottom: "20px" }} />
         </div>
         <div className="loading-spinner"></div>
       </div>

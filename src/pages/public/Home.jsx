@@ -91,6 +91,16 @@ const Home = () => {
                 <div className="highlight-icon">{item.icon}</div>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
+                {item.link && (
+                  <Button
+                    variant="tertiary"
+                    size="small"
+                    onClick={() => navigate(item.link)}
+                    style={{ marginTop: "1rem" }}
+                  >
+                    How It Works
+                  </Button>
+                )}
               </div>
             ))}
           </div>
@@ -105,26 +115,7 @@ const Home = () => {
             <h2>What Our Global Community Says</h2>
           </div>
 
-          <div className="trust-badges-wrapper testimonials-trust">
-            {trustBadgesData.map((badge, i) => (
-              <React.Fragment key={i}>
-                <div className="trust-badge">
-                  <div className="trust-platform">
-                    <span className={`${badge.type}-logo`}>{badge.logo}</span> {badge.platform}
-                  </div>
-                  <div className="trust-rating">
-                    {badge.stars && (
-                      <span className="stars">{"★".repeat(badge.stars)}</span>
-                    )}
-                    <span className={badge.stars ? "rating-score" : "rating-text"}>
-                      {badge.rating}
-                    </span>
-                  </div>
-                </div>
-                {i < trustBadgesData.length - 1 && <div className="trust-divider"></div>}
-              </React.Fragment>
-            ))}
-          </div>
+
 
           <div className="testimonials-track-container">
             <div className="testimonials-track">

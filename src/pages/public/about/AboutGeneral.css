@@ -19,7 +19,7 @@
   background-color: var(--about-bg-primary);
   color: var(--about-text-primary);
   font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .about-container {
@@ -68,7 +68,7 @@
 }
 
 .about-hero-minimal h1 span {
-  opacity: 0.7;
+  color: var(--color-brand-tertiary);
 }
 
 .about-hero-minimal p {
@@ -88,10 +88,10 @@
 
 .about-section-header .badge {
   display: inline-block;
-  background: var(--about-bg-dark);
-  color: white;
+  background: var(--color-brand-tertiary);
+  color: var(--color-black);
   padding: 0.4rem 1.2rem;
-  border-radius: 50px;
+  border-radius: 2px;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -157,7 +157,7 @@
   background-color: var(--about-bg-dark);
   color: white;
   padding: 1rem 2.5rem;
-  border-radius: 4px;
+  border-radius: 2px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -185,6 +185,32 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #000;
+}
+
+/* --- Interactive Images --- */
+.grayscale-image {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease, transform 0.6s ease;
+}
+
+.grayscale-image:hover {
+  filter: grayscale(0%) !important;
+}
+
+.grayscale-image.brightness-low {
+  filter: grayscale(100%) brightness(0.7);
+}
+
+.grayscale-image.brightness-low:hover {
+  filter: grayscale(0%) brightness(1) !important;
+}
+
+.grayscale-image.contrast-high {
+  filter: grayscale(100%) contrast(1.1);
+}
+
+.grayscale-image.contrast-high:hover {
+  filter: grayscale(0%) contrast(1) !important;
 }
 
 /* --- Responsive --- */

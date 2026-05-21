@@ -64,34 +64,15 @@
 
 .logo {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  transition: all var(--transition-base);
   z-index: 2;
   position: relative;
 }
 
-.logo::before {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  background: radial-gradient(
-    circle at center,
-    rgba(0, 0, 0, 0.05),
-    transparent 70%
-  );
-  opacity: 0;
-  transition: opacity var(--transition-base);
-  border-radius: var(--radius-full);
-}
-
-.logo:hover::before {
-  opacity: 1;
-}
-
-.logo:hover {
-  transform: scale(1.05);
+.logo img {
+  filter: grayscale(0) !important;
 }
 
 .logo-text {

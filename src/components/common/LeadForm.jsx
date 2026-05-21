@@ -48,8 +48,8 @@ const LeadForm = ({ source = "General", variant = "dark", onSuccess }) => {
     setMessage({ type: "", text: "" });
 
     try {
-      // In a real app, use environment variables for API URL
-      const response = await fetch("http://localhost:5000/api/leads", {
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || "/api";
+      const response = await fetch(`${baseUrl}/leads`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

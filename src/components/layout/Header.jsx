@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
-import {
-  FiUser,
-  FiMenu,
-  FiX,
-  FiChevronDown,
-} from "react-icons/fi";
+import logo from "../../assets/logo.png";
+
+import { FiUser, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import "./Header.css";
 
 const Header = () => {
@@ -45,9 +42,16 @@ const Header = () => {
           <div className="header-content">
             <div className="header-left">
               {/* Logo */}
-              <Link to="/" className="logo" onClick={() => setIsMenuOpen(false)}>
-                <span className="logo-text">NPathways</span>
-                <span className="logo-subtitle">Global</span>
+              <Link
+                to="/"
+                className="logo"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <img
+                  src={logo}
+                  alt="Logo"
+                  style={{ height: "70px" }}
+                />
               </Link>
               {/* Desktop Navigation */}
               <nav className={`nav ${isMenuOpen ? "nav-open" : ""}`}>
@@ -128,7 +132,9 @@ const Header = () => {
                       </Link>
                     </div>
                     <div className="dropdown-category">
-                      <span className="category-label">Readiness & Support</span>
+                      <span className="category-label">
+                        Readiness & Support
+                      </span>
                       <Link
                         to="/services/parents"
                         onClick={() => setIsMenuOpen(false)}
@@ -169,7 +175,6 @@ const Header = () => {
 
             {/* Actions */}
             <div className="header-actions">
-
               {/* User/Login */}
               {isAuthenticated ? (
                 <Link to="/dashboard" className="user-button">

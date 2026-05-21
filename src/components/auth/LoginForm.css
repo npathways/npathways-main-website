@@ -1,21 +1,25 @@
-/* Login Form Styles - Dark Theme */
+/* Login Form Styles - Black & White Theme */
 
 .login-card {
-  background: var(--color-white);
+  background: #ffffff;
   padding: var(--spacing-10);
-  border-radius: var(--radius-2xl);
+  border-radius: 2px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--color-gray-200);
+  border: 1px solid #000000;
   width: 100%;
-  max-width: 450px;
+  max-width: 500px;
   margin: 0 auto;
   position: relative;
+  box-sizing: border-box;
 }
 
 .login-card h2 {
-  color: var(--color-text-primary);
+  color: #000000;
   margin-bottom: var(--spacing-6);
   font-size: var(--font-size-3xl);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
 }
 
 .form-group {
@@ -24,43 +28,45 @@
 
 .form-group label {
   display: block;
-  color: var(--color-text-secondary);
+  color: #000000;
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   margin-bottom: var(--spacing-2);
 }
 
 .form-input {
   width: 100%;
-  padding: var(--spacing-3) var(--spacing-4);
-  background: var(--color-bg-secondary);
-  border: 1px solid var(--color-gray-300);
-  border-radius: var(--radius-lg);
-  color: var(--color-text-primary);
+  padding: var(--spacing-4);
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  color: #000000;
   font-size: var(--font-size-base);
   transition: all var(--transition-base);
+  box-sizing: border-box;
 }
 
 .form-input::placeholder {
-  color: var(--color-text-secondary);
-  opacity: 0.6;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .form-input:focus {
   outline: none;
-  border-color: var(--color-brand-primary);
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
-  background: var(--color-white);
+  border-color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
 }
 
 .error-alert {
-  background: #FEF2F2;
-  color: #991B1B;
+  background: #000000;
+  color: #ffffff;
   padding: var(--spacing-3) var(--spacing-4);
-  border-radius: var(--radius-lg);
+  border-radius: 2px;
   margin-bottom: var(--spacing-4);
   font-size: var(--font-size-sm);
-  border: 1px solid #F87171;
+  border: 1px solid #000000;
 }
 
 .login-footer {

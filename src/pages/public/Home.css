@@ -76,7 +76,7 @@
 }
 
 .hero-title-premium span {
-  color: #ffffff;
+  color: var(--color-brand-tertiary);
   display: block;
 }
 
@@ -115,23 +115,28 @@
 }
 
 .finder-card {
-  max-width: 1000px;
+  max-width: 1100px; /* Increased from 1000px */
   margin: 0 auto;
   background: #fff;
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1.5fr auto;
+  padding: 2.5rem; /* Increased padding */
+  display: flex; /* Switched to flex for better control */
   gap: 2rem;
   align-items: flex-end;
   border-radius: 2px;
   box-shadow: 0 30px 60px rgba(0,0,0,0.1);
   border: 1px solid #eee;
+  box-sizing: border-box;
 }
 
 .finder-field {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  flex: 1; /* Equal width for fields */
+}
+
+.finder-field:nth-child(3) {
+  flex: 1.5; /* Wider for the search/input field */
 }
 
 .finder-field label {
@@ -146,17 +151,30 @@
   border: 1px solid #ddd;
   border-radius: 2px;
   font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  height: 3.5rem; /* Explicit fixed height for perfect alignment */
+}
+
+.finder-field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2em;
+  padding-right: 3rem;
 }
 
 .finder-submit {
   background: #000;
   color: #fff;
   border: none;
-  padding: 1.2rem 2.5rem;
-  border-radius: 4px;
+  padding: 0 2.5rem;
+  border-radius: 2px;
   font-weight: 700;
   cursor: pointer;
-  height: 100%;
+  height: 3.5rem; /* Match input height exactly */
+  transition: all 0.3s ease;
 }
 
 /* --- Trust Badges Section --- */
@@ -179,7 +197,7 @@
   padding: 2rem;
   background: #fdfdfd;
   border: 1px solid #f5f5f5;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 .trust-badge {
@@ -219,7 +237,7 @@
 }
 
 .stars {
-  color: #ffc107;
+  color: var(--color-brand-tertiary);
   letter-spacing: 2px;
 }
 
@@ -286,6 +304,7 @@
 .highlight-icon {
   font-size: 3rem;
   margin-bottom: 1.5rem;
+  color: var(--color-brand-tertiary);
 }
 
 .highlight-card h3 {
@@ -329,6 +348,7 @@
 
 .dest-card:hover img {
   transform: scale(1.1);
+  filter: grayscale(0%) contrast(1);
 }
 
 .dest-overlay {
@@ -341,8 +361,23 @@
   color: #fff;
 }
 
-.dest-overlay h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-.dest-overlay a { color: #fff; font-size: 0.9rem; text-decoration: none; border-bottom: 1px solid #fff; }
+.dest-overlay h3 { 
+  font-size: 1.5rem; 
+  margin-bottom: 0.5rem; 
+  color: var(--color-brand-tertiary);
+}
+.dest-overlay a { 
+  color: #fff; 
+  font-size: 0.9rem; 
+  text-decoration: none; 
+  border-bottom: 1px solid #fff; 
+  transition: all 0.3s ease;
+}
+
+.dest-overlay a:hover {
+  color: var(--color-brand-tertiary);
+  border-color: var(--color-brand-tertiary);
+}
 
 /* --- Partners Slider --- */
 .partners-slider-section {
@@ -435,52 +470,26 @@
   border: 1px solid #1a1a1a;
 }
 
-.form-row {
+.home-cta-section .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin-bottom: 1rem;
 }
 
-.form-field {
+.home-cta-section .form-field {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   margin-bottom: 2rem;
 }
 
-.form-field label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700;
-  color: #ffffff;
-  opacity: 0.6;
-}
-
-.form-field input, .form-field select, .form-field textarea {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #222;
-  padding: 1rem 0;
-  color: #fff;
-  font-family: inherit;
-  font-size: 1rem;
-  border-radius: 0;
-  transition: all 0.3s ease;
-}
-
-.form-field textarea {
+.home-cta-section .form-field textarea {
   min-height: 80px;
   resize: vertical;
 }
 
-.form-field input:focus, .form-field select:focus, .form-field textarea:focus {
-  outline: none;
-  border-color: #fff;
-}
-
-.form-field select option {
+.home-cta-section .form-field select option {
   background: #111;
   color: #fff;
 }
@@ -578,7 +587,7 @@
   background: rgba(198, 206, 240, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(198, 206, 240, 0.2);
-  border-radius: var(--radius-pill);
+  border-radius: 2px;
   color: var(--accent-secondary);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
@@ -622,7 +631,7 @@
   background: var(--accent-primary);
   color: var(--text-on-accent);
   border: none;
-  border-radius: var(--radius-pill);
+  border-radius: 2px;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   cursor: pointer;
@@ -643,7 +652,7 @@
   background: transparent;
   color: var(--accent-secondary);
   border: 1px solid rgba(198, 206, 240, 0.3);
-  border-radius: var(--radius-pill);
+  border-radius: 2px;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   cursor: pointer;
@@ -664,7 +673,7 @@
   width: 100%;
   aspect-ratio: 1;
   background: rgba(10, 30, 63, 0.4);
-  border-radius: var(--radius-2xl);
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -705,7 +714,7 @@
   background: var(--bg-card);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-2xl);
+  border-radius: 2px;
   padding: 2rem;
   text-align: center;
   transition: all var(--transition-base);
@@ -751,7 +760,7 @@
   padding: 0.5rem 1rem;
   background: rgba(198, 206, 240, 0.1);
   border: 1px solid rgba(198, 206, 240, 0.2);
-  border-radius: var(--radius-pill);
+  border-radius: 2px;
   color: var(--accent-secondary);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
@@ -781,7 +790,7 @@
   background: var(--bg-card);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-2xl);
+  border-radius: 2px;
   padding: 2.5rem;
   transition: all var(--transition-base);
 }
@@ -796,7 +805,7 @@
   width: 60px;
   height: 60px;
   background: linear-gradient(135deg, var(--accent-primary), rgba(191, 255, 153, 0.5));
-  border-radius: var(--radius-xl);
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;

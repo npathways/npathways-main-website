@@ -18,7 +18,7 @@ const Contact = () => {
       <section className="section bg-gray contact-hero">
         <div className="container text-center">
           <h1>
-            Contact <span className="text-primary">Us</span>
+            Contact <span className="accent-text">Us</span>
           </h1>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
             Have questions? We're here to help you on your journey.
@@ -85,7 +85,7 @@ const Contact = () => {
       <section className="section bg-gray">
         <div className="container max-w-3xl">
           <div className="text-center mb-12">
-            <h2>Frequently Asked <span className="text-primary">Questions</span></h2>
+            <h2>Frequently Asked <span className="accent-text">Questions</span></h2>
             <p className="text-gray-600">Quick answers to common queries about our process.</p>
           </div>
           

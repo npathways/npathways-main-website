@@ -4,6 +4,7 @@ import UniversitiesGrid from "../../components/common/UniversitiesGrid";
 import Testimonials from "../../components/common/Testimonials";
 import LeadFormSection from "../../components/common/LeadFormSection";
 import LandingFooter from "../../components/layout/LandingFooter";
+import landingVideo from "../../assets/video/landing.mp4";
 import "./Home.css";
 
 const LandingPage = ({ onUnlock }) => {
@@ -25,25 +26,55 @@ const LandingPage = ({ onUnlock }) => {
       <main style={{ paddingTop: "80px" }}>
         {/* Landing Hero (Fullscreen) */}
         <section 
-          className="home-hero-premium"
+          className="home-hero-premium landing-hero-video-wrap"
           style={{
             minHeight: "100vh",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            position: "relative",
             marginTop: "-80px", /* pull up behind nav */
-            paddingTop: "80px"
+            paddingTop: "80px",
+            overflow: "hidden"
           }}
         >
-          <div className="container" style={{ textAlign: "center", color: "#fff", maxWidth: "1000px" }}>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="hero-video-bg"
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1
+            }}
+          >
+            <source src={landingVideo} type="video/mp4" />
+          </video>
+          <div 
+            className="hero-overlay"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7))",
+              zIndex: 2
+            }}
+          ></div>
+          <div className="container" style={{ textAlign: "center", color: "#fff", maxWidth: "1000px", position: "relative", zIndex: 3 }}>
             <span className="hero-badge-minimal" style={{ color: "#ddd", textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>
               Your Global Future Awaits
             </span>
             <h1 className="hero-title-premium" style={{ color: "#fff", textShadow: "0 2px 8px rgba(0,0,0,0.3)" }}>
-              Do You Dream of <span style={{ background: "none", WebkitTextFillColor: "white", color: "#fff" }}>Studying Abroad?</span>
+              Do You Dream of <span style={{ background: "none", color: "var(--color-brand-tertiary)" }}>Studying Abroad?</span>
             </h1>
             <p className="hero-desc-premium" style={{ color: "#eee", margin: "0 auto 3rem auto", maxWidth: "800px", textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}>
               Discover your potential with NPathways Global. We provide
@@ -55,10 +86,10 @@ const LandingPage = ({ onUnlock }) => {
               <button
                 onClick={scrollToForm}
                 style={{
-                  backgroundColor: "#fff",
-                  color: "#000",
+                  backgroundColor: "var(--color-brand-tertiary)",
+                  color: "var(--color-black)",
                   padding: "16px 32px",
-                  borderRadius: "30px",
+                  borderRadius: "2px",
                   fontWeight: "600",
                   border: "none",
                   cursor: "pointer",
@@ -123,13 +154,13 @@ const LandingPage = ({ onUnlock }) => {
                     className="highlight-icon"
                     style={{
                       fontSize: "2rem",
-                      color: "initial",
+                      color: "var(--color-brand-tertiary)",
                       background: "none",
                       width: "auto",
                       height: "auto",
                     }}
                   >
-                    {item.icon}
+                    {React.cloneElement(item.icon, { stroke: "var(--color-brand-tertiary)" })}
                   </div>
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>

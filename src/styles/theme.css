@@ -15,6 +15,10 @@
   --color-brand-secondary-dark: #000000;
   --color-brand-secondary-light: #333333;
   
+  --color-brand-tertiary: #FDBA31;        /* Golden Yellow */
+  --color-brand-tertiary-dark: #e0a52b;
+  --color-brand-tertiary-light: #fed170;
+  
   /* Background Colors */
   --color-bg-primary: #FFFFFF;            /* White */
   --color-bg-secondary: #F5F5F5;          /* Light Gray */
@@ -44,12 +48,12 @@
   /* Semantic Colors */
   --color-success: #10B981;
   --color-error: #EF4444;
-  --color-warning: #F59E0B;
+  --color-warning: #FDBA31;
   --color-info: #f7f7f7;
   
   /* Accent Colors */
   --color-accent-blue: #ffffff;
-  --color-accent-yellow: #FCD34D;
+  --color-accent-yellow: #FDBA31;
   
   /* ==================== EFFECTS & OVERLAYS ==================== */
   

@@ -15,8 +15,9 @@
     "desc": "98% success rate in filing"
   },
   {
-    "title": "Support",
+    "title": "Explore More",
     "icon": "04",
-    "desc": "Arrival & accommodation help"
+    "desc": "Discover our comprehensive 10-step student journey.",
+    "link": "/about/how-it-works"
   }
 ]
