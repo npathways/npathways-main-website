@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://npathways-backend.onrender.com',
+        target: 'https://hono-npathways-backend.npathwaysdecoded.workers.dev',
         changeOrigin: true,
       }
     }
