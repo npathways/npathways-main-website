@@ -74,7 +74,7 @@ const LandingPage = ({ onUnlock }) => {
               Your Global Future Awaits
             </span>
             <h1 className="hero-title-premium" style={{ color: "#fff", textShadow: "0 2px 8px rgba(0,0,0,0.3)" }}>
-              Do You Dream of <span style={{ background: "none", color: "var(--color-brand-tertiary)" }}>Studying Abroad?</span>
+              Beyond Borders. <span style={{ background: "none", color: "var(--color-brand-tertiary)" }}>Into Purpose</span>
             </h1>
             <p className="hero-desc-premium" style={{ color: "#eee", margin: "0 auto 3rem auto", maxWidth: "800px", textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}>
               Discover your potential with NPathways Global. We provide

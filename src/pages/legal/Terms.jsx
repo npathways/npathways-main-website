@@ -4,47 +4,51 @@ const Terms = () => {
   return (
     <div className="legal-page fade-in">
       <div className="container section">
-        <h1 className="legal-title">Terms and Conditions</h1>
-        <p className="legal-meta">Last Updated: January 03, 2026</p>
+        <h1 className="legal-title">Terms of Service</h1>
+        <p className="legal-meta">Last Updated: June 12, 2026</p>
 
         <div className="legal-content">
           <section>
-            <h2>1. Introduction</h2>
-            <p>Welcome to NPathways Global ("Company", "we", "our", "us"). These Terms and Conditions ("Terms") govern your use of our website located at npathways.world and npathways.global (together or individually "Service") operated by <strong>Skillinum Falcon LLP</strong>.</p>
-            <p>By accessing or using our Service, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Service.</p>
-          </section>
-
-          <section>
-            <h2>2. Accounts and Membership</h2>
-            <p>When you create an account with us, you guarantee that you are above the age of 18, and that the information you provide us is accurate, complete, and current at all times. Inaccurate, incomplete, or obsolete information may result in the immediate termination of your account on the Service.</p>
-          </section>
-
-          <section>
-            <h2>3. Intellectual Property</h2>
-            <p>The Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of NPathways Global and its licensors. The Service is protected by copyright, trademark, and other laws of both India and foreign countries.</p>
-          </section>
-
-          <section>
-            <h2>4. Purchases</h2>
-            <p>If you wish to purchase any product or service made available through the Service ("Purchase"), you may be asked to supply certain information relevant to your Purchase including, without limitation, your credit card number, the expiration date of your credit card, your billing address, and your shipping information.</p>
-          </section>
-
-          <section>
-            <h2>5. Disclaimer of Warranties; Limitation of Liability</h2>
-            <p>We do not guarantee, represent or warrant that your use of our service will be uninterrupted, timely, secure or error-free. We do not warrant that the results that may be obtained from the use of the service will be accurate or reliable.</p>
-            <p className="highlight-box">
-              <strong>Notice regarding Visa and Admissions:</strong> NPathways Global provides guidance and documentation support. We do not guarantee visa approval or university admission, as these decisions are at the sole discretion of the respective authorities.
+            <h2>Intellectual Property Rights</h2>
+            <p>
+              All materials featured on npathways.world—including but not limited to the structural layout, visual design, text, software, and imagery (collectively referred to as the "Content")—are the exclusive property of NPathways Global and its respective licensors. By accessing this website, you consent to adhere to these terms.
+            </p>
+            <p>
+              Unless explicitly authorized by applicable law or a specific licensing agreement, you are strictly prohibited from duplicating, displaying, distributing, modifying, publishing, selling, or creating derivative works from any part of the Content or services found on this platform.
             </p>
           </section>
 
           <section>
-            <h2>6. Governing Law</h2>
-            <p>These Terms shall be governed and construed in accordance with the laws of India, without regard to its conflict of law provisions. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.</p>
+            <h2>User Responsibilities</h2>
+            <p>
+              You agree that any personal information you submit to us will be completely accurate, truthful, and comprehensive.
+            </p>
+            <p>
+              Any written submissions required for your application process, such as statements of purpose, essays, or questionnaires, must be entirely your own original work.
+            </p>
+            <p>
+              If any of the details you previously provided to us become inaccurate or outdated, you are obligated to immediately inform both NPathways Global (including our representatives) and the respective academic institution you are applying to.
+            </p>
           </section>
 
           <section>
-            <h2>7. Contact Us</h2>
-            <p>If you have any questions about these Terms, please contact us at info@npathways.global.</p>
+            <h2>Limitation of Liability</h2>
+            <p>
+              NPathways Global retains the authority to alter the information and offerings on this website at any time without prior warning. We assume no liability for any losses or inconveniences that may arise from these modifications.
+            </p>
+            <p>
+              We do not take responsibility for the reliability, safety, or accuracy of content found on external third-party websites linked from our platform.
+            </p>
+            <p>
+              While we take every reasonable technical precaution, NPathways Global cannot guarantee that files or data downloaded from our website are entirely free of malware or viruses. All site information is subject to alteration without notice.
+            </p>
+          </section>
+
+          <section>
+            <h2>Copyright Notice</h2>
+            <p>
+              Copyright © 2026 NPathways Global. All rights reserved.
+            </p>
           </section>
         </div>
       </div>

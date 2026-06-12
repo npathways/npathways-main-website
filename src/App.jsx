@@ -47,11 +47,11 @@ const NotFound = lazy(() => import("./pages/public/NotFound"));
 
 function App() {
   const [isUnlocked, setIsUnlocked] = useState(
-    sessionStorage.getItem("site_unlocked") === "true"
+    localStorage.getItem("site_unlocked") === "true"
   );
 
   const handleUnlock = () => {
-    sessionStorage.setItem("site_unlocked", "true");
+    localStorage.setItem("site_unlocked", "true");
     setIsUnlocked(true);
   };
 

@@ -1,11 +1,22 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./LandingFooter.css";
 
 const LandingFooter = () => {
+  const navigate = useNavigate();
+
   const scrollToForm = () => {
     const formSection = document.getElementById("lead-form");
     if (formSection) {
       formSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        const form = document.getElementById("lead-form");
+        if (form) {
+          form.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
     }
   };
 
@@ -37,11 +48,9 @@ const LandingFooter = () => {
           
           <div className="footer-bottom-right">
             <div className="footer-legal-links">
-              <a href="#">Terms Of Use</a>
+              <Link to="/terms">Terms Of Use</Link>
               <span className="separator">|</span>
-              <a href="#">Cookie Preferences</a>
-              <span className="separator">|</span>
-              <a href="#">Privacy Policy</a>
+              <Link to="/privacy">Privacy Policy</Link>
             </div>
             <p className="footer-copyright">
               © {new Date().getFullYear()} NPathways Global. All rights reserved.<br/>
