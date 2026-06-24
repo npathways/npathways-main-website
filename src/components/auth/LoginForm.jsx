@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import Button from '../common/Button';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 import './LoginForm.css';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   
@@ -24,6 +26,7 @@ const LoginForm = () => {
 
     try {
       await login(email, password);
+      // Removed toast to use only container-level alerts
       navigate(from, { replace: true });
     } catch (err) {
       setError(err.message || 'Failed to login');
@@ -54,15 +57,39 @@ const LoginForm = () => {
         
         <div className="form-group">
           <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            className="form-input"
-            placeholder="••••••••"
-          />
+          <div style={{ position: 'relative' }}>
+            <input
+              type={showPassword ? "text" : "password"}
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="form-input"
+              placeholder="••••••••"
+              style={{ paddingRight: '2.5rem' }}
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              style={{
+                position: 'absolute',
+                right: '0.75rem',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                color: 'var(--color-text-secondary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: 0
+              }}
+              aria-label={showPassword ? "Hide password" : "Show password"}
+            >
+              {showPassword ? <FiEyeOff size={18} /> : <FiEye size={18} />}
+            </button>
+          </div>
         </div>
         
         <Button 
@@ -78,9 +105,6 @@ const LoginForm = () => {
       
       <div className="login-footer">
         <p>Don't have an account? <Link to="/register">Sign up</Link></p>
-        <p className="demo-hint">
-          Demo: user@npathways.com / password123
-        </p>
       </div>
     </div>
   );
