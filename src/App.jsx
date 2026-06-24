@@ -3,6 +3,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import LoadingScreen from "./components/common/LoadingScreen";
 import ScrollToTop from "./components/common/ScrollToTop";
 
+import { Toaster } from "react-hot-toast";
+
 // Layouts
 const PublicLayout = lazy(() => import("./components/layout/PublicLayout"));
 const DashboardLayout = lazy(() => import("./components/dashboard/DashboardLayout"));
@@ -21,7 +23,6 @@ const SchoolPrograms = lazy(() => import("./pages/public/services/SchoolPrograms
 const Contact = lazy(() => import("./pages/public/Contact"));
 const Founder = lazy(() => import("./pages/public/about/Founder"));
 const HowItWorks = lazy(() => import("./pages/public/about/HowItWorks"));
-const LandingPage = lazy(() => import("./pages/public/LandingPage"));
 
 // E-Commerce Pages
 const BootcampList = lazy(() => import("./pages/public/services/BootcampCalendar"));
@@ -46,29 +47,41 @@ const Refund = lazy(() => import("./pages/legal/Refund"));
 const NotFound = lazy(() => import("./pages/public/NotFound"));
 
 function App() {
-  const [isUnlocked, setIsUnlocked] = useState(
-    sessionStorage.getItem("site_unlocked") === "true"
-  );
-
-  const handleUnlock = () => {
-    sessionStorage.setItem("site_unlocked", "true");
-    setIsUnlocked(true);
-  };
 
   return (
     <>
+      <Toaster 
+        position="top-right" 
+        toastOptions={{
+          style: {
+            background: 'var(--color-bg-primary)',
+            color: 'var(--color-text-primary)',
+            border: '1px solid var(--border-default)',
+            borderRadius: 'var(--radius-md)',
+            boxShadow: 'var(--shadow-md)',
+            fontSize: 'var(--font-size-sm)'
+          },
+          success: {
+            iconTheme: {
+              primary: 'var(--color-success)',
+              secondary: 'var(--color-bg-primary)',
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: 'var(--color-error)',
+              secondary: 'var(--color-bg-primary)',
+            },
+          },
+        }}
+      />
       <ScrollToTop />
       <LoadingScreen />
       <Suspense fallback={<LoadingScreen />}>
         <Routes>
-          {/* Landing Page - Standalone */}
-          {!isUnlocked && (
-            <Route path="/" element={<LandingPage onUnlock={handleUnlock} />} />
-          )}
-
           {/* Public Routes */}
           <Route element={<PublicLayout />}>
-            {isUnlocked && <Route path="/" element={<Home />} />}
+            <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/about/founder" element={<Founder />} />
             <Route path="/about/how-it-works" element={<HowItWorks />} />

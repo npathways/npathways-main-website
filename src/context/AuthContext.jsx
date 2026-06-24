@@ -3,12 +3,6 @@ import PropTypes from 'prop-types';
 
 const AuthContext = createContext();
 
-// Mock users for demonstration
-const mockUsers = [
-  { id: 1, email: 'student@npathways.com', password: 'password123', name: 'John Doe' },
-  { id: 2, email: 'demo@npathways.com', password: 'demo123', name: 'Demo User' }
-];
-
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -23,48 +17,59 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    // Simulate API call
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const foundUser = mockUsers.find(
-          u => u.email === email && u.password === password
-        );
-        
-        if (foundUser) {
-          const { password: _, ...userWithoutPassword } = foundUser;
-          setUser(userWithoutPassword);
-          localStorage.setItem('npathways_user', JSON.stringify(userWithoutPassword));
-          resolve(userWithoutPassword);
-        } else {
-          reject(new Error('Invalid email or password'));
-        }
-      }, 500);
-    });
+    try {
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || '/api';
+      const response = await fetch(`${baseUrl}/auth/portal/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        const errorMsg = data.issues && data.issues.length > 0 
+          ? data.issues[0].message 
+          : data.message || 'Invalid email or password';
+        throw new Error(errorMsg);
+      }
+
+      setUser(data);
+      localStorage.setItem('npathways_user', JSON.stringify(data));
+      return data;
+    } catch (error) {
+      throw error;
+    }
   };
 
   const register = async (name, email, password) => {
-    // Simulate API call
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        // Check if user already exists
-        const exists = mockUsers.find(u => u.email === email);
-        if (exists) {
-          reject(new Error('User already exists'));
-          return;
-        }
+    try {
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || '/api';
+      const response = await fetch(`${baseUrl}/auth/portal/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
 
-        const newUser = {
-          id: mockUsers.length + 1,
-          email,
-          name
-        };
-        
-        mockUsers.push({ ...newUser, password });
-        setUser(newUser);
-        localStorage.setItem('npathways_user', JSON.stringify(newUser));
-        resolve(newUser);
-      }, 500);
-    });
+      const data = await response.json();
+
+      if (!response.ok) {
+        const errorMsg = data.issues && data.issues.length > 0 
+          ? data.issues[0].message 
+          : data.message || 'Registration failed';
+        throw new Error(errorMsg);
+      }
+
+      setUser(data);
+      localStorage.setItem('npathways_user', JSON.stringify(data));
+      return data;
+    } catch (error) {
+      throw error;
+    }
   };
 
   const logout = () => {
