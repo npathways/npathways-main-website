@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import Button from "../../components/common/Button";
 import BackButton from "../../components/common/BackButton";
-import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { FiEye, FiEyeOff, FiCheck, FiX } from 'react-icons/fi';
 import "./Login.css"; // Reusing Login styles
 import "../../components/auth/LoginForm.css"; // Form and card styles
 
@@ -25,10 +25,23 @@ const Register = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const passwordCriteria = {
+    length: formData.password.length >= 8,
+    uppercase: /[A-Z]/.test(formData.password),
+    number: /[0-9]/.test(formData.password),
+    special: /[^A-Za-z0-9]/.test(formData.password),
+  };
+  const isPasswordValid = formData.password.length > 0 && Object.values(passwordCriteria).every(Boolean);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     
+    if (!isPasswordValid) {
+      setError("Please ensure your password meets all requirements");
+      return;
+    }
+
     if (formData.password !== formData.confirmPassword) {
       setError("Passwords don't match");
       return;
@@ -56,8 +69,9 @@ const Register = () => {
               <h1>Join NPathways</h1>
               <p>Create your account to start your global education journey.</p>
               <img
-                src="https://placehold.co/400x300/00C194/FFFFFF?text=Sign+Up"
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600&h=450"
                 alt="Register Illustration"
+                style={{ borderRadius: '8px', objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -128,6 +142,20 @@ const Register = () => {
                     >
                       {showPassword ? <FiEyeOff size={18} /> : <FiEye size={18} />}
                     </button>
+                  </div>
+                </div>
+                <div style={{ marginTop: '0.5rem', marginBottom: '1rem', fontSize: '0.85rem' }}>
+                  <div style={{ color: passwordCriteria.uppercase ? '#00C194' : '#6b7280', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem', transition: 'color 0.2s ease' }}>
+                    {passwordCriteria.uppercase ? <FiCheck /> : <FiX />} One uppercase letter
+                  </div>
+                  <div style={{ color: passwordCriteria.number ? '#00C194' : '#6b7280', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem', transition: 'color 0.2s ease' }}>
+                    {passwordCriteria.number ? <FiCheck /> : <FiX />} One number
+                  </div>
+                  <div style={{ color: passwordCriteria.special ? '#00C194' : '#6b7280', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem', transition: 'color 0.2s ease' }}>
+                    {passwordCriteria.special ? <FiCheck /> : <FiX />} One special character
+                  </div>
+                  <div style={{ color: passwordCriteria.length ? '#00C194' : '#6b7280', display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'color 0.2s ease' }}>
+                    {passwordCriteria.length ? <FiCheck /> : <FiX />} Minimum 8 characters
                   </div>
                 </div>
                 <div className="form-group">
