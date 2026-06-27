@@ -17,8 +17,9 @@ const Login = () => {
                 applications.
               </p>
               <img
-                src="https://placehold.co/400x300/00C194/FFFFFF?text=User+Portal"
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600&h=450"
                 alt="Login Illustration"
+                style={{ borderRadius: '8px', objectFit: 'cover' }}
               />
             </div>
           </div>
