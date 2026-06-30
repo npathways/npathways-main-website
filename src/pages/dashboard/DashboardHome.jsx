@@ -1,72 +1,106 @@
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
+import { useProfile } from '../../context/ProfileContext';
+import { FiBookOpen, FiGlobe, FiAward, FiBriefcase, FiArrowRight } from 'react-icons/fi';
 import Card from '../../components/common/Card';
+import Modal from '../../components/common/Modal';
+import LeadForm from '../../components/common/LeadForm';
 import './DashboardHome.css';
 
 const DashboardHome = () => {
   const { user } = useAuth();
+  const { profileProgress } = useProfile();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
   
-  // Mock data for dashboard
-  const stats = [
-    { label: 'Purchased Products', value: '2', icon: '📦' },
-    { label: 'Files Uploaded', value: '5', icon: '📂' },
-    { label: 'Profile Completion', value: '80%', icon: '👤' },
+  const services = [
+    {
+      title: "Study Abroad",
+      description: "End-to-end guidance for international university admissions, ensuring you find the perfect alignment.",
+      icon: <FiGlobe />,
+      program: "Study Abroad"
+    },
+    {
+      title: "Skills & Bootcamps",
+      description: "Industry-aligned bootcamps designed to build your capability for the global market.",
+      icon: <FiBookOpen />,
+      program: "Skills & Bootcamps"
+    },
+    {
+      title: "Internships & Research",
+      description: "Gain practical experience and academic depth through our curated global programs.",
+      icon: <FiAward />,
+      program: "Internships & Research"
+    },
+    {
+      title: "Career Guidance",
+      description: "Scientific assessments and discovery sessions to find your true career path with clarity.",
+      icon: <FiBriefcase />,
+      program: "Career Guidance"
+    }
   ];
 
-  const recentActivity = [
-    { id: 1, action: 'Purchased "Visa Dossier Kit"', date: '2 days ago' },
-    { id: 2, action: 'Uploaded "Passport Copy"', date: '3 days ago' },
-    { id: 3, action: 'Updated Profile Information', date: '1 week ago' },
-  ];
+  const handleEnquireClick = (program) => {
+    setSelectedService(program);
+    setIsModalOpen(true);
+  };
 
   return (
     <div className="dashboard-home fade-in">
       <div className="welcome-banner">
         <h1>Welcome back, {user?.name || 'User'}!</h1>
-        <p>Here's what's happening with your applications today.</p>
-      </div>
-
-      <div className="stats-grid-dashboard">
-        {stats.map((stat, index) => (
-          <Card key={index} className="stat-card">
-            <div className="stat-icon-wrapper">{stat.icon}</div>
-            <div className="stat-content">
-              <h3>{stat.value}</h3>
-              <p>{stat.label}</p>
-            </div>
-          </Card>
-        ))}
-      </div>
-
-      <div className="dashboard-sections-grid">
-        <div className="recent-activity-section">
-          <h2>Recent Activity</h2>
-          <Card>
-            <ul className="activity-list">
-              {recentActivity.map(activity => (
-                <li key={activity.id}>
-                  <span className="activity-text">{activity.action}</span>
-                  <span className="activity-date">{activity.date}</span>
-                </li>
-              ))}
-            </ul>
-          </Card>
-        </div>
+        <p>Explore our premium services and take the next step in your journey.</p>
         
-        <div className="quick-actions-section">
-          <h2>Quick Actions</h2>
-          <div className="quick-actions-grid">
-            <Link to="/dashboard/my-files" className="quick-action-card">
-              <span className="action-icon">📤</span>
-              <span>Upload Document</span>
-            </Link>
-            <Link to="/products" className="quick-action-card">
-              <span className="action-icon">🛒</span>
-              <span>Browse Products</span>
-            </Link>
+        <div className="dashboard-progress mt-6">
+          <div className="progress-header">
+            <h3>Profile Completion</h3>
+            <span>{profileProgress}%</span>
           </div>
+          <div className="progress-bar-bg">
+            <div className="progress-bar-fill" style={{ width: `${profileProgress}%` }}></div>
+          </div>
+          {profileProgress < 100 && (
+            <p className="progress-helper-text">
+              Complete your profile in the Profile tab.
+            </p>
+          )}
         </div>
       </div>
+
+      <div className="services-section">
+        <h2>Our Services</h2>
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <Card key={index} className="service-card">
+              <div className="service-icon-wrapper">{service.icon}</div>
+              <div className="service-content">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <button 
+                  className="service-link" 
+                  onClick={() => handleEnquireClick(service.program)}
+                  style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', fontFamily: 'inherit' }}
+                >
+                  Enquire Now <FiArrowRight />
+                </button>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      <Modal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)}
+        title="Service Enquiry"
+      >
+        <LeadForm 
+          source="Dashboard Service Enquiry" 
+          variant="light" 
+          initialProgram={selectedService}
+          onClose={() => setIsModalOpen(false)}
+        />
+      </Modal>
     </div>
   );
 };

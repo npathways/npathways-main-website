@@ -8,6 +8,7 @@ import { Toaster } from "react-hot-toast";
 // Layouts
 const PublicLayout = lazy(() => import("./components/layout/PublicLayout"));
 const DashboardLayout = lazy(() => import("./components/dashboard/DashboardLayout"));
+import { ProfileProvider } from "./context/ProfileContext";
 
 // Public Pages
 const Home = lazy(() => import("./pages/public/Home"));
@@ -30,6 +31,8 @@ const BootcampList = lazy(() => import("./pages/public/services/BootcampCalendar
 // Auth Pages
 const Login = lazy(() => import("./pages/auth/Login"));
 const Register = lazy(() => import("./pages/auth/Register"));
+const ForgotPassword = lazy(() => import("./pages/auth/ForgotPassword"));
+const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
 const ProtectedRoute = lazy(() => import("./components/auth/ProtectedRoute"));
 
 // Dashboard Pages
@@ -106,6 +109,10 @@ function App() {
             <Route path="/refund" element={<Refund />} />
           </Route>
 
+          {/* Standalone Auth Pages (No Nav/Footer) */}
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+
           {/* Standalone 404 Page (No Nav/Footer) */}
           <Route path="*" element={<NotFound />} />
 
@@ -114,13 +121,15 @@ function App() {
             path="/dashboard"
             element={
               <ProtectedRoute>
-                <DashboardLayout />
+                <ProfileProvider>
+                  <DashboardLayout />
+                </ProfileProvider>
               </ProtectedRoute>
             }
           >
             <Route index element={<DashboardHome />} />
             <Route path="my-products" element={<MyProducts />} />
-            <Route path="my-files" element={<MyFiles />} />
+            <Route path="documents" element={<MyFiles />} />
             <Route path="profile" element={<Profile />} />
             {/* Redirect unknown dashboard routes to home */}
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
