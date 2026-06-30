@@ -20,8 +20,7 @@ const ResetPasswordForm = () => {
   const token = searchParams.get('token');
   const navigate = useNavigate();
 
-  // NOTE: For production, this should ideally pull from a config or env var
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8787";
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || '/api';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,7 +44,7 @@ const ResetPasswordForm = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(`${API_URL}/api/auth/portal/reset-password`, {
+      const response = await fetch(`${baseUrl}/auth/portal/reset-password`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, token, newPassword }),
