@@ -53,7 +53,7 @@
   padding: 0 1rem; /* Padding horizontal only, vertical controlled by height */
   height: 3.5rem; /* Explicit fixed height for perfect alignment */
   border: 1px solid #e0e0e0;
-  border-radius: 2px;
+  border-radius: var(--radius-md);
   font-size: 1rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;

@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import QuickEnquiry from "../common/QuickEnquiry";
 
 const PublicLayout = () => {
   const location = useLocation();
@@ -12,6 +13,7 @@ const PublicLayout = () => {
       <main style={{ minHeight: "100vh" }}>
         <Outlet />
       </main>
+      <QuickEnquiry />
       {!isAuthPage && <Footer />}
     </div>
   );

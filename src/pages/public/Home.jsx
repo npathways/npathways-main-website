@@ -1,23 +1,340 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Button from "../../components/common/Button";
 import heroVideo from "../../assets/video/hero.mp4";
+import toast from "react-hot-toast";
 
 // Import Data
 import destinationsData from "../../data/destinations.json";
-import ecosystemData from "../../data/ecosystem.json";
-import testimonialsData from "../../data/testimonials.json";
-import trustBadgesData from "../../data/trustBadges.json";
+
+// Import Icons
+import {
+  FaCompass,
+  FaMapMarkedAlt,
+  FaGraduationCap,
+  FaChartLine,
+  FaPenNib,
+  FaFileInvoiceDollar,
+  FaPassport,
+  FaPlaneDeparture,
+  FaHome,
+  FaHandsHelping
+} from "react-icons/fa";
+import {
+  FiArrowRight,
+  FiArrowLeft,
+  FiCheckCircle,
+  FiBookOpen,
+  FiUserCheck,
+  FiAward,
+  FiPhoneCall,
+  FiChevronLeft,
+  FiChevronRight
+} from "react-icons/fi";
 
 import "./Home.css";
 
-import LeadForm from "../../components/common/LeadForm";
+const stepsData = [
+  {
+    num: "01",
+    icon: <FaCompass />,
+    title: "Clarity Compass™ Assessment",
+    bgImg: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+    desc: "We start with a deep dive into your strengths and EQ. This isn't just a test; it's your career foundation."
+  },
+  {
+    num: "02",
+    icon: <FaMapMarkedAlt />,
+    title: "Global Goal Mapping",
+    bgImg: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80",
+    desc: "Identifying the right countries and industry trends that align with your long-term residency and career goals."
+  },
+  {
+    num: "03",
+    icon: <FaGraduationCap />,
+    title: "University Matchmaking",
+    bgImg: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
+    desc: "Comparing curricula, research opportunities, and lifestyle to find your perfect academic home."
+  },
+  {
+    num: "04",
+    icon: <FaChartLine />,
+    title: "Skill Gap Analysis",
+    bgImg: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
+    desc: "If your profile lacks certain technical or soft skills, we fill them through our specialized bootcamps."
+  },
+  {
+    num: "05",
+    icon: <FaPenNib />,
+    title: "Story-Driven Applications",
+    bgImg: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80",
+    desc: "We help you craft SOPs that aren't just templates, but powerful narratives of your individual growth."
+  },
+  {
+    num: "06",
+    icon: <FaFileInvoiceDollar />,
+    title: "Financial Architecture",
+    bgImg: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+    desc: "Navigating education loans, scholarships, and budgeting for a stress-free transition."
+  },
+  {
+    num: "07",
+    icon: <FaPassport />,
+    title: "The Visa Siege",
+    bgImg: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80",
+    desc: "Meticulous documentation and mock interviews to ensure your entry is seamless and successful."
+  },
+  {
+    num: "08",
+    icon: <FaPlaneDeparture />,
+    title: "Pre-Departure Orientation",
+    bgImg: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80",
+    desc: "Cultural hacks, banking setup, and survival skills for your first 30 days in a new country."
+  },
+  {
+    num: "09",
+    icon: <FaHome />,
+    title: "Settling In",
+    bgImg: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+    desc: "Assistance with accommodation coordination and your first week of administrative hurdles."
+  },
+  {
+    num: "10",
+    icon: <FaHandsHelping />,
+    title: "On-Going Mentorship",
+    bgImg: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80",
+    desc: "We remain your partner throughout your degree and during your first job search abroad."
+  }
+];
+
+const studentSupportData = [
+  {
+    num: "01",
+    title: "Career Discovery",
+    subtitle: "Psychometric & Ikigai mapping",
+    bgImg: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=1200&q=80",
+    desc: "Most students choose a country before they've chosen a direction. We start the other way around. Every NPathways journey begins with the Clarity Compass — a psychometric and aptitude diagnostic built around the idea of Ikigai: the place where what you're good at, what you enjoy, what the world needs, and what's actually viable for you all meet. In a single guided session, we map your natural strengths, genuine interests, and real-world readiness — not just your grades. The result isn't a generic report; it's a working answer to the question underneath every application: what am I actually building toward? For some students that means research. For others, industry, entrepreneurship, or a creative path nobody suggested before. Once that's clear, every decision after — which country, which course, which university — has something solid to stand on. This is the one step other consultancies skip. We think it's the one that matters most."
+  },
+  {
+    num: "02",
+    title: "Admissions",
+    subtitle: "Expert university shortlisting",
+    bgImg: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
+    desc: "A university list built on rankings alone is a list built for someone else. Once your direction is clear, our admissions team builds a shortlist around what actually fits you — your academic profile, your budget, your career goals, and the kind of environment you'll genuinely thrive in, not just the one that looks best on paper. We look past headline rankings to the things that decide your actual experience: department strength in your specific field, faculty and research opportunities, curriculum fit, industry connections, and realistic admission chances given your profile. From there, we work with you end-to-end — refining personal statements, coordinating recommendation letters, tracking every deadline — so your application reflects your strongest, most honest case for admission. The goal isn't the most prestigious name you can get in front of. It's the university where your specific goals actually have room to grow."
+  },
+  {
+    num: "03",
+    title: "Visa Success",
+    subtitle: "98% success rate in filing",
+    bgImg: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&q=80",
+    desc: "A strong admission means nothing without a strong visa file — and this is where most delays and rejections quietly happen, often over paperwork that could have been caught early. Our visa team has built a 98% success rate by treating every filing like it's the only one that matters: document-by-document review, country-specific requirement checks, financial proof structured the way that specific embassy expects it, and mock interviews before the real one. We track policy shifts as they happen — visa rules change more often than students expect — so your file is built against the current requirement, not last year's. And we stay with you past the approval stamp: guidance on arrival formalities, work-rights rules on your visa, and what to do if anything needs renewing later. Getting in is the milestone everyone celebrates. We think getting there safely and correctly is the part that actually deserves the effort."
+  },
+  {
+    num: "04",
+    title: "Your Journey",
+    subtitle: "Guided by us, decided by you",
+    bgImg: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1200&q=80",
+    desc: "Studying abroad isn't one decision — it's a sequence of them, and every student's sequence looks different. For college students, we work directly with you, in person, taking the time to actually understand you before we map anything out. For school students and minors, we work through your parents at every step, so the family stays informed and involved throughout. Either way, the decisions are always yours to make — ours is to guide, explain, and stand beside you while you make them. From your first clarity conversation through direction-setting, university and country selection, applications, visas, pre-departure preparation, arrival, and settling in — every stage has a defined, supported step, built around who you actually are, not a template everyone gets. No two journeys here look the same, because no two students do. This is what \"beyond borders into purpose\" actually looks like in practice — a journey that speaks for itself."
+  }
+];
+
+const parentSupportData = [
+  {
+    num: "01",
+    title: "Travel & Stay",
+    subtitle: "with them, every step of the way",
+    bgImg: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80",
+    desc: "For many parents, the hardest part isn't the paperwork — it's not being there when your child takes their first steps into a new country. If you choose to travel with them for the first move, we handle it as carefully as we handle the student's own visa: accompanying-parent visa guidance, help sourcing accommodation near campus, and a clear day-by-day itinerary for the visit — what to set up first, which offices to visit, what can wait. If a follow-up visit is on your mind later — orientation day, a graduation, just checking in — we can help plan that too, from paperwork to logistics. You shouldn't have to choose between being present for your child's biggest moment and knowing how to actually navigate a country you've never seen. We'd rather you spend that time being a parent, not a logistics manager."
+  },
+  {
+    num: "02",
+    title: "Financial Clarity",
+    subtitle: "plan the full cost, not just the fees",
+    bgImg: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80",
+    desc: "Tuition is only ever part of the number. Living costs, currency shifts, one-time visa and travel costs, part-time work rules that affect what your child can actually earn there — these are the details that quietly break budgets built only around a university's advertised fee. We sit down with families early and build a realistic, full-picture cost plan: total program cost (not per-year guesses), city-specific living expenses, scholarship and loan options you actually qualify for, and a currency-risk conversation most consultancies skip entirely. You'll know what this really costs, and what happens to your budget if the exchange rate moves against you mid-program — before you're already committed. No pressure, no upsell. Just the numbers a parent actually needs to say yes with confidence, not just hope."
+  },
+  {
+    num: "03",
+    title: "The Parent Circle",
+    subtitle: "you're not doing this alone",
+    bgImg: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80",
+    desc: "Somewhere between the acceptance letter and the actual goodbye, most parents realize they know exactly one other family going through this — if that. The Parent Circle is a community of NPathways parents, past and current, who've stood exactly where you're standing. Ask the questions that feel too small for a formal consultation — what to pack, how the first phone call home usually goes, what nobody tells you about the first month. We host regular meet-ups, both online and in person, where experienced parents and new ones simply talk — no agenda, no pitch, just people who understand. Some of the most useful advice a parent will get isn't from us. It's from another parent who did this eighteen months ago and remembers exactly what they wish someone had told them."
+  },
+  {
+    num: "04",
+    title: "Our Global Family Network",
+    subtitle: "easing the distance",
+    bgImg: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
+    desc: "We built this around the idea that distance shouldn't mean disconnection. Beyond regular updates on how your child is settling in, we're building partnerships with international student communities and other consultancies abroad, so families here can host visiting international students for a day or two — a genuine, warm, cultural exchange that gives you a small version of the connection you're missing, and gives a student far from home a taste of it too. We also run seasonal meet-and-greets and community events for parents locally, so the people who understand this exact transition aren't strangers on a screen but people you actually know. Your child moved abroad for their purpose. That doesn't mean your role in their life got smaller — just further away. We're here to shorten that distance wherever we can."
+  }
+];
+
+const categoriesList = [
+  { label: 'Student', desc: 'Currently studying in school or college', icon: <FiBookOpen size={20} /> },
+  { label: 'Parent', desc: 'Inquiring for a son or daughter', icon: <FiUserCheck size={20} /> },
+  { label: 'Working Professional', desc: 'Currently working and seeking growth', icon: <FiAward size={20} /> }
+];
+
+const programsList = [
+  { label: 'Study Abroad', desc: 'Global admissions guidance', icon: <FiBookOpen size={20} /> },
+  { label: 'Test Preparation', desc: 'CAT, GMAT, GRE coaching & prep', icon: <FiAward size={20} /> },
+  { label: 'Admissions Consulting', desc: 'Essays, resume & profiles', icon: <FiUserCheck size={20} /> },
+  { label: 'Skills & Bootcamps', desc: 'Intensive tech & business courses', icon: <FiBookOpen size={20} /> },
+  { label: 'Visa Assistance', desc: 'Step-by-step visa documentation', icon: <FiAward size={20} /> },
+  { label: 'Career Counseling', desc: 'One-on-one professional guidance', icon: <FiPhoneCall size={20} /> }
+];
 
 const Home = () => {
   const navigate = useNavigate();
+  const [activeStep, setActiveStep] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [activeStudentPanel, setActiveStudentPanel] = useState(0);
+  const [activeParentPanel, setActiveParentPanel] = useState(0);
+  const studentIndexRef = useRef(0);
+  const parentIndexRef = useRef(0);
+
+  // CTA Wizard state
+  const [wizardStep, setWizardStep] = useState(1);
+  const [wizardData, setWizardData] = useState({
+    name: '', category: '', grade: '', passoutYear: '',
+    examType: '', examStatus: '', selectedProgram: '',
+    email: '', countryCode: '+91', phone: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false); // tear + plane animation
+
+  const handleWizardNext = () => {
+    if (wizardStep === 1 && !wizardData.name.trim()) { toast.error('Please enter your name'); return; }
+    if (wizardStep === 2 && !wizardData.category) { toast.error('Please select who you are'); return; }
+    if (wizardStep === 3 && (wizardData.category === 'Student' || wizardData.category === 'Parent') && !wizardData.grade.trim()) { toast.error('Please enter your current grade'); return; }
+    setWizardStep(prev => prev + 1);
+  };
+
+  const handleWizardBack = () => setWizardStep(prev => prev - 1);
+
+  const handleWizardChange = (e) => {
+    const { name, value } = e.target;
+    setWizardData(prev => ({ ...prev, [name]: value, ...(name === 'category' && value === 'Working Professional' ? { grade: '' } : {}) }));
+  };
+
+  const handleCategoryPick = (category) => {
+    setWizardData(prev => ({ ...prev, category, ...(category === 'Working Professional' ? { grade: '' } : {}) }));
+    setTimeout(() => setWizardStep(3), 350);
+  };
+
+  const handleProgramPick = (selectedProgram) => {
+    setWizardData(prev => ({ ...prev, selectedProgram }));
+    setTimeout(() => setWizardStep(6), 350);
+  };
+
+  const resetWizard = () => {
+    setWizardData({ name: '', category: '', grade: '', passoutYear: '', examType: '', examStatus: '', selectedProgram: '', email: '', countryCode: '+91', phone: '' });
+    setWizardStep(1);
+    setIsSuccess(false);
+    setIsAnimating(false);
+  };
+
+  const handleWizardSubmit = async (e) => {
+    e.preventDefault();
+    if (!wizardData.email.trim() || !wizardData.phone.trim()) { toast.error('Please provide email and phone number'); return; }
+    setIsSubmitting(true);
+    try {
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8787/api';
+      const payload = {
+        name: wizardData.name, email: wizardData.email, phone: wizardData.phone,
+        countryCode: wizardData.countryCode, category: wizardData.category || null,
+        grade: wizardData.grade || null, passoutYear: wizardData.passoutYear || null,
+        examType: wizardData.examType || null, examStatus: wizardData.examStatus || null,
+        selectedProgram: wizardData.selectedProgram || null, source: 'Home Page CTA Wizard'
+      };
+      const response = await fetch(`${baseUrl}/leads`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      if (!response.ok) throw new Error('Submission failed');
+      // Trigger boarding pass tear + plane animation before success
+      setIsSubmitting(false);
+      setIsAnimating(true);
+      setTimeout(() => {
+        setIsAnimating(false);
+        setIsSuccess(true);
+      }, 2600);
+    } catch (err) {
+      console.error(err);
+      toast.error('Something went wrong. Please try again.');
+      setIsSubmitting(false);
+    }
+  };
+
+  const scrollToPanel = (sectionClass, index) => {
+    const wrapper = document.querySelector(`.${sectionClass} .support-accordion`);
+    if (wrapper) {
+      const rect = wrapper.getBoundingClientRect();
+      const wrapperTop = rect.top + window.scrollY;
+      const wrapperHeight = rect.height;
+      // Calculate target scroll position where the viewport center aligns with the center of the panel's zone
+      const targetCenterInWrapper = (index + 0.5) * (wrapperHeight / 4);
+      const targetScrollY = wrapperTop + targetCenterInWrapper - window.innerHeight / 2;
+
+      // Update refs and states immediately to avoid click lag/delays
+      if (sectionClass.includes("student")) {
+        studentIndexRef.current = index;
+        setActiveStudentPanel(index);
+      } else {
+        parentIndexRef.current = index;
+        setActiveParentPanel(index);
+      }
+
+      window.scrollTo({
+        top: targetScrollY,
+        behavior: "smooth"
+      });
+    }
+  };
+
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % stepsData.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const studentWrapper = document.querySelector(".student-support .support-accordion");
+
+      const viewportCenter = window.innerHeight / 2;
+
+      if (studentWrapper) {
+        const rect = studentWrapper.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          const progress = (viewportCenter - rect.top) / rect.height;
+          const clamped = Math.max(0, Math.min(0.99, progress));
+          const index = Math.floor(clamped * 4); // 4 panels
+          if (studentIndexRef.current !== index) {
+            studentIndexRef.current = index;
+            setActiveStudentPanel(index);
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -34,7 +351,7 @@ const Home = () => {
           <source src={heroVideo} type="video/mp4" />
         </video>
         <div className="hero-overlay"></div>
-        
+
         <div className="container hero-split">
           <div className="hero-content-left">
             <span className="hero-badge-minimal">
@@ -69,7 +386,9 @@ const Home = () => {
               </Button>
               <Button
                 variant="premium-outline"
-                onClick={() => navigate("/about/how-it-works")}
+                onClick={() => {
+                  document.querySelector('.home-process-stack-section')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 How It Works
               </Button>
@@ -78,61 +397,219 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Highlight - Ecosystem */}
-      <section className="highlights-section">
+      {/* Your journey with us - 3D Overlapping Card Slider */}
+      <section className="home-process-stack-section">
         <div className="container">
-          <div className="section-header-premium">
-            <span className="badge">Our Ecosystem</span>
-            <h2>Complete Student Support</h2>
+          <div className="section-header-premium text-center">
+            <span className="badge">The Roadmap</span>
+            <h2>Your journey with us</h2>
+            <p className="section-subtitle">
+              From the first spark of direction-setting to your first job in a new country, we are with you every step of the way.
+            </p>
           </div>
-          <div className="highlights-grid">
-            {ecosystemData.map((item, i) => (
-              <div key={i} className="highlight-card">
-                <div className="highlight-icon">{item.icon}</div>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-                {item.link && (
-                  <Button
-                    variant="tertiary"
-                    size="small"
-                    onClick={() => navigate(item.link)}
-                    style={{ marginTop: "1rem" }}
+        </div>
+
+        <div
+          className="stack-slider-container"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* Huge background text watermark */}
+          <div className="stack-bg-text">NPATHWAYS</div>
+
+          <div
+            className="stack-deck-wrapper"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <div className="stack-cards-deck">
+              {stepsData.map((step, index) => {
+                // Calculate circular offset
+                let offset = index - activeStep;
+                if (offset < -5) offset += 10;
+                if (offset > 4) offset -= 10;
+
+                const isCenter = offset === 0;
+                const isVisible = Math.abs(offset) <= 2;
+
+                // Determine transform style (Expanded side-to-side translates)
+                let style = {};
+                if (offset === 0) {
+                  style = {
+                    transform: "translate3d(0%, 0, 0) scale(1)",
+                    zIndex: 10,
+                    opacity: 1,
+                    pointerEvents: "auto"
+                  };
+                } else if (offset === -1) {
+                  style = {
+                    transform: "translate3d(-60%, 0, -120px) scale(0.85) rotateY(15deg)",
+                    zIndex: 8,
+                    opacity: 1,
+                    pointerEvents: "auto"
+                  };
+                } else if (offset === -2) {
+                  style = {
+                    transform: "translate3d(-110%, 0, -240px) scale(0.7) rotateY(25deg)",
+                    zIndex: 6,
+                    opacity: 1,
+                    pointerEvents: "auto"
+                  };
+                } else if (offset === 1) {
+                  style = {
+                    transform: "translate3d(60%, 0, -120px) scale(0.85) rotateY(-15deg)",
+                    zIndex: 8,
+                    opacity: 1,
+                    pointerEvents: "auto"
+                  };
+                } else if (offset === 2) {
+                  style = {
+                    transform: "translate3d(110%, 0, -240px) scale(0.7) rotateY(-25deg)",
+                    zIndex: 6,
+                    opacity: 1,
+                    pointerEvents: "auto"
+                  };
+                } else {
+                  style = {
+                    transform: "translate3d(0%, 0, -500px) scale(0)",
+                    zIndex: 0,
+                    opacity: 0,
+                    pointerEvents: "none"
+                  };
+                }
+
+                return (
+                  <div
+                    key={index}
+                    className={`stack-card ${isCenter ? "active" : ""} ${isVisible ? "visible" : "hidden"}`}
+                    style={{ ...style, "--card-bg": `url(${step.bgImg})` }}
+                    onClick={() => {
+                      navigate("/about/how-it-works", { state: { activeStep: index } });
+                    }}
                   >
-                    How It Works
-                  </Button>
-                )}
+                    <div className="stack-card-overlay"></div>
+                    <div className="stack-card-glass">
+                      <div className="card-number-bg">{step.num}</div>
+                      <div className="card-header-row">
+                        <span className="card-num-label">{step.num}</span>
+                        <div className="card-icon">{step.icon}</div>
+                      </div>
+                      <h3 className="card-title">{step.title}</h3>
+                      <p className="card-desc">{step.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Slider controls (Arrows & Dots) */}
+          <div className="slider-controls">
+            <button
+              className="control-btn prev-btn"
+              onClick={() => setActiveStep((prev) => (prev - 1 + 10) % 10)}
+              aria-label="Previous step"
+            >
+              <FiChevronLeft size={22} />
+            </button>
+            <div className="slider-dots">
+              {stepsData.map((_, i) => (
+                <button
+                  key={i}
+                  className={`dot-btn ${i === activeStep ? "active" : ""}`}
+                  onClick={() => setActiveStep(i)}
+                  aria-label={`Go to step ${i + 1}`}
+                />
+              ))}
+            </div>
+            <button
+              className="control-btn next-btn"
+              onClick={() => setActiveStep((prev) => (prev + 1) % 10)}
+              aria-label="Next step"
+            >
+              <FiChevronRight size={22} />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Complete Student Support Section (Accordion) */}
+      <section className="home-support-section student-support">
+        <div className="container">
+          <div className="section-header-premium text-center">
+            <span className="badge">For Students</span>
+            <h2>Complete Student Support</h2>
+            <p className="section-subtitle">
+              How we guide college and school students from clarity to transition.
+            </p>
+          </div>
+
+          <div className="support-accordion">
+            {studentSupportData.map((card, i) => (
+              <div
+                key={i}
+                className={`support-panel ${activeStudentPanel === i ? "active" : ""}`}
+                style={{ backgroundImage: `url(${card.bgImg})` }}
+                onClick={() => scrollToPanel("student-support", i)}
+                onMouseMove={handleMouseMove}
+              >
+                <div className="support-panel-overlay"></div>
+                <div className="support-panel-glass">
+                  <div className="support-card-header">
+                    <span className="support-card-number">{card.num}</span>
+                    <div className="support-card-titles">
+                      <h3>
+                        {card.title}
+                        <span className="support-card-subtitle-inline"> — {card.subtitle}</span>
+                      </h3>
+                    </div>
+                  </div>
+                  <p className="support-card-desc">{card.desc}</p>
+                  <div className="support-card-indicator">
+                    <span>Scroll to see details</span>
+                    <span className="indicator-arrow">↓</span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="testimonials-section">
+      {/* Complete Parents Support Section (Accordion) */}
+      <section className="home-support-section parent-support">
         <div className="container">
-          <div className="section-header-premium">
-            <span className="badge">Success Stories</span>
-            <h2>What Our Global Community Says</h2>
+          <div className="section-header-premium text-center">
+            <span className="badge">For Parents</span>
+            <h2>Complete Parents Support</h2>
+            <p className="section-subtitle">
+              Total financial clarity, travel logistics, and community networks built for families.
+            </p>
           </div>
 
-
-
-          <div className="testimonials-track-container">
-            <div className="testimonials-track">
-              {[...testimonialsData, ...testimonialsData].map((t, i) => (
-                <div key={i} className="testimonial-card">
-                  <div className="testimonial-quote">"</div>
-                  <p className="testimonial-text">{t.quote}</p>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">{t.initial}</div>
-                    <div className="author-info">
-                      <h4>{t.name}</h4>
-                      <span>{t.role}</span>
+          <div className="parent-support-grid">
+            {parentSupportData.map((card, i) => (
+              <div
+                key={i}
+                className="parent-grid-card"
+                style={{ backgroundImage: `url(${card.bgImg})` }}
+                onMouseMove={handleMouseMove}
+              >
+                <div className="support-panel-overlay"></div>
+                <div className="support-panel-glass">
+                  <div className="support-card-header">
+                    <span className="support-card-number">{card.num}</span>
+                    <div className="support-card-titles">
+                      <h3>
+                        {card.title}
+                        <span className="support-card-subtitle-inline"> — {card.subtitle}</span>
+                      </h3>
                     </div>
                   </div>
+                  <p className="support-card-desc">{card.desc}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -158,38 +635,321 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Partners Slider - Brand Alliances */}
-      <section className="partners-slider-section">
-        <div className="container">
-          <h3 className="partners-title">Our University Partners</h3>
-          <div className="partners-track">
-            <div className="partner-logo">IVY LEAGUE HUB</div>
-            <div className="partner-logo">RUSSELL GROUP</div>
-            <div className="partner-logo">GLOBAL TECH U</div>
-            <div className="partner-logo">EUROPEAN INSTITUTE</div>
-            <div className="partner-logo">PACIFIC ACADEMY</div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA: Contact Form Section */}
+      {/* CTA: Step-by-Step Wizard Section */}
       <section className="home-cta-section">
+        <div className="home-cta-bg-layer"></div>
         <div className="container">
-          <div className="cta-form-wrapper">
-            <div className="cta-content-info">
-              <span className="badge">Get Started</span>
-              <h2 style={{color: "white"}}>Ready to start your journey?</h2>
-              <p>
-                Fill out the form and our expert mentors will reach out to help
-                you find your perfect global pathway.
-              </p>
-              <div className="cta-contact-minimal">
-                <span>info@npathways.global</span>
-                <span>+91 98765 43210</span>
+
+          {/* Centered CTA Header */}
+          <div className="home-cta-header-center">
+            <h2 className="home-cta-heading">
+              {wizardData.name ? `Welcome, ${wizardData.name.split(' ')[0]}!` : "Ready to start your journey?"}
+            </h2>
+            <p className="home-cta-sub">
+              {wizardData.name
+                ? "Answer these quick steps to build your custom NPathways mentorship blueprint."
+                : "Answer a few quick questions and our expert mentors will personalise a plan just for you."}
+            </p>
+          </div>
+
+          <div className="home-cta-inner">
+
+            {/* Left Side: Wizard Form */}
+            <div className="home-cta-left" style={{ display: 'flex', flexDirection: 'column' }}>
+              <div className="home-cta-wizard" style={{ width: '100%' }}>
+                {!isSuccess ? (
+                  <div className="home-wizard-box">
+                    <div className="home-wizard-step-tag">Step {wizardStep} of 6</div>
+
+                    {/* Step 1: Name */}
+                    {wizardStep === 1 && (
+                      <div className="home-wizard-step fade-in-up">
+                        <label className="home-wizard-label">What should we call you?</label>
+                        <input type="text" name="name" placeholder="Enter your full name" value={wizardData.name}
+                          onChange={handleWizardChange} className="home-wizard-input" autoFocus
+                          onKeyDown={e => e.key === 'Enter' && handleWizardNext()} />
+                        <div className="home-wizard-actions">
+                          <button className="home-wizard-btn-next" onClick={handleWizardNext} disabled={!wizardData.name.trim()}>
+                            Continue <FiArrowRight style={{ marginLeft: '8px' }} />
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Step 2: Category */}
+                    {wizardStep === 2 && (
+                      <div className="home-wizard-step fade-in-up">
+                        <label className="home-wizard-label">Who are you representing?</label>
+                        <div className="home-wizard-cards-grid">
+                          {categoriesList.map((cat, idx) => (
+                            <div key={cat.label}
+                              className={`home-wizard-card ${wizardData.category === cat.label ? 'selected' : ''}`}
+                              onClick={() => handleCategoryPick(cat.label)}
+                              style={{ animationDelay: `${idx * 0.06}s` }}
+                            >
+                              <div className="home-wizard-card-icon">{cat.icon}</div>
+                              <div><h4>{cat.label}</h4><p>{cat.desc}</p></div>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="home-wizard-actions home-wizard-row">
+                          <button className="home-wizard-btn-back" onClick={handleWizardBack}><FiArrowLeft /> Back</button>
+                          <button className="home-wizard-btn-next" onClick={handleWizardNext} disabled={!wizardData.category}>Next <FiArrowRight /></button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Step 3: Academic Details */}
+                    {wizardStep === 3 && (
+                      <div className="home-wizard-step fade-in-up">
+                        <label className="home-wizard-label">Tell us about your educational background</label>
+                        {(wizardData.category === 'Student' || wizardData.category === 'Parent') && (
+                          <div className="home-wizard-field">
+                            <label>Current Grade *</label>
+                            <input type="text" name="grade" placeholder="e.g. 12th Grade, Undergrad 3rd Year" value={wizardData.grade}
+                              onChange={handleWizardChange} className="home-wizard-input" />
+                          </div>
+                        )}
+                        <div className="home-wizard-field">
+                          <label>Graduation / Passout Year</label>
+                          <input type="text" name="passoutYear" placeholder="e.g. 2026" value={wizardData.passoutYear}
+                            onChange={handleWizardChange} className="home-wizard-input" />
+                        </div>
+                        <div className="home-wizard-actions home-wizard-row">
+                          <button className="home-wizard-btn-back" onClick={handleWizardBack}><FiArrowLeft /> Back</button>
+                          <button className="home-wizard-btn-next" onClick={handleWizardNext}
+                            disabled={(wizardData.category === 'Student' || wizardData.category === 'Parent') && !wizardData.grade.trim()}>
+                            Next <FiArrowRight />
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Step 4: Exam Info */}
+                    {wizardStep === 4 && (
+                      <div className="home-wizard-step fade-in-up">
+                        <label className="home-wizard-label">Are you preparing for any entrance exams?</label>
+                        <div className="home-wizard-two-col">
+                          <div className="home-wizard-field">
+                            <label>Exam Type</label>
+                            <select name="examType" value={wizardData.examType} onChange={handleWizardChange} className="home-wizard-select">
+                              <option value="">None / Other</option>
+                              {["CAT", "GMAT", "GRE", "XAT", "NMAT", "SNAP", "Other"].map(e => <option key={e} value={e}>{e}</option>)}
+                            </select>
+                          </div>
+                          <div className="home-wizard-field">
+                            <label>Preparation Status</label>
+                            <select name="examStatus" value={wizardData.examStatus} onChange={handleWizardChange} className="home-wizard-select">
+                              <option value="">Select Status</option>
+                              {["Applied", "Yet to Apply", "Planning to Apply"].map(s => <option key={s} value={s}>{s}</option>)}
+                            </select>
+                          </div>
+                        </div>
+                        <div className="home-wizard-actions home-wizard-row">
+                          <button className="home-wizard-btn-back" onClick={handleWizardBack}><FiArrowLeft /> Back</button>
+                          <button className="home-wizard-btn-next" onClick={handleWizardNext}>Next <FiArrowRight /></button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Step 5: Service */}
+                    {wizardStep === 5 && (
+                      <div className="home-wizard-step fade-in-up">
+                        <label className="home-wizard-label">What service are you interested in?</label>
+                        <div className="home-wizard-cards-grid home-wizard-cards-2col">
+                          {programsList.map((srv, idx) => (
+                            <div key={srv.label}
+                              className={`home-wizard-card ${wizardData.selectedProgram === srv.label ? 'selected' : ''}`}
+                              onClick={() => handleProgramPick(srv.label)}
+                              style={{ animationDelay: `${idx * 0.05}s` }}
+                            >
+                              <div className="home-wizard-card-icon">{srv.icon}</div>
+                              <div><h4>{srv.label}</h4><p>{srv.desc}</p></div>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="home-wizard-actions home-wizard-row">
+                          <button className="home-wizard-btn-back" onClick={handleWizardBack}><FiArrowLeft /> Back</button>
+                          <button className="home-wizard-btn-next" onClick={handleWizardNext} disabled={!wizardData.selectedProgram}>Next <FiArrowRight /></button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Step 6: Contact Info */}
+                    {wizardStep === 6 && (
+                      <form onSubmit={handleWizardSubmit} className="home-wizard-step fade-in-up">
+                        <label className="home-wizard-label">Almost done! How can we reach you?</label>
+                        <div className="home-wizard-field">
+                          <label>Email Address</label>
+                          <input type="email" name="email" placeholder="name@example.com" value={wizardData.email}
+                            onChange={handleWizardChange} className="home-wizard-input" required />
+                        </div>
+                        <div className="home-wizard-field">
+                          <label>Phone Number</label>
+                          <div style={{ display: 'flex', gap: '10px' }}>
+                            <select name="countryCode" value={wizardData.countryCode} onChange={handleWizardChange}
+                              className="home-wizard-select" style={{ width: '120px' }}>
+                              <option value="+91">+91 (IN)</option>
+                              <option value="+1">+1 (US)</option>
+                              <option value="+44">+44 (UK)</option>
+                              <option value="+61">+61 (AU)</option>
+                              <option value="+65">+65 (SG)</option>
+                            </select>
+                            <input type="tel" name="phone" placeholder="00000 00000" value={wizardData.phone}
+                              onChange={handleWizardChange} className="home-wizard-input" style={{ flex: 1 }} required />
+                          </div>
+                        </div>
+                        <div className="home-wizard-actions home-wizard-row">
+                          <button type="button" className="home-wizard-btn-back" onClick={handleWizardBack} disabled={isSubmitting}><FiArrowLeft /> Back</button>
+                          <button type="submit" className="home-wizard-btn-submit"
+                            disabled={isSubmitting || !wizardData.email.trim() || !wizardData.phone.trim()}>
+                            {isSubmitting ? 'Sending…' : 'Submit Inquiry'}
+                          </button>
+                        </div>
+                      </form>
+                    )}
+                  </div>
+                ) : (
+                  <div className="home-wizard-success fade-in">
+                    <FiCheckCircle size={60} className="home-wizard-success-icon" />
+                    <h3>Inquiry Submitted!</h3>
+                    <p>Thank you, <strong>{wizardData.name.split(' ')[0]}</strong>. Our counselors will reach out to you shortly.</p>
+                    <button className="home-wizard-btn-next" onClick={resetWizard} style={{ marginTop: '20px' }}>Submit Another</button>
+                  </div>
+                )}
               </div>
             </div>
-            <div className="cta-form-box">
-              <LeadForm source="Home Page CTA" variant="dark" />
+
+            {/* Right Side: Dynamic Mentorship Passport / Boarding Pass */}
+            <div className="home-cta-right" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+              <div className={`cta-boarding-pass${isAnimating ? ' pass-tearing' : ''}`}>
+                {/* Main Ticket Area */}
+                <div className="pass-main">
+                  <div className="pass-header-row">
+                    <div className="pass-airline">NPATHWAYS AIRLINES</div>
+                    <div className="pass-class-badge">FIRST CLASS</div>
+                  </div>
+
+                  <div className="pass-route-row">
+                    <div className="route-airport">
+                      <span className="airport-code">BOM</span>
+                      <span className="airport-city">MUMBAI</span>
+                    </div>
+                    <div className="route-flight-symbol">
+                      <span className="plane-icon">✈</span>
+                      <span className="flight-number">NP-2026</span>
+                    </div>
+                    <div className="route-airport dest">
+                      <span className="airport-code">
+                        {wizardData.selectedProgram
+                          ? (wizardData.selectedProgram.includes("USA") ? "USA"
+                            : wizardData.selectedProgram.includes("UK") ? "LHR"
+                              : wizardData.selectedProgram.includes("Canada") ? "YYZ"
+                                : wizardData.selectedProgram.includes("Australia") ? "SYD"
+                                  : "ABR")
+                          : "ABR"}
+                      </span>
+                      <span className="airport-city">
+                        {wizardData.selectedProgram
+                          ? (wizardData.selectedProgram.includes("USA") ? "UNITED STATES"
+                            : wizardData.selectedProgram.includes("UK") ? "LONDON"
+                              : wizardData.selectedProgram.includes("Canada") ? "TORONTO"
+                                : wizardData.selectedProgram.includes("Australia") ? "SYDNEY"
+                                  : "ABROAD")
+                          : "ABROAD"}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="pass-details-grid">
+                    <div className="pass-detail-item span-two">
+                      <span className="detail-label">PASSENGER NAME</span>
+                      <span className="detail-value highlight">{wizardData.name || "Awaiting Name..."}</span>
+                    </div>
+                    <div className="pass-detail-item">
+                      <span className="detail-label">CATEGORY</span>
+                      <span className="detail-value">{wizardData.category || "---"}</span>
+                    </div>
+                    <div className="pass-detail-item">
+                      <span className="detail-label">ACADEMIC YEAR</span>
+                      <span className="detail-value">{wizardData.grade || "---"} {wizardData.passoutYear ? `(${wizardData.passoutYear})` : ""}</span>
+                    </div>
+                    <div className="pass-detail-item span-two">
+                      <span className="detail-label">TARGET EXAM</span>
+                      <span className="detail-value">{wizardData.examType ? `${wizardData.examType} (${wizardData.examStatus || 'Planning'})` : "None"}</span>
+                    </div>
+                    <div className="pass-detail-item span-two">
+                      <span className="detail-label">INTEREST / PROGRAM</span>
+                      <span className="detail-value highlight-gold">{wizardData.selectedProgram || "---"}</span>
+                    </div>
+                    <div className="pass-detail-item">
+                      <span className="detail-label">FLIGHT / SEAT</span>
+                      <span className="detail-value">NP-2026 / 1A</span>
+                    </div>
+                    <div className="pass-detail-item">
+                      <span className="detail-label">GATE / BOARDING</span>
+                      <span className="detail-value gold">IKIGAI / NOW</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Perforation Line and Notches */}
+                <div className="pass-perforation">
+                  <div className="notch-top"></div>
+                  <div className="perforation-dashed"></div>
+                  <div className="notch-bottom"></div>
+                </div>
+
+                {/* Stub Area (Receipt) */}
+                <div className="pass-stub">
+                  <div className="stub-header">
+                    <span className="stub-title">STUB RECEIPT</span>
+                  </div>
+                  <div className="stub-body">
+                    <div className="stub-field">
+                      <span className="stub-label">PASSENGER</span>
+                      <span className="stub-value highlight-stub">{wizardData.name ? wizardData.name.split(' ')[0] : "EXPLORER"}</span>
+                    </div>
+                    <div className="stub-field">
+                      <span className="stub-label">ROUTE</span>
+                      <span className="stub-value">
+                        BOM ➔ {wizardData.selectedProgram
+                          ? (wizardData.selectedProgram.includes("USA") ? "USA"
+                            : wizardData.selectedProgram.includes("UK") ? "LHR"
+                              : wizardData.selectedProgram.includes("Canada") ? "YYZ"
+                                : wizardData.selectedProgram.includes("Australia") ? "SYD"
+                                  : "ABR")
+                          : "ABR"}
+                      </span>
+                    </div>
+                    <div className="stub-field">
+                      <span className="stub-label">CLASS</span>
+                      <span className="stub-value gold">PREMIUM</span>
+                    </div>
+                  </div>
+                  <div className="stub-footer">
+                    <div className="passport-barcode">
+                      <div className="barcode-line select-1"></div>
+                      <div className="barcode-line select-2"></div>
+                      <div className="barcode-line select-3"></div>
+                      <div className="barcode-line select-4"></div>
+                      <div className="barcode-line select-1"></div>
+                      <div className="barcode-line select-5"></div>
+                      <div className="barcode-line select-2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Plane animation overlay – lives inside the boarding pass column */}
+              {isAnimating && (
+                <div className="pass-plane-overlay">
+                  <div className="anim-plane-wrapper">
+                    <span className="anim-plane">✈</span>
+                    <div className="anim-exhaust"></div>
+                  </div>
+                  <p className="anim-text">Boarding your inquiry...</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -113,15 +113,15 @@
   
   /* ==================== BORDERS ==================== */
   
-  /* Border Radius */
-  --radius-sm: 2px;
-  --radius-md: 2px;
-  --radius-lg: 2px;
-  --radius-xl: 2px;
-  --radius-2xl: 2px;
-  --radius-3xl: 2px;
-  --radius-pill: 2px;
-  --radius-full: 9999px;
+  /* Border Radius — Unified Card-Consistent Scale */
+  --radius-sm:   8px;   /* Badges, tags, small chips */
+  --radius-md:   12px;  /* Inputs, selects, small cards */
+  --radius-lg:   16px;  /* Buttons, dropdowns */
+  --radius-xl:   20px;  /* Standard cards (primary card radius) */
+  --radius-2xl:  24px;  /* Large cards, wizard boxes */
+  --radius-3xl:  28px;  /* Hero banners, feature panels */
+  --radius-pill: 100px; /* Pills, badges, FAB buttons */
+  --radius-full: 9999px; /* Perfect circles */
   
   /* Border Widths */
   --border-thin: 1px;
@@ -200,4 +200,48 @@
   
   --font-family: var(--font-body);
   --font-weight-normal: var(--font-weight-regular);
+}
+
+/* ============================================================
+   GLOBAL RADIUS NORMALIZATION
+   Enforces the card-consistent radius scale on all elements.
+   ============================================================ */
+
+/* Inputs, textareas, selects */
+input:not([type="radio"]):not([type="checkbox"]):not([type="range"]),
+textarea,
+select {
+  border-radius: var(--radius-md) !important;
+}
+
+/* All buttons */
+button,
+.btn,
+[class*="btn-"] {
+  border-radius: var(--radius-lg) !important;
+}
+
+/* Standard card component */
+.card,
+.card-elevated,
+.card-flat,
+.card-bordered {
+  border-radius: var(--radius-xl) !important;
+}
+
+/* Modals */
+.modal-content,
+.qe-modal {
+  border-radius: var(--radius-2xl) !important;
+}
+
+/* Quick Enquiry FAB pill stays as pill */
+.qe-fab {
+  border-radius: var(--radius-pill) !important;
+}
+
+/* Close button circles remain circles */
+.qe-close-btn,
+.modal-close-btn {
+  border-radius: var(--radius-full) !important;
 }
