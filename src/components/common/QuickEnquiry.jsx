@@ -80,7 +80,12 @@ const QuickEnquiry = () => {
         phone: formData.phone,
         selectedProgram: formData.service,
         source: 'Quick Enquiry Widget',
-        countryCode: '+91' // Default or allow them to enter it
+        countryCode: '+91', // Default or allow them to enter it
+        category: null,
+        grade: null,
+        passoutYear: null,
+        examType: null,
+        examStatus: null
       };
 
       const response = await fetch(`${baseUrl}/leads`, {
