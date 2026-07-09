@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { 
   FaCompass, 
   FaMapMarkedAlt, 
@@ -19,9 +19,21 @@ import "./HowItWorks.css";
 const HowItWorks = () => {
   const roadRef = useRef(null);
   const [planePosition, setPlanePosition] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (location.state && typeof location.state.activeStep === 'number') {
+      const stepIndex = location.state.activeStep;
+      setTimeout(() => {
+        const element = document.getElementById(`milestone-${stepIndex}`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          element.classList.add("is-visible");
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
 
     const handleScroll = () => {
       if (!roadRef.current) return;
@@ -155,6 +167,7 @@ const HowItWorks = () => {
             {steps.map((step, index) => (
               <div 
                 key={index} 
+                id={`milestone-${index}`}
                 className={`road-milestone ${index % 2 === 0 ? "left" : "right"}`}
               >
                 <div className="milestone-dot">
