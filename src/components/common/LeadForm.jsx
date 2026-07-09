@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import Button from "./Button";
 import "./LeadForm.css";
 
-const LeadForm = ({ source = "General", variant = "dark", onSuccess }) => {
+const LeadForm = ({ source = "General", variant = "dark", initialProgram = "", onSuccess, onClose }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     countryCode: "+91",
     phone: "",
-    selectedProgram: "",
+    selectedProgram: initialProgram,
     category: "",
     grade: "",
     passoutYear: "",
@@ -21,9 +21,11 @@ const LeadForm = ({ source = "General", variant = "dark", onSuccess }) => {
 
   const programs = [
     "Study Abroad",
+    "Test Preparation",
+    "Admissions Consulting",
     "Skills & Bootcamps",
     "Internships & Research",
-    "Career Guidance",
+    "Career Counseling",
     "Visa Assistance",
     "School Programs",
   ];
@@ -72,6 +74,9 @@ const LeadForm = ({ source = "General", variant = "dark", onSuccess }) => {
           examStatus: "",
         });
         if (onSuccess) onSuccess();
+        if (onClose) {
+          setTimeout(() => onClose(), 2000); // Close after 2s so user sees success message
+        }
       } else {
         const error = await response.json();
         throw new Error(error.message || "Failed to submit lead");

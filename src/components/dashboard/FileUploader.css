@@ -10,8 +10,8 @@
   max-width: 100%;
   text-align: center;
   position: relative;
-  background: rgba(10, 30, 63, 0.4);
-  border: 2px dashed rgba(191, 255, 153, 0.3);
+  background: var(--color-bg-secondary);
+  border: 2px dashed var(--color-gray-300);
   border-radius: var(--radius-2xl);
   display: flex;
   align-items: center;
@@ -21,8 +21,8 @@
 }
 
 .file-upload-form:hover {
-  background: rgba(10, 30, 63, 0.6);
-  border-color: rgba(191, 255, 153, 0.5);
+  background: var(--color-gray-100);
+  border-color: var(--color-gray-400);
 }
 
 .file-upload-form.drag-active {

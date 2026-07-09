@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { FiHome, FiUser, FiFolder, FiLogOut } from 'react-icons/fi';
 import './Sidebar.css';
 
 const Sidebar = ({ isOpen, onClose }) => {
@@ -13,10 +14,9 @@ const Sidebar = ({ isOpen, onClose }) => {
   };
 
   const menuItems = [
-    { path: '/dashboard', label: 'Overview', icon: '[O]', exact: true },
-    { path: '/dashboard/my-products', label: 'My Products', icon: '[P]' },
-    { path: '/dashboard/my-files', label: 'My Files', icon: '[F]' },
-    { path: '/dashboard/profile', label: 'Profile', icon: '[U]' },
+    { path: '/dashboard', label: 'Dashboard', icon: <FiHome />, exact: true },
+    { path: '/dashboard/profile', label: 'Profile', icon: <FiUser /> },
+    { path: '/dashboard/documents', label: 'Documents', icon: <FiFolder /> },
   ];
 
   return (
@@ -48,7 +48,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
         <div className="sidebar-footer">
           <button className="logout-btn" onClick={handleLogout}>
-            <span className="nav-icon">&gt;</span>
+            <span className="nav-icon"><FiLogOut /></span>
             <span className="nav-label">Logout</span>
           </button>
         </div>
