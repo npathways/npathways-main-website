@@ -311,3 +311,357 @@
     font-size: var(--font-size-xl);
   }
 }
+
+/* ============================================
+   Interactive Contact Wizard (Bigger & More Creative)
+   ============================================ */
+
+.contact-wizard-card {
+  width: 100% !important;
+  max-width: 760px !important;
+  padding: 40px !important;
+  border-radius: 20px !important;
+  box-shadow: var(--shadow-2xl) !important;
+  overflow: hidden;
+  background: var(--color-bg-card);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.wizard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.wizard-header {
+  margin-bottom: 30px;
+}
+
+.wizard-header h2 {
+  font-size: 2rem !important;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: 6px !important;
+}
+
+.wizard-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}
+
+/* Creative Progress Bar */
+.wizard-progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  position: relative;
+}
+
+.progress-step-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.progress-step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #64748b;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-step-number.active {
+  background: var(--color-brand-tertiary, #000);
+  border-color: var(--color-brand-tertiary, #000);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.progress-step-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.progress-step-container:has(.progress-step-number.active) .progress-step-label {
+  color: var(--color-text-primary);
+}
+
+.progress-step-line {
+  flex: 1;
+  height: 3px;
+  background: #cbd5e1;
+  margin: 0 12px;
+  transform: translateY(-13px);
+  transition: background-color 0.4s ease;
+  z-index: 1;
+}
+
+.progress-step-line.active {
+  background: var(--color-brand-tertiary, #000);
+}
+
+/* Steps */
+.wizard-steps {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wizard-step {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.wizard-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+/* Premium Inputs */
+.wizard-input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid var(--border-default);
+  border-radius: 12px;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-primary);
+  outline: none;
+  transition: all 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.wizard-input:focus {
+  border-color: var(--color-brand-tertiary, #000);
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Services Grid (More Creative Choice Cards) */
+.wizard-services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.wizard-service-card {
+  padding: 20px;
+  border: 2px solid var(--border-default);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.wizard-service-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.wizard-service-card:hover {
+  border-color: var(--color-brand-tertiary, #000);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.wizard-service-card:hover .wizard-service-icon {
+  background: var(--color-brand-tertiary, #000);
+  color: #fff;
+}
+
+.wizard-service-card.selected {
+  background: #fff;
+  border-color: var(--color-brand-tertiary, #000);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.wizard-service-card.selected::after {
+  opacity: 1;
+}
+
+.wizard-service-card.selected * {
+  color: #000 !important;
+}
+
+.wizard-service-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.wizard-service-info h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: var(--color-text-primary);
+}
+
+.wizard-service-info p {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+/* Actions */
+.wizard-actions {
+  margin-top: auto;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wizard-btn-next,
+.wizard-btn-submit {
+  padding: 14px 28px !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  border-radius: 8px !important;
+}
+
+.wizard-btn-back {
+  padding: 14px 24px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+}
+
+/* Success State */
+.wizard-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.wizard-success-icon-wrapper {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.wizard-success-icon {
+  color: #10b981;
+  animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.wizard-success h2 {
+  font-size: 2rem !important;
+  font-weight: 800;
+  margin-bottom: 12px !important;
+  color: var(--color-text-primary);
+}
+
+.wizard-success p {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 400px;
+  margin-bottom: 24px;
+}
+
+/* Animations */
+.fade-in-up {
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Grid */
+@media (max-width: 900px) {
+  .contact-info-row-premium {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .wizard-services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-wizard-card {
+    padding: 24px !important;
+  }
+  
+  .wizard-progress-bar {
+    margin: 10px 0;
+  }
+}
+
+.wizard-center-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.contact-info-row-premium {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
