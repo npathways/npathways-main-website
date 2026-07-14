@@ -48,7 +48,7 @@ const CareerGuidance = () => {
                 variant="premium"
                 size="large"
                 fullWidth
-                onClick={() => (window.location.href = "/contact")}
+                onClick={() => window.dispatchEvent(new Event('open-quick-enquiry'))}
               >
                 Talk to an Advisor
               </Button>
@@ -87,22 +87,6 @@ const CareerGuidance = () => {
             </section>
 
 
-            {/* Help Widget */}
-            <section className="help-cta-section mt-12">
-              <div className="help-cta-box">
-                <h3>Discover Your Potential</h3>
-                <p>
-                  Find the career path that aligns with your natural strengths and global goals.
-                </p>
-                <Button
-                  variant="premium"
-                  size="large"
-                  onClick={() => (window.location.href = "/contact")}
-                >
-                  Book Discovery Session
-                </Button>
-              </div>
-            </section>
           </main>
         </div>
       </div>

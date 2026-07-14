@@ -37,18 +37,6 @@ const Services = () => {
         "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070&auto=format&fit=crop",
       category: "Stakeholder Services",
     },
-    {
-      ...supportServices.find((s) => s.id === "bootcamps"),
-      image:
-        "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?q=80&w=2070&auto=format&fit=crop",
-      category: "Readiness Tools",
-    },
-    {
-      ...supportServices.find((s) => s.id === "school-programs"),
-      image:
-        "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop",
-      category: "Readiness Tools",
-    },
   ];
 
 
@@ -107,30 +95,37 @@ const Services = () => {
         </div>
       </section>
       
-      {/* Final CTA */}
-      <section className="section text-center py-24">
-        <div className="container">
-          <h2 className="text-3xl mb-6">Need a Personalized Strategy?</h2>
-          <p className="text-gray-600 mb-10 max-w-xl mx-auto">
-            Book a discovery session with our expert counselors to find the
-            right path for your unique profile.
-          </p>
-          <div className="cta-buttons">
-            <Button
-              variant="primary"
-              size="large"
-              onClick={() => (window.location.href = "/contact")}
-            >
-              Talk to an Advisor
-            </Button>
-            <Button
-              variant="outline"
-              size="large"
-              onClick={() => (window.location.href = "/services/bootcamps")}
-            >
-              Explore Bootcamps
-            </Button>
+      {/* Custom Creative CTA */}
+      <section className="services-cta-section" style={{ padding: "8rem 0", background: "#fbfbfb" }}>
+        <div className="container" style={{ maxWidth: "80%", width: "80%", margin: "0 auto", padding: "0" }}>
+          
+          <div className="services-creative-cta-card">
+            
+            {/* Glowing radar pulses behind text */}
+            <div className="cta-pulse-ring ring-1"></div>
+            <div className="cta-pulse-ring ring-2"></div>
+            <div className="cta-pulse-ring ring-3"></div>
+
+            <div className="cta-content-wrapper">
+              <span className="cta-tagline">Map Your Transition</span>
+              <h2 className="cta-title">Ready to Launch Your Global Journey?</h2>
+              <p className="cta-desc">
+                Skip the guesswork. Connect with our expert advisors to engineer a custom pathway tailored precisely to your background, profile, and ambitions.
+              </p>
+              
+              <div className="cta-button-wrap">
+                <button 
+                  onClick={() => window.dispatchEvent(new Event('open-quick-enquiry'))}
+                  className="cta-launch-button"
+                >
+                  <span className="btn-text">Begin Pathway Design</span>
+                  <span className="btn-arrow">✈</span>
+                </button>
+              </div>
+            </div>
+
           </div>
+
         </div>
       </section>
     </div>

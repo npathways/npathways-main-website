@@ -358,7 +358,7 @@ const Home = () => {
               Global Education Reimagined
             </span>
             <h1 className="hero-title-premium">
-              Find Your <br /> <span>Global Pathway</span>
+              Beyond Borders. <br /> <span>Into Purpose.</span>
             </h1>
             <p className="hero-desc-premium">
               Premium study abroad guidance from career discovery to
@@ -366,7 +366,7 @@ const Home = () => {
               you a future.
             </p>
             <div className="hero-actions-premium">
-              <Button variant="premium" onClick={() => navigate("/contact")}>
+              <Button variant="premium" onClick={() => window.dispatchEvent(new Event('open-quick-enquiry'))}>
                 Book Free Consultation
                 <svg
                   width="20"
@@ -627,7 +627,6 @@ const Home = () => {
                 <img src={dest.img} alt={dest.name} />
                 <div className="dest-overlay">
                   <h3>{dest.name}</h3>
-                  <Link to="/services">Explore Services →</Link>
                 </div>
               </div>
             ))}

@@ -44,7 +44,7 @@ const ForParents = () => {
                 variant="premium"
                 size="large"
                 fullWidth
-                onClick={() => (window.location.href = "/contact")}
+                onClick={() => window.dispatchEvent(new Event('open-quick-enquiry'))}
               >
                 Talk to an Advisor
               </Button>
@@ -85,22 +85,6 @@ const ForParents = () => {
 
             {/* Download Resources Section - Moved from Sidebar */}
 
-            {/* Help Widget - Moved from Sidebar */}
-            <section className="help-cta-section">
-              <div className="help-cta-box">
-                <h3>Need Help?</h3>
-                <p>
-                  Speak with our advisors to find the right path for your child.
-                </p>
-                <Button
-                  variant="premium"
-                  size="large"
-                  onClick={() => (window.location.href = "/contact")}
-                >
-                  Contact Us Now
-                </Button>
-              </div>
-            </section>
           </main>
         </div>
       </div>

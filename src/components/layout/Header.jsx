@@ -147,21 +147,17 @@ const Header = () => {
                       >
                         For Schools
                       </Link>
-                      <Link
-                        to="/services/bootcamps"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Bootcamps
-                      </Link>
-                      <Link
-                        to="/services/school-programs"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        School Programs
-                      </Link>
                     </div>
                   </div>
                 </div>
+
+                <Link
+                  to="/bootcamps-webinars"
+                  className="nav-link"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Bootcamps & Webinars
+                </Link>
 
                 <Link
                   to="/contact"

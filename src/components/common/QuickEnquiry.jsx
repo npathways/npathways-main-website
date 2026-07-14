@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './QuickEnquiry.css';
 import { FiMessageCircle, FiX, FiCheckCircle } from 'react-icons/fi';
 import toast from 'react-hot-toast';
@@ -12,6 +12,17 @@ const QuickEnquiry = () => {
     email: '',
     phone: ''
   });
+
+  useEffect(() => {
+    const handleTrigger = () => {
+      setIsOpen(true);
+      setStep(1);
+      setIsSuccess(false);
+      setFormData({ name: '', service: '', email: '', phone: '' });
+    };
+    window.addEventListener('open-quick-enquiry', handleTrigger);
+    return () => window.removeEventListener('open-quick-enquiry', handleTrigger);
+  }, []);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 

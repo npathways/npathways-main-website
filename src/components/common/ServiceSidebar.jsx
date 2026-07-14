@@ -4,7 +4,7 @@ import { consultancyServices, supportServices } from "../../data/services";
 
 const ServiceSidebar = () => {
   const location = useLocation();
-  const allServices = [...consultancyServices, ...supportServices];
+  const allServices = [...consultancyServices, ...supportServices].filter(s => s.id !== 'bootcamps' && s.id !== 'school-programs');
 
   return (
     <aside className="service-sidebar">
