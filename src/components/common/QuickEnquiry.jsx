@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './QuickEnquiry.css';
 import { FiMessageCircle, FiX, FiCheckCircle } from 'react-icons/fi';
 import toast from 'react-hot-toast';
@@ -12,6 +12,17 @@ const QuickEnquiry = () => {
     email: '',
     phone: ''
   });
+
+  useEffect(() => {
+    const handleTrigger = () => {
+      setIsOpen(true);
+      setStep(1);
+      setIsSuccess(false);
+      setFormData({ name: '', service: '', email: '', phone: '' });
+    };
+    window.addEventListener('open-quick-enquiry', handleTrigger);
+    return () => window.removeEventListener('open-quick-enquiry', handleTrigger);
+  }, []);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -80,7 +91,12 @@ const QuickEnquiry = () => {
         phone: formData.phone,
         selectedProgram: formData.service,
         source: 'Quick Enquiry Widget',
-        countryCode: '+91' // Default or allow them to enter it
+        countryCode: '+91', // Default or allow them to enter it
+        category: null,
+        grade: null,
+        passoutYear: null,
+        examType: null,
+        examStatus: null
       };
 
       const response = await fetch(`${baseUrl}/leads`, {

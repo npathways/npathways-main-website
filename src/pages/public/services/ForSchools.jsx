@@ -44,7 +44,7 @@ const ForSchools = () => {
                 variant="premium"
                 size="large"
                 fullWidth
-                onClick={() => (window.location.href = "/contact")}
+                onClick={() => window.dispatchEvent(new Event('open-quick-enquiry'))}
               >
                 Talk to an Advisor
               </Button>
@@ -85,22 +85,6 @@ const ForSchools = () => {
 
             {/* Partnership Docs Section - Moved from Sidebar */}
 
-            {/* Institutional Relations CTA - Moved from Sidebar */}
-            <section className="help-cta-section">
-              <div className="help-cta-box">
-                <h3>Institutional Relations</h3>
-                <p>
-                  Connect with our team to start a partnership with your school.
-                </p>
-                <Button
-                  variant="premium"
-                  size="large"
-                  onClick={() => (window.location.href = "/contact")}
-                >
-                  Inquire Now
-                </Button>
-              </div>
-            </section>
           </main>
         </div>
       </div>

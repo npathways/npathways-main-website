@@ -48,7 +48,7 @@ const VisaAssistance = () => {
                 variant="premium"
                 size="large"
                 fullWidth
-                onClick={() => (window.location.href = "/contact")}
+                onClick={() => window.dispatchEvent(new Event('open-quick-enquiry'))}
               >
                 Talk to an Advisor
               </Button>
@@ -87,22 +87,6 @@ const VisaAssistance = () => {
             </section>
 
 
-            {/* Help Widget */}
-            <section className="help-cta-section mt-12">
-              <div className="help-cta-box">
-                <h3>Ready to File?</h3>
-                <p>
-                  Ensure your visa application is perfect with our expert review.
-                </p>
-                <Button
-                  variant="premium"
-                  size="large"
-                  onClick={() => (window.location.href = "/contact")}
-                >
-                  Get Visa Support
-                </Button>
-              </div>
-            </section>
           </main>
         </div>
       </div>

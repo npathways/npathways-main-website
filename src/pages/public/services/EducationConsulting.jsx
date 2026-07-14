@@ -48,7 +48,7 @@ const EducationConsulting = () => {
                 variant="premium"
                 size="large"
                 fullWidth
-                onClick={() => (window.location.href = "/contact")}
+                onClick={() => window.dispatchEvent(new Event('open-quick-enquiry'))}
               >
                 Talk to an Advisor
               </Button>
@@ -87,22 +87,6 @@ const EducationConsulting = () => {
             </section>
 
 
-            {/* Help Widget */}
-            <section className="help-cta-section mt-12">
-              <div className="help-cta-box">
-                <h3>Start Your Global Journey</h3>
-                <p>
-                  Speak with our senior consultants to map out your application strategy.
-                </p>
-                <Button
-                  variant="premium"
-                  size="large"
-                  onClick={() => (window.location.href = "/contact")}
-                >
-                  Book Free Consultation
-                </Button>
-              </div>
-            </section>
           </main>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./AboutGeneral.css";
+import founderImg from "../../../assets/founder.jpeg";
 
 const Founder = () => {
   useEffect(() => {
@@ -36,7 +37,7 @@ const Founder = () => {
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
+                  src={founderImg}
                   alt="Founder"
                   className="grayscale-image contrast-high"
                   style={{
@@ -230,9 +231,14 @@ const Founder = () => {
             Book a specialized premium consultation session for deep career
             mapping.
           </p>
-          <Link to="/contact" className="about-btn-premium">
+          <a
+            href="https://www.linkedin.com/in/coachdeepakrajaa/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="about-btn-premium"
+          >
             Connect with Founder
-          </Link>
+          </a>
         </div>
       </section>
     </div>
