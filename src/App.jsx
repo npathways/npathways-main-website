@@ -25,6 +25,7 @@ const Contact = lazy(() => import("./pages/public/Contact"));
 const Founder = lazy(() => import("./pages/public/about/Founder"));
 const HowItWorks = lazy(() => import("./pages/public/about/HowItWorks"));
 const BootcampsWebinars = lazy(() => import("./pages/public/BootcampsWebinars"));
+const DestinationDetail = lazy(() => import("./pages/public/DestinationDetail"));
 
 // E-Commerce Pages
 const BootcampList = lazy(() => import("./pages/public/services/BootcampCalendar"));
@@ -99,6 +100,7 @@ function App() {
             <Route path="/bootcamps-webinars" element={<BootcampsWebinars />} />
             <Route path="/services/school-programs" element={<SchoolPrograms />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/destinations/:id" element={<DestinationDetail />} />
             <Route path="/services/bootcamp-calendar" element={<BootcampList />} />
             <Route path="/products" element={<Navigate to="/services" replace />} />
             <Route path="/products/*" element={<Navigate to="/services" replace />} />
