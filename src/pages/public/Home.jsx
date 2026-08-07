@@ -711,10 +711,10 @@ const Home = () => {
               Global Education Reimagined
             </span>
             <h1 className="hero-title-premium">
-              Beyond Borders. <br /> <span>Into Purpose.</span>
+              NPathways Global <br /> <span>Beyond Borders. Into Purpose.</span>
             </h1>
             <p className="hero-desc-premium">
-              Premium study abroad guidance from career discovery to
+              Welcome to <strong>NPathways</strong> — premium study abroad guidance from career discovery to
               post-arrival support. We don't just find you a university; we find
               you a future.
             </p>
