@@ -154,7 +154,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Leadership Section */}
+      {/* Leadership Section - Hidden for now */}
+      {/*
       <section style={{ padding: "8rem 0" }}>
         <div className="about-container">
           <div className="about-section-header">
@@ -224,6 +225,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* Partners Banner */}
       <section

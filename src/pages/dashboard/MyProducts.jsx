@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/common/Button';
 import Card from '../../components/common/Card';
 import { products } from '../../data/products';
 
 const MyProducts = () => {
+  const navigate = useNavigate();
   // Mock purchased products (first two products)
   const purchasedProducts = products.slice(0, 2);
 

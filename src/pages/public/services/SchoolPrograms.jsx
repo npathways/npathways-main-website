@@ -44,7 +44,7 @@ const SchoolPrograms = () => {
                 variant="premium"
                 size="large"
                 fullWidth
-                onClick={() => (window.location.href = "/contact")}
+                onClick={() => window.dispatchEvent(new Event('open-quick-enquiry'))}
               >
                 Talk to an Advisor
               </Button>
@@ -85,20 +85,6 @@ const SchoolPrograms = () => {
 
             {/* Program Catalog Section - Moved from Sidebar */}
 
-            {/* Start Your Program CTA - Moved from Sidebar */}
-            <section className="help-cta-section">
-              <div className="help-cta-box">
-                <h3>Start Your Program</h3>
-                <p>Programs designed to fit into your academic calendar.</p>
-                <Button
-                  variant="premium"
-                  size="large"
-                  onClick={() => (window.location.href = "/products/programs")}
-                >
-                  View Active Programs
-                </Button>
-              </div>
-            </section>
           </main>
         </div>
       </div>

@@ -169,7 +169,7 @@ export const supportServices = [
       { question: 'Are bootcamps online or offline?', answer: 'We offer both hybrid and fully online bootcamps to suit global schedules.' },
       { question: 'Will I get a certificate?', answer: 'Yes, all successful graduates receive a globally recognized NPathways certificate.' }
     ],
-    link: '/services/bootcamps'
+    link: '/bootcamps-webinars'
   },
   {
     id: 'school-programs',
