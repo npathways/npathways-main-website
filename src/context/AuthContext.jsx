@@ -27,12 +27,18 @@ export const AuthProvider = ({ children }) => {
         body: JSON.stringify({ email, password }),
       });
 
-      const data = await response.json();
+      let data = {};
+      let isJson = true;
+      try {
+        data = await response.json();
+      } catch (_) {
+        isJson = false;
+      }
 
       if (!response.ok) {
-        const errorMsg = data.issues && data.issues.length > 0 
+        const errorMsg = isJson && data.issues && data.issues.length > 0 
           ? data.issues[0].message 
-          : data.message || 'Invalid email or password';
+          : isJson ? (data.message || 'Invalid email or password') : 'Server returned an invalid response. Please try again.';
         throw new Error(errorMsg);
       }
 
@@ -55,12 +61,18 @@ export const AuthProvider = ({ children }) => {
         body: JSON.stringify({ name, email, password }),
       });
 
-      const data = await response.json();
+      let data = {};
+      let isJson = true;
+      try {
+        data = await response.json();
+      } catch (_) {
+        isJson = false;
+      }
 
       if (!response.ok) {
-        const errorMsg = data.issues && data.issues.length > 0 
+        const errorMsg = isJson && data.issues && data.issues.length > 0 
           ? data.issues[0].message 
-          : data.message || 'Registration failed';
+          : isJson ? (data.message || 'Registration failed') : 'Server returned an invalid response. Please try again.';
         throw new Error(errorMsg);
       }
 

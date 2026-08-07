@@ -379,6 +379,37 @@
   border-color: var(--color-brand-tertiary);
 }
 
+.dest-card-interactive {
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+}
+
+.dest-card-interactive:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dest-guide-hint {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(253, 186, 49, 0.2);
+  border: 1px solid var(--color-brand-tertiary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.dest-card-interactive:hover .dest-guide-hint {
+  opacity: 1;
+  background: var(--color-brand-tertiary);
+  color: #000000;
+}
+
 /* --- Partners Slider --- */
 .partners-slider-section {
   padding: 6rem 0;
@@ -3040,4 +3071,167 @@
   .home-cta-heading {
     font-size: 1.75rem;
   }
+}
+
+/* ==================== GLOBE WIDGET ==================== */
+.dest-card.globe-card {
+  grid-column: span 2;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  display: block;
+}
+
+.globe-widget-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+  gap: 2rem;
+}
+
+.globe-circle-wrap {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+}
+
+.globe-canvas {
+  width: 180px;
+  height: 180px;
+  display: block;
+}
+
+.globe-widget-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.globe-widget-details h4 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-brand-tertiary, #FDBA31);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.globe-widget-details p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.globe-search-form {
+  display: flex;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  padding: 0.2rem;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.globe-search-form:focus-within {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-brand-tertiary, #FDBA31);
+  box-shadow: 0 0 12px rgba(253, 186, 49, 0.2);
+}
+
+.globe-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.6rem 1.2rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+.globe-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.globe-search-submit {
+  width: 36px;
+  height: 36px;
+  background: var(--color-brand-tertiary, #FDBA31);
+  color: #000000;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.globe-search-submit:hover {
+  transform: scale(1.08) rotate(15deg);
+}
+
+@media (max-width: 991px) {
+  .dest-card.globe-card {
+    grid-column: span 4;
+  }
+}
+
+@media (max-width: 768px) {
+  .globe-widget-card {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+    text-align: center;
+  }
+  .globe-circle-wrap {
+    width: 120px;
+    height: 120px;
+  }
+  .globe-canvas {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Autocomplete Suggestions - Horizontal Pills */
+.globe-suggestions-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  width: 100%;
+}
+
+.globe-suggestion-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.globe-suggestion-pill:hover {
+  background: var(--color-brand-tertiary, #FDBA31);
+  border-color: var(--color-brand-tertiary, #FDBA31);
+  color: #000000;
+  transform: translateY(-1px);
 }

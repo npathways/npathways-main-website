@@ -10,14 +10,11 @@ const LeadForm = ({ source = "General", variant = "dark", initialProgram = "", o
     phone: "",
     selectedProgram: initialProgram,
     category: "",
-    grade: "",
-    passoutYear: "",
-    examType: "",
-    examStatus: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [message, setMessage] = useState({ type: "", text: "" });
+  const [formAlert, setFormAlert] = useState({ type: "", text: "" });
 
   const programs = [
     "Study Abroad",
@@ -30,24 +27,20 @@ const LeadForm = ({ source = "General", variant = "dark", initialProgram = "", o
     "School Programs",
   ];
 
-  const exams = ["CAT", "GMAT", "GRE", "XAT", "NMAT", "SNAP", "Other"];
-  const statuses = ["Applied", "Yet to Apply", "Planning to Apply"];
-  const categories = ["Parent", "Student", "Working Professional"];
+  const categories = ["Parent", "Student", "Working Professional", "Just Looking Around"];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-      // Reset grade if category changes and is not student/parent
-      ...(name === "category" && value === "Working Professional" ? { grade: "" } : {}),
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setMessage({ type: "", text: "" });
+    setFormAlert({ type: "", text: "" });
 
     try {
       const baseUrl = import.meta.env.VITE_API_BASE_URL || "/api";
@@ -60,7 +53,7 @@ const LeadForm = ({ source = "General", variant = "dark", initialProgram = "", o
       });
 
       if (response.ok) {
-        setMessage({ type: "success", text: "Thank you! Our team will contact you shortly." });
+        setFormAlert({ type: "success", text: "Thank you! Our team will contact you shortly." });
         setFormData({
           name: "",
           email: "",
@@ -68,22 +61,23 @@ const LeadForm = ({ source = "General", variant = "dark", initialProgram = "", o
           phone: "",
           selectedProgram: "",
           category: "",
-          grade: "",
-          passoutYear: "",
-          examType: "",
-          examStatus: "",
+          message: "",
         });
         if (onSuccess) onSuccess();
         if (onClose) {
           setTimeout(() => onClose(), 2000); // Close after 2s so user sees success message
         }
       } else {
-        const error = await response.json();
-        throw new Error(error.message || "Failed to submit lead");
+        let errorMessage = "Failed to submit lead";
+        try {
+          const errorData = await response.json();
+          errorMessage = errorData.message || errorMessage;
+        } catch (_) {}
+        throw new Error(errorMessage);
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      setMessage({ type: "error", text: "Something went wrong. Please try again later." });
+      setFormAlert({ type: "error", text: error.message || "Something went wrong. Please try again later." });
     } finally {
       setIsSubmitting(false);
     }
@@ -91,9 +85,9 @@ const LeadForm = ({ source = "General", variant = "dark", initialProgram = "", o
 
   return (
     <div className={`lead-form-container ${variant}`}>
-      {message.text && (
-        <div className={`form-message ${message.type}`}>
-          {message.text}
+      {formAlert.text && (
+        <div className={`form-message ${formAlert.type}`}>
+          {formAlert.text}
         </div>
       )}
       <form onSubmit={handleSubmit} className="modern-lead-form">
@@ -168,7 +162,7 @@ const LeadForm = ({ source = "General", variant = "dark", initialProgram = "", o
             </select>
           </div>
 
-          {/* I am a... (Category) */}
+          {/* I am a... (Category/Occupation) */}
           <div className="form-field">
             <label>I am a...</label>
             <select
@@ -177,71 +171,34 @@ const LeadForm = ({ source = "General", variant = "dark", initialProgram = "", o
               onChange={handleChange}
               required
             >
-              <option value="" disabled>Select Category</option>
+              <option value="" disabled>Select Occupation</option>
               {categories.map((c) => (
                 <option key={c} value={c}>{c}</option>
               ))}
             </select>
           </div>
 
-          {/* Conditional: Current Grade / College Year */}
-          {(formData.category === "Student" || formData.category === "Parent") && (
-            <div className="form-field">
-              <label>Current Grade / College Year</label>
-              <input
-                type="text"
-                name="grade"
-                placeholder="e.g. 12th Grade, 3rd Year"
-                value={formData.grade}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          )}
-
-          {/* Year of Passout */}
-          <div className="form-field">
-            <label>Year of Passout</label>
-            <input
-              type="text"
-              name="passoutYear"
-              placeholder="e.g. 2025"
-              value={formData.passoutYear}
+          {/* Custom Query Message */}
+          <div className="form-field full-width">
+            <label>Any Query or Message? (Optional)</label>
+            <textarea
+              name="message"
+              placeholder="Tell us what you're looking for or share any specific questions..."
+              value={formData.message}
               onChange={handleChange}
-              required
+              rows={3}
+              style={{
+                width: "100%",
+                padding: "0.75rem",
+                borderRadius: "6px",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
+                backgroundColor: "rgba(255, 255, 255, 0.05)",
+                color: "#fff",
+                fontFamily: "inherit",
+                fontSize: "0.95rem",
+                resize: "vertical"
+              }}
             />
-          </div>
-
-          {/* Target Entrance Exam */}
-          <div className="form-field">
-            <label>Target Entrance Exam</label>
-            <select
-              name="examType"
-              value={formData.examType}
-              onChange={handleChange}
-              required
-            >
-              <option value="" disabled>Select Exam</option>
-              {exams.map((e) => (
-                <option key={e} value={e}>{e}</option>
-              ))}
-            </select>
-          </div>
-
-          {/* Application Status */}
-          <div className="form-field">
-            <label>Application Status</label>
-            <select
-              name="examStatus"
-              value={formData.examStatus}
-              onChange={handleChange}
-              required
-            >
-              <option value="" disabled>Select Status</option>
-              {statuses.map((s) => (
-                <option key={s} value={s}>{s}</option>
-              ))}
-            </select>
           </div>
         </div>
 
