@@ -8,7 +8,7 @@
   color: #ffffff;
   position: relative;
   overflow: hidden;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
 }
 
 .not-found-content {

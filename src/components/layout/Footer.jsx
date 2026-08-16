@@ -13,8 +13,7 @@ const Footer = () => {
               <img src={logo} alt="NPathways Logo" style={{ height: "60px" }} />
             </Link>
             <p className="footer-description">
-              Empowering Global Ambitions. We guide students at every stage of
-              their study abroad journey.
+              nPathways guides you from clarity to capability. Discover your purpose through Ikigai, listen deeply with Kiku, and grow step-by-step through Kaizen, whether your pathway leads locally or abroad.
             </p>
             <div className="social-links">
               <a
@@ -104,24 +103,7 @@ const Footer = () => {
                   <path d="M10 14c.5.5 1.5.5 2 0s.5-1.5 0-2-1.5-.5-2 0" />
                 </svg>
               </a>
-              <a
-                href="/"
-                className="social-link"
-                aria-label="Facebook"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
-              </a>
+
             </div>
           </div>
 
@@ -165,19 +147,28 @@ const Footer = () => {
 
           {/* Services */}
           <div className="footer-column">
-            <h4>Our Services</h4>
+            <h4>Our Pathways</h4>
             <ul className="footer-links">
               <li>
-                <Link to="/services/education-consulting">Education Consulting</Link>
+                <Link to="/services/education-consulting">Academic Pathways</Link>
               </li>
               <li>
-                <Link to="/services/career-guidance">Career Guidance</Link>
+                <Link to="/services/career-guidance">Career Pathways</Link>
               </li>
               <li>
-                <Link to="/services/visa-assistance">Visa Assistance</Link>
+                <Link to="/services/curricular-based-pathways">Curricular-Based Pathways</Link>
               </li>
               <li>
-                <Link to="/bootcamps-webinars">Bootcamps & Webinars</Link>
+                <Link to="/services/pathway-programs">Pathway Programs (Bridge Courses)</Link>
+              </li>
+              <li>
+                <Link to="/services/competitive-exam-strategy">Competitive Exam Pathways</Link>
+              </li>
+              <li>
+                <Link to="/bootcamps-webinars">Skill & Bootcamp Pathways</Link>
+              </li>
+              <li>
+                <Link to="/services/study-abroad-pathway">Study Abroad Pathway</Link>
               </li>
             </ul>
           </div>

@@ -1,19 +1,14 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { consultancyServices, supportServices } from "../../../data/services";
+import React from "react";
+import { Link } from "react-router-dom";
+import { consultancyServices } from "../../../data/services";
 import Button from "../../../components/common/Button";
 import PathwayTopNav from "../../../components/services/PathwayTopNav";
 import "./ServiceDetails.css";
 
-const CareerGuidance = () => {
-  const service = consultancyServices.find((s) => s.id === "career-guidance");
-  const location = useLocation();
+const CompetitiveExamStrategy = () => {
+  const service = consultancyServices.find((s) => s.id === "competitive-exam-strategy");
 
   if (!service) return null;
-
-
-  // Combine services for sidebar
-  const allServices = [...consultancyServices, ...supportServices];
 
   return (
     <div className="service-detail-page fade-in">
@@ -39,8 +34,8 @@ const CareerGuidance = () => {
           {/* Fixed Image Panel */}
           <div className="service-image-panel">
             <img
-              src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop"
-              alt="Career Guidance"
+              src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop"
+              alt="Competitive Exam Strategy"
               className="grayscale"
             />
             <div className="image-panel-cta">
@@ -50,7 +45,7 @@ const CareerGuidance = () => {
                 fullWidth
                 onClick={() => window.dispatchEvent(new Event('open-quick-enquiry'))}
               >
-                Talk to an Advisor
+                Talk to a Strategist
               </Button>
             </div>
           </div>
@@ -63,7 +58,7 @@ const CareerGuidance = () => {
                 {service.longDescription}
               </p>
 
-              <h3>Guidance Highlights</h3>
+              <h3>Strategy Features</h3>
               <ul className="check-list space-y-4 mb-10">
                 {service.features.map((f, i) => (
                   <li key={i} className="flex gap-3 items-start">
@@ -89,8 +84,6 @@ const CareerGuidance = () => {
                 ))}
               </div>
             </section>
-
-
           </main>
         </div>
       </div>
@@ -98,4 +91,4 @@ const CareerGuidance = () => {
   );
 };
 
-export default CareerGuidance;
+export default CompetitiveExamStrategy;

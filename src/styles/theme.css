@@ -15,9 +15,9 @@
   --color-brand-secondary-dark: #000000;
   --color-brand-secondary-light: #333333;
   
-  --color-brand-tertiary: #FDBA31;        /* Golden Yellow */
+  --color-brand-tertiary: #e0a52b;        /* Deep Gold */
   --color-brand-tertiary-dark: #e0a52b;
-  --color-brand-tertiary-light: #fed170;
+  --color-brand-tertiary-light: #f6cf7d;
   
   /* Background Colors */
   --color-bg-primary: #FFFFFF;            /* White */
@@ -48,12 +48,12 @@
   /* Semantic Colors */
   --color-success: #10B981;
   --color-error: #EF4444;
-  --color-warning: #FDBA31;
+  --color-warning: #e0a52b;
   --color-info: #f7f7f7;
   
   /* Accent Colors */
   --color-accent-blue: #ffffff;
-  --color-accent-yellow: #FDBA31;
+  --color-accent-yellow: #e0a52b;
   
   /* ==================== EFFECTS & OVERLAYS ==================== */
   
@@ -69,8 +69,8 @@
   /* ==================== TYPOGRAPHY ==================== */
   
   /* Font Families */
-  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-heading: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-body: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   
   /* Font Sizes */
   --font-size-xs: 0.75rem;      /* 12px */

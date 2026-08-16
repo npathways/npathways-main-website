@@ -64,7 +64,7 @@ const Header = () => {
                 </Link>
 
                 <div
-                  className={`nav-dropdown ${
+                  className={`nav-dropdown mega-dropdown-wrapper ${
                     activeDropdown === "about" ? "active" : ""
                   }`}
                 >
@@ -75,30 +75,69 @@ const Header = () => {
                   >
                     About <FiChevronDown className="chevron" />
                   </Link>
-                  <div className="dropdown-menu">
-                    <div className="dropdown-category">
-                      <span className="category-label">Company</span>
-                      <Link to="/about" onClick={() => setIsMenuOpen(false)}>
-                        Overview
-                      </Link>
-                      <Link
-                        to="/about/founder"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        About Founder
-                      </Link>
-                      <Link
-                        to="/about/how-it-works"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        How It Works
-                      </Link>
+                  <div className="dropdown-menu cols-1">
+                    <div className="dropdown-container">
+                      {/* Column 1: Explore Callout (Apple-style) */}
+                      <div className="dropdown-col-explore">
+                        <span className="explore-label">Explore About</span>
+                        <h3>Who We <br />Are</h3>
+                        <Link
+                          to="/about"
+                          className="explore-link"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Read Our Story <span>→</span>
+                        </Link>
+                      </div>
+
+                      {/* Column 2: Company */}
+                      <div className="dropdown-category">
+                        <span className="category-label">Company</span>
+                        <Link to="/about" onClick={() => setIsMenuOpen(false)}>
+                          Overview
+                        </Link>
+                        <Link
+                          to="/about/founder"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          About Founder
+                        </Link>
+                        <Link
+                          to="/about/how-it-works"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          How It Works
+                        </Link>
+                      </div>
+
+                      {/* Column 3: Philosophy */}
+                      <div className="dropdown-category">
+                        <span className="category-label">Philosophy</span>
+                        <Link
+                          to="/about#ikigai"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Ikigai
+                        </Link>
+                        <Link
+                          to="/about#kiku"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Kiku
+                        </Link>
+                        <Link
+                          to="/about#kaizen"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Kaizen
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div
-                  className={`nav-dropdown ${
+                  className={`nav-dropdown mega-dropdown-wrapper ${
                     activeDropdown === "services" ? "active" : ""
                   }`}
                 >
@@ -109,79 +148,103 @@ const Header = () => {
                   >
                     Services <FiChevronDown className="chevron" />
                   </Link>
-                  <div className="dropdown-menu">
-                    <div className="dropdown-category">
-                      <span className="category-label">Consultancy</span>
-                      <Link
-                        to="/services/education-consulting"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Global Education Consulting
-                      </Link>
-                      <Link
-                        to="/services/career-guidance"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Career Guidance
-                      </Link>
-                      <Link
-                        to="/services/visa-assistance"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Visa Assistance
-                      </Link>
-                    </div>
-                    <div className="dropdown-category">
-                      <span className="category-label">
-                        Readiness & Support
-                      </span>
-                      <Link
-                        to="/services/parents"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        For Parents
-                      </Link>
-                      <Link
-                        to="/services/schools"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        For Schools
-                      </Link>
-                    </div>
-                    <div className="dropdown-category">
-                      <span className="category-label">
-                        Destinations
-                      </span>
-                      <Link
-                        to="/destinations/usa"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Study in USA
-                      </Link>
-                      <Link
-                        to="/destinations/uk"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Study in UK
-                      </Link>
-                      <Link
-                        to="/destinations/canada"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Study in Canada
-                      </Link>
-                      <Link
-                        to="/destinations/australia"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Study in Australia
-                      </Link>
-                      <Link
-                        to="/destinations/germany"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Study in Germany
-                      </Link>
+                  <div className="dropdown-menu cols-2">
+                    <div className="dropdown-container">
+                      {/* Column 1: Explore Callout (Apple-style) */}
+                      <div className="dropdown-col-explore">
+                        <span className="explore-label">Explore Services</span>
+                        <h3>Design Your <br />Pathway</h3>
+                        <Link
+                          to="/services"
+                          className="explore-link"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          All Services Overview <span>→</span>
+                        </Link>
+                      </div>
+
+                      {/* Column 2: Core Pathways */}
+                      <div className="dropdown-category">
+                        <span className="category-label">Pathways</span>
+                        <Link
+                          to="/services/education-consulting"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Academic Pathways
+                        </Link>
+                        <Link
+                          to="/services/career-guidance"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Career Pathways
+                        </Link>
+                        <Link
+                          to="/services/curricular-based-pathways"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Curricular-Based Pathways
+                        </Link>
+                        <Link
+                          to="/services/pathway-programs"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Pathway Programs (Bridge Courses)
+                        </Link>
+                        <Link
+                          to="/services/competitive-exam-strategy"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Competitive Exam Pathways
+                        </Link>
+                        <Link
+                          to="/bootcamps-webinars"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Skill & Bootcamp Pathways
+                        </Link>
+                      </div>
+
+                      {/* Column 3: Study Abroad Pathway & Subcat Services */}
+                      <div className="dropdown-category">
+                        <span className="category-label">Study Abroad Pathway</span>
+                        <Link
+                          to="/services/study-abroad-pathway"
+                          onClick={() => setIsMenuOpen(false)}
+                          style={{ fontWeight: "700", color: "var(--color-brand-primary)" }}
+                        >
+                          Study Abroad Pathway (Overview)
+                        </Link>
+                        <Link
+                          to="/services/visa-assistance"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Visa & Study Abroad Assistance
+                        </Link>
+                        <Link
+                          to="/services/study-abroad/student-support"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Complete Student Support
+                        </Link>
+                        <Link
+                          to="/services/study-abroad/parent-support"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Complete Parents Support
+                        </Link>
+                        <Link
+                          to="/services/study-abroad/destinations"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Popular Destinations
+                        </Link>
+                        <Link
+                          to="/services/study-abroad/destinations#explore-destinations"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Explore Other Destinations
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>

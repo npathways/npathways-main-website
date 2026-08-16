@@ -20,7 +20,15 @@ const EducationConsulting = lazy(() => import("./pages/public/services/Education
 const CareerGuidance = lazy(() => import("./pages/public/services/CareerGuidance"));
 const VisaAssistance = lazy(() => import("./pages/public/services/VisaAssistance"));
 const Bootcamps = lazy(() => import("./pages/public/services/Bootcamps"));
-const SchoolPrograms = lazy(() => import("./pages/public/services/SchoolPrograms"));
+
+const CompetitiveExamStrategy = lazy(() => import("./pages/public/services/CompetitiveExamStrategy"));
+const ForCollegesUniversities = lazy(() => import("./pages/public/services/ForCollegesUniversities"));
+const CurricularBasedPathways = lazy(() => import("./pages/public/services/CurricularBasedPathways"));
+const PathwayPrograms = lazy(() => import("./pages/public/services/PathwayPrograms"));
+const StudyAbroadPathway = lazy(() => import("./pages/public/services/StudyAbroadPathway"));
+const StudyAbroadStudentSupport = lazy(() => import("./pages/public/services/StudyAbroadStudentSupport"));
+const StudyAbroadParentSupport = lazy(() => import("./pages/public/services/StudyAbroadParentSupport"));
+const StudyAbroadDestinations = lazy(() => import("./pages/public/services/StudyAbroadDestinations"));
 const Contact = lazy(() => import("./pages/public/Contact"));
 const Founder = lazy(() => import("./pages/public/about/Founder"));
 const HowItWorks = lazy(() => import("./pages/public/about/HowItWorks"));
@@ -98,7 +106,15 @@ function App() {
             <Route path="/services/visa-assistance" element={<VisaAssistance />} />
             <Route path="/services/bootcamps" element={<Navigate to="/bootcamps-webinars" replace />} />
             <Route path="/bootcamps-webinars" element={<BootcampsWebinars />} />
-            <Route path="/services/school-programs" element={<SchoolPrograms />} />
+            <Route path="/services/school-programs" element={<Navigate to="/services/schools" replace />} />
+            <Route path="/services/competitive-exam-strategy" element={<CompetitiveExamStrategy />} />
+            <Route path="/services/colleges-universities" element={<ForCollegesUniversities />} />
+            <Route path="/services/curricular-based-pathways" element={<CurricularBasedPathways />} />
+            <Route path="/services/pathway-programs" element={<PathwayPrograms />} />
+            <Route path="/services/study-abroad-pathway" element={<StudyAbroadPathway />} />
+            <Route path="/services/study-abroad/student-support" element={<StudyAbroadStudentSupport />} />
+            <Route path="/services/study-abroad/parent-support" element={<StudyAbroadParentSupport />} />
+            <Route path="/services/study-abroad/destinations" element={<StudyAbroadDestinations />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/destinations/:id" element={<DestinationDetail />} />
             <Route path="/services/bootcamp-calendar" element={<BootcampList />} />

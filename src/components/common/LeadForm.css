@@ -93,20 +93,69 @@
   border-color: #ffffff;
 }
 
+.phone-input-group {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius-md);
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.light .phone-input-group {
+  border-color: #000000;
+  background-color: #ffffff;
+}
+
+.dark .phone-input-group {
+  border-color: #ffffff;
+  background-color: #000000;
+}
+
 .phone-input-group select {
-  flex: 0 0 110px;
+  flex: 0 0 135px; /* Increased from 110px to fit "+91 (IN)" cleanly */
   border: none !important;
-  border-right: 1px solid currentColor !important;
+  border-right: 1px solid #e0e0e0 !important;
   padding-right: 2.5rem;
   border-radius: 0;
-  height: 100%; /* Fill the group height */
+  height: 100%;
+  background-color: transparent !important;
+  color: inherit;
+  margin: 0;
+}
+
+.light .phone-input-group select {
+  border-right-color: #000000 !important;
+}
+
+.dark .phone-input-group select {
+  border-right-color: #ffffff !important;
 }
 
 .phone-input-group input {
   flex: 1;
   border: none !important;
   border-radius: 0;
-  height: 100%; /* Fill the group height */
+  height: 100%;
+  background-color: transparent !important;
+  color: inherit;
+  padding: 0 1rem !important;
+  margin: 0;
+}
+
+.phone-input-group:focus-within {
+  transform: translateY(-1px);
+}
+
+.light .phone-input-group:focus-within {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dark .phone-input-group:focus-within {
+  box-shadow: 0 0 0 2px #ffffff;
 }
 
 .modern-lead-form input::placeholder,
