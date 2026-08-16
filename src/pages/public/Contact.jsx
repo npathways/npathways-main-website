@@ -12,14 +12,11 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     category: '',
-    grade: '',
-    passoutYear: '',
-    examType: '',
-    examStatus: '',
     selectedProgram: '',
     email: '',
     countryCode: '+91',
-    phone: ''
+    phone: '',
+    message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -28,7 +25,8 @@ const Contact = () => {
   const categoriesList = [
     { label: 'Student', desc: 'Currently studying in school or college', icon: <FiBookOpen size={20} /> },
     { label: 'Parent', desc: 'Inquiring for a son or daughter', icon: <FiUserCheck size={20} /> },
-    { label: 'Working Professional', desc: 'Currently working and seeking growth', icon: <FiAward size={20} /> }
+    { label: 'Working Professional', desc: 'Currently working and seeking growth', icon: <FiAward size={20} /> },
+    { label: 'Just Looking Around', desc: 'Exploring programs and resources', icon: <FiPhoneCall size={20} /> }
   ];
 
   const programsList = [
@@ -53,9 +51,13 @@ const Contact = () => {
       toast.error('Please select who you are');
       return;
     }
-    if (step === 3) {
-      if ((formData.category === 'Student' || formData.category === 'Parent') && !formData.grade.trim()) {
-        toast.error('Please enter your current grade');
+    if (step === 3 && !formData.selectedProgram) {
+      toast.error('Please select a service');
+      return;
+    }
+    if (step === 4) {
+      if (!formData.email.trim() || !formData.phone.trim()) {
+        toast.error('Please provide email and phone number');
         return;
       }
     }
@@ -70,37 +72,32 @@ const Contact = () => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value,
-      ...(name === 'category' && value === 'Working Professional' ? { grade: '' } : {})
+      [name]: value
     }));
   };
 
   const handleCategorySelect = (category) => {
     setFormData(prev => ({
       ...prev,
-      category,
-      ...(category === 'Working Professional' ? { grade: '' } : {})
+      category
     }));
     setTimeout(() => setStep(3), 400);
   };
 
   const handleProgramSelect = (selectedProgram) => {
     setFormData(prev => ({ ...prev, selectedProgram }));
-    setTimeout(() => setStep(6), 400); // Jump to contact info after program select
+    setTimeout(() => setStep(4), 400); // Jump to contact info after program select
   };
 
   const resetWizard = () => {
     setFormData({
       name: '',
       category: '',
-      grade: '',
-      passoutYear: '',
-      examType: '',
-      examStatus: '',
       selectedProgram: '',
       email: '',
       countryCode: '+91',
-      phone: ''
+      phone: '',
+      message: ''
     });
     setStep(1);
     setIsSuccess(false);
@@ -124,11 +121,8 @@ const Contact = () => {
         phone: formData.phone,
         countryCode: formData.countryCode,
         category: formData.category || null,
-        grade: formData.grade || null,
-        passoutYear: formData.passoutYear || null,
-        examType: formData.examType || null,
-        examStatus: formData.examStatus || null,
         selectedProgram: formData.selectedProgram || null,
+        message: formData.message || null,
         source: 'Contact Page Wizard'
       };
 
@@ -228,102 +222,12 @@ const Contact = () => {
                             <button onClick={handleBack} className="contact-wizard-btn-back">
                               <FiArrowLeft style={{ marginRight: '8px' }} /> Back
                             </button>
-                            <button onClick={handleNext} className="contact-wizard-btn-next" disabled={!formData.category}>
-                              Next <FiArrowRight style={{ marginLeft: '8px' }} />
-                            </button>
                           </div>
                         </div>
                       )}
 
-                      {/* Step 3: Academic Details */}
+                      {/* Step 3: Service Selection */}
                       {step === 3 && (
-                        <div className="wizard-step fade-in-up">
-                          <label className="contact-wizard-label">Tell us about your educational background</label>
-                          <div className="contact-wizard-field-group">
-                            {(formData.category === 'Student' || formData.category === 'Parent') && (
-                              <div className="contact-wizard-field">
-                                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '700', fontSize: '0.85rem' }}>Current Grade *</label>
-                                <input
-                                  type="text"
-                                  name="grade"
-                                  placeholder="e.g. 12th Grade, Undergrad 3rd Year"
-                                  value={formData.grade}
-                                  onChange={handleChange}
-                                  className="contact-wizard-input"
-                                  required
-                                />
-                              </div>
-                            )}
-                            <div className="contact-wizard-field">
-                              <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '700', fontSize: '0.85rem' }}>Graduation / Passout Year</label>
-                              <input
-                                type="text"
-                                name="passoutYear"
-                                placeholder="e.g. 2026"
-                                value={formData.passoutYear}
-                                onChange={handleChange}
-                                className="contact-wizard-input"
-                              />
-                            </div>
-                          </div>
-                          <div className="contact-wizard-actions">
-                            <button onClick={handleBack} className="contact-wizard-btn-back">
-                              <FiArrowLeft style={{ marginRight: '8px' }} /> Back
-                            </button>
-                            <button 
-                              onClick={handleNext} 
-                              className="contact-wizard-btn-next"
-                              disabled={(formData.category === 'Student' || formData.category === 'Parent') && !formData.grade.trim()}
-                            >
-                              Next <FiArrowRight style={{ marginLeft: '8px' }} />
-                            </button>
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Step 4: Exams Intent */}
-                      {step === 4 && (
-                        <div className="wizard-step fade-in-up">
-                          <label className="contact-wizard-label">Are you preparing for any entrance exams?</label>
-                          <div className="contact-wizard-field-group" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                            <div className="contact-wizard-field">
-                              <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '700', fontSize: '0.85rem' }}>Exam Type</label>
-                              <select 
-                                name="examType" 
-                                value={formData.examType} 
-                                onChange={handleChange}
-                                className="contact-wizard-select"
-                              >
-                                <option value="">None / Other</option>
-                                {["CAT", "GMAT", "GRE", "XAT", "NMAT", "SNAP", "Other"].map(e => <option key={e} value={e}>{e}</option>)}
-                              </select>
-                            </div>
-                            <div className="contact-wizard-field">
-                              <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '700', fontSize: '0.85rem' }}>Preparation Status</label>
-                              <select 
-                                name="examStatus" 
-                                value={formData.examStatus} 
-                                onChange={handleChange}
-                                className="contact-wizard-select"
-                              >
-                                <option value="">Select Status</option>
-                                {["Applied", "Yet to Apply", "Planning to Apply"].map(s => <option key={s} value={s}>{s}</option>)}
-                              </select>
-                            </div>
-                          </div>
-                          <div className="contact-wizard-actions">
-                            <button onClick={handleBack} className="contact-wizard-btn-back">
-                              <FiArrowLeft style={{ marginRight: '8px' }} /> Back
-                            </button>
-                            <button onClick={handleNext} className="contact-wizard-btn-next">
-                              Next <FiArrowRight style={{ marginLeft: '8px' }} />
-                            </button>
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Step 5: Service Selection */}
-                      {step === 5 && (
                         <div className="wizard-step fade-in-up">
                           <label className="contact-wizard-label">What services are you interested in?</label>
                           <div className="contact-wizard-cards-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
@@ -346,17 +250,14 @@ const Contact = () => {
                             <button onClick={handleBack} className="contact-wizard-btn-back">
                               <FiArrowLeft style={{ marginRight: '8px' }} /> Back
                             </button>
-                            <button onClick={handleNext} className="contact-wizard-btn-next" disabled={!formData.selectedProgram}>
-                              Next <FiArrowRight style={{ marginLeft: '8px' }} />
-                            </button>
                           </div>
                         </div>
                       )}
 
-                      {/* Step 6: Contact Info */}
-                      {step === 6 && (
-                        <form onSubmit={handleSubmit} className="wizard-step fade-in-up">
-                          <label className="contact-wizard-label">Almost done! How can we contact you?</label>
+                      {/* Step 4: Contact Info */}
+                      {step === 4 && (
+                        <div className="wizard-step fade-in-up">
+                          <label className="contact-wizard-label">How can we contact you?</label>
                           <div className="contact-wizard-field">
                             <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '700', fontSize: '0.85rem' }}>Email Address</label>
                             <input
@@ -369,7 +270,7 @@ const Contact = () => {
                               required
                             />
                           </div>
-                          <div className="contact-wizard-field">
+                          <div className="contact-wizard-field" style={{ marginTop: '1.5rem' }}>
                             <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '700', fontSize: '0.85rem' }}>Phone Number</label>
                             <div style={{ display: 'flex', gap: '10px' }}>
                               <select
@@ -398,10 +299,35 @@ const Contact = () => {
                             </div>
                           </div>
                           <div className="contact-wizard-actions">
+                            <button type="button" onClick={handleBack} className="contact-wizard-btn-back">
+                              <FiArrowLeft style={{ marginRight: '8px' }} /> Back
+                            </button>
+                            <button type="button" onClick={handleNext} disabled={!formData.email.trim() || !formData.phone.trim()} className="contact-wizard-btn-next">
+                              Next <FiArrowRight style={{ marginLeft: '8px' }} />
+                            </button>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Step 5: Custom Query / Message */}
+                      {step === 5 && (
+                        <form onSubmit={handleSubmit} className="wizard-step fade-in-up">
+                          <label className="contact-wizard-label">Do you have any specific query or message? (Optional)</label>
+                          <div className="contact-wizard-field">
+                            <textarea
+                              name="message"
+                              placeholder="Type your message or queries here..."
+                              value={formData.message}
+                              onChange={handleChange}
+                              className="contact-wizard-input"
+                              style={{ height: '140px', resize: 'vertical', padding: '12px' }}
+                            />
+                          </div>
+                          <div className="contact-wizard-actions" style={{ marginTop: '1.5rem' }}>
                             <button type="button" onClick={handleBack} disabled={isSubmitting} className="contact-wizard-btn-back">
                               <FiArrowLeft style={{ marginRight: '8px' }} /> Back
                             </button>
-                            <button type="submit" disabled={isSubmitting || !formData.email.trim() || !formData.phone.trim()} className="contact-wizard-btn-submit">
+                            <button type="submit" disabled={isSubmitting} className="contact-wizard-btn-submit">
                               {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
                             </button>
                           </div>
@@ -467,20 +393,26 @@ const Contact = () => {
                       <span className="contact-detail-value highlight">{formData.name || "Awaiting Name..."}</span>
                     </div>
                     <div className="contact-pass-detail-item">
-                      <span className="contact-detail-label">CATEGORY</span>
+                      <span className="contact-detail-label">OCCUPATION</span>
                       <span className="contact-detail-value">{formData.category || "---"}</span>
                     </div>
                     <div className="contact-pass-detail-item">
-                      <span className="contact-detail-label">ACADEMIC YEAR</span>
-                      <span className="contact-detail-value">{formData.grade || "---"} {formData.passoutYear ? `(${formData.passoutYear})` : ""}</span>
+                      <span className="contact-detail-label">PHONE NO</span>
+                      <span className="contact-detail-value">{formData.phone ? `${formData.countryCode} ${formData.phone}` : "---"}</span>
                     </div>
                     <div className="contact-pass-detail-item span-two">
-                      <span className="contact-detail-label">TARGET EXAM</span>
-                      <span className="contact-detail-value">{formData.examType ? `${formData.examType} (${formData.examStatus || 'Planning'})` : "None"}</span>
+                      <span className="contact-detail-label">EMAIL ADDRESS</span>
+                      <span className="contact-detail-value">{formData.email || "---"}</span>
                     </div>
                     <div className="contact-pass-detail-item span-two">
                       <span className="contact-detail-label">INTEREST / PROGRAM</span>
                       <span className="contact-detail-value highlight-gold">{formData.selectedProgram || "---"}</span>
+                    </div>
+                    <div className="contact-pass-detail-item span-two">
+                      <span className="contact-detail-label">CUSTOM QUERY / MESSAGE</span>
+                      <span className="contact-detail-value" style={{ fontSize: '11px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        {formData.message || "No query added."}
+                      </span>
                     </div>
                     <div className="contact-pass-detail-item">
                       <span className="contact-detail-label">FLIGHT / SEAT</span>

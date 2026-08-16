@@ -172,7 +172,8 @@ const parentSupportData = [
 const categoriesList = [
   { label: 'Student', desc: 'Currently studying in school or college', icon: <FiBookOpen size={20} /> },
   { label: 'Parent', desc: 'Inquiring for a son or daughter', icon: <FiUserCheck size={20} /> },
-  { label: 'Working Professional', desc: 'Currently working and seeking growth', icon: <FiAward size={20} /> }
+  { label: 'Working Professional', desc: 'Currently working and seeking growth', icon: <FiAward size={20} /> },
+  { label: 'Just Looking Around', desc: 'Exploring programs and resources', icon: <FiPhoneCall size={20} /> }
 ];
 
 const programsList = [
@@ -181,8 +182,361 @@ const programsList = [
   { label: 'Admissions Consulting', desc: 'Essays, resume & profiles', icon: <FiUserCheck size={20} /> },
   { label: 'Skills & Bootcamps', desc: 'Intensive tech & business courses', icon: <FiBookOpen size={20} /> },
   { label: 'Visa Assistance', desc: 'Step-by-step visa documentation', icon: <FiAward size={20} /> },
-  { label: 'Career Counseling', desc: 'One-on-one professional guidance', icon: <FiPhoneCall size={20} /> }
+  { label: 'Career Counseling', desc: 'One-on-one professional guidance', icon: <FiPhoneCall size={20} /> },
+  { label: 'Internships & Research', desc: 'Experiential learning opportunities', icon: <FiAward size={20} /> },
+  { label: 'School Programs', desc: 'Coordinated institutional workshops', icon: <FiBookOpen size={20} /> }
 ];
+
+const landmassPoints = [
+  // North America
+  { lat: 70, lon: -160 }, { lat: 70, lon: -140 }, { lat: 70, lon: -120 }, { lat: 70, lon: -100 },
+  { lat: 70, lon: -80 }, { lat: 70, lon: -60 }, { lat: 65, lon: -150 }, { lat: 60, lon: -140 },
+  { lat: 58, lon: -135 }, { lat: 55, lon: -125 }, { lat: 50, lon: -125 }, { lat: 45, lon: -125 },
+  { lat: 40, lon: -122 }, { lat: 35, lon: -120 }, { lat: 30, lon: -115 }, { lat: 50, lon: -110 },
+  { lat: 45, lon: -110 }, { lat: 40, lon: -105 }, { lat: 35, lon: -105 }, { lat: 30, lon: -100 },
+  { lat: 25, lon: -98 }, { lat: 48, lon: -100 }, { lat: 43, lon: -95 }, { lat: 38, lon: -90 },
+  { lat: 33, lon: -85 }, { lat: 28, lon: -82 }, { lat: 48, lon: -70 }, { lat: 45, lon: -70 },
+  { lat: 43, lon: -75 }, { lat: 40, lon: -75 }, { lat: 35, lon: -80 }, { lat: 30, lon: -80 },
+  { lat: 25, lon: -80 }, { lat: 25, lon: -105 }, { lat: 22, lon: -105 }, { lat: 20, lon: -100 },
+  { lat: 18, lon: -95 }, { lat: 15, lon: -95 }, { lat: 12, lon: -85 }, { lat: 9, lon: -80 },
+  // Greenland
+  { lat: 80, lon: -40 }, { lat: 75, lon: -50 }, { lat: 75, lon: -30 }, { lat: 70, lon: -45 },
+  { lat: 70, lon: -35 }, { lat: 65, lon: -45 }, { lat: 65, lon: -40 },
+  // South America
+  { lat: 10, lon: -75 }, { lat: 10, lon: -70 }, { lat: 8, lon: -65 }, { lat: 5, lon: -60 },
+  { lat: 2, lon: -55 }, { lat: -2, lon: -50 }, { lat: -5, lon: -45 }, { lat: -5, lon: -40 },
+  { lat: -8, lon: -35 }, { lat: -12, lon: -38 }, { lat: -16, lon: -39 }, { lat: -20, lon: -42 },
+  { lat: -23, lon: -45 }, { lat: -26, lon: -48 }, { lat: -30, lon: -50 }, { lat: -35, lon: -55 },
+  { lat: -40, lon: -60 }, { lat: -45, lon: -65 }, { lat: -50, lon: -70 }, { lat: -5, lon: -80 },
+  { lat: -10, lon: -78 }, { lat: -15, lon: -75 }, { lat: -20, lon: -70 }, { lat: -25, lon: -70 },
+  { lat: -30, lon: -72 }, { lat: -35, lon: -73 }, { lat: -40, lon: -75 }, { lat: -45, lon: -75 },
+  { lat: -50, lon: -75 }, { lat: -53, lon: -72 },
+  // Africa
+  { lat: 35, lon: -5 }, { lat: 35, lon: 0 }, { lat: 35, lon: 5 }, { lat: 35, lon: 10 },
+  { lat: 35, lon: 15 }, { lat: 35, lon: 20 }, { lat: 32, lon: 25 }, { lat: 31, lon: 30 },
+  { lat: 28, lon: -5 }, { lat: 28, lon: 5 }, { lat: 28, lon: 15 }, { lat: 28, lon: 25 },
+  { lat: 20, lon: -10 }, { lat: 20, lon: 0 }, { lat: 20, lon: 10 }, { lat: 20, lon: 20 },
+  { lat: 20, lon: 30 }, { lat: 15, lon: -15 }, { lat: 12, lon: -15 }, { lat: 8, lon: -10 },
+  { lat: 5, lon: -5 }, { lat: 5, lon: 0 }, { lat: 5, lon: 5 }, { lat: 5, lon: 10 },
+  { lat: 0, lon: 10 }, { lat: 0, lon: 15 }, { lat: 0, lon: 20 }, { lat: 0, lon: 25 },
+  { lat: -5, lon: 15 }, { lat: -5, lon: 20 }, { lat: -5, lon: 25 }, { lat: -10, lon: 15 },
+  { lat: -10, lon: 25 }, { lat: -15, lon: 15 }, { lat: -15, lon: 25 }, { lat: -20, lon: 18 },
+  { lat: -20, lon: 25 }, { lat: -25, lon: 20 }, { lat: -25, lon: 28 }, { lat: -30, lon: 22 },
+  { lat: -30, lon: 28 }, { lat: -34, lon: 25 }, { lat: -15, lon: 47 }, { lat: -20, lon: 48 },
+  { lat: -25, lon: 46 }, { lat: 10, lon: 40 }, { lat: 5, lon: 42 }, { lat: 0, lon: 40 },
+  { lat: -5, lon: 38 }, { lat: -10, lon: 39 }, { lat: 15, lon: 38 }, { lat: 12, lon: 43 },
+  { lat: 10, lon: 47 }, { lat: 8, lon: 48 }, { lat: 22, lon: 36 }, { lat: 25, lon: 34 },
+  // Europe
+  { lat: 38, lon: -9 }, { lat: 40, lon: -8 }, { lat: 42, lon: -5 }, { lat: 48, lon: 0 },
+  { lat: 50, lon: 5 }, { lat: 52, lon: 10 }, { lat: 52, lon: 15 }, { lat: 50, lon: 20 },
+  { lat: 55, lon: -2 }, { lat: 57, lon: -4 }, { lat: 42, lon: 13 }, { lat: 40, lon: 16 },
+  { lat: 38, lon: 22 }, { lat: 38, lon: 24 }, { lat: 60, lon: 10 }, { lat: 62, lon: 12 },
+  { lat: 65, lon: 15 }, { lat: 68, lon: 20 }, { lat: 70, lon: 25 }, { lat: 60, lon: 20 },
+  { lat: 62, lon: 22 }, { lat: 65, lon: 22 }, { lat: 45, lon: 25 }, { lat: 48, lon: 30 },
+  { lat: 50, lon: 35 }, { lat: 52, lon: 40 }, { lat: 55, lon: 35 }, { lat: 55, lon: 45 },
+  // Russia / Siberia
+  { lat: 70, lon: 40 }, { lat: 70, lon: 60 }, { lat: 70, lon: 80 }, { lat: 70, lon: 100 },
+  { lat: 70, lon: 120 }, { lat: 70, lon: 140 }, { lat: 70, lon: 160 }, { lat: 60, lon: 40 },
+  { lat: 60, lon: 50 }, { lat: 60, lon: 60 }, { lat: 60, lon: 70 }, { lat: 60, lon: 80 },
+  { lat: 60, lon: 90 }, { lat: 60, lon: 100 }, { lat: 60, lon: 110 }, { lat: 60, lon: 120 },
+  { lat: 60, lon: 130 }, { lat: 60, lon: 140 }, { lat: 60, lon: 150 }, { lat: 60, lon: 160 },
+  { lat: 50, lon: 50 }, { lat: 50, lon: 60 }, { lat: 50, lon: 70 }, { lat: 50, lon: 80 },
+  { lat: 50, lon: 90 }, { lat: 50, lon: 100 }, { lat: 50, lon: 110 }, { lat: 50, lon: 120 },
+  { lat: 50, lon: 130 }, { lat: 50, lon: 140 }, { lat: 50, lon: 150 },
+  // Middle East & Central Asia
+  { lat: 30, lon: 40 }, { lat: 30, lon: 45 }, { lat: 25, lon: 45 }, { lat: 20, lon: 45 },
+  { lat: 15, lon: 48 }, { lat: 15, lon: 52 }, { lat: 20, lon: 55 }, { lat: 25, lon: 55 },
+  { lat: 40, lon: 50 }, { lat: 40, lon: 60 }, { lat: 45, lon: 70 }, { lat: 40, lon: 70 },
+  { lat: 40, lon: 80 }, { lat: 45, lon: 80 }, { lat: 35, lon: 65 }, { lat: 35, lon: 75 },
+  // India / South Asia
+  { lat: 32, lon: 75 }, { lat: 28, lon: 77 }, { lat: 26, lon: 80 }, { lat: 22, lon: 70 },
+  { lat: 20, lon: 73 }, { lat: 16, lon: 74 }, { lat: 12, lon: 76 }, { lat: 9, lon: 77 },
+  { lat: 10, lon: 79 }, { lat: 13, lon: 80 }, { lat: 17, lon: 82 }, { lat: 22, lon: 85 },
+  { lat: 22, lon: 89 },
+  // China / East Asia
+  { lat: 35, lon: 90 }, { lat: 35, lon: 100 }, { lat: 35, lon: 110 }, { lat: 30, lon: 100 },
+  { lat: 30, lon: 110 }, { lat: 30, lon: 115 }, { lat: 25, lon: 105 }, { lat: 25, lon: 112 },
+  { lat: 22, lon: 110 }, { lat: 22, lon: 115 }, { lat: 38, lon: 116 }, { lat: 40, lon: 120 },
+  { lat: 43, lon: 125 },
+  // SE Asia & Indonesia
+  { lat: 18, lon: 102 }, { lat: 14, lon: 105 }, { lat: 10, lon: 105 }, { lat: 5, lon: 102 },
+  { lat: 3, lon: 101 }, { lat: 0, lon: 102 }, { lat: -3, lon: 104 }, { lat: -6, lon: 107 },
+  { lat: -7, lon: 112 }, { lat: 0, lon: 113 }, { lat: 2, lon: 114 }, { lat: -3, lon: 114 },
+  { lat: 15, lon: 120 }, { lat: 10, lon: 122 }, { lat: 6, lon: 125 }, { lat: 1, lon: 122 },
+  { lat: -2, lon: 120 }, { lat: -3, lon: 135 }, { lat: -4, lon: 140 },
+  // Japan
+  { lat: 32, lon: 130 }, { lat: 35, lon: 135 }, { lat: 38, lon: 139 }, { lat: 43, lon: 142 },
+  // Australia / NZ
+  { lat: -22, lon: 115 }, { lat: -25, lon: 113 }, { lat: -30, lon: 115 }, { lat: -34, lon: 116 },
+  { lat: -12, lon: 125 }, { lat: -12, lon: 131 }, { lat: -12, lon: 136 }, { lat: -15, lon: 141 },
+  { lat: -20, lon: 147 }, { lat: -25, lon: 151 }, { lat: -30, lon: 152 }, { lat: -35, lon: 150 },
+  { lat: -38, lon: 145 }, { lat: -34, lon: 125 }, { lat: -34, lon: 135 }, { lat: -37, lon: 140 },
+  { lat: -42, lon: 146 }, { lat: -37, lon: 175 }, { lat: -41, lon: 175 }, { lat: -45, lon: 170 },
+  { lat: -46, lon: 167 }
+];
+
+const GlobeWidget = () => {
+  const navigate = useNavigate();
+  const canvasRef = useRef(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [zoomFactor, setZoomFactor] = useState(1);
+  const [rotationSpeed, setRotationSpeed] = useState(0.003);
+  const rotationRef = useRef(0);
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  const autocompleteList = [
+    "United States", "United Kingdom", "Canada", "Australia", "Germany",
+    "Ireland", "France", "Netherlands", "New Zealand", "Singapore", 
+    "Sweden", "Switzerland", "Italy", "Spain", "Austria"
+  ];
+
+  const handleInputChange = (e) => {
+    const val = e.target.value;
+    setSearchQuery(val);
+    if (val.trim().length > 0) {
+      const filtered = autocompleteList.filter(country =>
+        country.toLowerCase().includes(val.toLowerCase())
+      );
+      setSuggestions(filtered);
+      setShowSuggestions(true);
+    } else {
+      setSuggestions([]);
+      setShowSuggestions(false);
+    }
+  };
+
+  const handleSelectSuggestion = (country) => {
+    setSearchQuery(country);
+    setSuggestions([]);
+    setShowSuggestions(false);
+    // Directly submit for a smoother experience!
+    setTimeout(() => {
+      triggerSubmit(country);
+    }, 50);
+  };
+
+  const matchCountry = (query) => {
+    const q = query.toLowerCase().trim();
+    
+    // 1. Exact abbreviation matches
+    const exactMatches = {
+      "usa": "usa",
+      "us": "usa",
+      "uk": "uk",
+      "aus": "australia",
+      "can": "canada",
+      "ger": "germany",
+    };
+    if (exactMatches[q]) return exactMatches[q];
+
+    // 2. Exact match check
+    if (q === "united states" || q === "united states of america" || q === "america") return "usa";
+    if (q === "united kingdom" || q === "england" || q === "britain" || q === "great britain") return "uk";
+    if (q === "canada") return "canada";
+    if (q === "australia" || q === "austrilia") return "australia";
+    if (q === "germany" || q === "germani" || q === "deutschland") return "germany";
+
+    // 3. Word token boundary check (prevents matching internal substrings like "aus" in "austria")
+    const tokens = q.split(/\s+/);
+    if (tokens.includes("usa") || tokens.includes("america") || tokens.includes("states")) return "usa";
+    if (tokens.includes("uk") || tokens.includes("kingdom") || tokens.includes("england") || tokens.includes("britain")) return "uk";
+    if (tokens.includes("canada")) return "canada";
+    if (tokens.includes("australia") || tokens.includes("austrilia")) return "australia";
+    if (tokens.includes("germany") || tokens.includes("germani")) return "germany";
+
+    return null;
+  };
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    let animationFrameId;
+
+    const render = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const cx = canvas.width / 2;
+      const cy = canvas.height / 2;
+      const radius = (canvas.width / 2.6) * zoomFactor;
+
+      rotationRef.current += rotationSpeed;
+
+      // Draw Earth outer circular boundary
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.arc(cx, cy, radius, 0, 2 * Math.PI);
+      ctx.stroke();
+
+      // Draw Latitude lines
+      for (let lat = -60; lat <= 60; lat += 30) {
+        const r = radius * Math.cos((lat * Math.PI) / 180);
+        const y = cy + radius * Math.sin((lat * Math.PI) / 180);
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.08)";
+        ctx.beginPath();
+        ctx.ellipse(cx, y, Math.abs(r), Math.abs(r * 0.2 * Math.sin(rotationRef.current)), 0, 0, 2 * Math.PI);
+        ctx.stroke();
+      }
+
+      // Draw Longitude lines
+      for (let lon = 0; lon < 360; lon += 45) {
+        const angle = (lon * Math.PI) / 180 + rotationRef.current;
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.08)";
+        ctx.beginPath();
+        ctx.ellipse(cx, cy, Math.abs(radius * Math.cos(angle)), radius, 0, 0, 2 * Math.PI);
+        ctx.stroke();
+      }
+
+      // Draw landmass points (World Map Continent Dots)
+      landmassPoints.forEach(pt => {
+        const radLat = (pt.lat * Math.PI) / 180;
+        const radLon = (pt.lon * Math.PI) / 180 + rotationRef.current;
+
+        const x = cx + radius * Math.cos(radLat) * Math.sin(radLon);
+        const y = cy - radius * Math.sin(radLat);
+        const z = Math.cos(radLat) * Math.cos(radLon);
+
+        if (z > 0) {
+          ctx.fillStyle = `rgba(255, 255, 255, ${0.15 * z})`;
+          ctx.beginPath();
+          ctx.arc(x, y, 1.8 * z, 0, 2 * Math.PI);
+          ctx.fill();
+        }
+      });
+
+      // Draw stylized country dots
+      const dots = [
+        { lat: 38, lon: -97, label: "USA" },
+        { lat: 55, lon: -3, label: "UK" },
+        { lat: 56, lon: -106, label: "Canada" },
+        { lat: -25, lon: 133, label: "Australia" },
+        { lat: 51, lon: 10, label: "Germany" }
+      ];
+
+      dots.forEach(dot => {
+        const radLat = (dot.lat * Math.PI) / 180;
+        const radLon = (dot.lon * Math.PI) / 180 + rotationRef.current;
+        
+        const x = cx + radius * Math.cos(radLat) * Math.sin(radLon);
+        const y = cy - radius * Math.sin(radLat);
+        const z = Math.cos(radLat) * Math.cos(radLon);
+
+        if (z > 0) {
+          ctx.fillStyle = "#FDBA31";
+          ctx.beginPath();
+          ctx.arc(x, y, 5 * z, 0, 2 * Math.PI);
+          ctx.fill();
+
+          ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
+          ctx.font = "bold 9px monospace";
+          ctx.fillText(dot.label, x + 7, y + 3);
+        } else {
+          // Draw translucent indicator for countries rotating on the back side of the Earth
+          ctx.fillStyle = "rgba(253, 186, 49, 0.2)";
+          ctx.beginPath();
+          ctx.arc(x, y, 2.5, 0, 2 * Math.PI);
+          ctx.fill();
+
+          ctx.fillStyle = "rgba(255, 255, 255, 0.25)";
+          ctx.font = "italic 8px monospace";
+          ctx.fillText(dot.label, x + 5, y + 2);
+        }
+      });
+
+      animationFrameId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [zoomFactor, rotationSpeed]);
+
+  const triggerSubmit = (query) => {
+    if (!query.trim()) return;
+
+    setIsAnimating(true);
+    setRotationSpeed(0.08);
+
+    let currentZoom = 1;
+    const interval = setInterval(() => {
+      currentZoom += 0.06;
+      setZoomFactor(currentZoom);
+      if (currentZoom >= 1.8) {
+        clearInterval(interval);
+        
+        const matchedId = matchCountry(query);
+        if (matchedId) {
+          toast.success(`Zooming to Study in ${matchedId.toUpperCase()}!`);
+          setTimeout(() => {
+            navigate(`/destinations/${matchedId}`);
+            setIsAnimating(false);
+            setZoomFactor(1);
+            setRotationSpeed(0.003);
+            setSearchQuery("");
+          }, 500);
+        } else {
+          toast(`Opening Enquiry for "${query}"`, { icon: '✈️' });
+          setTimeout(() => {
+            window.dispatchEvent(new CustomEvent('open-quick-enquiry', { detail: { country: query } }));
+            setIsAnimating(false);
+            setZoomFactor(1);
+            setRotationSpeed(0.003);
+            setSearchQuery("");
+          }, 500);
+        }
+      }
+    }, 25);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    triggerSubmit(searchQuery);
+  };
+
+  return (
+    <div className="globe-widget-card">
+      <div className="globe-circle-wrap">
+        <canvas ref={canvasRef} width="180" height="180" className="globe-canvas" />
+      </div>
+      <div className="globe-widget-details">
+        <h4>Explore Other Pathways</h4>
+        <p>Search any country to start your journey.</p>
+        <form onSubmit={handleSubmit} className="globe-search-form" style={{ position: 'relative' }}>
+          <input
+            type="text"
+            placeholder="Where do you want to fly? (e.g. Germany)"
+            value={searchQuery}
+            onChange={handleInputChange}
+            onFocus={() => { if (searchQuery.trim()) setShowSuggestions(true); }}
+            onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+            disabled={isAnimating}
+            className="globe-search-input"
+          />
+          <button type="submit" className="globe-search-submit" disabled={isAnimating}>
+            ✈
+          </button>
+        </form>
+
+        {showSuggestions && suggestions.length > 0 && (
+          <div className="globe-suggestions-pills">
+            {suggestions.map((country, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => handleSelectSuggestion(country)}
+                className="globe-suggestion-pill"
+              >
+                {country}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const Home = () => {
   const navigate = useNavigate();
@@ -196,9 +550,8 @@ const Home = () => {
   // CTA Wizard state
   const [wizardStep, setWizardStep] = useState(1);
   const [wizardData, setWizardData] = useState({
-    name: '', category: '', grade: '', passoutYear: '',
-    examType: '', examStatus: '', selectedProgram: '',
-    email: '', countryCode: '+91', phone: ''
+    name: '', category: '', selectedProgram: '',
+    email: '', countryCode: '+91', phone: '', message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -207,7 +560,8 @@ const Home = () => {
   const handleWizardNext = () => {
     if (wizardStep === 1 && !wizardData.name.trim()) { toast.error('Please enter your name'); return; }
     if (wizardStep === 2 && !wizardData.category) { toast.error('Please select who you are'); return; }
-    if (wizardStep === 3 && (wizardData.category === 'Student' || wizardData.category === 'Parent') && !wizardData.grade.trim()) { toast.error('Please enter your current grade'); return; }
+    if (wizardStep === 3 && !wizardData.selectedProgram) { toast.error('Please select a service'); return; }
+    if (wizardStep === 4 && (!wizardData.email.trim() || !wizardData.phone.trim())) { toast.error('Please provide email and phone number'); return; }
     setWizardStep(prev => prev + 1);
   };
 
@@ -215,21 +569,21 @@ const Home = () => {
 
   const handleWizardChange = (e) => {
     const { name, value } = e.target;
-    setWizardData(prev => ({ ...prev, [name]: value, ...(name === 'category' && value === 'Working Professional' ? { grade: '' } : {}) }));
+    setWizardData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleCategoryPick = (category) => {
-    setWizardData(prev => ({ ...prev, category, ...(category === 'Working Professional' ? { grade: '' } : {}) }));
+    setWizardData(prev => ({ ...prev, category }));
     setTimeout(() => setWizardStep(3), 350);
   };
 
   const handleProgramPick = (selectedProgram) => {
     setWizardData(prev => ({ ...prev, selectedProgram }));
-    setTimeout(() => setWizardStep(6), 350);
+    setTimeout(() => setWizardStep(4), 350);
   };
 
   const resetWizard = () => {
-    setWizardData({ name: '', category: '', grade: '', passoutYear: '', examType: '', examStatus: '', selectedProgram: '', email: '', countryCode: '+91', phone: '' });
+    setWizardData({ name: '', category: '', selectedProgram: '', email: '', countryCode: '+91', phone: '', message: '' });
     setWizardStep(1);
     setIsSuccess(false);
     setIsAnimating(false);
@@ -244,9 +598,8 @@ const Home = () => {
       const payload = {
         name: wizardData.name, email: wizardData.email, phone: wizardData.phone,
         countryCode: wizardData.countryCode, category: wizardData.category || null,
-        grade: wizardData.grade || null, passoutYear: wizardData.passoutYear || null,
-        examType: wizardData.examType || null, examStatus: wizardData.examStatus || null,
-        selectedProgram: wizardData.selectedProgram || null, source: 'Home Page CTA Wizard'
+        selectedProgram: wizardData.selectedProgram || null, message: wizardData.message || null,
+        source: 'Home Page CTA Wizard'
       };
       const response = await fetch(`${baseUrl}/leads`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       if (!response.ok) throw new Error('Submission failed');
@@ -358,10 +711,10 @@ const Home = () => {
               Global Education Reimagined
             </span>
             <h1 className="hero-title-premium">
-              Beyond Borders. <br /> <span>Into Purpose.</span>
+              NPathways Global <br /> <span>Beyond Borders. Into Purpose.</span>
             </h1>
             <p className="hero-desc-premium">
-              Premium study abroad guidance from career discovery to
+              Welcome to <strong>NPathways</strong> — premium study abroad guidance from career discovery to
               post-arrival support. We don't just find you a university; we find
               you a future.
             </p>
@@ -617,19 +970,39 @@ const Home = () => {
       {/* Popular Destinations - Masonry Style */}
       <section className="destinations-section">
         <div className="container">
-          <div className="section-header-premium">
+          <div className="section-header-premium text-center">
             <span className="badge">Destinations</span>
             <h2>Popular Pathways</h2>
           </div>
           <div className="destinations-masonry">
-            {destinationsData.map((dest, i) => (
-              <div key={i} className={`dest-card ${dest.size}`}>
-                <img src={dest.img} alt={dest.name} />
-                <div className="dest-overlay">
-                  <h3>{dest.name}</h3>
+            {destinationsData.map((dest, i) => {
+              const CardContent = (
+                <>
+                  <img src={dest.img} alt={dest.name} />
+                  <div className="dest-overlay">
+                    <h3>{dest.name}</h3>
+                    {dest.hasGuide && <span className="dest-guide-hint">View Guide →</span>}
+                  </div>
+                </>
+              );
+
+              if (dest.hasGuide) {
+                return (
+                  <Link key={i} to={`/destinations/${dest.id}`} className={`dest-card ${dest.size} dest-card-interactive`}>
+                    {CardContent}
+                  </Link>
+                );
+              }
+
+              return (
+                <div key={i} className={`dest-card ${dest.size}`}>
+                  {CardContent}
                 </div>
-              </div>
-            ))}
+              );
+            })}
+            <div className="dest-card medium globe-card">
+              <GlobeWidget />
+            </div>
           </div>
         </div>
       </section>
@@ -658,7 +1031,7 @@ const Home = () => {
               <div className="home-cta-wizard" style={{ width: '100%' }}>
                 {!isSuccess ? (
                   <div className="home-wizard-box">
-                    <div className="home-wizard-step-tag">Step {wizardStep} of 6</div>
+                    <div className="home-wizard-step-tag">Step {wizardStep} of 5</div>
 
                     {/* Step 1: Name */}
                     {wizardStep === 1 && (
@@ -698,64 +1071,11 @@ const Home = () => {
                       </div>
                     )}
 
-                    {/* Step 3: Academic Details */}
+                    {/* Step 3: Service */}
                     {wizardStep === 3 && (
                       <div className="home-wizard-step fade-in-up">
-                        <label className="home-wizard-label">Tell us about your educational background</label>
-                        {(wizardData.category === 'Student' || wizardData.category === 'Parent') && (
-                          <div className="home-wizard-field">
-                            <label>Current Grade *</label>
-                            <input type="text" name="grade" placeholder="e.g. 12th Grade, Undergrad 3rd Year" value={wizardData.grade}
-                              onChange={handleWizardChange} className="home-wizard-input" />
-                          </div>
-                        )}
-                        <div className="home-wizard-field">
-                          <label>Graduation / Passout Year</label>
-                          <input type="text" name="passoutYear" placeholder="e.g. 2026" value={wizardData.passoutYear}
-                            onChange={handleWizardChange} className="home-wizard-input" />
-                        </div>
-                        <div className="home-wizard-actions home-wizard-row">
-                          <button className="home-wizard-btn-back" onClick={handleWizardBack}><FiArrowLeft /> Back</button>
-                          <button className="home-wizard-btn-next" onClick={handleWizardNext}
-                            disabled={(wizardData.category === 'Student' || wizardData.category === 'Parent') && !wizardData.grade.trim()}>
-                            Next <FiArrowRight />
-                          </button>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Step 4: Exam Info */}
-                    {wizardStep === 4 && (
-                      <div className="home-wizard-step fade-in-up">
-                        <label className="home-wizard-label">Are you preparing for any entrance exams?</label>
-                        <div className="home-wizard-two-col">
-                          <div className="home-wizard-field">
-                            <label>Exam Type</label>
-                            <select name="examType" value={wizardData.examType} onChange={handleWizardChange} className="home-wizard-select">
-                              <option value="">None / Other</option>
-                              {["CAT", "GMAT", "GRE", "XAT", "NMAT", "SNAP", "Other"].map(e => <option key={e} value={e}>{e}</option>)}
-                            </select>
-                          </div>
-                          <div className="home-wizard-field">
-                            <label>Preparation Status</label>
-                            <select name="examStatus" value={wizardData.examStatus} onChange={handleWizardChange} className="home-wizard-select">
-                              <option value="">Select Status</option>
-                              {["Applied", "Yet to Apply", "Planning to Apply"].map(s => <option key={s} value={s}>{s}</option>)}
-                            </select>
-                          </div>
-                        </div>
-                        <div className="home-wizard-actions home-wizard-row">
-                          <button className="home-wizard-btn-back" onClick={handleWizardBack}><FiArrowLeft /> Back</button>
-                          <button className="home-wizard-btn-next" onClick={handleWizardNext}>Next <FiArrowRight /></button>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Step 5: Service */}
-                    {wizardStep === 5 && (
-                      <div className="home-wizard-step fade-in-up">
                         <label className="home-wizard-label">What service are you interested in?</label>
-                        <div className="home-wizard-cards-grid home-wizard-cards-2col">
+                        <div className="home-wizard-cards-grid home-wizard-cards-2col" style={{ gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                           {programsList.map((srv, idx) => (
                             <div key={srv.label}
                               className={`home-wizard-card ${wizardData.selectedProgram === srv.label ? 'selected' : ''}`}
@@ -774,16 +1094,16 @@ const Home = () => {
                       </div>
                     )}
 
-                    {/* Step 6: Contact Info */}
-                    {wizardStep === 6 && (
-                      <form onSubmit={handleWizardSubmit} className="home-wizard-step fade-in-up">
-                        <label className="home-wizard-label">Almost done! How can we reach you?</label>
+                    {/* Step 4: Contact Info */}
+                    {wizardStep === 4 && (
+                      <div className="home-wizard-step fade-in-up">
+                        <label className="home-wizard-label">How can we reach you?</label>
                         <div className="home-wizard-field">
                           <label>Email Address</label>
                           <input type="email" name="email" placeholder="name@example.com" value={wizardData.email}
                             onChange={handleWizardChange} className="home-wizard-input" required />
                         </div>
-                        <div className="home-wizard-field">
+                        <div className="home-wizard-field" style={{ marginTop: '1rem' }}>
                           <label>Phone Number</label>
                           <div style={{ display: 'flex', gap: '10px' }}>
                             <select name="countryCode" value={wizardData.countryCode} onChange={handleWizardChange}
@@ -799,9 +1119,26 @@ const Home = () => {
                           </div>
                         </div>
                         <div className="home-wizard-actions home-wizard-row">
+                          <button type="button" className="home-wizard-btn-back" onClick={handleWizardBack}><FiArrowLeft /> Back</button>
+                          <button type="button" className="home-wizard-btn-next" onClick={handleWizardNext}
+                            disabled={!wizardData.email.trim() || !wizardData.phone.trim()}>
+                            Next <FiArrowRight />
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Step 5: Custom Message / Query */}
+                    {wizardStep === 5 && (
+                      <form onSubmit={handleWizardSubmit} className="home-wizard-step fade-in-up">
+                        <label className="home-wizard-label">Do you have any specific query or message? (Optional)</label>
+                        <div className="home-wizard-field">
+                          <textarea name="message" placeholder="Type your message or queries here..." value={wizardData.message}
+                            onChange={handleWizardChange} className="home-wizard-input" style={{ height: '120px', resize: 'vertical', padding: '12px' }} />
+                        </div>
+                        <div className="home-wizard-actions home-wizard-row">
                           <button type="button" className="home-wizard-btn-back" onClick={handleWizardBack} disabled={isSubmitting}><FiArrowLeft /> Back</button>
-                          <button type="submit" className="home-wizard-btn-submit"
-                            disabled={isSubmitting || !wizardData.email.trim() || !wizardData.phone.trim()}>
+                          <button type="submit" className="home-wizard-btn-submit" disabled={isSubmitting}>
                             {isSubmitting ? 'Sending…' : 'Submit Inquiry'}
                           </button>
                         </div>
@@ -866,20 +1203,26 @@ const Home = () => {
                       <span className="detail-value highlight">{wizardData.name || "Awaiting Name..."}</span>
                     </div>
                     <div className="pass-detail-item">
-                      <span className="detail-label">CATEGORY</span>
+                      <span className="detail-label">OCCUPATION</span>
                       <span className="detail-value">{wizardData.category || "---"}</span>
                     </div>
                     <div className="pass-detail-item">
-                      <span className="detail-label">ACADEMIC YEAR</span>
-                      <span className="detail-value">{wizardData.grade || "---"} {wizardData.passoutYear ? `(${wizardData.passoutYear})` : ""}</span>
+                      <span className="detail-label">PHONE NO</span>
+                      <span className="detail-value">{wizardData.phone ? `${wizardData.countryCode} ${wizardData.phone}` : "---"}</span>
                     </div>
                     <div className="pass-detail-item span-two">
-                      <span className="detail-label">TARGET EXAM</span>
-                      <span className="detail-value">{wizardData.examType ? `${wizardData.examType} (${wizardData.examStatus || 'Planning'})` : "None"}</span>
+                      <span className="detail-label">EMAIL ADDRESS</span>
+                      <span className="detail-value">{wizardData.email || "---"}</span>
                     </div>
                     <div className="pass-detail-item span-two">
                       <span className="detail-label">INTEREST / PROGRAM</span>
                       <span className="detail-value highlight-gold">{wizardData.selectedProgram || "---"}</span>
+                    </div>
+                    <div className="pass-detail-item span-two">
+                      <span className="detail-label">CUSTOM QUERY / MESSAGE</span>
+                      <span className="detail-value" style={{ fontSize: '11px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        {wizardData.message || "No query added."}
+                      </span>
                     </div>
                     <div className="pass-detail-item">
                       <span className="detail-label">FLIGHT / SEAT</span>

@@ -67,7 +67,11 @@ const EducationConsulting = () => {
               <ul className="check-list space-y-4 mb-10">
                 {service.features.map((f, i) => (
                   <li key={i} className="flex gap-3 items-start">
-                    <span className="text-black font-bold">✓</span>
+                    <span className="flex-shrink-0" style={{ display: "inline-flex", alignItems: "center", marginTop: "4px" }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" style={{ background: "var(--color-brand-tertiary, #FDBA31)", borderRadius: "4px", padding: "2px" }}>
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
                     <span>{f}</span>
                   </li>
                 ))}

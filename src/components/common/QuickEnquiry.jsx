@@ -5,20 +5,30 @@ import toast from 'react-hot-toast';
 
 const QuickEnquiry = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [step, setStep] = useState(1); // 1: Name, 2: Service, 3: Email/Phone
+  const [step, setStep] = useState(1); // 1: Name, 2: Occupation, 3: Service, 4: Email/Phone, 5: Message
   const [formData, setFormData] = useState({
     name: '',
+    occupation: '',
     service: '',
     email: '',
-    phone: ''
+    phone: '',
+    message: ''
   });
 
   useEffect(() => {
-    const handleTrigger = () => {
+    const handleTrigger = (e) => {
       setIsOpen(true);
       setStep(1);
       setIsSuccess(false);
-      setFormData({ name: '', service: '', email: '', phone: '' });
+      const countryDetail = e.detail?.country || '';
+      setFormData({
+        name: '',
+        occupation: '',
+        service: countryDetail ? `Study Abroad` : '',
+        email: '',
+        phone: '',
+        message: countryDetail ? `Enquiry for: ${countryDetail}` : ''
+      });
     };
     window.addEventListener('open-quick-enquiry', handleTrigger);
     return () => window.removeEventListener('open-quick-enquiry', handleTrigger);
@@ -27,17 +37,23 @@ const QuickEnquiry = () => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const services = [
-    'Book a Call',
-    'Consulting',
-    'Visa Help',
-    'Bootcamps'
+    "Study Abroad",
+    "Test Preparation",
+    "Admissions Consulting",
+    "Skills & Bootcamps",
+    "Internships & Research",
+    "Career Counseling",
+    "Visa Assistance",
+    "School Programs",
   ];
+
+  const occupations = ["Student", "Parent", "Working Professional", "Just Looking Around"];
 
   const handleOpen = () => {
     setIsOpen(true);
     setStep(1);
     setIsSuccess(false);
-    setFormData({ name: '', service: '', email: '', phone: '' });
+    setFormData({ name: '', occupation: '', service: '', email: '', phone: '', message: '' });
   };
 
   const handleClose = () => {
@@ -53,8 +69,16 @@ const QuickEnquiry = () => {
       toast.error('Please enter your name');
       return;
     }
-    if (step === 2 && !formData.service) {
+    if (step === 2 && !formData.occupation) {
+      toast.error('Please select who you are');
+      return;
+    }
+    if (step === 3 && !formData.service) {
       toast.error('Please select a service');
+      return;
+    }
+    if (step === 4 && (!formData.email.trim() || !formData.phone.trim())) {
+      toast.error('Please provide email and phone number');
       return;
     }
     setStep(prev => prev + 1);
@@ -69,9 +93,14 @@ const QuickEnquiry = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const handleOccupationSelect = (occupation) => {
+    setFormData(prev => ({ ...prev, occupation }));
+    setTimeout(() => setStep(3), 400);
+  };
+
   const handleServiceSelect = (service) => {
     setFormData(prev => ({ ...prev, service }));
-    setTimeout(() => setStep(3), 400); // Auto-advance after animation
+    setTimeout(() => setStep(4), 400); // Auto-advance after animation
   };
 
   const handleSubmit = async (e) => {
@@ -91,12 +120,9 @@ const QuickEnquiry = () => {
         phone: formData.phone,
         selectedProgram: formData.service,
         source: 'Quick Enquiry Widget',
-        countryCode: '+91', // Default or allow them to enter it
-        category: null,
-        grade: null,
-        passoutYear: null,
-        examType: null,
-        examStatus: null
+        countryCode: '+91', // Default country code
+        category: formData.occupation || null,
+        message: formData.message || null,
       };
 
       const response = await fetch(`${baseUrl}/leads`, {
@@ -151,6 +177,10 @@ const QuickEnquiry = () => {
                 <div className={`qe-dot ${step >= 2 ? 'active' : ''}`} />
                 <div className={`qe-line ${step >= 3 ? 'active' : ''}`} />
                 <div className={`qe-dot ${step >= 3 ? 'active' : ''}`} />
+                <div className={`qe-line ${step >= 4 ? 'active' : ''}`} />
+                <div className={`qe-dot ${step >= 4 ? 'active' : ''}`} />
+                <div className={`qe-line ${step >= 5 ? 'active' : ''}`} />
+                <div className={`qe-dot ${step >= 5 ? 'active' : ''}`} />
               </div>
             </div>
 
@@ -173,18 +203,18 @@ const QuickEnquiry = () => {
                 </button>
               </div>
 
-              {/* Step 2: Service Selection */}
+              {/* Step 2: Occupation */}
               <div className={`qe-step ${step === 2 ? 'active' : step > 2 ? 'prev' : 'next'}`}>
-                <h4>Hi {formData.name.split(' ')[0]}, how can we help?</h4>
+                <h4>Hi {formData.name.split(' ')[0]}, what do you do?</h4>
                 <div className="qe-bubbles">
-                  {services.map((service, idx) => (
+                  {occupations.map((occupation, idx) => (
                     <button
                       key={idx}
-                      className={`qe-bubble ${formData.service === service ? 'selected' : ''}`}
-                      onClick={() => handleServiceSelect(service)}
-                      style={{ animationDelay: `${idx * 0.1}s` }}
+                      className={`qe-bubble ${formData.occupation === occupation ? 'selected' : ''}`}
+                      onClick={() => handleOccupationSelect(occupation)}
+                      style={{ animationDelay: `${idx * 0.1}s`, padding: '8px 12px', fontSize: '0.85rem' }}
                     >
-                      {service}
+                      {occupation}
                     </button>
                   ))}
                 </div>
@@ -193,10 +223,30 @@ const QuickEnquiry = () => {
                 </button>
               </div>
 
-              {/* Step 3: Email & Phone */}
+              {/* Step 3: Service Selection */}
               <div className={`qe-step ${step === 3 ? 'active' : step > 3 ? 'prev' : 'next'}`}>
+                <h4>How can we help you?</h4>
+                <div className="qe-bubbles" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                  {services.map((service, idx) => (
+                    <button
+                      key={idx}
+                      className={`qe-bubble ${formData.service === service ? 'selected' : ''}`}
+                      onClick={() => handleServiceSelect(service)}
+                      style={{ animationDelay: `${idx * 0.05}s`, padding: '8px 10px', fontSize: '0.8rem', textAlign: 'center' }}
+                    >
+                      {service}
+                    </button>
+                  ))}
+                </div>
+                <button className="qe-btn-text" onClick={handleBack} style={{ marginTop: '12px' }}>
+                  Back
+                </button>
+              </div>
+
+              {/* Step 4: Email & Phone */}
+              <div className={`qe-step ${step === 4 ? 'active' : step > 4 ? 'prev' : 'next'}`}>
                 <h4>How can we reach you?</h4>
-                <form onSubmit={handleSubmit}>
+                <div>
                   <div className="qe-input-group">
                     <input 
                       type="email"
@@ -217,6 +267,31 @@ const QuickEnquiry = () => {
                       onChange={handleChange}
                       className="qe-input"
                       required
+                    />
+                  </div>
+                  <div className="qe-actions">
+                    <button type="button" className="qe-btn-text" onClick={handleBack}>
+                      Back
+                    </button>
+                    <button type="button" className="qe-btn-primary" onClick={handleNext} disabled={!formData.email.trim() || !formData.phone.trim()}>
+                      Next
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 5: Message */}
+              <div className={`qe-step ${step === 5 ? 'active' : step > 5 ? 'prev' : 'next'}`}>
+                <h4>Any details or questions? (Optional)</h4>
+                <form onSubmit={handleSubmit}>
+                  <div className="qe-input-group">
+                    <textarea
+                      name="message"
+                      placeholder="Message or specific queries..."
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="qe-input"
+                      style={{ height: '80px', padding: '8px', fontSize: '0.9rem', resize: 'none' }}
                     />
                   </div>
                   <div className="qe-actions">

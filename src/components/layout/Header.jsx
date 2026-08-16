@@ -148,6 +148,41 @@ const Header = () => {
                         For Schools
                       </Link>
                     </div>
+                    <div className="dropdown-category">
+                      <span className="category-label">
+                        Destinations
+                      </span>
+                      <Link
+                        to="/destinations/usa"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Study in USA
+                      </Link>
+                      <Link
+                        to="/destinations/uk"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Study in UK
+                      </Link>
+                      <Link
+                        to="/destinations/canada"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Study in Canada
+                      </Link>
+                      <Link
+                        to="/destinations/australia"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Study in Australia
+                      </Link>
+                      <Link
+                        to="/destinations/germany"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Study in Germany
+                      </Link>
+                    </div>
                   </div>
                 </div>
 

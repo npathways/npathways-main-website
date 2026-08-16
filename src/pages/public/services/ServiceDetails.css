@@ -279,6 +279,19 @@
   margin-bottom: 2rem;
 }
 
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.5rem;
+}
+
+.check-list li {
+  display: flex;
+  align-items: start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 /* Benefits Grid */
 .benefits-grid {
   display: grid;

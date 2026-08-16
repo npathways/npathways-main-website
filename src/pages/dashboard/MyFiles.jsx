@@ -69,8 +69,12 @@ const MyFiles = () => {
         });
         
         if (!response.ok) {
-          const errorData = await response.json();
-          toast.error(`Failed to upload ${file.name}: ${errorData.message}`);
+          let errorMsg = "Upload failed";
+          try {
+            const errorData = await response.json();
+            errorMsg = errorData.message || errorMsg;
+          } catch (_) {}
+          toast.error(`Failed to upload ${file.name}: ${errorMsg}`);
         } else {
           successCount++;
         }
