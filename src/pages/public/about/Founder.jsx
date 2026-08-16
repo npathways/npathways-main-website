@@ -24,7 +24,7 @@ const Founder = () => {
       <section style={{ padding: "6rem 0" }}>
         <div className="about-container">
           <div className="about-grid-2" style={{ alignItems: "flex-start" }}>
-            <div className="founder-image-wrapper" style={{ position: "sticky", top: "120px" }}>
+            <div className="founder-image-wrapper">
               <div
                 style={{
                   width: "100%",
@@ -227,7 +227,7 @@ const Founder = () => {
       <section style={{ padding: "6rem 0", borderTop: "1px solid #eee" }}>
         <div className="about-container" style={{ textAlign: "center" }}>
           <h3>Want to discuss your career with Deepak?</h3>
-          <p style={{ color: "#666", marginBottom: "2rem" }}>
+          <p style={{ color: "#666", marginBottom: "2rem", textAlign: "center" }}>
             Book a specialized premium consultation session for deep career
             mapping.
           </p>

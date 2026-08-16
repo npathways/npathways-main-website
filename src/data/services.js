@@ -3,40 +3,49 @@
 export const serviceCategories = [
   {
     id: 'consultancy',
-    name: 'Consultancy Services',
-    services: ['global-education-consulting', 'career-guidance', 'visa-assistance']
+    name: 'Study Abroad Services',
+    services: [
+      'academic-university-consulting',
+      'career-guidance',
+      'competitive-exam-strategy',
+      'visa-assistance'
+    ]
   },
   {
     id: 'readiness',
-    name: 'Readiness & Accelerators',
-    services: ['for-parents', 'for-schools', 'bootcamps', 'school-programs']
+    name: 'Readiness & Partnerships',
+    services: [
+      'bootcamps',
+      'for-parents',
+      'for-schools',
+      'for-colleges-universities'
+    ]
   }
 ];
 
 export const consultancyServices = [
   {
-    id: 'global-education-consulting',
-    name: 'Global Education Consulting',
+    id: 'academic-university-consulting',
+    name: 'Academic & University Consulting',
     icon: null,
-    shortDescription: 'University shortlisting and admission support',
-    description: 'We guide students at every stage of their study abroad journey — from selecting the right universities to preparing standout SOPs and LORs, coaching for exams like IELTS, SAT, GRE, and TOEFL, helping secure scholarships, and managing visa applications.',
-    longDescription: 'Our Global Education Consulting is a premium, end-to-end service designed for students aiming for top-tier international universities. We go beyond simple applications by building a strategic profile that highlights your unique strengths and aligns with institutional expectations. From the Ivy League to Russell Group institutions, we help you navigate the complex global admissions landscape with ease.',
+    shortDescription: 'Course, college, and university shortlisting and admission support — in India or abroad',
+    description: 'Academic & University Consulting is a premium, end-to-end service for students building toward the right institution.',
+    longDescription: 'Academic & University Consulting is a premium, end-to-end service for students building toward the right institution — whether that\'s a top-tier international university or a competitive Indian one. We go beyond simple applications by building a strategic profile that highlights your unique strengths and aligns with what admissions committees, in any country, are actually evaluating. From Ivy League and Russell Group institutions to India\'s top entrance-based colleges and deemed universities, we help you navigate the admissions landscape without guesswork.',
     features: [
-      'University shortlisting based on profile',
+      'College and university shortlisting based on profile — India and abroad',
       'Application strategy and planning',
-      'SOP and LOR preparation',
-      'Exam coaching (IELTS, SAT, GRE, TOEFL)',
+      'SOP, LOR, and portfolio preparation',
       'Scholarship guidance',
-      'Visa application support'
+      'Visa application support (for international applications)'
     ],
     benefits: [
-      { title: 'Strategic Advantage', description: 'Expert insights into what top-tier admissions committees are looking for.' },
+      { title: 'Strategic Advantage', description: 'Expert insight into what admissions committees are actually looking for, wherever the target sits.' },
       { title: 'Minimized Stress', description: 'We manage the timelines, documentation, and deadlines for you.' },
-      { title: 'Higher Admit Rates', description: 'Optimized profiles consistently secure seats in prestigious institutions.' }
+      { title: 'Higher Admit Rates', description: 'Optimized profiles consistently secure seats in the institutions students are actually aiming for.' }
     ],
     faq: [
       { question: 'When should I start the consulting process?', answer: 'Ideally, you should start 12-18 months before your intended intake to build a strong profile.' },
-      { question: 'Do you guarantee admission?', answer: 'While no one can guarantee admission, our strategic approach significantly improves your chances at target universities.' }
+      { question: 'Do you help with Indian universities too?', answer: 'Yes, we now support admissions and mapping to top-tier universities and competitive tracks within India as well.' }
     ],
     pricing: 'Custom',
     link: '/services/education-consulting'
@@ -46,34 +55,59 @@ export const consultancyServices = [
     name: 'Career Guidance',
     icon: null,
     shortDescription: '1-on-1 personalized strategy sessions',
-    description: 'Personalized career counseling to help you discover your strengths, clarify your goals, and create an actionable roadmap for studying abroad.',
-    longDescription: 'Career Guidance at NPathways is a reflective and analytical process. We help students and professionals identify their core interests and map them to global industry trends. This ensures that your choice of major or master\'s program isn\'t just based on popularity, but on long-term career viability and personal fulfillment.',
+    description: 'Personalized career counseling to help you discover your strengths, clarify your goals, and create an actionable roadmap.',
+    longDescription: 'Career Guidance at nPathways is a reflective, analytical process — not a form to fill out. We help students and professionals identify their core interests and map them against real industry trends, so the choice of stream, major, or master\'s program isn\'t based on what\'s popular this year, but on long-term fit and genuine fulfillment. This is also where we start when a student has no idea yet — that\'s not a gap to fix before the session, it\'s the actual starting point of it.',
     features: [
       'One-on-one counseling sessions',
-      'Career pathway analysis',
+      'Career and interest mapping (including for students who feel completely undecided)',
       'Goal setting and planning',
       'Profile evaluation',
       'Course and university recommendations'
     ],
     benefits: [
-      { title: 'Path Clarity', description: 'Remove the confusion of multiple options with a data-backed roadmap.' },
-      { title: 'Market Awareness', description: 'Align your education with future job market demands.' },
-      { title: 'Personalized Strategy', description: 'A plan that respects your unique strengths and financial constraints.' }
+      { title: 'Path Clarity', description: 'Remove the confusion of endless options with a data-backed roadmap.' },
+      { title: 'Market Awareness', description: 'Align your education with where the job market is actually headed, not where it used to be.' },
+      { title: 'Personalized Strategy', description: 'A plan that respects your unique strengths, interests, and family\'s financial constraints.' }
     ],
     faq: [
-      { question: 'Is this only for study abroad?', answer: 'While we specialize in global pathways, our guidance helps with any long-term career planning.' },
-      { question: 'How many sessions will I need?', answer: 'Most students find clarity within 2-3 deep-dive sessions.' }
+      { question: 'Is this only for students who are undecided?', answer: 'No, it\'s also for students who have general directions but want to stress-test their decisions with real-world industry data.' }
     ],
     pricing: 'Custom',
     link: '/services/career-guidance'
   },
   {
-    id: 'visa-assistance',
-    name: 'Visa Assistance',
+    id: 'competitive-exam-strategy',
+    name: 'Competitive Exam Strategy',
     icon: null,
-    shortDescription: 'End-to-end documentation and filing support',
-    description: 'Complete visa support including documentation review, application filing, interview preparation, and follow-up assistance.',
-    longDescription: 'The visa process is often the most stressful part of the global transition. Our team of experts stays updated on the latest immigration policies and documentation requirements for major destinations including the US, UK, Canada, Australia, and Europe. We ensure your file is meticulous, increasing the probability of a successful outcome.',
+    shortDescription: '1-on-1 exam strategy layered on top of your existing coaching',
+    description: 'Strategic counseling for exams like JEE, NEET, CAT, CLAT, CUET, and standardized tests.',
+    longDescription: 'Most students preparing for JEE, NEET, CAT, CLAT, CUET, or international tests like IELTS, SAT, GMAT, and GRE already have coaching. What they don\'t have is someone checking whether the exam itself is the right target, and whether the prep is actually converting into readiness — not just more hours. Competitive Exam Strategy sits above your existing coaching: we diagnose fit, build the attempt-cycle timeline, and read your mock-test data the way a strategist would, not a tutor.',
+    features: [
+      'Exam-fit diagnostic — aptitude vs. target exam, before more time is committed',
+      'Attempt-cycle and timeline planning, mapped to your school or college calendar',
+      'Mock-test and score-trend analysis with concrete correction points',
+      'Coordination with your existing coaching institute — we complement, not replace',
+      'Interview and personal-interaction prep (for CAT, CLAT, and similar exams)',
+      'Scenario planning across likely score bands, so no outcome is a total surprise'
+    ],
+    benefits: [
+      { title: 'Clarity Under Pressure', description: 'Know exactly what the target score requires and where you actually stand against it.' },
+      { title: 'Coordinated Prep', description: 'Strategy that works with your coaching, not more material competing for the same hours.' },
+      { title: 'Score-Band Readiness', description: 'A real plan for every likely outcome, not just the best-case one.' }
+    ],
+    faq: [
+      { question: 'Do you provide tutoring or subject classes?', answer: 'No, we do not tutor. We act as exam strategists to ensure your existing coaching and hours are converting into actual test readiness.' }
+    ],
+    pricing: 'Custom',
+    link: '/services/competitive-exam-strategy'
+  },
+  {
+    id: 'visa-assistance',
+    name: 'Visa & Study Abroad Assistance',
+    icon: null,
+    shortDescription: 'End-to-end documentation and filing support — for the pathways that lead abroad',
+    description: 'Complete study visa support including documentation review, application filing, and interview prep.',
+    longDescription: 'When a student\'s roadmap points beyond India, the visa process is often the most stressful part of getting there. Our team stays current on immigration policy and documentation requirements for major destinations — the US, UK, Canada, Australia, and Europe — and makes sure every file is meticulous, because a single technical error is often the difference between an approval and a delay.',
     features: [
       'Visa eligibility assessment',
       'Document preparation and review',
@@ -82,13 +116,12 @@ export const consultancyServices = [
       'Follow-up and tracking'
     ],
     benefits: [
-      { title: '98% Success Rate', description: 'Our meticulous filing process ensures high approval rates.' },
-      { title: 'Expert Documentation', description: 'Avoiding common pitfalls and technical errors in filing.' },
-      { title: 'Mock Interviews', description: 'Build confidence with simulated visa interviews for relevant countries.' }
+      { title: '98% Success Rate', description: 'A meticulous filing process that consistently holds up under scrutiny.' },
+      { title: 'Expert Documentation', description: 'Avoiding the common pitfalls and technical errors that cause delays.' },
+      { title: 'Mock Interviews', description: 'Simulated visa interviews specific to the destination country, so the real one isn\'t the first time you\'ve faced the questions.' }
     ],
     faq: [
-      { question: 'Do you help with financial documentation?', answer: 'Yes, we guide you on how to correctly present your financial records as per embassy requirements.' },
-      { question: 'What if my visa is rejected?', answer: 'We analyze the rejection reason and assist with re-filing or appeals where possible.' }
+      { question: 'Which countries do you support?', answer: 'We support student visas for the United States, United Kingdom, Canada, Australia, and European destinations.' }
     ],
     pricing: 'Custom',
     link: '/services/visa-assistance'
@@ -97,107 +130,107 @@ export const consultancyServices = [
 
 export const supportServices = [
   {
+    id: 'bootcamps',
+    name: 'Skill & Bootcamp Programs',
+    icon: null,
+    shortDescription: 'Hands-on upskilling for the gaps a syllabus doesn\'t cover',
+    description: 'Intensive short-term workshops and bootcamps to close specific academic, technical, or soft-skill gaps.',
+    longDescription: 'A strong transcript gets a student considered. It doesn\'t automatically make them ready — for an interview, an internship, an application, or a first year in a new environment. Skill & Bootcamp Programs are short, focused sessions built to close the exact gap a student\'s roadmap has already flagged, rather than offering the same generic curriculum to everyone in the room.',
+    features: [
+      'Technical skill bootcamps, matched to the student\'s target field',
+      'Communication and interview-readiness workshops',
+      'Portfolio, resume, and personal-narrative building',
+      'Industry webinars and direct sessions with working professionals',
+      'Gap-specific modules tied to the student\'s individual pathway plan, not a fixed syllabus'
+    ],
+    benefits: [
+      { title: 'Real-World Ready', description: 'Skills that show up in interviews and applications, not just certificates in a drawer.' },
+      { title: 'Compounding Value', description: 'Every module ties back to the student\'s actual pathway goal, so it adds up instead of sitting apart from it.' },
+      { title: 'Direct Industry Exposure', description: 'Real conversations with professionals in the field, not just secondhand descriptions of it.' }
+    ],
+    faq: [
+      { question: 'Can students select individual bootcamps?', answer: 'Yes, bootcamps are selected based on the specific gaps identified in the student\'s Step 4 Skill Gap Analysis.' }
+    ],
+    pricing: 'Custom',
+    link: '/bootcamps-webinars'
+  },
+  {
     id: 'for-parents',
     name: 'For Parents',
     icon: null,
-    shortDescription: 'Safety and clarity for families.',
-    description: 'Comprehensive orientation and support programs designed to help parents navigate the global education landscape with confidence.',
-    longDescription: 'Studying abroad is a major family decision. We provide parents with the tools, information, and emotional support needed to ensure their child\'s safety, financial clarity, and academic success in a foreign land. Our sessions cover everything from choosing safe destinations to managing finances and cultural transitions.',
+    shortDescription: 'Safety and clarity for families, whatever the pathway',
+    description: 'Financial planning, destination audits, and progress tracking designed for peace of mind.',
+    longDescription: 'Every major academic decision is a family decision — not just the ones that involve a passport. Whether the plan is a competitive exam, a college in another city, or a university abroad, we give parents the tools, information, and support to feel confident in it: financial clarity, safety where relevant, and a clear view of what their child is actually walking toward.',
     features: [
-      'Safety & destination audits',
-      'Financial planning & forex guidance',
+      'Safety and destination audits (for pathways that involve relocation, in India or abroad)',
+      'Financial planning and cost transparency, including forex guidance where relevant',
       'Regular student progress reports',
       'Emergency support protocols',
       'Parental community access'
     ],
     benefits: [
-      { title: 'Peace of Mind', description: 'Know your child is in safe hands with vetted destinations and local support.' },
-      { title: 'Financial Roadmap', description: 'Clear visibility into total cost of education and living expenses.' },
-      { title: 'Better Alignment', description: 'Bridging the communication gap between student ambitions and family expectations.' }
+      { title: 'Peace of Mind', description: 'Know your child is on a vetted, well-supported pathway, wherever it leads.' },
+      { title: 'Financial Roadmap', description: 'Clear visibility into the total cost of the plan, start to finish.' },
+      { title: 'Better Alignment', description: 'Bridging the gap between a student\'s ambitions and a family\'s expectations, honestly, before it becomes conflict.' }
     ],
     faq: [
-      { question: 'How do you ensure student safety?', answer: 'We only partner with accredited universities in safe locations and provide 24/7 on-ground support.' },
-      { question: 'Do you help with student housing?', answer: 'Yes, we assist in finding safe, university-approved or verified private accommodation.' }
+      { question: 'How do you keep parents updated?', answer: 'We share regular progress reports and hold scheduled alignment calls with families.' }
     ],
+    pricing: 'Custom',
     link: '/services/parents'
   },
   {
     id: 'for-schools',
     name: 'For Schools',
     icon: null,
-    shortDescription: 'Institutional success and global exposure.',
-    description: 'Strategic partnerships with schools to provide students with global career pathways and institutional growth opportunities.',
-    longDescription: 'We partner with K-12 institutions to integrate global education readiness into their curriculum. From set-up of international wings to organizing global immersion programs and counselor training, we help schools become global hubs for student excellence.',
+    shortDescription: 'Institutional success — academic outcomes, exam results, and global exposure',
+    description: 'Curriculum alignment, counselor training, and on-campus university fairs for K-12 partners.',
+    longDescription: 'We partner with K-12 institutions to build genuine readiness into their curriculum — not just international exposure, but stronger outcomes across the board: competitive exam performance, career clarity, and academic pathway planning, alongside global readiness for the students who want it. From setting up dedicated academic and international wings to counselor training and university fairs, we help schools raise outcomes across every kind of pathway their students actually choose.',
     features: [
-      'International Wing setup consulting',
-      'Professional development for teachers',
-      'Global university fairs on campus',
-      'Curriculum alignment for global prep',
-      'Student profile building workshops'
+      'Academic and international wing setup consulting',
+      'Professional development for teachers and in-house counselors',
+      'On-campus university fairs and competitive-exam workshops',
+      'Curriculum alignment for both domestic and global readiness',
+      'Student profile-building and interest-mapping workshops'
     ],
     benefits: [
-      { title: 'Institutional Prestige', description: 'Enhance your school brand with a strong global education department.' },
-      { title: 'Student Success', description: 'Higher college placement rates in top-tier global universities.' },
-      { title: 'Teacher Growth', description: 'Exposing educators to global standards and teaching methodologies.' }
+      { title: 'Institutional Prestige', description: 'Strengthen your school\'s academic and global-education reputation in one move, not two separate ones.' },
+      { title: 'Student Success', description: 'Better outcomes across competitive exams, domestic admissions, and global placements alike.' },
+      { title: 'Teacher Growth', description: 'Equip educators with modern career-guidance and global-readiness standards, not just exam-prep methods.' }
     ],
     faq: [
-      { question: 'How do we start a partnership?', answer: 'Contact our institutional relations team for a discovery session and audit.' },
-      { question: 'Is there a cost for the school?', answer: 'We offer both subsidized and premium partnership models based on school requirements.' }
+      { question: 'Is there a minimum size school you partner with?', answer: 'We customize partnerships based on the school\'s curriculum and specific student needs.' }
     ],
+    pricing: 'Custom',
     link: '/services/schools'
   },
   {
-    id: 'bootcamps',
-    name: 'Bootcamps',
+    id: 'for-colleges-universities',
+    name: 'For Colleges & Universities',
     icon: null,
-    shortDescription: 'Intensive profile-building accelerators.',
-    description: 'High-impact, short-term programs designed to build specific skills and professional profiles.',
-    longDescription: 'Our bootcamps are intensive accelerators where students work on real-world projects, build portfolios, and interact with industry experts. Whether it\'s tech, business, or design, we provide the platform to go from concept to creation.',
+    shortDescription: 'Stronger student outcomes, and a trusted pipeline of ready applicants',
+    description: 'Employability bootcamps, counseling cells, and recruitment partnerships for higher-ed.',
+    longDescription: 'Colleges and universities don\'t need the same support schools do — the students have already arrived. What they need is help on both ends: getting current students genuinely placement-ready before they graduate, and, for institutions actively recruiting, a pipeline of applicants who are a real fit rather than just a filled seat. We partner with institutions on both fronts — running employability and skill-readiness programs for final-year students, and, where relevant, connecting our own students to the right college or university partners as part of their pathway.',
     features: [
-      'Industry-expert mentorship',
-      'Real-world project publication',
-      'Skill certification',
-      'Peer-to-peer collaboration',
-      'Portfolio submission support'
+      'Employability and placement-readiness bootcamps for final-year students',
+      'Structured career-guidance support for the institution\'s own counseling cell',
+      'Skill-gap workshops aligned to current industry and admissions expectations',
+      'Recruitment and pipeline partnerships for institutions seeking well-matched applicants',
+      'Outcome tracking and reporting — placement rates, admit rates, and student readiness over time'
     ],
     benefits: [
-      { title: 'Portfolio Punch', description: 'Gain unique achievements that stand out on college applications.' },
-      { title: 'Domain Expertise', description: 'Deep dive into a specific field beyond textbook knowledge.' },
-      { title: 'Social Proof', description: 'Work with recognized brands and experts in the field.' }
+      { title: 'Better Placement Outcomes', description: 'Students graduate genuinely job-ready, not just credentialed.' },
+      { title: 'A Stronger Applicant Pipeline', description: 'For partner institutions, a steady stream of students who are a real fit, not just a filled quota.' },
+      { title: 'Lighter Counseling Load', description: 'We extend your institution\'s own guidance capacity instead of duplicating it.' }
     ],
     faq: [
-      { question: 'Are bootcamps online or offline?', answer: 'We offer both hybrid and fully online bootcamps to suit global schedules.' },
-      { question: 'Will I get a certificate?', answer: 'Yes, all successful graduates receive a globally recognized NPathways certificate.' }
+      { question: 'What programs do you run for universities?', answer: 'We run core placement readiness bootcamps, technical workshops, and coordinate student recruitment drives.' }
     ],
-    link: '/bootcamps-webinars'
-  },
-  {
-    id: 'school-programs',
-    name: 'School Programs',
-    icon: null,
-    shortDescription: 'Structured institutional engagements.',
-    description: 'Long-term programs integrated with the school calendar for holistic student development.',
-    longDescription: 'NPathways school programs are designed to be part of the academic ecosystem. We provide year-long guidance and activities that transform students from passive learners to global leaders.',
-    features: [
-      'Quarterly readiness audits',
-      'Guest lectures from global alumni',
-      'University application workshops',
-      'Leadership & soft-skills training',
-      'Global immersion tours'
-    ],
-    benefits: [
-      { title: 'Holistic Growth', description: 'Balance academic goals with global readiness and life skills.' },
-      { title: 'Stress-free Planning', description: 'Spreading the career discovery process over 2-3 years.' },
-      { title: 'Community Effect', description: 'Students grow together in a culture of global ambition.' }
-    ],
-    faq: [
-      { question: 'How do these programs fit into the timetable?', answer: 'We work with the school administration to schedule sessions during non-academic or co-curricular hours.' }
-    ],
-    link: '/services/school-programs'
+    pricing: 'Custom',
+    link: '/services/colleges-universities'
   }
 ];
 
-// Get service by ID
 export const getServiceById = (id) => {
   return consultancyServices.find(service => service.id === id) || 
          supportServices.find(service => service.id === id);

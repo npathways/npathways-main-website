@@ -40,70 +40,115 @@ const stepsData = [
     icon: <FaCompass />,
     title: "Clarity Compass™ Assessment",
     bgImg: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
-    desc: "We start with a deep dive into your strengths and EQ. This isn't just a test; it's your career foundation."
+    desc: "We start with a deep dive into your strengths, interests, and EQ. This isn't just a test  it's the foundation every decision after this one gets built on."
   },
   {
     num: "02",
     icon: <FaMapMarkedAlt />,
-    title: "Global Goal Mapping",
+    title: "Pathway Goal Mapping",
     bgImg: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80",
-    desc: "Identifying the right countries and industry trends that align with your long-term residency and career goals."
+    desc: "Identifying the right destination for you  a competitive exam, a top Indian university, a course abroad, or a career direction you haven't considered yet  aligned to your long-term goals, not the default everyone else picked."
   },
   {
     num: "03",
     icon: <FaGraduationCap />,
-    title: "University Matchmaking",
+    title: "Best-Fit Matchmaking",
     bgImg: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
-    desc: "Comparing curricula, research opportunities, and lifestyle to find your perfect academic home."
+    desc: "Comparing curricula, boards, institutions, and career tracks  in India or abroad  to find the fit that actually matches how you think and where you want to end up."
   },
   {
     num: "04",
     icon: <FaChartLine />,
     title: "Skill Gap Analysis",
     bgImg: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
-    desc: "If your profile lacks certain technical or soft skills, we fill them through our specialized bootcamps."
+    desc: "If your profile is missing something  technical, academic, or soft skills  we close the gap through our bootcamps and bridge programs before it becomes a bottleneck."
   },
   {
     num: "05",
     icon: <FaPenNib />,
     title: "Story-Driven Applications",
     bgImg: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80",
-    desc: "We help you craft SOPs that aren't just templates, but powerful narratives of your individual growth."
+    desc: "Whether it's an SOP, a college application, or an exam-prep portfolio, we help you build a narrative that's genuinely yours  not a template everyone else is also submitting."
   },
   {
     num: "06",
     icon: <FaFileInvoiceDollar />,
     title: "Financial Architecture",
     bgImg: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
-    desc: "Navigating education loans, scholarships, and budgeting for a stress-free transition."
+    desc: "Navigating scholarships, education loans, and budgeting  for a course in India or a degree abroad  so the plan is stress-free, not just ambitious."
   },
   {
     num: "07",
     icon: <FaPassport />,
-    title: "The Visa Siege",
+    title: "The Gauntlet",
     bgImg: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80",
-    desc: "Meticulous documentation and mock interviews to ensure your entry is seamless and successful."
+    desc: "Meticulous prep and mock interviews for whatever gate stands between you and your goal  a board exam, a competitive entrance test, a college interview, or a visa. We drill for the one that's actually yours."
   },
   {
     num: "08",
     icon: <FaPlaneDeparture />,
-    title: "Pre-Departure Orientation",
+    title: "Pre-Launch Orientation",
     bgImg: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80",
-    desc: "Cultural hacks, banking setup, and survival skills for your first 30 days in a new country."
+    desc: "The practical playbook for your next transition  new city, new campus, new country  banking, logistics, and the survival skills for your first 30 days wherever that is."
   },
   {
     num: "09",
     icon: <FaHome />,
     title: "Settling In",
     bgImg: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
-    desc: "Assistance with accommodation coordination and your first week of administrative hurdles."
+    desc: "Support through accommodation, orientation, and the first week of administrative hurdles  whether that's a hostel in another state or an apartment in another country."
   },
   {
     num: "10",
     icon: <FaHandsHelping />,
     title: "On-Going Mentorship",
     bgImg: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80",
-    desc: "We remain your partner throughout your degree and during your first job search abroad."
+    desc: "We stay your partner through the degree, the first job search, or the next fork in the road  because a pathway isn't done the day you get in. It's done when you're actually living it."
+  }
+];
+
+const popularPathwaysData = [
+  {
+    title: "Academic Pathways",
+    desc: "For the student who has the destination  but not yet the route.",
+    link: "/services/education-consulting",
+    icon: <FaGraduationCap />
+  },
+  {
+    title: "Career Pathways",
+    desc: "For the student who doesn't know yet  which is exactly where we start.",
+    link: "/services/career-guidance",
+    icon: <FaCompass />
+  },
+  {
+    title: "Curricular-Based Pathways",
+    desc: "Every Board. One Strategy. Board and subject choices.",
+    link: "/services/curricular-based-pathways",
+    icon: <FiBookOpen />
+  },
+  {
+    title: "Pathway Programs (Bridge Courses)",
+    desc: "Close the specific academic or transition gaps.",
+    link: "/services/pathway-programs",
+    icon: <FaChartLine />
+  },
+  {
+    title: "Competitive Exam Pathways",
+    desc: "Layered exam prep strategy for JEE, NEET, CAT, CLAT, etc.",
+    link: "/services/competitive-exam-strategy",
+    icon: <FiAward />
+  },
+  {
+    title: "Skill & Bootcamp Pathways",
+    desc: "Outcome-specific bootcamps for job and life readiness.",
+    link: "/bootcamps-webinars",
+    icon: <FaFileInvoiceDollar />
+  },
+  {
+    title: "Study Abroad Pathway",
+    desc: "When the plan points beyond India, we take you the whole way.",
+    link: "/services/study-abroad-pathway",
+    icon: <FaPlaneDeparture />
   }
 ];
 
@@ -113,28 +158,28 @@ const studentSupportData = [
     title: "Career Discovery",
     subtitle: "Psychometric & Ikigai mapping",
     bgImg: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=1200&q=80",
-    desc: "Most students choose a country before they've chosen a direction. We start the other way around. Every NPathways journey begins with the Clarity Compass — a psychometric and aptitude diagnostic built around the idea of Ikigai: the place where what you're good at, what you enjoy, what the world needs, and what's actually viable for you all meet. In a single guided session, we map your natural strengths, genuine interests, and real-world readiness — not just your grades. The result isn't a generic report; it's a working answer to the question underneath every application: what am I actually building toward? For some students that means research. For others, industry, entrepreneurship, or a creative path nobody suggested before. Once that's clear, every decision after — which country, which course, which university — has something solid to stand on. This is the one step other consultancies skip. We think it's the one that matters most."
+    desc: "Most students choose a country before they've chosen a direction. We start the other way around. Every NPathways journey begins with the Clarity Compass  a psychometric and aptitude diagnostic built around the idea of Ikigai: the place where what you're good at, what you enjoy, what the world needs, and what's actually viable for you all meet. In a single guided session, we map your natural strengths, genuine interests, and real-world readiness  not just your grades. The result isn't a generic report; it's a working answer to the question underneath every application: what am I actually building toward? For some students that means research. For others, industry, entrepreneurship, or a creative path nobody suggested before. Once that's clear, every decision after  which country, which course, which university  has something solid to stand on. This is the one step other consultancies skip. We think it's the one that matters most."
   },
   {
     num: "02",
     title: "Admissions",
     subtitle: "Expert university shortlisting",
     bgImg: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
-    desc: "A university list built on rankings alone is a list built for someone else. Once your direction is clear, our admissions team builds a shortlist around what actually fits you — your academic profile, your budget, your career goals, and the kind of environment you'll genuinely thrive in, not just the one that looks best on paper. We look past headline rankings to the things that decide your actual experience: department strength in your specific field, faculty and research opportunities, curriculum fit, industry connections, and realistic admission chances given your profile. From there, we work with you end-to-end — refining personal statements, coordinating recommendation letters, tracking every deadline — so your application reflects your strongest, most honest case for admission. The goal isn't the most prestigious name you can get in front of. It's the university where your specific goals actually have room to grow."
+    desc: "A university list built on rankings alone is a list built for someone else. Once your direction is clear, our admissions team builds a shortlist around what actually fits you  your academic profile, your budget, your career goals, and the kind of environment you'll genuinely thrive in, not just the one that looks best on paper. We look past headline rankings to the things that decide your actual experience: department strength in your specific field, faculty and research opportunities, curriculum fit, industry connections, and realistic admission chances given your profile. From there, we work with you end-to-end  refining personal statements, coordinating recommendation letters, tracking every deadline  so your application reflects your strongest, most honest case for admission. The goal isn't the most prestigious name you can get in front of. It's the university where your specific goals actually have room to grow."
   },
   {
     num: "03",
     title: "Visa Success",
     subtitle: "98% success rate in filing",
     bgImg: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&q=80",
-    desc: "A strong admission means nothing without a strong visa file — and this is where most delays and rejections quietly happen, often over paperwork that could have been caught early. Our visa team has built a 98% success rate by treating every filing like it's the only one that matters: document-by-document review, country-specific requirement checks, financial proof structured the way that specific embassy expects it, and mock interviews before the real one. We track policy shifts as they happen — visa rules change more often than students expect — so your file is built against the current requirement, not last year's. And we stay with you past the approval stamp: guidance on arrival formalities, work-rights rules on your visa, and what to do if anything needs renewing later. Getting in is the milestone everyone celebrates. We think getting there safely and correctly is the part that actually deserves the effort."
+    desc: "A strong admission means nothing without a strong visa file  and this is where most delays and rejections quietly happen, often over paperwork that could have been caught early. Our visa team has built a 98% success rate by treating every filing like it's the only one that matters: document-by-document review, country-specific requirement checks, financial proof structured the way that specific embassy expects it, and mock interviews before the real one. We track policy shifts as they happen  visa rules change more often than students expect  so your file is built against the current requirement, not last year's. And we stay with you past the approval stamp: guidance on arrival formalities, work-rights rules on your visa, and what to do if anything needs renewing later. Getting in is the milestone everyone celebrates. We think getting there safely and correctly is the part that actually deserves the effort."
   },
   {
     num: "04",
     title: "Your Journey",
     subtitle: "Guided by us, decided by you",
     bgImg: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1200&q=80",
-    desc: "Studying abroad isn't one decision — it's a sequence of them, and every student's sequence looks different. For college students, we work directly with you, in person, taking the time to actually understand you before we map anything out. For school students and minors, we work through your parents at every step, so the family stays informed and involved throughout. Either way, the decisions are always yours to make — ours is to guide, explain, and stand beside you while you make them. From your first clarity conversation through direction-setting, university and country selection, applications, visas, pre-departure preparation, arrival, and settling in — every stage has a defined, supported step, built around who you actually are, not a template everyone gets. No two journeys here look the same, because no two students do. This is what \"beyond borders into purpose\" actually looks like in practice — a journey that speaks for itself."
+    desc: "Studying abroad isn't one decision  it's a sequence of them, and every student's sequence looks different. For college students, we work directly with you, in person, taking the time to actually understand you before we map anything out. For school students and minors, we work through your parents at every step, so the family stays informed and involved throughout. Either way, the decisions are always yours to make  ours is to guide, explain, and stand beside you while you make them. From your first clarity conversation through direction-setting, university and country selection, applications, visas, pre-departure preparation, arrival, and settling in  every stage has a defined, supported step, built around who you actually are, not a template everyone gets. No two journeys here look the same, because no two students do. This is what \"beyond borders into purpose\" actually looks like in practice  a journey that speaks for itself."
   }
 ];
 
@@ -144,28 +189,28 @@ const parentSupportData = [
     title: "Travel & Stay",
     subtitle: "with them, every step of the way",
     bgImg: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80",
-    desc: "For many parents, the hardest part isn't the paperwork — it's not being there when your child takes their first steps into a new country. If you choose to travel with them for the first move, we handle it as carefully as we handle the student's own visa: accompanying-parent visa guidance, help sourcing accommodation near campus, and a clear day-by-day itinerary for the visit — what to set up first, which offices to visit, what can wait. If a follow-up visit is on your mind later — orientation day, a graduation, just checking in — we can help plan that too, from paperwork to logistics. You shouldn't have to choose between being present for your child's biggest moment and knowing how to actually navigate a country you've never seen. We'd rather you spend that time being a parent, not a logistics manager."
+    desc: "For many parents, the hardest part isn't the paperwork  it's not being there when your child takes their first steps into a new country. If you choose to travel with them for the first move, we handle it as carefully as we handle the student's own visa: accompanying-parent visa guidance, help sourcing accommodation near campus, and a clear day-by-day itinerary for the visit  what to set up first, which offices to visit, what can wait. If a follow-up visit is on your mind later  orientation day, a graduation, just checking in  we can help plan that too, from paperwork to logistics. You shouldn't have to choose between being present for your child's biggest moment and knowing how to actually navigate a country you've never seen. We'd rather you spend that time being a parent, not a logistics manager."
   },
   {
     num: "02",
     title: "Financial Clarity",
     subtitle: "plan the full cost, not just the fees",
     bgImg: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80",
-    desc: "Tuition is only ever part of the number. Living costs, currency shifts, one-time visa and travel costs, part-time work rules that affect what your child can actually earn there — these are the details that quietly break budgets built only around a university's advertised fee. We sit down with families early and build a realistic, full-picture cost plan: total program cost (not per-year guesses), city-specific living expenses, scholarship and loan options you actually qualify for, and a currency-risk conversation most consultancies skip entirely. You'll know what this really costs, and what happens to your budget if the exchange rate moves against you mid-program — before you're already committed. No pressure, no upsell. Just the numbers a parent actually needs to say yes with confidence, not just hope."
+    desc: "Tuition is only ever part of the number. Living costs, currency shifts, one-time visa and travel costs, part-time work rules that affect what your child can actually earn there  these are the details that quietly break budgets built only around a university's advertised fee. We sit down with families early and build a realistic, full-picture cost plan: total program cost (not per-year guesses), city-specific living expenses, scholarship and loan options you actually qualify for, and a currency-risk conversation most consultancies skip entirely. You'll know what this really costs, and what happens to your budget if the exchange rate moves against you mid-program  before you're already committed. No pressure, no upsell. Just the numbers a parent actually needs to say yes with confidence, not just hope."
   },
   {
     num: "03",
     title: "The Parent Circle",
     subtitle: "you're not doing this alone",
     bgImg: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80",
-    desc: "Somewhere between the acceptance letter and the actual goodbye, most parents realize they know exactly one other family going through this — if that. The Parent Circle is a community of NPathways parents, past and current, who've stood exactly where you're standing. Ask the questions that feel too small for a formal consultation — what to pack, how the first phone call home usually goes, what nobody tells you about the first month. We host regular meet-ups, both online and in person, where experienced parents and new ones simply talk — no agenda, no pitch, just people who understand. Some of the most useful advice a parent will get isn't from us. It's from another parent who did this eighteen months ago and remembers exactly what they wish someone had told them."
+    desc: "Somewhere between the acceptance letter and the actual goodbye, most parents realize they know exactly one other family going through this  if that. The Parent Circle is a community of NPathways parents, past and current, who've stood exactly where you're standing. Ask the questions that feel too small for a formal consultation  what to pack, how the first phone call home usually goes, what nobody tells you about the first month. We host regular meet-ups, both online and in person, where experienced parents and new ones simply talk  no agenda, no pitch, just people who understand. Some of the most useful advice a parent will get isn't from us. It's from another parent who did this eighteen months ago and remembers exactly what they wish someone had told them."
   },
   {
     num: "04",
     title: "Our Global Family Network",
     subtitle: "easing the distance",
     bgImg: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
-    desc: "We built this around the idea that distance shouldn't mean disconnection. Beyond regular updates on how your child is settling in, we're building partnerships with international student communities and other consultancies abroad, so families here can host visiting international students for a day or two — a genuine, warm, cultural exchange that gives you a small version of the connection you're missing, and gives a student far from home a taste of it too. We also run seasonal meet-and-greets and community events for parents locally, so the people who understand this exact transition aren't strangers on a screen but people you actually know. Your child moved abroad for their purpose. That doesn't mean your role in their life got smaller — just further away. We're here to shorten that distance wherever we can."
+    desc: "We built this around the idea that distance shouldn't mean disconnection. Beyond regular updates on how your child is settling in, we're building partnerships with international student communities and other consultancies abroad, so families here can host visiting international students for a day or two  a genuine, warm, cultural exchange that gives you a small version of the connection you're missing, and gives a student far from home a taste of it too. We also run seasonal meet-and-greets and community events for parents locally, so the people who understand this exact transition aren't strangers on a screen but people you actually know. Your child moved abroad for their purpose. That doesn't mean your role in their life got smaller  just further away. We're here to shorten that distance wherever we can."
   }
 ];
 
@@ -177,14 +222,13 @@ const categoriesList = [
 ];
 
 const programsList = [
-  { label: 'Study Abroad', desc: 'Global admissions guidance', icon: <FiBookOpen size={20} /> },
-  { label: 'Test Preparation', desc: 'CAT, GMAT, GRE coaching & prep', icon: <FiAward size={20} /> },
-  { label: 'Admissions Consulting', desc: 'Essays, resume & profiles', icon: <FiUserCheck size={20} /> },
-  { label: 'Skills & Bootcamps', desc: 'Intensive tech & business courses', icon: <FiBookOpen size={20} /> },
-  { label: 'Visa Assistance', desc: 'Step-by-step visa documentation', icon: <FiAward size={20} /> },
-  { label: 'Career Counseling', desc: 'One-on-one professional guidance', icon: <FiPhoneCall size={20} /> },
-  { label: 'Internships & Research', desc: 'Experiential learning opportunities', icon: <FiAward size={20} /> },
-  { label: 'School Programs', desc: 'Coordinated institutional workshops', icon: <FiBookOpen size={20} /> }
+  { label: 'Academic & University Consulting', desc: 'Course, college, and university shortlisting', icon: <FiBookOpen size={20} /> },
+  { label: 'Career Guidance', desc: '1-on-1 personalized Ikigai mapping & career strategy', icon: <FiPhoneCall size={20} /> },
+  { label: 'Curricular-Based Strategy', desc: 'Board selection & subject combination planning', icon: <FiBookOpen size={20} /> },
+  { label: 'Pathway Programs (Bridge Courses)', desc: 'Transition support & targeted bridge courses', icon: <FiAward size={20} /> },
+  { label: 'Competitive Exam Strategy', desc: 'JEE, NEET, CAT, GMAT, GRE coaching & prep strategy', icon: <FiAward size={20} /> },
+  { label: 'Skills & Bootcamp Programs', desc: 'Intensive technology, business & upskilling bootcamps', icon: <FiBookOpen size={20} /> },
+  { label: 'Study Abroad & Visa Assistance', desc: 'End-to-end global admissions, visa & student support', icon: <FiAward size={20} /> }
 ];
 
 const landmassPoints = [
@@ -288,7 +332,7 @@ const GlobeWidget = () => {
 
   const autocompleteList = [
     "United States", "United Kingdom", "Canada", "Australia", "Germany",
-    "Ireland", "France", "Netherlands", "New Zealand", "Singapore", 
+    "Ireland", "France", "Netherlands", "New Zealand", "Singapore",
     "Sweden", "Switzerland", "Italy", "Spain", "Austria"
   ];
 
@@ -319,7 +363,7 @@ const GlobeWidget = () => {
 
   const matchCountry = (query) => {
     const q = query.toLowerCase().trim();
-    
+
     // 1. Exact abbreviation matches
     const exactMatches = {
       "usa": "usa",
@@ -418,13 +462,13 @@ const GlobeWidget = () => {
       dots.forEach(dot => {
         const radLat = (dot.lat * Math.PI) / 180;
         const radLon = (dot.lon * Math.PI) / 180 + rotationRef.current;
-        
+
         const x = cx + radius * Math.cos(radLat) * Math.sin(radLon);
         const y = cy - radius * Math.sin(radLat);
         const z = Math.cos(radLat) * Math.cos(radLon);
 
         if (z > 0) {
-          ctx.fillStyle = "#FDBA31";
+          ctx.fillStyle = "#e0a52b";
           ctx.beginPath();
           ctx.arc(x, y, 5 * z, 0, 2 * Math.PI);
           ctx.fill();
@@ -465,7 +509,7 @@ const GlobeWidget = () => {
       setZoomFactor(currentZoom);
       if (currentZoom >= 1.8) {
         clearInterval(interval);
-        
+
         const matchedId = matchCountry(query);
         if (matchedId) {
           toast.success(`Zooming to Study in ${matchedId.toUpperCase()}!`);
@@ -542,10 +586,6 @@ const Home = () => {
   const navigate = useNavigate();
   const [activeStep, setActiveStep] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [activeStudentPanel, setActiveStudentPanel] = useState(0);
-  const [activeParentPanel, setActiveParentPanel] = useState(0);
-  const studentIndexRef = useRef(0);
-  const parentIndexRef = useRef(0);
 
   // CTA Wizard state
   const [wizardStep, setWizardStep] = useState(1);
@@ -617,40 +657,6 @@ const Home = () => {
     }
   };
 
-  const scrollToPanel = (sectionClass, index) => {
-    const wrapper = document.querySelector(`.${sectionClass} .support-accordion`);
-    if (wrapper) {
-      const rect = wrapper.getBoundingClientRect();
-      const wrapperTop = rect.top + window.scrollY;
-      const wrapperHeight = rect.height;
-      // Calculate target scroll position where the viewport center aligns with the center of the panel's zone
-      const targetCenterInWrapper = (index + 0.5) * (wrapperHeight / 4);
-      const targetScrollY = wrapperTop + targetCenterInWrapper - window.innerHeight / 2;
-
-      // Update refs and states immediately to avoid click lag/delays
-      if (sectionClass.includes("student")) {
-        studentIndexRef.current = index;
-        setActiveStudentPanel(index);
-      } else {
-        parentIndexRef.current = index;
-        setActiveParentPanel(index);
-      }
-
-      window.scrollTo({
-        top: targetScrollY,
-        behavior: "smooth"
-      });
-    }
-  };
-
-  const handleMouseMove = (e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    card.style.setProperty("--mouse-x", `${x}px`);
-    card.style.setProperty("--mouse-y", `${y}px`);
-  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -664,35 +670,10 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [isPaused]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const studentWrapper = document.querySelector(".student-support .support-accordion");
 
-      const viewportCenter = window.innerHeight / 2;
-
-      if (studentWrapper) {
-        const rect = studentWrapper.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          const progress = (viewportCenter - rect.top) / rect.height;
-          const clamped = Math.max(0, Math.min(0.99, progress));
-          const index = Math.floor(clamped * 4); // 4 panels
-          if (studentIndexRef.current !== index) {
-            studentIndexRef.current = index;
-            setActiveStudentPanel(index);
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className="home-redesign">
-      {/* Hero Section - Split Layout */}
       <section className="home-hero-premium">
         <video
           className="hero-video-bg"
@@ -708,19 +689,17 @@ const Home = () => {
         <div className="container hero-split">
           <div className="hero-content-left">
             <span className="hero-badge-minimal">
-              Global Education Reimagined
+              YOUR FUTURE. MAPPED WITH PURPOSE.
             </span>
             <h1 className="hero-title-premium">
-              NPathways Global <br /> <span>Beyond Borders. Into Purpose.</span>
+              NPathways Global <br /> <span>Beyond Boundaries. Into Purpose.</span>
             </h1>
             <p className="hero-desc-premium">
-              Welcome to <strong>NPathways</strong> — premium study abroad guidance from career discovery to
-              post-arrival support. We don't just find you a university; we find
-              you a future.
+              Welcome to <strong>nPathways</strong>  where students and parents turn "what should I do next" into a real plan. Competitive exams, top universities in India or abroad, the right course, or just clarity when nothing feels obvious yet  we map it, match it, and help you go get it.
             </p>
             <div className="hero-actions-premium">
               <Button variant="premium" onClick={() => window.dispatchEvent(new Event('open-quick-enquiry'))}>
-                Book Free Consultation
+                Map My Path
                 <svg
                   width="20"
                   height="20"
@@ -750,14 +729,87 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Your journey with us - 3D Overlapping Card Slider */}
+      {/* SECTION 2 – Built on Three Ideas Older Than Us */}
+      <section className="home-philosophy-section">
+        <div className="container">
+          <div className="section-header-premium text-center">
+            <span className="badge">Our Philosophy</span>
+            <h2>Built on Three Ideas Older Than Us</h2>
+            <p className="section-subtitle">
+              The principles that govern how we listen, how we map, and how we mentor.
+            </p>
+          </div>
+
+          <div className="philosophy-zen-layout">
+            {/* Column 1: Ikigai */}
+            <div className="philosophy-zen-item animate-on-scroll">
+              <span className="zen-number">01</span>
+              <div className="concept-header">
+                <h3>Ikigai</h3>
+                <span className="concept-japanese-inline">生き甲斐</span>
+                <span className="concept-definition">your reason for being</span>
+              </div>
+              <p className="concept-desc">
+                The point where what you love, what you're good at, what the world needs, and what sustains you overlap.
+              </p>
+              <div className="concept-how-we-use">
+                <h5>How we use it:</h5>
+                <p>
+                  Most career advice optimizes for one corner of that overlap  usually "what pays." We map all four, every time, for every student. It's the actual method behind Clarity Compass™: not "what should you do," but "where do these four things meet for you specifically." A pathway that only satisfies one corner isn't a pathway.
+                </p>
+              </div>
+            </div>
+
+            {/* Column 2: Kiku */}
+            <div className="philosophy-zen-item animate-on-scroll">
+              <span className="zen-number">02</span>
+              <div className="concept-header">
+                <h3>Kiku</h3>
+                <span className="concept-japanese-inline">聴く</span>
+                <span className="concept-definition">to truly listen</span>
+              </div>
+              <p className="concept-desc">
+                Not just hearing what's said, but listening for what a student hasn't figured out how to say yet.
+              </p>
+              <div className="concept-how-we-use">
+                <h5>How we use it:</h5>
+                <p>
+                  Most consultations start with a form. Ours start with a conversation  because the real answer rarely arrives in the first sentence. Kiku is the principle behind Step 1, the Clarity Compass™ assessment  we don't map a pathway until we've actually heard the whole thing, including the parts said quietly, or not said at all.
+                </p>
+              </div>
+            </div>
+
+            {/* Column 3: Kaizen */}
+            <div className="philosophy-zen-item animate-on-scroll">
+              <span className="zen-number">03</span>
+              <div className="concept-header">
+                <h3>Kaizen</h3>
+                <span className="concept-japanese-inline">改善</span>
+                <span className="concept-definition">continuous improvement</span>
+              </div>
+              <p className="concept-desc">
+                Progress made in small, honest steps  not one big leap, and never standing still.
+              </p>
+              <div className="concept-how-we-use">
+                <h5>How we use it:</h5>
+                <p>
+                  This is why the journey is ten steps and not one decision. A roadmap isn't a document you hand over and walk away from  it's something we keep recalibrating as the student, the syllabus, the exam landscape, or the goal itself shifts. Step 10 exists because of this principle: mentorship ends when the plan stops needing adjustment  which is never.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Your 10-Step Journey - 3D Overlapping Card Slider */}
       <section className="home-process-stack-section">
         <div className="container">
           <div className="section-header-premium text-center">
-            <span className="badge">The Roadmap</span>
-            <h2>Your journey with us</h2>
+            <span className="badge">How it works</span>
+            <h2>Your 10-Step Journey</h2>
+            <h3 className="section-header-highlight">To a Life You Actually Chose</h3>
             <p className="section-subtitle">
-              From the first spark of direction-setting to your first job in a new country, we are with you every step of the way.
+              From the first spark of an idea to the day you're living the plan you built, we're with you every single step of the way  whether that plan ends in Delhi, Bangalore, Boston, or Berlin.
             </p>
           </div>
         </div>
@@ -886,126 +938,36 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Complete Student Support Section (Accordion) */}
-      <section className="home-support-section student-support">
+      {/* Explore Our Pathways Section */}
+      <section className="home-pathways-section">
         <div className="container">
           <div className="section-header-premium text-center">
-            <span className="badge">For Students</span>
-            <h2>Complete Student Support</h2>
+            <span className="badge">Pathways</span>
+            <h2>Explore Our Pathways</h2>
             <p className="section-subtitle">
-              How we guide college and school students from clarity to transition.
+              We design personalized routes for academic excellence, career discovery, stream decisions, and study abroad transitions.
             </p>
           </div>
 
-          <div className="support-accordion">
-            {studentSupportData.map((card, i) => (
-              <div
-                key={i}
-                className={`support-panel ${activeStudentPanel === i ? "active" : ""}`}
-                style={{ backgroundImage: `url(${card.bgImg})` }}
-                onClick={() => scrollToPanel("student-support", i)}
-                onMouseMove={handleMouseMove}
-              >
-                <div className="support-panel-overlay"></div>
-                <div className="support-panel-glass">
-                  <div className="support-card-header">
-                    <span className="support-card-number">{card.num}</span>
-                    <div className="support-card-titles">
-                      <h3>
-                        {card.title}
-                        <span className="support-card-subtitle-inline"> — {card.subtitle}</span>
-                      </h3>
-                    </div>
-                  </div>
-                  <p className="support-card-desc">{card.desc}</p>
-                  <div className="support-card-indicator">
-                    <span>Scroll to see details</span>
-                    <span className="indicator-arrow">↓</span>
-                  </div>
+          <div className="pathways-grid-new">
+            {popularPathwaysData.map((pw, index) => (
+              <div key={index} className={`pathways-grid-card ${index === 6 ? "full-width-card" : ""}`}>
+                <div className="pathways-card-header">
+                  <div className="pathways-card-icon">{pw.icon}</div>
+                  <h3>{pw.title}</h3>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Complete Parents Support Section (Accordion) */}
-      <section className="home-support-section parent-support">
-        <div className="container">
-          <div className="section-header-premium text-center">
-            <span className="badge">For Parents</span>
-            <h2>Complete Parents Support</h2>
-            <p className="section-subtitle">
-              Total financial clarity, travel logistics, and community networks built for families.
-            </p>
-          </div>
-
-          <div className="parent-support-grid">
-            {parentSupportData.map((card, i) => (
-              <div
-                key={i}
-                className="parent-grid-card"
-                style={{ backgroundImage: `url(${card.bgImg})` }}
-                onMouseMove={handleMouseMove}
-              >
-                <div className="support-panel-overlay"></div>
-                <div className="support-panel-glass">
-                  <div className="support-card-header">
-                    <span className="support-card-number">{card.num}</span>
-                    <div className="support-card-titles">
-                      <h3>
-                        {card.title}
-                        <span className="support-card-subtitle-inline"> — {card.subtitle}</span>
-                      </h3>
-                    </div>
-                  </div>
-                  <p className="support-card-desc">{card.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Popular Destinations - Masonry Style */}
-      <section className="destinations-section">
-        <div className="container">
-          <div className="section-header-premium text-center">
-            <span className="badge">Destinations</span>
-            <h2>Popular Pathways</h2>
-          </div>
-          <div className="destinations-masonry">
-            {destinationsData.map((dest, i) => {
-              const CardContent = (
-                <>
-                  <img src={dest.img} alt={dest.name} />
-                  <div className="dest-overlay">
-                    <h3>{dest.name}</h3>
-                    {dest.hasGuide && <span className="dest-guide-hint">View Guide →</span>}
-                  </div>
-                </>
-              );
-
-              if (dest.hasGuide) {
-                return (
-                  <Link key={i} to={`/destinations/${dest.id}`} className={`dest-card ${dest.size} dest-card-interactive`}>
-                    {CardContent}
+                <p className="pathways-card-desc">{pw.desc}</p>
+                <div className="pathways-card-action">
+                  <Link to={pw.link} className="btn-read-pathway">
+                    Explore Pathway <span>→</span>
                   </Link>
-                );
-              }
-
-              return (
-                <div key={i} className={`dest-card ${dest.size}`}>
-                  {CardContent}
                 </div>
-              );
-            })}
-            <div className="dest-card medium globe-card">
-              <GlobeWidget />
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
 
       {/* CTA: Step-by-Step Wizard Section */}
       <section className="home-cta-section">
@@ -1107,7 +1069,7 @@ const Home = () => {
                           <label>Phone Number</label>
                           <div style={{ display: 'flex', gap: '10px' }}>
                             <select name="countryCode" value={wizardData.countryCode} onChange={handleWizardChange}
-                              className="home-wizard-select" style={{ width: '120px' }}>
+                              className="home-wizard-select" style={{ width: '150px' }}>
                               <option value="+91">+91 (IN)</option>
                               <option value="+1">+1 (US)</option>
                               <option value="+44">+44 (UK)</option>

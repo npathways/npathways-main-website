@@ -18,7 +18,7 @@
 .about-shared-page {
   background-color: var(--about-bg-primary);
   color: var(--about-text-primary);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   overflow-x: clip;
 }
 
@@ -228,5 +228,166 @@
   
   .about-section-header h2 {
     font-size: 2rem;
+  }
+}
+
+/* --- Philosophy Alternating Asymmetrical Rows --- */
+.philosophy-alternating-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.philosophy-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 0;
+  width: 100%;
+  align-items: start;
+}
+
+.row-info-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.row-desc-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.zen-number {
+  font-size: 3.5rem;
+  font-family: serif;
+  font-weight: 800;
+  color: var(--color-brand-tertiary-dark, #e0a52b);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.concept-header {
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.concept-header h3 {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: #000000;
+  margin: 0;
+}
+
+.concept-japanese-inline {
+  font-size: 1.25rem;
+  font-family: serif;
+  color: var(--color-text-secondary, #718096);
+  font-weight: 600;
+}
+
+.concept-definition {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--color-brand-tertiary-dark, #e0a52b);
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.concept-desc {
+  font-size: 1.15rem;
+  color: #333333;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--color-gray-200, #E8E8E8);
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+.concept-how-we-use h5 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #888888;
+  margin: 0 0 0.75rem 0;
+  text-align: left;
+}
+
+.concept-how-we-use p {
+  font-size: 1rem;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Stagger orders and border grids on desktop */
+@media (min-width: 992px) {
+  /* Default Row (Ikigai, Kaizen): Info Left, Desc Right */
+  .philosophy-row:not(.philosophy-row-reversed) .row-info-col {
+    padding-right: 5rem;
+    border-right: 1px solid var(--color-gray-200, #E8E8E8);
+  }
+  
+  .philosophy-row:not(.philosophy-row-reversed) .row-desc-col {
+    padding-left: 5rem;
+  }
+
+  /* Reversed Row (Kiku): Desc Left, Info Right */
+  .philosophy-row-reversed {
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  .philosophy-row-reversed .row-info-col {
+    order: 2;
+    padding-left: 5rem;
+    border-left: 1px solid var(--color-gray-200, #E8E8E8);
+  }
+
+  .philosophy-row-reversed .row-desc-col {
+    order: 1;
+    padding-right: 5rem;
+  }
+}
+
+/* Mobile responsive - stack vertical, clear borders and paddings */
+@media (max-width: 991px) {
+  .philosophy-alternating-rows {
+    gap: 4.5rem;
+  }
+
+  .philosophy-row {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+
+  .row-info-col,
+  .row-desc-col {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    order: unset !important;
+  }
+
+  .concept-header h3 {
+    font-size: 1.85rem;
+  }
+}
+
+/* Desktop-only sticky layout for Founder image */
+@media (min-width: 992px) {
+  .founder-image-wrapper {
+    position: sticky;
+    top: 120px;
   }
 }

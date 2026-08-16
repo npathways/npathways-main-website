@@ -68,7 +68,7 @@
 }
 
 .hero-title-premium {
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
   font-weight: 900;
   line-height: 1;
   margin-bottom: 2rem;
@@ -84,7 +84,7 @@
   font-size: 1.25rem;
   color: #dddddd;
   line-height: 1.7;
-  max-width: 600px;
+  max-width: 680px;
   margin-bottom: 3rem;
 }
 
@@ -568,6 +568,11 @@
   .finder-card { grid-template-columns: 1fr; bottom: -120px; }
   .teaser-box { flex-direction: column; text-align: center; padding: 3rem 2rem; }
   .teaser-visual { margin-top: 4rem; }
+}
+
+@media (max-width: 576px) {
+  .highlights-grid { grid-template-columns: 1fr !important; }
+  .destinations-masonry { grid-template-columns: 1fr !important; }
 }
 
 /* Hero Section */
@@ -2231,6 +2236,7 @@
   line-height: 1.7;
   margin: 0 auto;
   max-width: 600px;
+  text-align: center;
 }
 
 .home-cta-contacts {
@@ -2864,7 +2870,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #fdba31, #f59e0b);
+  background: linear-gradient(135deg, #e0a52b, #b8801b);
   color: #0d0d1a;
   font-weight: 700;
   font-size: 0.95rem;
@@ -3234,4 +3240,337 @@
   border-color: var(--color-brand-tertiary, #FDBA31);
   color: #000000;
   transform: translateY(-1px);
+}
+
+/* --- Standalone Pathways Section --- */
+.home-pathways-section {
+  padding: 8rem 0;
+  background-color: #fbfbfb;
+  border-bottom: 1px solid var(--color-gray-100, #F3F3F3);
+}
+
+.pathways-grid-new {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+@media (max-width: 1024px) {
+  .pathways-grid-new {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .pathways-grid-new {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.pathways-grid-card {
+  background: #ffffff;
+  border: 1px solid var(--color-gray-200, #E8E8E8);
+  border-radius: var(--radius-xl, 20px);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-base, 300ms);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+}
+
+.pathways-grid-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  border-color: var(--color-brand-tertiary, #FDBA31);
+}
+
+.pathways-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.pathways-card-header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  text-align: left;
+}
+
+.pathways-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: rgba(253, 186, 49, 0.1);
+  border-radius: var(--radius-lg, 16px);
+  color: var(--color-brand-tertiary, #FDBA31);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  transition: all var(--transition-base, 300ms);
+}
+
+.pathways-grid-card:hover .pathways-card-icon {
+  background: var(--color-brand-tertiary, #FDBA31);
+  color: #000000;
+}
+
+.pathways-card-desc {
+  font-size: 0.9rem;
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.pathways-card-action {
+  text-align: left;
+}
+
+.btn-read-pathway {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #000000;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.btn-read-pathway span {
+  transition: transform 0.2s ease;
+}
+
+.pathways-grid-card:hover .btn-read-pathway {
+  color: var(--color-brand-tertiary-dark, #e0a52b);
+}
+
+.pathways-grid-card:hover .btn-read-pathway span {
+  transform: translateX(4px);
+}
+
+/* Study Abroad Special Placement - spans full width on desktop */
+@media (min-width: 1025px) {
+  .pathways-grid-card.full-width-card {
+    grid-column: span 3;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 4rem;
+    background: linear-gradient(135deg, #ffffff 0%, #fffbf2 100%);
+    border-color: rgba(253, 186, 49, 0.2);
+  }
+  
+  .pathways-grid-card.full-width-card .pathways-card-header {
+    margin-bottom: 0;
+    width: 30%;
+  }
+
+  .pathways-grid-card.full-width-card .pathways-card-header h3 {
+    font-size: 1.35rem;
+  }
+  
+  .pathways-grid-card.full-width-card .pathways-card-desc {
+    margin-bottom: 0;
+    padding: 0 2rem;
+    width: 50%;
+    font-size: 1rem;
+  }
+  
+  .pathways-grid-card.full-width-card .pathways-card-action {
+    width: 20%;
+    text-align: right;
+  }
+  
+  .pathways-grid-card.full-width-card .btn-read-pathway {
+    background: #000000;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-lg, 16px);
+  }
+  
+  .pathways-grid-card.full-width-card:hover .btn-read-pathway {
+    background: var(--color-brand-tertiary, #FDBA31);
+    color: #000000;
+  }
+}
+
+/* --- Philosophy Section --- */
+.home-philosophy-section {
+  padding: 8rem 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--color-gray-100, #F3F3F3);
+}
+
+.philosophy-zen-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3.5rem;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.philosophy-zen-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+  padding: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: tileFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.philosophy-zen-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.philosophy-zen-item:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.philosophy-zen-item:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.philosophy-zen-item:hover {
+  transform: translateY(-8px);
+}
+
+@keyframes tileFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Vertical line dividers between columns on desktop */
+@media (min-width: 992px) {
+  .philosophy-zen-item + .philosophy-zen-item {
+    border-left: 1px solid var(--color-gray-200, #E8E8E8);
+    padding-left: 3.5rem;
+  }
+  
+  /* Adjust gaps to accommodate vertical borders */
+  .philosophy-zen-layout {
+    gap: 0;
+  }
+  
+  .philosophy-zen-item {
+    padding-right: 2rem;
+  }
+  
+  .philosophy-zen-item:last-child {
+    padding-right: 0;
+  }
+}
+
+.zen-number {
+  font-size: 3.5rem;
+  font-family: serif;
+  font-weight: 800;
+  color: var(--color-brand-tertiary-dark, #e0a52b);
+  line-height: 1;
+  margin-bottom: 1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.philosophy-zen-item:hover .zen-number {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.concept-header {
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.concept-header h3 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #000000;
+  margin: 0;
+}
+
+.concept-japanese-inline {
+  font-size: 1.1rem;
+  font-family: serif;
+  color: var(--color-text-secondary, #718096);
+  font-weight: 600;
+}
+
+.concept-definition {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--color-brand-tertiary-dark, #e0a52b);
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.concept-desc {
+  font-size: 1.05rem;
+  color: #333333;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--color-gray-200, #E8E8E8);
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+.concept-how-we-use h5 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #888888;
+  margin: 0 0 0.75rem 0;
+  text-align: left;
+}
+
+.concept-how-we-use p {
+  font-size: 0.95rem;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Mobile responsive resets */
+@media (max-width: 991px) {
+  .philosophy-zen-layout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  
+  .philosophy-zen-item {
+    border-left: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.section-header-highlight {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-brand-tertiary-dark, #e0a52b);
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
 }

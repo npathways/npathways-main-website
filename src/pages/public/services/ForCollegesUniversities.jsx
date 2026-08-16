@@ -1,19 +1,14 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { consultancyServices, supportServices } from "../../../data/services";
+import React from "react";
+import { Link } from "react-router-dom";
+import { supportServices } from "../../../data/services";
 import Button from "../../../components/common/Button";
-import PathwayTopNav from "../../../components/services/PathwayTopNav";
+import ServiceSidebar from "../../../components/common/ServiceSidebar";
 import "./ServiceDetails.css";
 
-const CareerGuidance = () => {
-  const service = consultancyServices.find((s) => s.id === "career-guidance");
-  const location = useLocation();
+const ForCollegesUniversities = () => {
+  const service = supportServices.find((s) => s.id === "for-colleges-universities");
 
   if (!service) return null;
-
-
-  // Combine services for sidebar
-  const allServices = [...consultancyServices, ...supportServices];
 
   return (
     <div className="service-detail-page fade-in">
@@ -31,16 +26,16 @@ const CareerGuidance = () => {
         </div>
       </section>
 
-      <PathwayTopNav />
-
       <div className="container">
         <div className="service-layout-grid">
+          {/* Sidebar */}
+          <ServiceSidebar />
 
           {/* Fixed Image Panel */}
           <div className="service-image-panel">
             <img
-              src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop"
-              alt="Career Guidance"
+              src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop"
+              alt="Colleges & Universities partnership"
               className="grayscale"
             />
             <div className="image-panel-cta">
@@ -50,7 +45,7 @@ const CareerGuidance = () => {
                 fullWidth
                 onClick={() => window.dispatchEvent(new Event('open-quick-enquiry'))}
               >
-                Talk to an Advisor
+                Partner With Us
               </Button>
             </div>
           </div>
@@ -63,7 +58,7 @@ const CareerGuidance = () => {
                 {service.longDescription}
               </p>
 
-              <h3>Guidance Highlights</h3>
+              <h3>Partnership Features</h3>
               <ul className="check-list space-y-4 mb-10">
                 {service.features.map((f, i) => (
                   <li key={i} className="flex gap-3 items-start">
@@ -79,7 +74,7 @@ const CareerGuidance = () => {
             </section>
 
             <section className="benefits-section mb-12">
-              <h3>Direct Benefits</h3>
+              <h3>Why Partner With Us?</h3>
               <div className="benefits-grid">
                 {service.benefits.map((b, i) => (
                   <div key={i} className="benefit-card">
@@ -89,8 +84,6 @@ const CareerGuidance = () => {
                 ))}
               </div>
             </section>
-
-
           </main>
         </div>
       </div>
@@ -98,4 +91,4 @@ const CareerGuidance = () => {
   );
 };
 
-export default CareerGuidance;
+export default ForCollegesUniversities;

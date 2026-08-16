@@ -24,7 +24,7 @@ const QuickEnquiry = () => {
       setFormData({
         name: '',
         occupation: '',
-        service: countryDetail ? `Study Abroad` : '',
+        service: countryDetail ? 'Study Abroad & Visa Assistance' : '',
         email: '',
         phone: '',
         message: countryDetail ? `Enquiry for: ${countryDetail}` : ''
@@ -37,14 +37,13 @@ const QuickEnquiry = () => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const services = [
-    "Study Abroad",
-    "Test Preparation",
-    "Admissions Consulting",
-    "Skills & Bootcamps",
-    "Internships & Research",
-    "Career Counseling",
-    "Visa Assistance",
-    "School Programs",
+    "Academic & University Consulting",
+    "Career Guidance",
+    "Curricular-Based Strategy",
+    "Pathway Programs (Bridge Courses)",
+    "Competitive Exam Strategy",
+    "Skills & Bootcamp Programs",
+    "Study Abroad & Visa Assistance"
   ];
 
   const occupations = ["Student", "Parent", "Working Professional", "Just Looking Around"];
