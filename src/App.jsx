@@ -26,8 +26,7 @@ const ForCollegesUniversities = lazy(() => import("./pages/public/services/ForCo
 const CurricularBasedPathways = lazy(() => import("./pages/public/services/CurricularBasedPathways"));
 const PathwayPrograms = lazy(() => import("./pages/public/services/PathwayPrograms"));
 const StudyAbroadPathway = lazy(() => import("./pages/public/services/StudyAbroadPathway"));
-const StudyAbroadStudentSupport = lazy(() => import("./pages/public/services/StudyAbroadStudentSupport"));
-const StudyAbroadParentSupport = lazy(() => import("./pages/public/services/StudyAbroadParentSupport"));
+const StudyAbroadCompleteSupport = lazy(() => import("./pages/public/services/StudyAbroadCompleteSupport"));
 const StudyAbroadDestinations = lazy(() => import("./pages/public/services/StudyAbroadDestinations"));
 const Contact = lazy(() => import("./pages/public/Contact"));
 const Founder = lazy(() => import("./pages/public/about/Founder"));
@@ -112,8 +111,7 @@ function App() {
             <Route path="/services/curricular-based-pathways" element={<CurricularBasedPathways />} />
             <Route path="/services/pathway-programs" element={<PathwayPrograms />} />
             <Route path="/services/study-abroad-pathway" element={<StudyAbroadPathway />} />
-            <Route path="/services/study-abroad/student-support" element={<StudyAbroadStudentSupport />} />
-            <Route path="/services/study-abroad/parent-support" element={<StudyAbroadParentSupport />} />
+            <Route path="/services/study-abroad/complete-support" element={<StudyAbroadCompleteSupport />} />
             <Route path="/services/study-abroad/destinations" element={<StudyAbroadDestinations />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/destinations/:id" element={<DestinationDetail />} />

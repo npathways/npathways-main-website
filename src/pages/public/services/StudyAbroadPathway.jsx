@@ -585,7 +585,7 @@ const StudyAbroadPathway = () => {
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: "3.5rem" }}>
-            <Link to="/services/study-abroad/student-support">
+            <Link to="/services/study-abroad/complete-support">
               <Button variant="premium" size="large">
                 Explore Student Support Details →
               </Button>
@@ -627,7 +627,7 @@ const StudyAbroadPathway = () => {
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: "3.5rem" }}>
-            <Link to="/services/study-abroad/parent-support">
+            <Link to="/services/study-abroad/complete-support">
               <Button variant="premium" size="large">
                 Explore Parents Support Details →
               </Button>
