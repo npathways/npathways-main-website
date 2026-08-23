@@ -23,8 +23,7 @@ const PathwayTopNav = () => {
   const studyAbroadItems = [
     { name: 'Study Abroad Overview', link: '/services/study-abroad-pathway' },
     { name: 'Visa & Study Abroad Assistance', link: '/services/visa-assistance' },
-    { name: 'Complete Student Support', link: '/services/study-abroad/student-support' },
-    { name: 'Complete Parents Support', link: '/services/study-abroad/parent-support' },
+    { name: '360° Complete Support', link: '/services/study-abroad/complete-support' },
     { name: 'Popular Destinations', link: '/services/study-abroad/destinations' }
   ];
 

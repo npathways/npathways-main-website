@@ -221,16 +221,10 @@ const Header = () => {
                           Visa & Study Abroad Assistance
                         </Link>
                         <Link
-                          to="/services/study-abroad/student-support"
+                          to="/services/study-abroad/complete-support"
                           onClick={() => setIsMenuOpen(false)}
                         >
-                          Complete Student Support
-                        </Link>
-                        <Link
-                          to="/services/study-abroad/parent-support"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Complete Parents Support
+                          360° Complete Support
                         </Link>
                         <Link
                           to="/services/study-abroad/destinations"
@@ -238,12 +232,7 @@ const Header = () => {
                         >
                           Popular Destinations
                         </Link>
-                        <Link
-                          to="/services/study-abroad/destinations#explore-destinations"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Explore Other Destinations
-                        </Link>
+
                       </div>
                     </div>
                   </div>
