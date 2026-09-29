@@ -499,8 +499,7 @@ const Contact = () => {
               </div>
               <div className="contact-card-info-wrap">
                 <h3>Email Us</h3>
-                <p className="contact-card-main-val">info@npathways.global</p>
-                <p className="contact-card-sub-val">support@npathways.global</p>
+                <p className="contact-card-main-val">talktous@npathways.world</p>
               </div>
             </div>
             <div className="contact-card-creative">
@@ -509,8 +508,11 @@ const Contact = () => {
               </div>
               <div className="contact-card-info-wrap">
                 <h3>Call Us</h3>
-                <p className="contact-card-main-val">+91 98765 43210</p>
-                <p className="contact-card-sub-val">Mon-Fri, 9:00 AM - 6:00 PM IST</p>
+                <p className="contact-card-main-val">
+                  <a href="tel:+917010668119" style={{ color: "inherit", textDecoration: "none" }}>
+                    +91 70106 68119
+                  </a>
+                </p>
               </div>
             </div>
           </div>

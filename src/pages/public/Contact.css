@@ -15,6 +15,9 @@
 }
 
 .contact-hero h1 {
+  font-size: var(--font-size-hero);
+  font-weight: 900;
+  line-height: 1.1;
   color: #ffffff !important;
 }
 
@@ -1075,6 +1078,10 @@
   .contact-wizard-inner {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+  .contact-boarding-pass,
+  .contact-wizard-inner .home-cta-right {
+    display: none !important;
   }
   .faq-grid-layout {
     grid-template-columns: 1fr !important;

@@ -60,7 +60,7 @@
 }
 
 .about-hero-minimal h1 {
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: var(--font-size-hero);
   font-weight: 900;
   color: #ffffff;
   margin: 0;
@@ -305,12 +305,12 @@
 .concept-desc {
   font-size: 1.15rem;
   color: #333333;
-  line-height: 1.7;
+  line-height: 1.65;
   margin-bottom: 1.75rem;
   font-weight: 500;
   border-bottom: 1px solid var(--color-gray-200, #E8E8E8);
   padding-bottom: 1.5rem;
-  text-align: center;
+  text-align: left;
 }
 
 .concept-how-we-use h5 {
@@ -325,9 +325,9 @@
 .concept-how-we-use p {
   font-size: 1rem;
   color: #555555;
-  line-height: 1.6;
+  line-height: 1.65;
   margin: 0;
-  text-align: justify;
+  text-align: left;
 }
 
 /* Stagger orders and border grids on desktop */

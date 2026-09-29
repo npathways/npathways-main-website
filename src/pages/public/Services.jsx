@@ -16,7 +16,7 @@ const pathwaysData = [
   {
     id: "academic-pathway",
     name: "Academic Pathways",
-    shortDescription: "For the student who has the destination — but not yet the route. Course, college, and university shortlisting and admissions.",
+    shortDescription: "For the student who has the destination, but not yet the route. Course, college, and university shortlisting and admissions.",
     icon: <FaGraduationCap />,
     link: "/services/education-consulting",
     image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop"
@@ -24,7 +24,7 @@ const pathwaysData = [
   {
     id: "career-pathway",
     name: "Career Pathways",
-    shortDescription: "For the student who doesn't know yet — which is exactly where we start. Strengths counseling and Ikigai mapping.",
+    shortDescription: "For the student who doesn't know yet, which is exactly where we start. Strengths counseling and Ikigai mapping.",
     icon: <FaCompass />,
     link: "/services/career-guidance",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop"
@@ -80,10 +80,10 @@ const Services = () => {
           <nav className="breadcrumb">
             <Link to="/">Home</Link>
             <span>/</span>
-            <span className="text-black">Our Pathways</span>
+            <span className="text-black">Services</span>
           </nav>
           <h1>
-            Our <span className="accent-text">Pathways</span>
+            Our <span className="accent-text">Services</span>
           </h1>
         </div>
       </section>

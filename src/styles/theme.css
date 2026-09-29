@@ -68,9 +68,9 @@
   
   /* ==================== TYPOGRAPHY ==================== */
   
-  /* Font Families */
-  --font-heading: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-body: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Font Families - Native Apple SF Pro on macOS/iOS, Inter on Windows/Android for exact Apple look */
+  --font-heading: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   
   /* Font Sizes */
   --font-size-xs: 0.75rem;      /* 12px */
@@ -83,6 +83,7 @@
   --font-size-4xl: 2.25rem;     /* 36px */
   --font-size-5xl: 3rem;        /* 48px */
   --font-size-6xl: 3.75rem;     /* 60px */
+  --font-size-hero: clamp(2.5rem, 5vw, 4.25rem); /* Home hero title scale */
   
   /* Font Weights */
   --font-weight-light: 300;
@@ -98,22 +99,22 @@
   
   /* ==================== SPACING ==================== */
   
-  --spacing-1: 0.25rem;   /* 4px */
-  --spacing-2: 0.5rem;    /* 8px */
-  --spacing-3: 0.75rem;   /* 12px */
-  --spacing-4: 1rem;      /* 16px */
-  --spacing-5: 1.25rem;   /* 20px */
-  --spacing-6: 1.5rem;    /* 24px */
-  --spacing-8: 2rem;      /* 32px */
-  --spacing-10: 2.5rem;   /* 40px */
-  --spacing-12: 3rem;     /* 48px */
-  --spacing-16: 4rem;     /* 64px */
-  --spacing-20: 5rem;     /* 80px */
-  --spacing-24: 6rem;     /* 96px */
+  --spacing-1: 0.1875rem; /* ~3px (-1px) */
+  --spacing-2: 0.4375rem; /* ~7px (-1px) */
+  --spacing-3: 0.6875rem; /* ~11px (-1px) */
+  --spacing-4: 0.9375rem; /* ~15px (-1px) */
+  --spacing-5: 1.1875rem; /* ~19px (-1px) */
+  --spacing-6: 1.4375rem; /* ~23px (-1px) */
+  --spacing-8: 1.9375rem; /* ~31px (-1px) */
+  --spacing-10: 2.4375rem;/* ~39px (-1px) */
+  --spacing-12: 2.9375rem;/* ~47px (-1px) */
+  --spacing-16: 3.9375rem;/* ~63px (-1px) */
+  --spacing-20: 4.9375rem;/* ~79px (-1px) */
+  --spacing-24: 5.9375rem;/* ~95px (-1px) */
   
   /* ==================== BORDERS ==================== */
   
-  /* Border Radius — Unified Card-Consistent Scale */
+  /* Border Radius: Unified Card-Consistent Scale */
   --radius-sm:   8px;   /* Badges, tags, small chips */
   --radius-md:   12px;  /* Inputs, selects, small cards */
   --radius-lg:   16px;  /* Buttons, dropdowns */

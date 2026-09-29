@@ -10,7 +10,7 @@ const StudyAbroadCompleteSupport = () => {
   const studentFeatures = [
     {
       title: "Career Discovery (Ikigai Mapping)",
-      desc: "Every journey begins with the Clarity Compass — mapping your natural strengths, genuine interests, and real-world viability to identify what you are actually building toward."
+      desc: "Every journey begins with the Clarity Compass, mapping your natural strengths, genuine interests, and real-world viability to identify what you are actually building toward."
     },
     {
       title: "University Admissions Consulting",

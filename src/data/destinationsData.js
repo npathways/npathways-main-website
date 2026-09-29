@@ -18,11 +18,11 @@ export const destinationsData = {
         id: "getting-to-know",
         title: "Getting to Know Canada",
         content: [
-          "Canada is a federation of 10 provinces and 3 territories, the second-largest country in the world by land area but home to a comparatively small population of around 41 million, heavily concentrated in cities close to the US border — Toronto, Vancouver, Montreal, Ottawa, and Calgary account for the bulk of the country's university-going population and job opportunities.",
-          "<strong>Language:</strong> Canada is officially bilingual — English is dominant everywhere except Quebec, where French is the primary language (Montreal, however, remains highly bilingual and English is entirely sufficient for most programmes and daily life even there). Nearly all the universities in this guide teach primarily in English.",
+          "Canada is a federation of 10 provinces and 3 territories, the second-largest country in the world by land area but home to a comparatively small population of around 41 million, heavily concentrated in cities close to the US border: Toronto, Vancouver, Montreal, Ottawa, and Calgary account for the bulk of the country's university-going population and job opportunities.",
+          "<strong>Language:</strong> Canada is officially bilingual; English is dominant everywhere except Quebec, where French is the primary language (Montreal, however, remains highly bilingual and English is entirely sufficient for most programmes and daily life even there). Nearly all the universities in this guide teach primarily in English.",
           "<strong>Currency:</strong> The Canadian Dollar (CAD, symbol $ or C$) is Canada's currency. As of July 2026, 1 CAD is trading at approximately ₹66 to ₹67, according to live market data. Always check a live converter before budgeting your tuition and living costs.",
           "<strong>Academic calendar:</strong> Canada runs a Fall (September) intake as the primary and largest one, with Winter (January) and, at some universities, Summer (May) intakes offering a smaller range of programmes.",
-          "<strong>Why students choose Canada:</strong> For years, Canada was seen as the most immigration-friendly major study destination — a relatively clear path from study permit to Post-Graduation Work Permit (PGWP) to permanent residency (PR) via Express Entry. Important update for 2026: Canada has tightened its international student policy substantially since 2024, introducing a national cap on study permits, stricter PGWP eligibility tied to specific fields of study, and higher financial-proof requirements. Canada remains an excellent, high-quality, relatively affordable destination — but it is no longer the 'easy PR' pathway it was once perceived to be, and students should plan primarily around education quality and career fit, treating PR as a possible long-term outcome rather than a guarantee."
+          "<strong>Why students choose Canada:</strong> For years, Canada was seen as the most immigration-friendly major study destination: a relatively clear path from study permit to Post-Graduation Work Permit (PGWP) to permanent residency (PR) via Express Entry. Important update for 2026: Canada has tightened its international student policy substantially since 2024, introducing a national cap on study permits, stricter PGWP eligibility tied to specific fields of study, and higher financial-proof requirements. Canada remains an excellent, high-quality, relatively affordable destination, but it is no longer the 'easy PR' pathway it was once perceived to be, and students should plan primarily around education quality and career fit, treating PR as a possible long-term outcome rather than a guarantee."
         ]
       },
       {
@@ -35,48 +35,48 @@ export const destinationsData = {
           {
             title: "Ontario",
             list: [
-              "<strong>University of Toronto</strong> — Toronto, Ontario. QS World Rank #29 (2026). Canada's largest and most research-intensive university, with three campuses (St. George, Scarborough, Mississauga); exceptional in computer science, engineering, and the Rotman School of Management.",
-              "<strong>University of Waterloo</strong> — Waterloo, Ontario. Not always the highest on global prestige rankings, but the single most sought-after Canadian university among Indian tech applicants because of its mandatory co-op programme, which places students in 5-6 paid industry work terms across their degree — an unmatched practical advantage for computer science and engineering students.",
-              "<strong>McMaster University</strong> — Hamilton, Ontario. U15 member, strong in engineering, health sciences, and business (DeGroote School of Business).",
-              "<strong>Western University</strong> — London, Ontario. Strong Ivey Business School (one of Canada's top MBA programmes) and engineering faculty.",
-              "<strong>Queen's University</strong> — Kingston, Ontario. U15 member, strong Smith School of Business and engineering programmes, smaller and highly research-focused.",
-              "<strong>University of Ottawa & Carleton University</strong> — both in Ottawa, Canada's capital; strong technology and public-policy programmes with proximity to federal government and tech employers (Shopify, and a growing AI research cluster).",
-              "<strong>York University</strong> — Toronto; Schulich School of Business is a well-regarded destination for MBA and business analytics.",
-              "<strong>Toronto Metropolitan University (TMU)</strong> — Toronto; strong applied and industry-linked programmes in engineering, business, and media, popular for its downtown-Toronto location and practical curriculum design.",
-              "<strong>University of Guelph & University of Windsor</strong> — strong regional choices, Guelph for agriculture/food science and Windsor for automotive engineering given its proximity to Detroit."
+              "<strong>University of Toronto</strong>: Toronto, Ontario. QS World Rank #29 (2026). Canada's largest and most research-intensive university, with three campuses (St. George, Scarborough, Mississauga); exceptional in computer science, engineering, and the Rotman School of Management.",
+              "<strong>University of Waterloo</strong>: Waterloo, Ontario. Not always the highest on global prestige rankings, but the single most sought-after Canadian university among Indian tech applicants because of its mandatory co-op programme, which places students in 5-6 paid industry work terms across their degree, an unmatched practical advantage for computer science and engineering students.",
+              "<strong>McMaster University</strong>: Hamilton, Ontario. U15 member, strong in engineering, health sciences, and business (DeGroote School of Business).",
+              "<strong>Western University</strong>: London, Ontario. Strong Ivey Business School (one of Canada's top MBA programmes) and engineering faculty.",
+              "<strong>Queen's University</strong>: Kingston, Ontario. U15 member, strong Smith School of Business and engineering programmes, smaller and highly research-focused.",
+              "<strong>University of Ottawa & Carleton University</strong>: both in Ottawa, Canada's capital; strong technology and public-policy programmes with proximity to federal government and tech employers (Shopify, and a growing AI research cluster).",
+              "<strong>York University</strong>: Toronto; Schulich School of Business is a well-regarded destination for MBA and business analytics.",
+              "<strong>Toronto Metropolitan University (TMU)</strong>: Toronto; strong applied and industry-linked programmes in engineering, business, and media, popular for its downtown-Toronto location and practical curriculum design.",
+              "<strong>University of Guelph & University of Windsor</strong>: strong regional choices, Guelph for agriculture/food science and Windsor for automotive engineering given its proximity to Detroit."
             ]
           },
           {
             title: "British Columbia",
             list: [
-              "<strong>University of British Columbia (UBC)</strong> — Vancouver, British Columbia. QS World Rank #40 (2026). One of Canada's top two research universities, strong in computer science, engineering, forestry, and the Sauder School of Business; the Vancouver campus sits in one of the most Indian-population-dense cities in Canada.",
-              "<strong>Simon Fraser University (SFU)</strong> — Burnaby, British Columbia (Metro Vancouver). Strong computing science school with close ties to Vancouver's growing tech sector (Amazon, Microsoft, and EA all have major Vancouver offices).",
-              "<strong>University of Victoria</strong> — Victoria, British Columbia. Strong co-op programme, smaller and more affordable than Vancouver-proper institutions."
+              "<strong>University of British Columbia (UBC)</strong>: Vancouver, British Columbia. QS World Rank #40 (2026). One of Canada's top two research universities, strong in computer science, engineering, forestry, and the Sauder School of Business; the Vancouver campus sits in one of the most Indian-population-dense cities in Canada.",
+              "<strong>Simon Fraser University (SFU)</strong>: Burnaby, British Columbia (Metro Vancouver). Strong computing science school with close ties to Vancouver's growing tech sector (Amazon, Microsoft, and EA all have major Vancouver offices).",
+              "<strong>University of Victoria</strong>: Victoria, British Columbia. Strong co-op programme, smaller and more affordable than Vancouver-proper institutions."
             ]
           },
           {
             title: "Quebec",
             list: [
-              "<strong>McGill University</strong> — Montreal, Quebec. QS World Rank #27 (2026), Canada's top-ranked university this year, surpassing Toronto. English-medium instruction despite being in Quebec; internationally elite in medicine, engineering, and management (Desautels Faculty of Management).",
-              "<strong>Université de Montréal & HEC Montréal</strong> — leading French-medium (with some English programmes) options, HEC Montréal being one of Canada's top business schools.",
-              "<strong>Concordia University</strong> — Montreal; English-medium, strong in engineering, computer science, and business, notably more affordable than McGill while still benefiting from Montreal's low cost of living relative to Toronto and Vancouver.",
-              "<strong>Polytechnique Montréal</strong> — Canada's largest engineering school, strong ties to Quebec's aerospace industry (Bombardier, CAE)."
+              "<strong>McGill University</strong>: Montreal, Quebec. QS World Rank #27 (2026), Canada's top-ranked university this year, surpassing Toronto. English-medium instruction despite being in Quebec; internationally elite in medicine, engineering, and management (Desautels Faculty of Management).",
+              "<strong>Université de Montréal & HEC Montréal</strong>: leading French-medium (with some English programmes) options, HEC Montréal being one of Canada's top business schools.",
+              "<strong>Concordia University</strong>: Montreal; English-medium, strong in engineering, computer science, and business, notably more affordable than McGill while still benefiting from Montreal's low cost of living relative to Toronto and Vancouver.",
+              "<strong>Polytechnique Montréal</strong>: Canada's largest engineering school, strong ties to Quebec's aerospace industry (Bombardier, CAE)."
             ]
           },
           {
             title: "Alberta & the Prairies",
             list: [
-              "<strong>University of Alberta</strong> — Edmonton, Alberta. QS World Rank #94 (2026). U15 member, strong in engineering, computer science (particularly reinforcement learning and AI, home to Alberta Machine Intelligence Institute, one of the world's leading AI research labs), and energy engineering.",
-              "<strong>University of Calgary</strong> — Calgary, Alberta. Strong engineering and energy-sector-linked programmes, given Calgary's role as Canada's oil and gas hub.",
-              "<strong>University of Saskatchewan & University of Manitoba</strong> — strong agricultural sciences and engineering programmes, considerably lower cost of living than the major metros."
+              "<strong>University of Alberta</strong>: Edmonton, Alberta. QS World Rank #94 (2026). U15 member, strong in engineering, computer science (particularly reinforcement learning and AI, home to Alberta Machine Intelligence Institute, one of the world's leading AI research labs), and energy engineering.",
+              "<strong>University of Calgary</strong>: Calgary, Alberta. Strong engineering and energy-sector-linked programmes, given Calgary's role as Canada's oil and gas hub.",
+              "<strong>University of Saskatchewan & University of Manitoba</strong>: strong agricultural sciences and engineering programmes, considerably lower cost of living than the major metros."
             ]
           },
           {
             title: "Atlantic & Other Provinces",
             list: [
-              "<strong>Dalhousie University</strong> — Halifax, Nova Scotia. Strong ocean/marine sciences and computer science, more affordable Atlantic Canada option with a growing Indian student population.",
-              "<strong>Memorial University of Newfoundland</strong> — St. John's, Newfoundland. Known for some of the lowest tuition fees among Canadian research universities, popular for engineering.",
-              "<strong>Laurentian University & University of New Brunswick</strong> — smaller, more accessible universities offering computer science and business programmes with lower entry requirements and living costs, popular for students seeking a lower-cost pathway into the Canadian system."
+              "<strong>Dalhousie University</strong>: Halifax, Nova Scotia. Strong ocean/marine sciences and computer science, more affordable Atlantic Canada option with a growing Indian student population.",
+              "<strong>Memorial University of Newfoundland</strong>: St. John's, Newfoundland. Known for some of the lowest tuition fees among Canadian research universities, popular for engineering.",
+              "<strong>Laurentian University & University of New Brunswick</strong>: smaller, more accessible universities offering computer science and business programmes with lower entry requirements and living costs, popular for students seeking a lower-cost pathway into the Canadian system."
             ]
           }
         ]
@@ -85,34 +85,34 @@ export const destinationsData = {
         id: "what-you-can-study",
         title: "What You Can Study: Courses for Indian Students in 2026",
         content: [
-          "Canadian degrees generally follow: Bachelor's (4 years), Master's (1-2 years, either course-based or thesis-based), and PhD (4-6 years, typically funded). A distinctive Canadian feature — the co-op (cooperative education) programme — alternates academic terms with paid work terms and is one of the strongest reasons Indian students choose Canada specifically over the US or UK for career-focused Master's degrees."
+          "Canadian degrees generally follow: Bachelor's (4 years), Master's (1-2 years, either course-based or thesis-based), and PhD (4-6 years, typically funded). A distinctive Canadian feature, the co-op (cooperative education) programme, alternates academic terms with paid work terms and is one of the strongest reasons Indian students choose Canada specifically over the US or UK for career-focused Master's degrees."
         ],
         subsections: [
           {
             title: "Technology, Data & AI",
             list: [
-              "<strong>MSc/MEng Computer Science</strong> — University of Toronto (a globally leading centre for deep learning, given its historic link to AI pioneer Geoffrey Hinton), Waterloo, UBC, and McGill are the strongest choices.",
-              "<strong>MSc Artificial Intelligence / Machine Learning</strong> — University of Alberta (via Amii), University of Toronto (Vector Institute affiliation), and Montreal (Mila – Quebec AI Institute) form Canada's celebrated 'AI triangle'.",
-              "<strong>Master of Data Science (MDS)</strong> — UBC's Master of Data Science is one of the most respected, industry-partnered data science degrees in Canada, a fast, applied 10-month programme.",
-              "<strong>Master of Engineering (MEng) in Computer/Software Engineering with Co-op</strong> — University of Waterloo's programme is the most sought-after in the country for its guaranteed paid co-op placements.",
-              "<strong>Bachelor's in Computer Science / Software Engineering</strong> — Waterloo (globally renowned for its co-op model), Toronto, UBC, and McGill are the top direct-entry undergraduate choices."
+              "<strong>MSc/MEng Computer Science</strong>: University of Toronto (a globally leading centre for deep learning, given its historic link to AI pioneer Geoffrey Hinton), Waterloo, UBC, and McGill are the strongest choices.",
+              "<strong>MSc Artificial Intelligence / Machine Learning</strong>: University of Alberta (via Amii), University of Toronto (Vector Institute affiliation), and Montreal (Mila – Quebec AI Institute) form Canada's celebrated 'AI triangle'.",
+              "<strong>Master of Data Science (MDS)</strong>: UBC's Master of Data Science is one of the most respected, industry-partnered data science degrees in Canada, a fast, applied 10-month programme.",
+              "<strong>Master of Engineering (MEng) in Computer/Software Engineering with Co-op</strong>: University of Waterloo's programme is the most sought-after in the country for its guaranteed paid co-op placements.",
+              "<strong>Bachelor's in Computer Science / Software Engineering</strong>: Waterloo (globally renowned for its co-op model), Toronto, UBC, and McGill are the top direct-entry undergraduate choices."
             ]
           },
           {
             title: "Business & Management",
             list: [
-              "<strong>MBA</strong> — Rotman (Toronto), Ivey (Western), Desautels (McGill), and Sauder (UBC) are Canada's top-tier MBA programmes, generally requiring 2-4+ years of work experience.",
-              "<strong>Master of Management / Master of Management Analytics</strong> — Rotman's MMA and Schulich's programmes are aimed at recent graduates with limited work experience, a popular alternative for Indian students not yet MBA-eligible.",
-              "<strong>BBA/Bachelor of Commerce</strong> — Ivey (Western), Sauder (UBC), and Smith (Queen's) are the most recognised undergraduate business degrees."
+              "<strong>MBA</strong>: Rotman (Toronto), Ivey (Western), Desautels (McGill), and Sauder (UBC) are Canada's top-tier MBA programmes, generally requiring 2-4+ years of work experience.",
+              "<strong>Master of Management / Master of Management Analytics</strong>: Rotman's MMA and Schulich's programmes are aimed at recent graduates with limited work experience, a popular alternative for Indian students not yet MBA-eligible.",
+              "<strong>BBA/Bachelor of Commerce</strong>: Ivey (Western), Sauder (UBC), and Smith (Queen's) are the most recognised undergraduate business degrees."
             ]
           },
           {
             title: "Engineering & Other Fields",
             list: [
-              "<strong>Mechanical, Civil, and Electrical Engineering</strong> — Toronto, Waterloo, UBC, and Alberta all offer strong, industry-connected programmes, several with co-op options.",
-              "<strong>Petroleum & Energy Engineering</strong> — University of Calgary and University of Alberta lead this field given Alberta's oil and gas sector.",
-              "<strong>Supply Chain & Business Analytics</strong> — a fast-growing category at Toronto Metropolitan University, Concordia, and Carleton, popular for its 1-2 year format and direct link to Canada's logistics and retail sectors.",
-              "<strong>PhD programmes</strong> — typically 4-6 years, most STEM PhDs come with a funding package (assistantship + scholarship) covering tuition and a living stipend. Confirm the specific funding offer before accepting."
+              "<strong>Mechanical, Civil, and Electrical Engineering</strong>: Toronto, Waterloo, UBC, and Alberta all offer strong, industry-connected programmes, several with co-op options.",
+              "<strong>Petroleum & Energy Engineering</strong>: University of Calgary and University of Alberta lead this field given Alberta's oil and gas sector.",
+              "<strong>Supply Chain & Business Analytics</strong>: a fast-growing category at Toronto Metropolitan University, Concordia, and Carleton, popular for its 1-2 year format and direct link to Canada's logistics and retail sectors.",
+              "<strong>PhD programmes</strong>: typically 4-6 years, most STEM PhDs come with a funding package (assistantship + scholarship) covering tuition and a living stipend. Confirm the specific funding offer before accepting."
             ]
           }
         ]
@@ -149,19 +149,19 @@ export const destinationsData = {
         content: [
           "<strong>University eligibility:</strong> A typical Canadian application requires academic transcripts, a Statement of Purpose, 2-3 Letters of Recommendation, a CV/resume, and proof of English proficiency. Applications are generally submitted directly to each university.",
           "<strong>Country (visa) eligibility:</strong> Indian students need a Study Permit issued by Immigration, Refugees and Citizenship Canada (IRCC). Key steps and 2026 realities to know:",
-          "1. Receive your Letter of Acceptance from a Designated Learning Institution (DLI) — only DLIs are eligible to host international students.",
-          "2. As of the 2024-2026 policy changes, most provinces require a Provincial Attestation Letter (PAL) confirming your place counts within that province's allocated cap — your university will issue this alongside your offer.",
+          "1. Receive your Letter of Acceptance from a Designated Learning Institution (DLI): only DLIs are eligible to host international students.",
+          "2. As of the 2024-2026 policy changes, most provinces require a Provincial Attestation Letter (PAL) confirming your place counts within that province's allocated cap: your university will issue this alongside your offer.",
           "3. Apply online for your Study Permit through the IRCC portal, providing proof of acceptance, financial documents, and biometrics.",
           "4. Show proof of funds: demonstrate access to funds covering tuition for the first year plus a living-cost threshold of CAD 20,635 for a single applicant.",
           "5. Most Indian applicants can use the regular Study Permit stream; processing times now run several weeks to a few months, so apply as early as possible.",
-          "<strong>Important 2026 caution:</strong> Canada's international student policy has changed substantially since 2024 — including the national study permit cap, stricter spousal work permit eligibility, and PGWP eligibility now tied to a published list of 'in-demand' fields for college-level programs. Check IRCC's official website (canada.ca) for the latest rules."
+          "<strong>Important 2026 caution:</strong> Canada's international student policy has changed substantially since 2024: including the national study permit cap, stricter spousal work permit eligibility, and PGWP eligibility now tied to a published list of 'in-demand' fields for college-level programs. Check IRCC's official website (canada.ca) for the latest rules."
         ]
       },
       {
         id: "money-matters",
         title: "Money Matters: Scholarships and Funding",
         content: [
-          "Canadian tuition for international students typically runs CAD 20,000-45,000/year for Master's programmes (roughly ₹13-30 lakh at current rates) — generally cheaper than comparable US programmes, though Waterloo's co-op engineering and Toronto's professional master's programmes sit at the higher end.",
+          "Canadian tuition for international students typically runs CAD 20,000-45,000/year for Master's programmes (roughly ₹13-30 lakh at current rates), generally cheaper than comparable US programmes, though Waterloo's co-op engineering and Toronto's professional master's programmes sit at the higher end.",
           "<strong>University entrance scholarships:</strong> Toronto, UBC, Waterloo, and McGill all offer automatic or application-based entrance scholarships (typically CAD 2,000-15,000) for strong academic profiles.",
           "<strong>Graduate funding:</strong> many research-based Master's and virtually all PhD positions come with a Graduate Assistantship covering a portion of tuition and a stipend (typically CAD 15,000-30,000/year). Course-based Master's usually do not include funding.",
           "<strong>Vanier Canada Graduate Scholarships:</strong> Canada's most prestigious doctoral scholarship (CAD 50,000/year for 3 years), open to international students.",
@@ -195,10 +195,10 @@ export const destinationsData = {
         title: "Settling In: Practical Survival Notes",
         content: [
           "<strong>Health insurance:</strong> Ontario and BC require international students to arrange private health insurance (often through the university, roughly CAD 600-1,000/year); Quebec covers many Indian students under RAMQ.",
-          "<strong>Housing:</strong> on-campus residence is common in the first year; off-campus rental markets are tight and expensive in Toronto and Vancouver — start searching several months ahead.",
+          "<strong>Housing:</strong> on-campus residence is common in the first year; off-campus rental markets are tight and expensive in Toronto and Vancouver, start searching several months ahead.",
           "<strong>Banking:</strong> most students open an account with RBC, TD, Scotiabank, or CIBC, which run dedicated student account programmes.",
-          "<strong>Winters:</strong> winters are serious, especially in Ontario, Quebec, Alberta, and the Prairies — proper winter clothing is essential. Coastal BC (Vancouver) is milder and wetter.",
-          "<strong>SIN (Social Insurance Number):</strong> apply for this as soon as you arrive — it is required for any paid work, including on-campus jobs and co-op placements."
+          "<strong>Winters:</strong> winters are serious, especially in Ontario, Quebec, Alberta, and the Prairies; proper winter clothing is essential. Coastal BC (Vancouver) is milder and wetter.",
+          "<strong>SIN (Social Insurance Number):</strong> apply for this as soon as you arrive: it is required for any paid work, including on-campus jobs and co-op placements."
         ]
       },
       {
@@ -226,11 +226,11 @@ export const destinationsData = {
         id: "getting-to-know",
         title: "Getting to Know the United Kingdom",
         content: [
-          "The United Kingdom is a union of four nations — England, Scotland, Wales, and Northern Ireland — packed into an island smaller than the US state of Oregon, yet home to one of the most concentrated clusters of world-class universities anywhere on earth. With a population of around 68 million, the UK's higher education system spans roughly 165 universities, most of them public and government-regulated.",
+          "The United Kingdom is a union of four nations (England, Scotland, Wales, and Northern Ireland) packed into an island smaller than the US state of Oregon, yet home to one of the most concentrated clusters of world-class universities anywhere on earth. With a population of around 68 million, the UK's higher education system spans roughly 165 universities, most of them public and government-regulated.",
           "<strong>Language:</strong> English is the language of instruction and daily life everywhere. You will hear Welsh in parts of Wales and Scots Gaelic in parts of Scotland, but neither affects student life.",
           "<strong>Currency:</strong> The Pound Sterling (GBP, symbol £) is the UK's currency. As of July 2026, 1 GBP is trading at approximately ₹126 to ₹128. This is a very strong currency, so factor conversion carefully.",
           "<strong>Academic calendar:</strong> The UK runs primarily on a single September/October intake, with a smaller January intake at some universities. Planning ahead by 10-12 months is essential.",
-          "<strong>Why students choose the UK:</strong> The single biggest draw is time and cost efficiency — a UK Master's degree is typically just one year (versus two in the US), meaning lower total tuition and living costs and a faster route to the job market. The UK is also home to Oxford and Cambridge, plus London's unmatched concentration of financial and tech employers."
+          "<strong>Why students choose the UK:</strong> The single biggest draw is time and cost efficiency: a UK Master's degree is typically just one year (versus two in the US), meaning lower total tuition and living costs and a faster route to the job market. The UK is also home to Oxford and Cambridge, plus London's unmatched concentration of financial and tech employers."
         ]
       },
       {
@@ -243,45 +243,45 @@ export const destinationsData = {
           {
             title: "Oxbridge",
             list: [
-              "<strong>University of Oxford</strong> — Oxford, England. QS World Rank #4 (2026); THE consistently ranks Oxford #1 in the UK. Collegiate structure (36 colleges), strengths in PPE, medicine, law, and humanities, with a fast-growing computer science and AI presence.",
-              "<strong>University of Cambridge</strong> — Cambridge, England. QS World Rank #6 (2026). Also collegiate (31 colleges); historic strength in mathematics, natural sciences, engineering, and the birthplace of the 'Silicon Fen' tech cluster."
+              "<strong>University of Oxford</strong>: Oxford, England. QS World Rank #4 (2026); THE consistently ranks Oxford #1 in the UK. Collegiate structure (36 colleges), strengths in PPE, medicine, law, and humanities, with a fast-growing computer science and AI presence.",
+              "<strong>University of Cambridge</strong>: Cambridge, England. QS World Rank #6 (2026). Also collegiate (31 colleges); historic strength in mathematics, natural sciences, engineering, and the birthplace of the 'Silicon Fen' tech cluster."
             ]
           },
           {
             title: "London",
             list: [
-              "<strong>Imperial College London</strong> — QS World Rank #2 (2026), the UK's highest-ranked university this year and second in the world. Focused purely on science, engineering, medicine, and business; exceptional for computer science, AI, and quantitative finance.",
-              "<strong>University College London (UCL)</strong> — QS World Rank #9 (2026). London's largest, broadest research university; strengths in architecture (The Bartlett), economics, computer science, and life sciences.",
-              "<strong>King's College London (KCL)</strong> — QS World Rank #31 (2026). Strong in medicine, law, humanities, and the Department of War Studies.",
-              "<strong>London School of Economics (LSE)</strong> — QS World Rank around #56 (2026), but top-3-5 in the UK for economics, finance, and social sciences; top choice for finance/management master's.",
-              "<strong>City, University of London</strong> — home to the Bayes Business School, a strong choice for finance and business analytics.",
-              "<strong>Queen Mary University of London</strong> — Russell Group member, strong in law, business, and computer science, more affordable than central-London giants.",
-              "<strong>Brunel University London & University of Westminster</strong> — popular mid-tier choices for business, computing, and media with slightly lower entry requirements."
+              "<strong>Imperial College London</strong>: QS World Rank #2 (2026), the UK's highest-ranked university this year and second in the world. Focused purely on science, engineering, medicine, and business; exceptional for computer science, AI, and quantitative finance.",
+              "<strong>University College London (UCL)</strong>: QS World Rank #9 (2026). London's largest, broadest research university; strengths in architecture (The Bartlett), economics, computer science, and life sciences.",
+              "<strong>King's College London (KCL)</strong>: QS World Rank #31 (2026). Strong in medicine, law, humanities, and the Department of War Studies.",
+              "<strong>London School of Economics (LSE)</strong>: QS World Rank around #56 (2026), but top-3-5 in the UK for economics, finance, and social sciences; top choice for finance/management master's.",
+              "<strong>City, University of London</strong>: home to the Bayes Business School, a strong choice for finance and business analytics.",
+              "<strong>Queen Mary University of London</strong>: Russell Group member, strong in law, business, and computer science, more affordable than central-London giants.",
+              "<strong>Brunel University London & University of Westminster</strong>: popular mid-tier choices for business, computing, and media with slightly lower entry requirements."
             ]
           },
           {
             title: "Scotland",
             list: [
-              "<strong>University of Edinburgh</strong> — QS World Rank #34 (2026). Scotland's top university, strong in informatics (one of Europe's largest CS schools), medicine, and business.",
-              "<strong>University of Glasgow</strong> — Russell Group member, strong in engineering, law, and life sciences; founded 1451.",
-              "<strong>University of St Andrews</strong> — Scotland's oldest university (1413), consistently rated top in the UK for undergraduate student satisfaction.",
-              "<strong>University of Aberdeen & University of Dundee</strong> — strong regional choices for engineering, energy, and life sciences."
+              "<strong>University of Edinburgh</strong>: QS World Rank #34 (2026). Scotland's top university, strong in informatics (one of Europe's largest CS schools), medicine, and business.",
+              "<strong>University of Glasgow</strong>: Russell Group member, strong in engineering, law, and life sciences; founded 1451.",
+              "<strong>University of St Andrews</strong>: Scotland's oldest university (1413), consistently rated top in the UK for undergraduate student satisfaction.",
+              "<strong>University of Aberdeen & University of Dundee</strong>: strong regional choices for engineering, energy, and life sciences."
             ]
           },
           {
             title: "England (beyond London)",
             list: [
-              "<strong>University of Manchester</strong> — Russell Group; one of the largest UK universities, strong in engineering, business, and CS, with a huge Indian student community.",
-              "<strong>University of Warwick</strong> — near Coventry; consistently top 10, exceptional for business (Warwick Business School), economics, and computer science.",
-              "<strong>University of Bristol</strong> — Russell Group, strong in engineering, computer science, and law.",
-              "<strong>University of Birmingham</strong> — Russell Group, strong business school and engineering.",
-              "<strong>University of Leeds</strong> — Russell Group, strong business, engineering, and CS.",
-              "<strong>University of Sheffield</strong> — Russell Group, strong engineering (aerospace/materials in partnership with Boeing).",
-              "<strong>University of Nottingham</strong> — Russell Group, strong engineering, business, and pharmacy.",
-              "<strong>University of Southampton</strong> — Russell Group, strong engineering (maritime) and CS.",
-              "<strong>Durham University & Lancaster University</strong> — Durham has a collegiate structure; Lancaster has a top-10 business school.",
-              "<strong>University of York & Newcastle University</strong> — York for CS and data science; Newcastle for marine technology and affordable living.",
-              "<strong>Loughborough, Coventry, Hertfordshire, Leicester & Surrey</strong> — Surrey is renowned for its 5G/6G and computer science research."
+              "<strong>University of Manchester</strong>: Russell Group; one of the largest UK universities, strong in engineering, business, and CS, with a huge Indian student community.",
+              "<strong>University of Warwick</strong>: near Coventry; consistently top 10, exceptional for business (Warwick Business School), economics, and computer science.",
+              "<strong>University of Bristol</strong>: Russell Group, strong in engineering, computer science, and law.",
+              "<strong>University of Birmingham</strong>: Russell Group, strong business school and engineering.",
+              "<strong>University of Leeds</strong>: Russell Group, strong business, engineering, and CS.",
+              "<strong>University of Sheffield</strong>: Russell Group, strong engineering (aerospace/materials in partnership with Boeing).",
+              "<strong>University of Nottingham</strong>: Russell Group, strong engineering, business, and pharmacy.",
+              "<strong>University of Southampton</strong>: Russell Group, strong engineering (maritime) and CS.",
+              "<strong>Durham University & Lancaster University</strong>: Durham has a collegiate structure; Lancaster has a top-10 business school.",
+              "<strong>University of York & Newcastle University</strong>: York for CS and data science; Newcastle for marine technology and affordable living.",
+              "<strong>Loughborough, Coventry, Hertfordshire, Leicester & Surrey</strong>: Surrey is renowned for its 5G/6G and computer science research."
             ]
           }
         ]
@@ -296,28 +296,28 @@ export const destinationsData = {
           {
             title: "Technology, Data & AI",
             list: [
-              "<strong>MSc Computer Science</strong> — Oxford, Cambridge, Imperial, UCL, Edinburgh, and Manchester all offer highly regarded one-year taught programmes.",
-              "<strong>MSc Artificial Intelligence / ML</strong> — Edinburgh's School of Informatics (one of the largest in Europe), Imperial, UCL, and Southampton are the top UK choices.",
-              "<strong>MSc Data Science / Business Analytics</strong> — Warwick, Bristol, Manchester, LSE, and Bayes Business School are popular for their strong industry links.",
-              "<strong>MSc Cybersecurity</strong> — Royal Holloway, Surrey, and Lancaster are certified centres of cybersecurity excellence.",
-              "<strong>BSc Computer Science</strong> — Imperial, UCL, Edinburgh, Manchester, and Warwick offer the most respected 3-year undergraduate computing degrees."
+              "<strong>MSc Computer Science</strong>: Oxford, Cambridge, Imperial, UCL, Edinburgh, and Manchester all offer highly regarded one-year taught programmes.",
+              "<strong>MSc Artificial Intelligence / ML</strong>: Edinburgh's School of Informatics (one of the largest in Europe), Imperial, UCL, and Southampton are the top UK choices.",
+              "<strong>MSc Data Science / Business Analytics</strong>: Warwick, Bristol, Manchester, LSE, and Bayes Business School are popular for their strong industry links.",
+              "<strong>MSc Cybersecurity</strong>: Royal Holloway, Surrey, and Lancaster are certified centres of cybersecurity excellence.",
+              "<strong>BSc Computer Science</strong>: Imperial, UCL, Edinburgh, Manchester, and Warwick offer the most respected 3-year undergraduate computing degrees."
             ]
           },
           {
             title: "Business & Management",
             list: [
-              "<strong>MSc Finance / MSc Management</strong> — LSE, Imperial, Warwick, and UCL are top choices, requiring little to no prior work experience (unlike US MBAs).",
-              "<strong>Full-time MBA</strong> — London Business School (LBS), Oxford (Saïd), Cambridge (Judge), and Warwick are top choices; most require 3+ years of experience.",
-              "<strong>BSc Business/Economics</strong> — LSE, Warwick, UCL, and Bath are top undergraduate destinations."
+              "<strong>MSc Finance / MSc Management</strong>: LSE, Imperial, Warwick, and UCL are top choices, requiring little to no prior work experience (unlike US MBAs).",
+              "<strong>Full-time MBA</strong>: London Business School (LBS), Oxford (Saïd), Cambridge (Judge), and Warwick are top choices; most require 3+ years of experience.",
+              "<strong>BSc Business/Economics</strong>: LSE, Warwick, UCL, and Bath are top undergraduate destinations."
             ]
           },
           {
             title: "Engineering & Other Fields",
             list: [
-              "<strong>Engineering (Mech/Civil/Elec/Aero)</strong> — Imperial, Cambridge, Bristol, and Sheffield lead the field.",
-              "<strong>Biomedical & Life Sciences</strong> — Oxford, Cambridge, UCL, and Nottingham lead, closely tied to the UK's big pharma sector (GSK, AstraZeneca).",
-              "<strong>Law (LLM)</strong> — Oxford, Cambridge, LSE, UCL, and KCL are globally recognised for one-year LLM degrees.",
-              "<strong>PhD programmes</strong> — typically 3-4 years, funded through UKRI studentships, Commonwealth Scholarships, or university-specific awards."
+              "<strong>Engineering (Mech/Civil/Elec/Aero)</strong>: Imperial, Cambridge, Bristol, and Sheffield lead the field.",
+              "<strong>Biomedical & Life Sciences</strong>: Oxford, Cambridge, UCL, and Nottingham lead, closely tied to the UK's big pharma sector (GSK, AstraZeneca).",
+              "<strong>Law (LLM)</strong>: Oxford, Cambridge, LSE, UCL, and KCL are globally recognised for one-year LLM degrees.",
+              "<strong>PhD programmes</strong>: typically 3-4 years, funded through UKRI studentships, Commonwealth Scholarships, or university-specific awards."
             ]
           }
         ]
@@ -434,7 +434,7 @@ export const destinationsData = {
           "<strong>Language:</strong> The USA has no official language at the federal level, but English is the language of instruction, business, and daily life almost everywhere. Spanish is widely spoken, but never needed for studying.",
           "<strong>Currency:</strong> The US Dollar (USD, symbol $) is the currency used nationwide. As of July 2026, 1 USD is trading at approximately ₹95 to ₹96 against the Indian Rupee. Check a live converter (Wise, XE) before budgeting tuition and living costs.",
           "<strong>Academic calendar:</strong> Most universities follow a Fall (August/September) and Spring (January) intake system. Fall is the primary intake and carries the widest course choice, scholarships, and assistantship opportunities.",
-          "<strong>Why students choose the USA:</strong> It has the largest higher education system on earth — over 4,000 accredited colleges and universities — unmatched research funding, Optional Practical Training (OPT) for STEM graduates, and the deepest bench of global employers (Google, Amazon, Microsoft) actively hiring."
+          "<strong>Why students choose the USA:</strong> It has the largest higher education system on earth, with over 4,000 accredited colleges and universities, unmatched research funding, Optional Practical Training (OPT) for STEM graduates, and the deepest bench of global employers (Google, Amazon, Microsoft) actively hiring."
         ]
       },
       {
@@ -447,23 +447,23 @@ export const destinationsData = {
           {
             title: "The Ivy League (Northeast USA)",
             list: [
-              "<strong>Harvard University</strong> — Cambridge, MA. QS World Rank #5 (2026). Oldest US university (founded 1636); strongest in business, law, medicine, public policy, and AI (Harvard Kempner Institute).",
-              "<strong>Princeton University</strong> — Princeton, NJ. QS World Rank #25 (2026). Renowned for mathematics, physics, economics, and independent research; small graduate cohorts.",
-              "<strong>Yale University</strong> — New Haven, CT. QS World Rank #21 (2026). Strong in law, humanities, drama, computer science, and data science.",
-              "<strong>University of Pennsylvania (UPenn)</strong> — Philadelphia, PA. QS World Rank #15 (2026). Home to the Wharton School, plus strong engineering and data science programmes.",
-              "<strong>Columbia University</strong> — New York City, NY. QS World Rank #38 (2026). Located in Manhattan; strengths in journalism, business, international affairs, CS, with unmatched access to Wall Street.",
-              "<strong>Cornell University</strong> — Ithaca, NY. QS World Rank #16 (2026). Exceptional choice for engineering and computer science; Cornell Tech in NYC is built around technology and startups.",
-              "<strong>Brown University & Dartmouth College</strong> — Brown is known for its flexible open curriculum; Dartmouth is strong in undergraduate teaching and business (Tuck School)."
+              "<strong>Harvard University</strong>: Cambridge, MA. QS World Rank #5 (2026). Oldest US university (founded 1636); strongest in business, law, medicine, public policy, and AI (Harvard Kempner Institute).",
+              "<strong>Princeton University</strong>: Princeton, NJ. QS World Rank #25 (2026). Renowned for mathematics, physics, economics, and independent research; small graduate cohorts.",
+              "<strong>Yale University</strong>: New Haven, CT. QS World Rank #21 (2026). Strong in law, humanities, drama, computer science, and data science.",
+              "<strong>University of Pennsylvania (UPenn)</strong>: Philadelphia, PA. QS World Rank #15 (2026). Home to the Wharton School, plus strong engineering and data science programmes.",
+              "<strong>Columbia University</strong>: New York City, NY. QS World Rank #38 (2026). Located in Manhattan; strengths in journalism, business, international affairs, CS, with unmatched access to Wall Street.",
+              "<strong>Cornell University</strong>: Ithaca, NY. QS World Rank #16 (2026). Exceptional choice for engineering and computer science; Cornell Tech in NYC is built around technology and startups.",
+              "<strong>Brown University & Dartmouth College</strong>: Brown is known for its flexible open curriculum; Dartmouth is strong in undergraduate teaching and business (Tuck School)."
             ]
           },
           {
             title: "Top Private Research Universities",
             list: [
-              "<strong>Massachusetts Institute of Technology (MIT)</strong> — Cambridge, MA. QS World Rank #1 (2026), 14 consecutive years at the global top. Unmatched worldwide for computer science, AI, robotics, and data science.",
-              "<strong>Stanford University</strong> — Stanford, CA. QS World Rank #3 (2026). Heart of Silicon Valley; unrivalled for computer science, AI, entrepreneurship, and business (Stanford GSB).",
-              "<strong>California Institute of Technology (Caltech)</strong> — Pasadena, CA. QS World Rank #10 (2026). Small, intensely research-focused; elite in physics, aerospace, and applied mathematics.",
-              "<strong>University of Chicago & Johns Hopkins University</strong> — Chicago is famous for economics (Booth School); Johns Hopkins is the leading US destination for medicine and public health.",
-              "<strong>Duke University & Northwestern University</strong> — Duke is strong in Fuqua Business School; Northwestern's Kellogg School of Management is top-ranked."
+              "<strong>Massachusetts Institute of Technology (MIT)</strong>: Cambridge, MA. QS World Rank #1 (2026), 14 consecutive years at the global top. Unmatched worldwide for computer science, AI, robotics, and data science.",
+              "<strong>Stanford University</strong>: Stanford, CA. QS World Rank #3 (2026). Heart of Silicon Valley; unrivalled for computer science, AI, entrepreneurship, and business (Stanford GSB).",
+              "<strong>California Institute of Technology (Caltech)</strong>: Pasadena, CA. QS World Rank #10 (2026). Small, intensely research-focused; elite in physics, aerospace, and applied mathematics.",
+              "<strong>University of Chicago & Johns Hopkins University</strong>: Chicago is famous for economics (Booth School); Johns Hopkins is the leading US destination for medicine and public health.",
+              "<strong>Duke University & Northwestern University</strong>: Duke is strong in Fuqua Business School; Northwestern's Kellogg School of Management is top-ranked."
             ]
           }
         ]
@@ -478,17 +478,17 @@ export const destinationsData = {
           {
             title: "Technology, Data & AI",
             list: [
-              "<strong>MS Computer Science</strong> — MIT, Stanford, Carnegie Mellon University (CMU), UC Berkeley, and UIUC are the absolute elite choices.",
-              "<strong>MS Artificial Intelligence / ML</strong> — CMU (first dedicated AI department in the US), Stanford, MIT, and UT Austin offer world-class specializations.",
-              "<strong>MS Data Science / Business Analytics</strong> — Columbia, NYU, USC, and Northwestern offer highly respected, STEM-designated data analytics degrees.",
-              "<strong>Bachelor's in CS / Software Engineering</strong> — MIT, Stanford, UC Berkeley, CMU, and Georgia Tech are top direct-entry choices."
+              "<strong>MS Computer Science</strong>: MIT, Stanford, Carnegie Mellon University (CMU), UC Berkeley, and UIUC are the absolute elite choices.",
+              "<strong>MS Artificial Intelligence / ML</strong>: CMU (first dedicated AI department in the US), Stanford, MIT, and UT Austin offer world-class specializations.",
+              "<strong>MS Data Science / Business Analytics</strong>: Columbia, NYU, USC, and Northwestern offer highly respected, STEM-designated data analytics degrees.",
+              "<strong>Bachelor's in CS / Software Engineering</strong>: MIT, Stanford, UC Berkeley, CMU, and Georgia Tech are top direct-entry choices."
             ]
           },
           {
             title: "Business & Management",
             list: [
-              "<strong>MBA</strong> — Stanford GSB, Harvard Business School (HBS), Wharton (UPenn), Booth (Chicago), and Kellogg (Northwestern) form the top-tier 'M7' MBA list.",
-              "<strong>MS Business Analytics / Finance</strong> — MIT Sloan's MFin and Columbia's MSBA are STEM-designated programs popular with recent graduates."
+              "<strong>MBA</strong>: Stanford GSB, Harvard Business School (HBS), Wharton (UPenn), Booth (Chicago), and Kellogg (Northwestern) form the top-tier 'M7' MBA list.",
+              "<strong>MS Business Analytics / Finance</strong>: MIT Sloan's MFin and Columbia's MSBA are STEM-designated programs popular with recent graduates."
             ]
           }
         ]
@@ -615,14 +615,14 @@ export const destinationsData = {
           {
             title: "Group of Eight (Go8)",
             list: [
-              "<strong>University of Melbourne</strong> — QS World Rank #13 (2026). Consistently Australia's top-ranked institution, known for its Melbourne Model curriculum.",
-              "<strong>University of Sydney</strong> — QS World Rank #18 (2026). Strong programs in business, law, and medicine, set in Australia's largest financial hub.",
-              "<strong>University of New South Wales (UNSW)</strong> — QS World Rank #19 (2026). Highly respected for engineering, technology, and entrepreneurship.",
-              "<strong>Australian National University (ANU)</strong> — Canberra. QS World Rank #30 (2026). Australia's national research university, strong in political science and physical sciences.",
-              "<strong>Monash University</strong> — Melbourne. QS World Rank #37 (2026). Largest university in Australia, with exceptional research output in pharmacy and engineering.",
-              "<strong>University of Queensland (UQ)</strong> — Brisbane. QS World Rank #40 (2026). Known for biological sciences and environmental technologies.",
-              "<strong>University of Western Australia (UWA)</strong> — Perth. QS World Rank #77 (2026). Strong ties to resources, energy, and marine science sectors.",
-              "<strong>University of Adelaide</strong> — Adelaide. QS World Rank #82 (2026). Noted for agricultural science, winemaking, and defense research."
+              "<strong>University of Melbourne</strong>: QS World Rank #13 (2026). Consistently Australia's top-ranked institution, known for its Melbourne Model curriculum.",
+              "<strong>University of Sydney</strong>: QS World Rank #18 (2026). Strong programs in business, law, and medicine, set in Australia's largest financial hub.",
+              "<strong>University of New South Wales (UNSW)</strong>: QS World Rank #19 (2026). Highly respected for engineering, technology, and entrepreneurship.",
+              "<strong>Australian National University (ANU)</strong>: Canberra. QS World Rank #30 (2026). Australia's national research university, strong in political science and physical sciences.",
+              "<strong>Monash University</strong>: Melbourne. QS World Rank #37 (2026). Largest university in Australia, with exceptional research output in pharmacy and engineering.",
+              "<strong>University of Queensland (UQ)</strong>: Brisbane. QS World Rank #40 (2026). Known for biological sciences and environmental technologies.",
+              "<strong>University of Western Australia (UWA)</strong>: Perth. QS World Rank #77 (2026). Strong ties to resources, energy, and marine science sectors.",
+              "<strong>University of Adelaide</strong>: Adelaide. QS World Rank #82 (2026). Noted for agricultural science, winemaking, and defense research."
             ]
           }
         ]
@@ -637,16 +637,16 @@ export const destinationsData = {
           {
             title: "Technology, Data & AI",
             list: [
-              "<strong>Master of Information Technology</strong> — UNSW, Monash, and University of Sydney offer leading programs linked directly to Australia's tech hubs.",
-              "<strong>Master of Data Science</strong> — University of Melbourne and University of Queensland are top-tier selections.",
-              "<strong>Bachelor of Computer Science</strong> — Monash and Melbourne are direct-entry options for Class 12 graduates."
+              "<strong>Master of Information Technology</strong>: UNSW, Monash, and University of Sydney offer leading programs linked directly to Australia's tech hubs.",
+              "<strong>Master of Data Science</strong>: University of Melbourne and University of Queensland are top-tier selections.",
+              "<strong>Bachelor of Computer Science</strong>: Monash and Melbourne are direct-entry options for Class 12 graduates."
             ]
           },
           {
             title: "Business & Management",
             list: [
-              "<strong>MBA</strong> — Melbourne Business School and AGSM at UNSW Business School are internationally elite, requiring prior work experience.",
-              "<strong>Master of Professional Accounting / Finance</strong> — widely popular courses across Sydney and Melbourne universities."
+              "<strong>MBA</strong>: Melbourne Business School and AGSM at UNSW Business School are internationally elite, requiring prior work experience.",
+              "<strong>Master of Professional Accounting / Finance</strong>: widely popular courses across Sydney and Melbourne universities."
             ]
           }
         ]
@@ -757,11 +757,11 @@ export const destinationsData = {
           {
             title: "Leading Public & Technical Universities",
             list: [
-              "<strong>Technical University of Munich (TUM)</strong> — QS World Rank #28 (2026). Germany's top technical university, globally elite in computer science and engineering.",
-              "<strong>LMU Munich</strong> — QS World Rank #52 (2026). Excellent research university strong in physics, data science, and business.",
-              "<strong>Heidelberg University</strong> — QS World Rank #84 (2026). Germany's oldest university (1386), world-renowned for medicine and life sciences.",
-              "<strong>Karlsruhe Institute of Technology (KIT)</strong> — strong in mechanical and electrical engineering.",
-              "<strong>RWTH Aachen University</strong> — Germany's largest technical university, highly sought after for automotive and production engineering."
+              "<strong>Technical University of Munich (TUM)</strong>: QS World Rank #28 (2026). Germany's top technical university, globally elite in computer science and engineering.",
+              "<strong>LMU Munich</strong>: QS World Rank #52 (2026). Excellent research university strong in physics, data science, and business.",
+              "<strong>Heidelberg University</strong>: QS World Rank #84 (2026). Germany's oldest university (1386), world-renowned for medicine and life sciences.",
+              "<strong>Karlsruhe Institute of Technology (KIT)</strong>: strong in mechanical and electrical engineering.",
+              "<strong>RWTH Aachen University</strong>: Germany's largest technical university, highly sought after for automotive and production engineering."
             ]
           }
         ]
@@ -776,8 +776,8 @@ export const destinationsData = {
           {
             title: "Technology, Data & AI",
             list: [
-              "<strong>MSc Automotive Engineering / Robotics</strong> — RWTH Aachen and TU Munich are world leaders in mechanical automation.",
-              "<strong>MSc Computer Science / Data Engineering</strong> — TUM, TU Berlin, and Saarland University offer top programs."
+              "<strong>MSc Automotive Engineering / Robotics</strong>: RWTH Aachen and TU Munich are world leaders in mechanical automation.",
+              "<strong>MSc Computer Science / Data Engineering</strong>: TUM, TU Berlin, and Saarland University offer top programs."
             ]
           }
         ]

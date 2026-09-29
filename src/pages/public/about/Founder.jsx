@@ -70,7 +70,7 @@ const Founder = () => {
                 style={{ textAlign: "left", marginBottom: "2rem" }}
               >
                 <span className="badge">Founder & CEO</span>
-                <h2 style={{ fontSize: "3rem" }}>
+                <h2 style={{ fontSize: "var(--font-size-hero)", fontWeight: "900", lineHeight: "1.1" }}>
                   Building Pathways to Excellence
                 </h2>
               </div>
@@ -82,7 +82,7 @@ const Founder = () => {
                   To Everyone Who Has Ever Felt Lost Between Potential and Direction,
                 </p>
                 <p style={{ marginBottom: "1.5rem" }}>
-                  There comes a point in life where marks, degrees, and expectations stop answering the deeper question: "Who am I becoming?"
+                  There comes a point in life where marks, degrees, and expectations stop answering the deeper question, "Who am I becoming?"
                 </p>
                 <p style={{ marginBottom: "1.5rem" }}>
                   For years, education systems have taught people how to pass examinations, but very few have taught them how to understand themselves, build resilience, communicate with confidence, or navigate a rapidly changing world with clarity and purpose.
@@ -91,28 +91,28 @@ const Founder = () => {
                   That realization became the foundation of NPathways Global.
                 </p>
                 <p style={{ marginBottom: "1.5rem" }}>
-                  This journey did not begin with the ambition to build another study abroad company. It began with a simple but powerful belief: every individual deserves access to quality guidance, meaningful opportunities, and the confidence to pursue a life larger than their circumstances.
+                  This journey did not begin with the ambition to build another study abroad company. It began with a simple but powerful belief that every individual deserves access to quality guidance, meaningful opportunities, and the confidence to pursue a life larger than their circumstances.
                 </p>
                 <p style={{ marginBottom: "1.5rem" }}>
                   NPathways Global was built for students standing at crossroads. For parents searching for clarity. For young people with ambition but no roadmap. For dreamers who needed structure. And for capable individuals who simply needed someone to help them see what they were truly capable of becoming.
                 </p>
                 <p style={{ marginBottom: "1.5rem" }}>
-                  The mission has always been larger than admissions or visas. It is about building global citizens. It is about helping individuals discover their strengths, develop real-world skills, strengthen emotional resilience, and prepare themselves not just for universities — but for life itself.
+                  The mission has always been larger than admissions or visas. It is about building global citizens. It is about helping individuals discover their strengths, develop real-world skills, strengthen emotional resilience, and prepare themselves not just for universities, but for life itself.
                 </p>
                 <p style={{ marginBottom: "1.5rem" }}>
-                  At NPathways, every pathway begins with self-discovery. Before countries, courses, or careers, there must first be clarity. Clarity about strengths. Clarity about goals. Clarity about identity. Because sustainable success is never built on pressure alone — it is built on alignment.
+                  At NPathways, every pathway begins with self-discovery. Before countries, courses, or careers, there must first be clarity. Clarity about strengths. Clarity about goals. Clarity about identity. Because sustainable success is never built on pressure alone; it is built on alignment.
                 </p>
                 <p style={{ marginBottom: "1.5rem" }}>
                   This is why the vision continues to evolve beyond traditional counseling. From psychometric assessments and career mapping systems to communication training, emotional intelligence development, and AI-powered guidance tools, the goal is to create an ecosystem where education becomes transformational, not transactional.
                 </p>
                 <p style={{ marginBottom: "1.5rem" }}>
-                  The world is changing rapidly. Careers are evolving. Technology is reshaping industries. And young people today require more than information — they require direction, adaptability, confidence, and purpose.
+                  The world is changing rapidly. Careers are evolving. Technology is reshaping industries. And young people today require more than information; they require direction, adaptability, confidence, and purpose.
                 </p>
                 <p style={{ marginBottom: "1.5rem" }}>
                   That is the future NPathways Global hopes to contribute toward. Not by creating dependency, but by creating capable individuals who can stand on their own, think critically, adapt globally, and lead meaningfully.
                 </p>
                 <p style={{ marginBottom: "1.5rem" }}>
-                  To every student, parent, educator, and supporter who believes in growth, possibility, and human potential: thank you for becoming part of this journey.
+                  To every student, parent, educator, and supporter who believes in growth, possibility, and human potential, thank you for becoming part of this journey.
                 </p>
                 <p style={{ marginBottom: "1.5rem", fontWeight: "600", fontStyle: "italic", color: "#000" }}>
                   The road ahead is long, but the mission remains clear.<br /><br />
@@ -175,62 +175,11 @@ const Founder = () => {
         </div>
       </section>
 
-      {/* Experience Area */}
-      <section style={{ padding: "8rem 0" }}>
-        <div className="about-container">
-          <div className="about-grid-3">
-            {[
-              {
-                year: "2008",
-                title: "The Genesis",
-                desc: "Started as a volunteer counselor helping local students with applications.",
-              },
-              {
-                year: "2015",
-                title: "Skillinum Launch",
-                desc: "Established Skillinum Falcon LLP to professionalize skill-based education.",
-              },
-              {
-                year: "2020",
-                title: "NPathways Era",
-                desc: "Unified all services under the NPathways brand for a holistic student journey.",
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                style={{
-                  padding: "2rem",
-                  border: "1px solid #f0f0f0",
-                  borderRadius: "8px",
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: "3rem",
-                    fontWeight: "800",
-                    color: "#919191",
-                    display: "block",
-                    marginBottom: "1rem",
-                  }}
-                >
-                  {item.year}
-                </span>
-                <h3 style={{ marginBottom: "1rem" }}>{item.title}</h3>
-                <p style={{ color: "#666" }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Call to Action */}
-      <section style={{ padding: "6rem 0", borderTop: "1px solid #eee" }}>
+      <section style={{ padding: "4rem 0", borderTop: "1px solid #eee" }}>
         <div className="about-container" style={{ textAlign: "center" }}>
-          <h3>Want to discuss your career with Deepak?</h3>
-          <p style={{ color: "#666", marginBottom: "2rem", textAlign: "center" }}>
-            Book a specialized premium consultation session for deep career
-            mapping.
-          </p>
           <a
             href="https://www.linkedin.com/in/coachdeepakrajaa/"
             target="_blank"

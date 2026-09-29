@@ -18,9 +18,9 @@ export const CommonDataSection = () => (
             Capability, and Global Exposure.
           </p>
           <ul className="philosophy-list">
-            <li><strong>Clarity:</strong> Knowing the 'Why' before the 'Where'.</li>
-            <li><strong>Capability:</strong> Building the skills required for global success.</li>
-            <li><strong>Connection:</strong> Leveraging an ecosystem of global industry and academic partners.</li>
+            <li><strong>Clarity</strong> Knowing the 'Why' before the 'Where'.</li>
+            <li><strong>Capability</strong> Building the skills required for global success.</li>
+            <li><strong>Connection</strong> Leveraging an ecosystem of global industry and academic partners.</li>
           </ul>
         </div>
         <div className="outcomes-content">

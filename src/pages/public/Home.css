@@ -1603,7 +1603,8 @@
   position: relative;
   z-index: 2;
   transition: opacity 0.4s ease, visibility 0.4s ease;
-  text-align: justify; /* Justify text to make both margins line up cleanly */
+  text-align: left;
+  line-height: 1.55;
 }
 
 .stack-card:not(.active) .card-desc {
@@ -1828,7 +1829,8 @@
   transition: max-height 0.7s cubic-bezier(0.25, 0.8, 0.25, 1),
               opacity 0.5s ease,
               margin-top 0.5s ease;
-  text-align: justify; /* Justify text to make both margins line up cleanly */
+  text-align: left;
+  line-height: 1.65;
   /* Firefox Scrollbar compatibility */
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
@@ -1983,7 +1985,8 @@
   opacity: 0;
   overflow-y: auto; /* Enable scrollbars so long text can be read in full */
   margin-top: 0;
-  text-align: justify;
+  text-align: left;
+  line-height: 1.65;
   transition: max-height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
               opacity 0.4s ease,
               margin-top 0.4s ease;
@@ -2137,7 +2140,7 @@
 
 
 /* ============================================================
-   Home CTA — Step-by-Step Wizard Section
+   Home CTA: Step-by-Step Wizard Section
    ============================================================ */
 .home-cta-section {
   position: relative;
@@ -2617,36 +2620,12 @@
   50% { opacity: 1; }
 }
 
-/* Responsive adjustment for Boarding Pass */
-@media (max-width: 580px) {
-  .cta-boarding-pass {
-    flex-direction: column;
-  }
-  .pass-perforation {
-    flex-direction: row;
-    width: 100%;
-    height: 20px;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .notch-top {
-    margin-top: 0;
-    margin-left: -10px;
-    transform: rotate(90deg);
-  }
-  .notch-bottom {
-    margin-bottom: 0;
-    margin-right: -10px;
-    transform: rotate(90deg);
-  }
-  .perforation-dashed {
-    width: 100%;
-    height: 2px;
-    border-top: 2px dashed rgba(255, 255, 255, 0.15);
-    border-left: none;
-  }
-  .pass-stub {
-    border-left: none;
+/* Hide Boarding Pass in Mobile View (Screens <= 900px) */
+@media (max-width: 900px) {
+  .home-cta-right,
+  .cta-boarding-pass,
+  .pass-plane-overlay {
+    display: none !important;
   }
 }
 
@@ -3243,165 +3222,369 @@
 }
 
 /* --- Standalone Pathways Section --- */
+/* ============================================================
+   CREATIVE SERVICES & PATHWAYS SHOWCASE
+   ============================================================ */
+
 .home-pathways-section {
   padding: 8rem 0;
   background-color: #fbfbfb;
   border-bottom: 1px solid var(--color-gray-100, #F3F3F3);
+  position: relative;
 }
 
-.pathways-grid-new {
+/* Filter Pills */
+.services-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.service-filter-pill {
+  background: #ffffff;
+  color: #444444;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-pill, 100px);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.service-filter-pill:hover {
+  border-color: rgba(224, 165, 43, 0.4);
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+.service-filter-pill.active {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Creative Services Grid */
+.services-creative-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  margin-top: 4rem;
+  gap: 2.25rem;
+  align-items: start;
 }
 
 @media (max-width: 1024px) {
-  .pathways-grid-new {
+  .services-creative-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.75rem;
   }
 }
 
-@media (max-width: 600px) {
-  .pathways-grid-new {
+@media (max-width: 680px) {
+  .services-creative-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 }
 
-.pathways-grid-card {
+/* Service Creative Card */
+.service-creative-card {
+  position: relative;
   background: #ffffff;
-  border: 1px solid var(--color-gray-200, #E8E8E8);
-  border-radius: var(--radius-xl, 20px);
-  padding: 2.5rem 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-2xl, 24px);
+  padding: 2.1rem 1.85rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: all var(--transition-base, 300ms);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03);
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
 }
 
-.pathways-grid-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-  border-color: var(--color-brand-tertiary, #FDBA31);
+/* Flagship Card (Study Abroad) spanning 3 columns on desktop */
+@media (min-width: 1025px) {
+  .service-creative-card.flagship-card {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem 3rem;
+    background: linear-gradient(135deg, #ffffff 0%, #fffdf8 100%);
+  }
+
+  .service-creative-card.flagship-card .service-card-top-meta {
+    margin-bottom: 1rem;
+  }
+
+  .service-creative-card.flagship-card .service-card-main-title h3 {
+    font-size: 1.65rem;
+  }
+
+  .service-creative-card.flagship-card .service-card-bottom-action {
+    grid-column: span 2;
+    margin-top: 1rem;
+    padding-top: 1.25rem;
+  }
 }
 
-.pathways-card-header {
+/* Background image & Ambient Overlay */
+.service-card-bg-media {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.12;
+  filter: contrast(125%) brightness(0.95);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.service-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg, 
+    rgba(255, 255, 255, 0.92) 0%, 
+    rgba(255, 255, 255, 0.88) 40%, 
+    rgba(255, 255, 255, 0.97) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+  transition: background 0.4s ease;
+}
+
+.service-card-glow-orb {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(224, 165, 43, 0.25), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.45s ease;
+  z-index: 1;
+}
+
+/* 3D Glass Glint Reflection */
+.service-card-glint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: var(--radius-2xl, 24px);
+}
+
+/* Compass Coordinate Badge */
+.service-compass-watermark {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.4rem;
+  font-family: monospace;
+  font-size: 0.68rem;
+  color: rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  pointer-events: none;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.compass-ring {
+  font-size: 0.95rem;
+  color: var(--color-brand-tertiary-dark, #e0a52b);
+  opacity: 0.5;
+  transition: transform 0.5s ease;
+}
+
+.service-creative-card.is-active-service .compass-ring {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+.service-creative-card.is-active-service .service-compass-watermark {
+  color: var(--color-brand-tertiary-dark, #b88118);
+}
+
+/* Interactive States: Single Card Hover Expansion */
+.service-creative-card.is-service-dimmed {
+  opacity: 0.55;
+  filter: grayscale(20%);
+  transform: scale(0.985);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+}
+
+.service-creative-card.is-active-service {
+  transform: translateY(-10px) scale(1.015);
+  border-color: rgba(224, 165, 43, 0.6);
+  box-shadow: 
+    0 25px 60px rgba(224, 165, 43, 0.16),
+    0 8px 20px rgba(0, 0, 0, 0.06);
+  z-index: 5;
+}
+
+.service-creative-card.is-active-service .service-card-bg-media {
+  opacity: 0.28;
+  filter: contrast(135%) brightness(0.9);
+  transform: scale(1.08);
+}
+
+.service-creative-card.is-active-service .service-card-overlay {
+  background: linear-gradient(
+    180deg, 
+    rgba(255, 255, 255, 0.84) 0%, 
+    rgba(255, 255, 255, 0.78) 40%, 
+    rgba(255, 255, 255, 0.92) 100%
+  );
+}
+
+.service-creative-card.is-active-service .service-card-glow-orb {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Card Elements */
+.service-card-top-meta {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 1.25rem;
 }
 
-.pathways-card-header h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #000000;
-  margin: 0;
-  text-align: left;
-}
-
-.pathways-card-icon {
+.service-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg, 16px);
+  background: rgba(224, 165, 43, 0.15);
+  color: var(--color-brand-tertiary-dark, #b88118);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
-  background: rgba(253, 186, 49, 0.1);
-  border-radius: var(--radius-lg, 16px);
-  color: var(--color-brand-tertiary, #FDBA31);
-  font-size: 1.2rem;
-  flex-shrink: 0;
-  transition: all var(--transition-base, 300ms);
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
-.pathways-grid-card:hover .pathways-card-icon {
-  background: var(--color-brand-tertiary, #FDBA31);
+.service-creative-card.is-active-service .service-icon-box {
+  background: #000000;
+  color: #ffffff;
+  transform: scale(1.06) rotate(4deg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.service-tags-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.service-badge-pill {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  color: #222222;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-pill, 100px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.service-creative-card.is-active-service .service-badge-pill {
+  background: rgba(224, 165, 43, 0.22);
+  color: var(--color-brand-tertiary-dark, #b88118);
+  border-color: rgba(224, 165, 43, 0.45);
+}
+
+.service-card-main-title {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.service-card-main-title h3 {
+  font-size: 1.22rem;
+  font-weight: 800;
   color: #000000;
+  margin: 0 0 0.45rem 0;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  transition: color 0.3s ease;
 }
 
-.pathways-card-desc {
-  font-size: 0.9rem;
-  color: #555555;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  text-align: left;
-  flex-grow: 1;
+.service-creative-card.is-active-service .service-card-main-title h3 {
+  color: var(--color-brand-tertiary-dark, #e0a52b);
 }
 
-.pathways-card-action {
-  text-align: left;
+.service-card-brief {
+  font-size: 0.88rem;
+  color: #4a5568;
+  line-height: 1.5;
+  margin: 0;
+  word-break: break-word;
 }
 
-.btn-read-pathway {
+/* Bottom Action */
+.service-card-bottom-action {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.btn-explore-service {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.65rem;
   font-size: 0.9rem;
   font-weight: 700;
   color: #000000;
   text-decoration: none !important;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
-.btn-read-pathway span {
-  transition: transform 0.2s ease;
+.service-arrow-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  font-size: 0.85rem;
+  color: #000000;
+  transition: all 0.25s ease;
 }
 
-.pathways-grid-card:hover .btn-read-pathway {
-  color: var(--color-brand-tertiary-dark, #e0a52b);
+.service-creative-card.is-active-service .btn-explore-service {
+  color: var(--color-brand-tertiary-dark, #b88118);
 }
 
-.pathways-grid-card:hover .btn-read-pathway span {
+.service-creative-card.is-active-service .service-arrow-circle {
+  background: var(--color-brand-tertiary-dark, #e0a52b);
+  color: #000000;
   transform: translateX(4px);
-}
-
-/* Study Abroad Special Placement - spans full width on desktop */
-@media (min-width: 1025px) {
-  .pathways-grid-card.full-width-card {
-    grid-column: span 3;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 3rem 4rem;
-    background: linear-gradient(135deg, #ffffff 0%, #fffbf2 100%);
-    border-color: rgba(253, 186, 49, 0.2);
-  }
-  
-  .pathways-grid-card.full-width-card .pathways-card-header {
-    margin-bottom: 0;
-    width: 30%;
-  }
-
-  .pathways-grid-card.full-width-card .pathways-card-header h3 {
-    font-size: 1.35rem;
-  }
-  
-  .pathways-grid-card.full-width-card .pathways-card-desc {
-    margin-bottom: 0;
-    padding: 0 2rem;
-    width: 50%;
-    font-size: 1rem;
-  }
-  
-  .pathways-grid-card.full-width-card .pathways-card-action {
-    width: 20%;
-    text-align: right;
-  }
-  
-  .pathways-grid-card.full-width-card .btn-read-pathway {
-    background: #000000;
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius-lg, 16px);
-  }
-  
-  .pathways-grid-card.full-width-card:hover .btn-read-pathway {
-    background: var(--color-brand-tertiary, #FDBA31);
-    color: #000000;
-  }
 }
 
 /* --- Philosophy Section --- */
@@ -3413,37 +3596,144 @@
 
 .philosophy-zen-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 3.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
   margin-top: 4rem;
   width: 100%;
+  align-items: start;
 }
 
-.philosophy-zen-item {
+.philosophy-zen-item.philosophy-zen-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
   position: relative;
-  padding: 0;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 3.25rem 2.5rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-2xl, 24px);
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   animation: tileFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.philosophy-zen-item:nth-child(1) {
-  animation-delay: 0.1s;
+.philosophy-zen-item:nth-child(1) { animation-delay: 0.1s; }
+.philosophy-zen-item:nth-child(2) { animation-delay: 0.25s; }
+.philosophy-zen-item:nth-child(3) { animation-delay: 0.4s; }
+
+/* Japanese Art Layer & Subtle Parchment Overlay */
+.zen-card-art-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.32;
+  filter: grayscale(15%) contrast(125%) brightness(0.92);
+  transform: scale(1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.philosophy-zen-item:nth-child(2) {
-  animation-delay: 0.25s;
+.zen-card-art-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg, 
+    rgba(255, 255, 255, 0.86) 0%, 
+    rgba(255, 255, 255, 0.74) 45%, 
+    rgba(255, 255, 255, 0.90) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+  transition: background 0.4s ease;
 }
 
-.philosophy-zen-item:nth-child(3) {
-  animation-delay: 0.4s;
+/* Watermark Calligraphy Glyph */
+.zen-card-watermark-kanji {
+  position: absolute;
+  bottom: -15px;
+  right: -5px;
+  font-family: serif;
+  font-size: 8.5rem;
+  font-weight: 900;
+  color: rgba(20, 20, 20, 0.08);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 3;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
 }
 
-.philosophy-zen-item:hover {
-  transform: translateY(-8px);
+.zen-card-content {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Subtle Ambient Glow on Hover */
+.zen-card-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle at top right, rgba(224, 165, 43, 0.25), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: scale(0.8);
+  z-index: 3;
+}
+
+/* Sibling dimming: Ensure only the hovered card pops up and others stay subtle */
+.philosophy-zen-item.is-sibling-dimmed {
+  opacity: 0.55;
+  filter: grayscale(25%);
+  transform: scale(0.98);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+/* ACTIVE HOVER POPUP EXPANSION */
+.philosophy-zen-item.is-hover-expanded {
+  transform: translateY(-12px) scale(1.02);
+  border-color: rgba(224, 165, 43, 0.65);
+  box-shadow: 
+    0 30px 65px rgba(224, 165, 43, 0.22),
+    0 10px 25px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+.philosophy-zen-item.is-hover-expanded .zen-card-art-bg {
+  transform: scale(1.1);
+  opacity: 0.5;
+  filter: grayscale(0%) contrast(140%) brightness(0.9);
+}
+
+.philosophy-zen-item.is-hover-expanded .zen-card-art-overlay {
+  background: linear-gradient(
+    180deg, 
+    rgba(255, 255, 255, 0.82) 0%, 
+    rgba(255, 255, 255, 0.65) 40%, 
+    rgba(255, 255, 255, 0.88) 100%
+  );
+}
+
+.philosophy-zen-item.is-hover-expanded .zen-card-watermark-kanji {
+  transform: scale(1.15) translateY(-14px);
+  color: rgba(224, 165, 43, 0.24);
+}
+
+.philosophy-zen-item.is-hover-expanded .zen-card-glow {
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 @keyframes tileFadeInUp {
@@ -3457,113 +3747,472 @@
   }
 }
 
-/* Vertical line dividers between columns on desktop */
-@media (min-width: 992px) {
-  .philosophy-zen-item + .philosophy-zen-item {
-    border-left: 1px solid var(--color-gray-200, #E8E8E8);
-    padding-left: 3.5rem;
-  }
-  
-  /* Adjust gaps to accommodate vertical borders */
-  .philosophy-zen-layout {
-    gap: 0;
-  }
-  
-  .philosophy-zen-item {
-    padding-right: 2rem;
-  }
-  
-  .philosophy-zen-item:last-child {
-    padding-right: 0;
-  }
+.zen-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1.5rem;
 }
 
 .zen-number {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-family: serif;
   font-weight: 800;
   color: var(--color-brand-tertiary-dark, #e0a52b);
   line-height: 1;
-  margin-bottom: 1rem;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.philosophy-zen-item:hover .zen-number {
-  transform: translateY(-4px) scale(1.05);
+.philosophy-zen-item.is-hover-expanded .zen-number {
+  transform: scale(1.08) translateY(-2px);
+}
+
+.concept-japanese-badge {
+  font-size: 1.15rem;
+  font-family: serif;
+  color: #111111;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-pill, 100px);
+  letter-spacing: 1px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.philosophy-zen-item.is-hover-expanded .concept-japanese-badge {
+  background: rgba(224, 165, 43, 0.24);
+  color: var(--color-brand-tertiary-dark, #b88118);
+  border-color: rgba(224, 165, 43, 0.55);
 }
 
 .concept-header {
   margin-bottom: 1.25rem;
   display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  width: 100%;
 }
 
 .concept-header h3 {
-  font-size: 1.85rem;
-  font-weight: 800;
+  font-size: 2.1rem;
+  font-weight: 900;
   color: #000000;
   margin: 0;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
 }
 
-.concept-japanese-inline {
-  font-size: 1.1rem;
-  font-family: serif;
-  color: var(--color-text-secondary, #718096);
-  font-weight: 600;
+.philosophy-zen-item.is-hover-expanded .concept-header h3 {
+  color: var(--color-brand-tertiary-dark, #e0a52b);
 }
 
 .concept-definition {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 700;
-  color: var(--color-brand-tertiary-dark, #e0a52b);
+  color: #555555;
   display: block;
+}
+
+/* ============================================================
+   CREATIVE HOVER POPUP ACCORDION DRAWER (Only One Pops Up)
+   ============================================================ */
+
+.zen-card-hover-popup {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  opacity: 0;
   width: 100%;
-  margin-top: 0.25rem;
 }
 
-.concept-desc {
-  font-size: 1.05rem;
-  color: #333333;
-  line-height: 1.6;
-  margin-bottom: 1.75rem;
+.philosophy-zen-item.is-hover-expanded .zen-card-hover-popup {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.zen-popup-inner {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  padding: 0.75rem 0 1.25rem 0;
+}
+
+.zen-popup-art-tag {
+  display: inline-flex;
+  align-self: flex-start;
+  background: rgba(224, 165, 43, 0.12);
+  color: var(--color-brand-tertiary-dark, #b88118);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill, 100px);
+  border: 1px solid rgba(224, 165, 43, 0.25);
+}
+
+.zen-popup-desc {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  padding: 1.25rem 1.4rem;
+  border-radius: var(--radius-lg, 16px);
+  border-left: 3px solid var(--color-brand-tertiary-dark, #e0a52b);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.zen-popup-desc h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #777777;
+  margin: 0 0 0.35rem 0;
+  font-weight: 700;
+}
+
+.zen-popup-desc p {
+  font-size: 1rem;
+  color: #111111;
   font-weight: 500;
-  border-bottom: 1px solid var(--color-gray-200, #E8E8E8);
-  padding-bottom: 1.5rem;
-  text-align: center;
+  line-height: 1.6;
+  margin: 0;
 }
 
-.concept-how-we-use h5 {
-  font-size: 0.8rem;
+.zen-card-action {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(0, 0, 0, 0.12);
+}
+
+.zen-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+}
+
+.philosophy-zen-item.is-hover-expanded .zen-btn-label {
+  color: var(--color-brand-tertiary-dark, #e0a52b);
+}
+
+.zen-explore-arrow {
+  font-size: 1.05rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--color-brand-tertiary-dark, #e0a52b);
+}
+
+.philosophy-zen-item.is-hover-expanded .zen-explore-arrow {
+  transform: translateX(6px);
+}
+
+/* ============================================================
+   PHILOSOPHY CONCEPT POPUP MODAL (Creative Spring Animation)
+   ============================================================ */
+
+.zen-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: modalFadeIn 0.3s ease forwards;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.zen-modal-dialog {
+  background: #ffffff;
+  color: #111111;
+  width: 100%;
+  max-width: 720px;
+  border-radius: var(--radius-3xl, 28px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 35px 80px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(224, 165, 43, 0.3);
+  animation: modalZoomInSpring 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes modalZoomInSpring {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Japanese Art Backdrop Banner in Modal */
+.zen-modal-art-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.42;
+  filter: contrast(130%) brightness(0.95);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.zen-modal-art-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.7) 60%, rgba(255,255,255,1) 100%);
+}
+
+.zen-modal-art-watermark {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  font-family: serif;
+  font-size: 8rem;
+  font-weight: 900;
+  color: rgba(224, 165, 43, 0.28);
+  line-height: 1;
+  user-select: none;
+}
+
+.zen-modal-content-wrap {
+  position: relative;
+  z-index: 3;
+  padding: 3.5rem 3.5rem 3rem 3.5rem;
+}
+
+.zen-modal-ambient {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(224, 165, 43, 0.25), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.zen-modal-close {
+  position: absolute;
+  top: 1.75rem;
+  right: 1.75rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333333;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.zen-modal-close:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.zen-modal-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.zen-modal-num-tag {
+  font-size: 2.75rem;
+  font-family: serif;
+  font-weight: 900;
+  color: var(--color-brand-tertiary-dark, #e0a52b);
+  line-height: 1;
+}
+
+.zen-modal-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.zen-modal-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.zen-modal-name-row h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0;
+  color: #000000;
+  letter-spacing: -0.02em;
+}
+
+.zen-modal-kanji {
+  font-size: 1.4rem;
+  font-family: serif;
+  color: var(--color-brand-tertiary-dark, #e0a52b);
+  font-weight: 700;
+  background: rgba(224, 165, 43, 0.12);
+  padding: 0.2rem 0.75rem;
+  border-radius: var(--radius-pill, 100px);
+}
+
+.zen-modal-def {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #666666;
+}
+
+.zen-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.zen-modal-desc-box {
+  background: rgba(250, 250, 250, 0.9);
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-lg, 16px);
+  border-left: 4px solid var(--color-brand-tertiary-dark, #e0a52b);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.zen-modal-desc-box h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #777777;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.zen-modal-desc-box p {
+  font-size: 1.15rem;
+  color: #111111;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+}
+
+.zen-modal-usage-box h5 {
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #888888;
   margin: 0 0 0.75rem 0;
+  font-weight: 700;
   text-align: left;
 }
 
-.concept-how-we-use p {
-  font-size: 0.95rem;
-  color: #555555;
-  line-height: 1.6;
+.zen-modal-usage-box p {
+  font-size: 1.02rem;
+  color: #444444;
+  line-height: 1.75;
   margin: 0;
-  text-align: justify;
+  text-align: left;
+}
+
+.zen-modal-footer {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.zen-modal-art-caption {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: #888888;
+  font-style: italic;
+}
+
+.zen-art-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-brand-tertiary-dark, #e0a52b);
+}
+
+.zen-modal-btn-gotit {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 2.25rem;
+  border-radius: var(--radius-pill, 100px);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.zen-modal-btn-gotit:hover {
+  background: var(--color-brand-tertiary-dark, #e0a52b);
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(224, 165, 43, 0.35);
 }
 
 /* Mobile responsive resets */
 @media (max-width: 991px) {
   .philosophy-zen-layout {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    gap: 1.75rem;
   }
   
-  .philosophy-zen-item {
-    border-left: none !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  .zen-modal-content-wrap {
+    padding: 2.25rem 1.75rem;
+  }
+
+  .zen-modal-name-row h2 {
+    font-size: 2rem;
+  }
+
+  .zen-modal-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .zen-modal-btn-gotit {
+    width: 100%;
   }
 }
 
@@ -3574,3 +4223,4 @@
   margin-top: -0.5rem;
   margin-bottom: 1rem;
 }
+

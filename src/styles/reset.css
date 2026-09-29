@@ -12,7 +12,7 @@
 
 /* Root HTML */
 html {
-  font-size: 16px;
+  font-size: 15px; /* Reduced by 2px (17px -> 15px) for global text scaling */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
@@ -24,6 +24,8 @@ body {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-normal);
+  letter-spacing: -0.011em;
+  text-rendering: optimizeLegibility;
   color: var(--color-text-secondary);
   background-color: var(--color-bg-primary);
   overflow-x: hidden;
@@ -67,7 +69,9 @@ h6 {
 p {
   margin-bottom: var(--spacing-4);
   color: var(--color-text-secondary);
-  text-align: justify;
+  text-align: left;
+  line-height: 1.65;
+  letter-spacing: normal;
 }
 
 .text-center, 
@@ -136,4 +140,25 @@ button {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-gray-300);
+}
+
+/* Typographic Spacing Enhancements */
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+h4, h5, h6 {
+  letter-spacing: -0.01em;
+}
+
+p, li, span, a, input, textarea, select, button {
+  letter-spacing: -0.006em;
+}
+
+/* Ensure clean paragraph spacing in markdown and rich text containers */
+.content p:last-child,
+.destination-doc-section p:last-child,
+.legal-content p:last-child,
+.concept-how-we-use p:last-child {
+  margin-bottom: 0;
 }

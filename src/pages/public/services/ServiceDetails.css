@@ -37,7 +37,7 @@
 }
 
 .service-hero h1 {
-  font-size: 3.5rem;
+  font-size: var(--font-size-hero);
   font-weight: 900;
   color: #ffffff;
   margin-top: 1rem;

@@ -29,7 +29,8 @@ import {
   FiAward,
   FiPhoneCall,
   FiChevronLeft,
-  FiChevronRight
+  FiChevronRight,
+  FiX
 } from "react-icons/fi";
 
 import "./Home.css";
@@ -109,44 +110,86 @@ const stepsData = [
 
 const popularPathwaysData = [
   {
+    id: "academic",
     title: "Academic Pathways",
-    desc: "For the student who has the destination  but not yet the route.",
+    category: "Curriculum & Boards",
+    tag: "School & High School",
+    badge: "Most Popular",
+    desc: "For students with clear goals needing the ideal route: strategic planning, subject choices, and board transitions.",
+    features: ["Subject selection mapping", "Board transition strategy", "Academic milestones & KPIs"],
+    bgImage: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
     link: "/services/education-consulting",
     icon: <FaGraduationCap />
   },
   {
+    id: "career",
     title: "Career Pathways",
-    desc: "For the student who doesn't know yet  which is exactly where we start.",
+    category: "Direction & Diagnostics",
+    tag: "Aptitude & Strengths",
+    badge: "Clarity Compass™",
+    desc: "Psychometric profiling and guided Ikigai mapping that align your strengths with emerging global opportunities.",
+    features: ["Ikigai career alignment", "In-depth psychometric testing", "1-on-1 mentor debrief"],
+    bgImage: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=800&q=80",
     link: "/services/career-guidance",
     icon: <FaCompass />
   },
   {
+    id: "curricular",
     title: "Curricular-Based Pathways",
-    desc: "Every Board. One Strategy. Board and subject choices.",
+    category: "CBSE / ICSE / IB / Cambridge",
+    tag: "Syllabus Mastery",
+    badge: "Every Board",
+    desc: "One tailored strategy for every board: optimizing streams whether aiming for domestic colleges or overseas study.",
+    features: ["IB & Cambridge credit mapping", "Stream selector guidance", "Dual-target balance"],
+    bgImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80",
     link: "/services/curricular-based-pathways",
     icon: <FiBookOpen />
   },
   {
-    title: "Pathway Programs (Bridge Courses)",
-    desc: "Close the specific academic or transition gaps.",
+    id: "bridge",
+    title: "Pathway Programs",
+    category: "Bridge Courses",
+    tag: "Skills & Transitions",
+    badge: "Zero Gap",
+    desc: "Bridging academic transition gaps with targeted foundation modules before higher university coursework begins.",
+    features: ["Academic deficit recovery", "Foundation leveling modules", "University readiness prep"],
+    bgImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
     link: "/services/pathway-programs",
     icon: <FaChartLine />
   },
   {
+    id: "competitive",
     title: "Competitive Exam Pathways",
-    desc: "Layered exam prep strategy for JEE, NEET, CAT, CLAT, etc.",
+    category: "Entrance Strategy",
+    tag: "JEE • NEET • CAT • CLAT",
+    badge: "Layered Prep",
+    desc: "Layered preparation balancing school board results with entrance exam percentiles, diagnostic mocks, and pacing.",
+    features: ["Score velocity benchmarks", "Time-management playbooks", "Alternative safety choices"],
+    bgImage: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80",
     link: "/services/competitive-exam-strategy",
     icon: <FiAward />
   },
   {
+    id: "bootcamp",
     title: "Skill & Bootcamp Pathways",
-    desc: "Outcome-specific bootcamps for job and life readiness.",
+    category: "Hands-on Mastery",
+    tag: "Career & Tech Readiness",
+    badge: "High Impact",
+    desc: "Hands-on intensive programs developing tangible project portfolios, pitch skills, and workplace readiness.",
+    features: ["Real portfolio builds", "Live industry mentors", "Interview & pitching readiness"],
+    bgImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
     link: "/bootcamps-webinars",
     icon: <FaFileInvoiceDollar />
   },
   {
+    id: "abroad",
     title: "Study Abroad Pathway",
-    desc: "When the plan points beyond India, we take you the whole way.",
+    category: "Global Admissions",
+    tag: "US • UK • Canada • Europe",
+    badge: "Flagship 360°",
+    desc: "End-to-end guidance when planning beyond India: university shortlisting, statement refinement, 98% visa filing, and travel settling.",
+    features: ["Bespoke college shortlists", "End-to-end visa & finances", "Pre-departure & family circle"],
+    bgImage: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
     link: "/services/study-abroad-pathway",
     icon: <FaPlaneDeparture />
   }
@@ -158,21 +201,21 @@ const studentSupportData = [
     title: "Career Discovery",
     subtitle: "Psychometric & Ikigai mapping",
     bgImg: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=1200&q=80",
-    desc: "Most students choose a country before they've chosen a direction. We start the other way around. Every NPathways journey begins with the Clarity Compass  a psychometric and aptitude diagnostic built around the idea of Ikigai: the place where what you're good at, what you enjoy, what the world needs, and what's actually viable for you all meet. In a single guided session, we map your natural strengths, genuine interests, and real-world readiness  not just your grades. The result isn't a generic report; it's a working answer to the question underneath every application: what am I actually building toward? For some students that means research. For others, industry, entrepreneurship, or a creative path nobody suggested before. Once that's clear, every decision after  which country, which course, which university  has something solid to stand on. This is the one step other consultancies skip. We think it's the one that matters most."
+    desc: "Most students choose a country before they've chosen a direction. We start the other way around. Every NPathways journey begins with the Clarity Compass, a psychometric and aptitude diagnostic built around the idea of Ikigai, the place where what you're good at, what you enjoy, what the world needs, and what's actually viable for you all meet. In a single guided session, we map your natural strengths, genuine interests, and real-world readiness, not just your grades. The result isn't a generic report; it's a working answer to the question underneath every application; what am I actually building toward? For some students that means research. For others, industry, entrepreneurship, or a creative path nobody suggested before. Once that's clear, every decision after, which country, which course, which university, has something solid to stand on. This is the one step other consultancies skip. We think it's the one that matters most."
   },
   {
     num: "02",
     title: "Admissions",
     subtitle: "Expert university shortlisting",
     bgImg: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
-    desc: "A university list built on rankings alone is a list built for someone else. Once your direction is clear, our admissions team builds a shortlist around what actually fits you  your academic profile, your budget, your career goals, and the kind of environment you'll genuinely thrive in, not just the one that looks best on paper. We look past headline rankings to the things that decide your actual experience: department strength in your specific field, faculty and research opportunities, curriculum fit, industry connections, and realistic admission chances given your profile. From there, we work with you end-to-end  refining personal statements, coordinating recommendation letters, tracking every deadline  so your application reflects your strongest, most honest case for admission. The goal isn't the most prestigious name you can get in front of. It's the university where your specific goals actually have room to grow."
+    desc: "A university list built on rankings alone is a list built for someone else. Once your direction is clear, our admissions team builds a shortlist around what actually fits you, your academic profile, your budget, your career goals, and the kind of environment you'll genuinely thrive in, not just the one that looks best on paper. We look past headline rankings to the things that decide your actual experience, including department strength in your specific field, faculty and research opportunities, curriculum fit, industry connections, and realistic admission chances given your profile. From there, we work with you end-to-end, refining personal statements, coordinating recommendation letters, tracking every deadline, so your application reflects your strongest, most honest case for admission. The goal isn't the most prestigious name you can get in front of. It's the university where your specific goals actually have room to grow."
   },
   {
     num: "03",
     title: "Visa Success",
     subtitle: "98% success rate in filing",
     bgImg: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&q=80",
-    desc: "A strong admission means nothing without a strong visa file  and this is where most delays and rejections quietly happen, often over paperwork that could have been caught early. Our visa team has built a 98% success rate by treating every filing like it's the only one that matters: document-by-document review, country-specific requirement checks, financial proof structured the way that specific embassy expects it, and mock interviews before the real one. We track policy shifts as they happen  visa rules change more often than students expect  so your file is built against the current requirement, not last year's. And we stay with you past the approval stamp: guidance on arrival formalities, work-rights rules on your visa, and what to do if anything needs renewing later. Getting in is the milestone everyone celebrates. We think getting there safely and correctly is the part that actually deserves the effort."
+    desc: "A strong admission means nothing without a strong visa file, and this is where most delays and rejections quietly happen, often over paperwork that could have been caught early. Our visa team has built a 98% success rate by treating every filing like it's the only one that matters with document-by-document review, country-specific requirement checks, financial proof structured the way that specific embassy expects it, and mock interviews before the real one. We track policy shifts as they happen, visa rules change more often than students expect, so your file is built against the current requirement, not last year's. And we stay with you past the approval stamp, providing guidance on arrival formalities, work-rights rules on your visa, and what to do if anything needs renewing later. Getting in is the milestone everyone celebrates. We think getting there safely and correctly is the part that actually deserves the effort."
   },
   {
     num: "04",
@@ -213,6 +256,52 @@ const parentSupportData = [
     desc: "We built this around the idea that distance shouldn't mean disconnection. Beyond regular updates on how your child is settling in, we're building partnerships with international student communities and other consultancies abroad, so families here can host visiting international students for a day or two  a genuine, warm, cultural exchange that gives you a small version of the connection you're missing, and gives a student far from home a taste of it too. We also run seasonal meet-and-greets and community events for parents locally, so the people who understand this exact transition aren't strangers on a screen but people you actually know. Your child moved abroad for their purpose. That doesn't mean your role in their life got smaller  just further away. We're here to shorten that distance wherever we can."
   }
 ];
+
+const philosophyConcepts = [
+  {
+    id: "ikigai",
+    num: "01",
+    title: "Ikigai",
+    japanese: "生き甲斐",
+    definition: "your reason for being",
+    tagline: "Purpose, Passion & Meaning",
+    artTheme: "enso",
+    artSymbol: "円相",
+    artTitle: "Ensō — The Circle of Wholeness & Interconnected Purpose",
+    artBg: "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1200&q=80",
+    desc: "The point where what you love, what you're good at, what the world needs, and what sustains you overlap.",
+    howWeUse: "Most career advice optimizes for one corner of that overlap, usually \"what pays.\" We map all four, every time, for every student. It's the actual method behind Clarity Compass™, not \"what should you do,\" but \"where do these four things meet for you specifically.\" A pathway that only satisfies one corner isn't a pathway."
+  },
+  {
+    id: "kiku",
+    num: "02",
+    title: "Kiku",
+    japanese: "聴く",
+    definition: "to truly listen",
+    tagline: "Deep Listening & Empathy",
+    artTheme: "waves",
+    artSymbol: "波紋",
+    artTitle: "Seigaiha — Flow of Ocean Waves & Attuned Resonance",
+    artBg: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1200&q=80",
+    desc: "Not just hearing what's said, but listening for what a student hasn't figured out how to say yet.",
+    howWeUse: "Most consultations start with a form. Ours start with a conversation, because the real answer rarely arrives in the first sentence. Kiku is the principle behind Step 1, the Clarity Compass™ assessment; we don't map a pathway until we've actually heard the whole thing, including the parts said quietly, or not said at all."
+  },
+  {
+    id: "kaizen",
+    num: "03",
+    title: "Kaizen",
+    japanese: "改善",
+    definition: "continuous improvement",
+    tagline: "Incremental Growth & Mastery",
+    artTheme: "kintsugi",
+    artSymbol: "金継ぎ",
+    artTitle: "Kintsugi & Sumi-e — Golden Craftsmanship & Perpetual Mastery",
+    artBg: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+    desc: "Progress made in small, honest steps, not one big leap, and never standing still.",
+    howWeUse: "This is why the journey is ten steps and not one decision. A roadmap isn't a document you hand over and walk away from; it's something we keep recalibrating as the student, the syllabus, the exam landscape, or the goal itself shifts. Step 10 exists because of this principle: mentorship ends when the plan stops needing adjustment, which is never."
+  }
+];
+
 
 const categoriesList = [
   { label: 'Student', desc: 'Currently studying in school or college', icon: <FiBookOpen size={20} /> },
@@ -586,6 +675,38 @@ const Home = () => {
   const navigate = useNavigate();
   const [activeStep, setActiveStep] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [activeConcept, setActiveConcept] = useState(null);
+  const [hoveredConceptId, setHoveredConceptId] = useState(null);
+  const [hoveredServiceId, setHoveredServiceId] = useState(null);
+  const [activeServiceFilter, setActiveServiceFilter] = useState("All");
+  const [cardTilt, setCardTilt] = useState({});
+
+  const handleServiceMouseMove = (e, id) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -10;
+    const rotateY = ((x - centerX) / centerX) * 10;
+    const glintX = (x / rect.width) * 100;
+    const glintY = (y / rect.height) * 100;
+
+    setCardTilt((prev) => ({
+      ...prev,
+      [id]: { rotateX, rotateY, glintX, glintY }
+    }));
+  };
+
+  const handleServiceMouseLeave = (id) => {
+    setCardTilt((prev) => {
+      const next = { ...prev };
+      delete next[id];
+      return next;
+    });
+    setHoveredServiceId(null);
+  };
 
   // CTA Wizard state
   const [wizardStep, setWizardStep] = useState(1);
@@ -691,7 +812,7 @@ const Home = () => {
             <span className="hero-badge-minimal">
               YOUR FUTURE. MAPPED WITH PURPOSE.
             </span>
-            <h1 className="hero-title-premium">
+            <h1 className="hero-title-premium" style={{ fontSize: "clamp(2.15rem, 4.2vw, 3.5rem)" }}>
               NPathways Global <br /> <span>Beyond Boundaries. Into Purpose.</span>
             </h1>
             <p className="hero-desc-premium">
@@ -740,64 +861,141 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="philosophy-zen-layout">
-            {/* Column 1: Ikigai */}
-            <div className="philosophy-zen-item animate-on-scroll">
-              <span className="zen-number">01</span>
-              <div className="concept-header">
-                <h3>Ikigai</h3>
-                <span className="concept-japanese-inline">生き甲斐</span>
-                <span className="concept-definition">your reason for being</span>
-              </div>
-              <p className="concept-desc">
-                The point where what you love, what you're good at, what the world needs, and what sustains you overlap.
-              </p>
-              <div className="concept-how-we-use">
-                <h5>How we use it:</h5>
-                <p>
-                  Most career advice optimizes for one corner of that overlap  usually "what pays." We map all four, every time, for every student. It's the actual method behind Clarity Compass™: not "what should you do," but "where do these four things meet for you specifically." A pathway that only satisfies one corner isn't a pathway.
-                </p>
-              </div>
-            </div>
+          <div 
+            className="philosophy-zen-layout"
+            onMouseLeave={() => setHoveredConceptId(null)}
+          >
+            {philosophyConcepts.map((concept) => {
+              const isHovered = hoveredConceptId === concept.id;
+              const hasAnotherHovered = hoveredConceptId !== null && !isHovered;
 
-            {/* Column 2: Kiku */}
-            <div className="philosophy-zen-item animate-on-scroll">
-              <span className="zen-number">02</span>
-              <div className="concept-header">
-                <h3>Kiku</h3>
-                <span className="concept-japanese-inline">聴く</span>
-                <span className="concept-definition">to truly listen</span>
-              </div>
-              <p className="concept-desc">
-                Not just hearing what's said, but listening for what a student hasn't figured out how to say yet.
-              </p>
-              <div className="concept-how-we-use">
-                <h5>How we use it:</h5>
-                <p>
-                  Most consultations start with a form. Ours start with a conversation  because the real answer rarely arrives in the first sentence. Kiku is the principle behind Step 1, the Clarity Compass™ assessment  we don't map a pathway until we've actually heard the whole thing, including the parts said quietly, or not said at all.
-                </p>
-              </div>
-            </div>
+              return (
+                <div 
+                  key={concept.id}
+                  className={`philosophy-zen-item philosophy-zen-card zen-card-theme-${concept.artTheme} ${isHovered ? 'is-hover-expanded' : ''} ${hasAnotherHovered ? 'is-sibling-dimmed' : ''} animate-on-scroll`}
+                  onMouseEnter={() => setHoveredConceptId(concept.id)}
+                  onClick={() => setActiveConcept(concept)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setActiveConcept(concept); }}
+                >
+                  {/* Japanese Art Layer & Texture */}
+                  <div 
+                    className="zen-card-art-bg"
+                    style={{ backgroundImage: `url(${concept.artBg})` }}
+                  ></div>
+                  <div className="zen-card-art-overlay"></div>
+                  <div className="zen-card-watermark-kanji">{concept.artSymbol}</div>
+                  <div className="zen-card-glow"></div>
 
-            {/* Column 3: Kaizen */}
-            <div className="philosophy-zen-item animate-on-scroll">
-              <span className="zen-number">03</span>
-              <div className="concept-header">
-                <h3>Kaizen</h3>
-                <span className="concept-japanese-inline">改善</span>
-                <span className="concept-definition">continuous improvement</span>
-              </div>
-              <p className="concept-desc">
-                Progress made in small, honest steps  not one big leap, and never standing still.
-              </p>
-              <div className="concept-how-we-use">
-                <h5>How we use it:</h5>
-                <p>
-                  This is why the journey is ten steps and not one decision. A roadmap isn't a document you hand over and walk away from  it's something we keep recalibrating as the student, the syllabus, the exam landscape, or the goal itself shifts. Step 10 exists because of this principle: mentorship ends when the plan stops needing adjustment  which is never.
-                </p>
-              </div>
-            </div>
+                  <div className="zen-card-content">
+                    {/* Always visible: Number, Badge, Title & Definition */}
+                    <div className="zen-card-top">
+                      <span className="zen-number">{concept.num}</span>
+                      <span className="concept-japanese-badge">{concept.japanese}</span>
+                    </div>
+                    
+                    <div className="concept-header">
+                      <h3>{concept.title}</h3>
+                      <span className="concept-definition">{concept.definition}</span>
+                    </div>
+
+                    {/* Creative Hover Pop-up Content Pane (smooth spring expand) */}
+                    <div className="zen-card-hover-popup">
+                      <div className="zen-popup-inner">
+                        <div className="zen-popup-art-tag">
+                          <span>{concept.artTitle.split('—')[0].trim()}</span>
+                        </div>
+                        
+                        <div className="zen-popup-desc">
+                          <h4>The Philosophy</h4>
+                          <p>{concept.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="zen-card-action">
+                      <span className="zen-explore-btn">
+                        <span className="zen-btn-label">
+                          {isHovered ? "Detailed View" : "Hover to Discover"}
+                        </span>
+                        <FiArrowRight className="zen-explore-arrow" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
+
+          {/* Philosophy Concept Animated Popup Modal */}
+          {activeConcept && (
+            <div 
+              className="zen-modal-backdrop fade-in"
+              onClick={() => setActiveConcept(null)}
+            >
+              <div 
+                className={`zen-modal-dialog zoom-in-spring zen-modal-theme-${activeConcept.artTheme}`}
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Modal Japanese Art Background Banner */}
+                <div 
+                  className="zen-modal-art-backdrop"
+                  style={{ backgroundImage: `url(${activeConcept.artBg})` }}
+                >
+                  <div className="zen-modal-art-gradient"></div>
+                  <div className="zen-modal-art-watermark">{activeConcept.artSymbol}</div>
+                </div>
+
+                <div className="zen-modal-ambient"></div>
+                <button 
+                  className="zen-modal-close"
+                  onClick={() => setActiveConcept(null)}
+                  aria-label="Close details"
+                >
+                  <FiX size={22} />
+                </button>
+
+                <div className="zen-modal-content-wrap">
+                  <div className="zen-modal-header">
+                    <div className="zen-modal-num-tag">{activeConcept.num}</div>
+                    <div className="zen-modal-titles">
+                      <div className="zen-modal-name-row">
+                        <h2>{activeConcept.title}</h2>
+                        <span className="zen-modal-kanji">{activeConcept.japanese}</span>
+                      </div>
+                      <span className="zen-modal-def">{activeConcept.definition}</span>
+                    </div>
+                  </div>
+
+                  <div className="zen-modal-body">
+                    <div className="zen-modal-desc-box">
+                      <h4>The Philosophy</h4>
+                      <p>{activeConcept.desc}</p>
+                    </div>
+
+                    <div className="zen-modal-usage-box">
+                      <h5>How We Apply This In Your Journey</h5>
+                      <p>{activeConcept.howWeUse}</p>
+                    </div>
+                  </div>
+
+                  <div className="zen-modal-footer">
+                    <div className="zen-modal-art-caption">
+                      <span className="zen-art-dot"></span>
+                      <span>{activeConcept.artTitle}</span>
+                    </div>
+                    <button 
+                      className="zen-modal-btn-gotit"
+                      onClick={() => setActiveConcept(null)}
+                    >
+                      Close Principle
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -938,32 +1136,107 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Explore Our Pathways Section */}
+      {/* Services Section — Creative Interactive Showcase */}
       <section className="home-pathways-section">
         <div className="container">
           <div className="section-header-premium text-center">
-            <span className="badge">Pathways</span>
-            <h2>Explore Our Pathways</h2>
+            <span className="badge">Services & Pathways</span>
+            <h2>Explore Our Services</h2>
             <p className="section-subtitle">
-              We design personalized routes for academic excellence, career discovery, stream decisions, and study abroad transitions.
+              Personalised blueprints for school, college, competitive exam readiness, and global study transitions.
             </p>
           </div>
 
-          <div className="pathways-grid-new">
-            {popularPathwaysData.map((pw, index) => (
-              <div key={index} className={`pathways-grid-card ${index === 6 ? "full-width-card" : ""}`}>
-                <div className="pathways-card-header">
-                  <div className="pathways-card-icon">{pw.icon}</div>
-                  <h3>{pw.title}</h3>
-                </div>
-                <p className="pathways-card-desc">{pw.desc}</p>
-                <div className="pathways-card-action">
-                  <Link to={pw.link} className="btn-read-pathway">
-                    Explore Pathway <span>→</span>
-                  </Link>
-                </div>
-              </div>
+          {/* Interactive Filter Pills */}
+          <div className="services-filter-bar">
+            {["All", "Curriculum & Boards", "Direction & Diagnostics", "Entrance Strategy", "Global Admissions"].map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                className={`service-filter-pill ${activeServiceFilter === cat ? "active" : ""}`}
+                onClick={() => setActiveServiceFilter(cat)}
+              >
+                {cat === "All" ? "All Services" : cat}
+              </button>
             ))}
+          </div>
+
+          {/* Creative Service Cards Grid with 3D Pathway Compass Deck */}
+          <div 
+            className="services-creative-grid"
+            onMouseLeave={() => { setHoveredServiceId(null); setCardTilt({}); }}
+          >
+            {popularPathwaysData
+              .filter((pw) => activeServiceFilter === "All" || pw.category === activeServiceFilter)
+              .map((pw, index) => {
+                const isHovered = hoveredServiceId === pw.id;
+                const isSiblingDimmed = hoveredServiceId !== null && !isHovered;
+                const isFlagship = pw.id === "abroad" && activeServiceFilter === "All";
+                const tilt = cardTilt[pw.id];
+
+                const cardTransformStyle = tilt
+                  ? {
+                      transform: `perspective(1000px) rotateX(${tilt.rotateX.toFixed(2)}deg) rotateY(${tilt.rotateY.toFixed(2)}deg) translateY(-10px) scale(1.02)`,
+                      transition: "transform 0.1s ease-out, box-shadow 0.25s ease"
+                    }
+                  : undefined;
+
+                const glintStyle = tilt
+                  ? {
+                      background: `radial-gradient(circle at ${tilt.glintX}% ${tilt.glintY}%, rgba(255, 255, 255, 0.45) 0%, rgba(224, 165, 43, 0.15) 35%, transparent 70%)`,
+                      opacity: 1
+                    }
+                  : undefined;
+
+                return (
+                  <div
+                    key={pw.id || index}
+                    className={`service-creative-card ${isFlagship ? "flagship-card" : ""} ${isHovered ? "is-active-service" : ""} ${isSiblingDimmed ? "is-service-dimmed" : ""}`}
+                    style={cardTransformStyle}
+                    onMouseMove={(e) => handleServiceMouseMove(e, pw.id)}
+                    onMouseEnter={() => setHoveredServiceId(pw.id)}
+                    onMouseLeave={() => handleServiceMouseLeave(pw.id)}
+                  >
+                    {/* Background Imagery with ambient gradient */}
+                    <div 
+                      className="service-card-bg-media"
+                      style={{ backgroundImage: `url(${pw.bgImage})` }}
+                    ></div>
+                    <div className="service-card-overlay"></div>
+                    <div className="service-card-glow-orb"></div>
+                    
+                    {/* Dynamic 3D Glint Reflection Layer */}
+                    <div className="service-card-glint" style={glintStyle}></div>
+
+                    {/* Compass Coordinate Ring Watermark */}
+                    <div className="service-compass-watermark">
+                      <span className="compass-coord">PATH // 0{index + 1}</span>
+                      <span className="compass-ring">⊕</span>
+                    </div>
+
+                    {/* Card Content Top */}
+                    <div className="service-card-top-meta">
+                      <div className="service-icon-box">{pw.icon}</div>
+                      <div className="service-tags-wrap">
+                        <span className="service-badge-pill">{pw.badge}</span>
+                      </div>
+                    </div>
+
+                    <div className="service-card-main-title">
+                      <h3>{pw.title}</h3>
+                      <p className="service-card-brief">{pw.desc}</p>
+                    </div>
+
+                    {/* Footer Action */}
+                    <div className="service-card-bottom-action">
+                      <Link to={pw.link} className="btn-explore-service">
+                        <span>Explore Pathway</span>
+                        <span className="service-arrow-circle">→</span>
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
           </div>
         </div>
       </section>

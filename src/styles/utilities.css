@@ -29,6 +29,18 @@
   color: var(--color-white);
 }
 
+.leading-tight {
+  line-height: var(--line-height-tight);
+}
+
+.leading-normal {
+  line-height: var(--line-height-normal);
+}
+
+.leading-relaxed {
+  line-height: 1.65;
+}
+
 /* ==================== BACKGROUND UTILITIES ==================== */
 
 .bg-primary {
