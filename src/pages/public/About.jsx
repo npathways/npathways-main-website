@@ -295,9 +295,9 @@ const About = () => {
                   The point where what you love, what you're good at, what the world needs, and what sustains you overlap.
                 </p>
                 <div className="concept-how-we-use">
-                  <h5>How we use it:</h5>
+                  <h5>How we use it</h5>
                   <p>
-                    Most career advice optimizes for one corner of that overlap  usually "what pays." We map all four, every time, for every student. It's the actual method behind Clarity Compass™: not "what should you do," but "where do these four things meet for you specifically." A pathway that only satisfies one corner isn't a pathway.
+                    Most career advice optimizes for one corner of that overlap, usually "what pays." We map all four, every time, for every student. It's the actual method behind Clarity Compass™, not "what should you do," but "where do these four things meet for you specifically." A pathway that only satisfies one corner isn't a pathway.
                   </p>
                 </div>
               </div>
@@ -318,9 +318,9 @@ const About = () => {
                   Not just hearing what's said, but listening for what a student hasn't figured out how to say yet.
                 </p>
                 <div className="concept-how-we-use">
-                  <h5>How we use it:</h5>
+                  <h5>How we use it</h5>
                   <p>
-                    Most consultations start with a form. Ours start with a conversation  because the real answer rarely arrives in the first sentence. Kiku is the principle behind Step 1, the Clarity Compass™ assessment  we don't map a pathway until we've actually heard the whole thing, including the parts said quietly, or not said at all.
+                    Most consultations start with a form. Ours start with a conversation, because the real answer rarely arrives in the first sentence. Kiku is the principle behind Step 1, the Clarity Compass™ assessment; we don't map a pathway until we've actually heard the whole thing, including the parts said quietly, or not said at all.
                   </p>
                 </div>
               </div>
@@ -338,12 +338,12 @@ const About = () => {
               </div>
               <div className="row-desc-col">
                 <p className="concept-desc">
-                  Progress made in small, honest steps  not one big leap, and never standing still.
+                  Progress made in small, honest steps, not one big leap, and never standing still.
                 </p>
                 <div className="concept-how-we-use">
-                  <h5>How we use it:</h5>
+                  <h5>How we use it</h5>
                   <p>
-                    This is why the journey is ten steps and not one decision. A roadmap isn't a document you hand over and walk away from  it's something we keep recalibrating as the student, the syllabus, the exam landscape, or the goal itself shifts. Step 10 exists because of this principle: mentorship ends when the plan stops needing adjustment  which is never.
+                    This is why the journey is ten steps and not one decision. A roadmap isn't a document you hand over and walk away from; it's something we keep recalibrating as the student, the syllabus, the exam landscape, or the goal itself shifts. Step 10 exists because of this principle: mentorship ends when the plan stops needing adjustment, which is never.
                   </p>
                 </div>
               </div>

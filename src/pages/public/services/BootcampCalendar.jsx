@@ -204,15 +204,15 @@ const BootcampList = () => {
                   <div className="bootcamp-modal__section">
                     <h3>Schedule</h3>
                     <p>
-                      <strong>Dates:</strong>{" "}
+                      <strong>Dates</strong>{" "}
                       {formatDate(selectedBootcamp.startDate)} -{" "}
                       {formatDate(selectedBootcamp.endDate)}
                     </p>
                     <p>
-                      <strong>Time:</strong> {selectedBootcamp.time}
+                      <strong>Time</strong> {selectedBootcamp.time}
                     </p>
                     <p>
-                      <strong>Duration:</strong> {selectedBootcamp.duration}
+                      <strong>Duration</strong> {selectedBootcamp.duration}
                     </p>
                   </div>
 

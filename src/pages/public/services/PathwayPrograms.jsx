@@ -13,7 +13,7 @@ const PathwayPrograms = () => {
           <nav className="breadcrumb">
             <Link to="/">Home</Link>
             <span>/</span>
-            <Link to="/services">Pathways</Link>
+            <Link to="/services">Services</Link>
             <span>/</span>
             <span className="text-black font-medium">Pathway Programs</span>
           </nav>
@@ -52,13 +52,13 @@ const PathwayPrograms = () => {
               <h2>For the gap nobody names until it's already a problem.</h2>
               
               <div className="content-block my-6">
-                <h3>What it is:</h3>
+                <h3>What it is</h3>
                 <p className="text-xl text-gray-700">
-                  Every major transition — school to college, board to competitive exam, India to a foreign campus, one stream to another — has a gap in it that standard schooling doesn't cover. Pathway Programs are short, focused bridge courses built to close exactly that gap, before it turns into a semester of catching up.
+                  Every major transition (school to college, board to competitive exam, India to a foreign campus, one stream to another) has a gap in it that standard schooling doesn't cover. Pathway Programs are short, focused bridge courses built to close exactly that gap, before it turns into a semester of catching up.
                 </p>
               </div>
 
-              <h3>Who it's for:</h3>
+              <h3>Who it's for</h3>
               <ul className="check-list space-y-4 mb-10">
                 <li className="flex gap-3 items-start">
                   <span className="flex-shrink-0" style={{ display: "inline-flex", alignItems: "center", marginTop: "4px" }}>
@@ -88,7 +88,7 @@ const PathwayPrograms = () => {
             </section>
 
             <section className="benefits-section mb-12">
-              <h3>What we actually do:</h3>
+              <h3>What we actually do</h3>
               <div className="benefits-grid">
                 <div className="benefit-card">
                   <h4>Diagnose the Gap</h4>
@@ -96,7 +96,7 @@ const PathwayPrograms = () => {
                 </div>
                 <div className="benefit-card">
                   <h4>Targeted Bridge Coursework</h4>
-                  <p>Deliver targeted bridge coursework — academic, language, or study-skills based.</p>
+                  <p>Deliver targeted bridge coursework, whether academic, language, or study-skills based.</p>
                 </div>
                 <div className="benefit-card">
                   <h4>Format Shift Preparation</h4>

@@ -41,8 +41,8 @@
 }
 
 .about-hero-title {
-  font-size: var(--font-size-6xl);
-  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-hero);
+  font-weight: 900;
   margin-bottom: 1.5rem;
   line-height: 1.1;
 }

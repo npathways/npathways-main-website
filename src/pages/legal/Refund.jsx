@@ -12,7 +12,7 @@ const Refund = () => {
             <h2>1. Digital Products</h2>
             <p>Due to the nature of digital products, we generally do not offer refunds once the product has been sent or accessed.</p>
             <p className="highlight-box">
-              <strong>"Sent" Logic:</strong> A product is considered "sent" when the secure download link has been emailed to the address provided during checkout, or when the file becomes accessible in your User Dashboard.
+              <strong>"Sent" Logic</strong> A product is considered "sent" when the secure download link has been emailed to the address provided during checkout, or when the file becomes accessible in your User Dashboard.
             </p>
             <p>Exceptions may be made under the following circumstances:</p>
             <ul>
@@ -23,11 +23,11 @@ const Refund = () => {
 
           <section>
             <h2>2. Consultancy Services</h2>
-            <p>For booked consultancy sessions:</p>
+            <p>For booked consultancy sessions</p>
             <ul>
-              <li><strong>Cancellations:</strong> You may cancel a session up to 24 hours before the scheduled time for a full refund.</li>
-              <li><strong>Rescheduling:</strong> You may reschedule a session up to 12 hours before without penalty.</li>
-              <li><strong>No-Shows:</strong> Failure to attend a scheduled session without prior notice will result in forfeiture of the session fee.</li>
+              <li><strong>Cancellations</strong> You may cancel a session up to 24 hours before the scheduled time for a full refund.</li>
+              <li><strong>Rescheduling</strong> You may reschedule a session up to 12 hours before without penalty.</li>
+              <li><strong>No-Shows</strong> Failure to attend a scheduled session without prior notice will result in forfeiture of the session fee.</li>
             </ul>
           </section>
 

@@ -147,7 +147,7 @@ const Footer = () => {
 
           {/* Services */}
           <div className="footer-column">
-            <h4>Our Pathways</h4>
+            <h4>Services</h4>
             <ul className="footer-links">
               <li>
                 <Link to="/services/education-consulting">Academic Pathways</Link>

@@ -49,8 +49,8 @@ const Header = () => {
               >
                 <img
                   src={logo}
-                  alt="Logo"
-                  style={{ height: "70px" }}
+                  alt="NPathways Logo"
+                  className="header-logo-img"
                 />
               </Link>
               {/* Desktop Navigation */}
@@ -165,7 +165,7 @@ const Header = () => {
 
                       {/* Column 2: Core Pathways */}
                       <div className="dropdown-category">
-                        <span className="category-label">Pathways</span>
+                        <span className="category-label">Services</span>
                         <Link
                           to="/services/education-consulting"
                           onClick={() => setIsMenuOpen(false)}

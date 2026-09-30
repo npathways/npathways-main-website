@@ -18,14 +18,14 @@ const Privacy = () => {
             <p>We collect several different types of information for various purposes to provide and improve our Service to you.</p>
             <h3>Types of Data Collected</h3>
             <ul>
-              <li><strong>Personal Data:</strong> Email address, First name and last name, Phone number, Address, State, Province, ZIP/Postal code, City.</li>
-              <li><strong>Usage Data:</strong> Information on how the Service is accessed and used.</li>
+              <li><strong>Personal Data</strong> Email address, First name and last name, Phone number, Address, State, Province, ZIP/Postal code, City.</li>
+              <li><strong>Usage Data</strong> Information on how the Service is accessed and used.</li>
             </ul>
           </section>
 
           <section>
             <h2>3. Use of Data</h2>
-            <p>NPathways Global uses the collected data for various purposes:</p>
+            <p>NPathways Global uses the collected data for various purposes</p>
             <ul>
               <li>To provide and maintain the Service</li>
               <li>To notify you about changes to our Service</li>

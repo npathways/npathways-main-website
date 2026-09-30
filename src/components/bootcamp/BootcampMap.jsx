@@ -76,25 +76,25 @@ const BootcampMap = ({ onMarkerClick }) => {
                     <h4 class="bootcamp-popup__title">${bootcamp.name}</h4>
                     <div class="bootcamp-popup__details">
                       <p class="bootcamp-popup__date">
-                        <strong>Dates:</strong><br/>
+                        <strong>Dates</strong><br/>
                         ${formatDate(bootcamp.startDate)} - ${formatDate(
                   bootcamp.endDate
                 )}
                       </p>
                       <p class="bootcamp-popup__time">
-                        <strong>Time:</strong> ${bootcamp.time}
+                        <strong>Time</strong> ${bootcamp.time}
                       </p>
                       <p class="bootcamp-popup__location">
-                        <strong>Venue:</strong><br/>
+                        <strong>Venue</strong><br/>
                         ${bootcamp.location.venue}
                       </p>
                       <p class="bootcamp-popup__price">
-                        <strong>Price:</strong> ${formatCurrency(
+                        <strong>Price</strong> ${formatCurrency(
                           bootcamp.price
                         )}
                       </p>
                       <p class="bootcamp-popup__capacity">
-                        <strong>Seats:</strong> ${bootcamp.enrolled}/${
+                        <strong>Seats</strong> ${bootcamp.enrolled}/${
                   bootcamp.capacity
                 }
                       </p>

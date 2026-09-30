@@ -52,7 +52,7 @@ const ServiceSidebar = () => {
   return (
     <aside className="service-sidebar">
       <div className="sidebar-widget">
-        <h3 className="widget-title">Our Pathways & Services</h3>
+        <h3 className="widget-title">Services</h3>
         <ul className="sidebar-nav">
           {allSidebarItems.map((s) => (
             <li key={s.id} className="sidebar-nav-item">

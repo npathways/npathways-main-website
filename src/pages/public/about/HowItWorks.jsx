@@ -77,61 +77,61 @@ const HowItWorks = () => {
       num: "01",
       icon: <FaCompass />,
       title: "Clarity Compass™ Assessment",
-      desc: "We start with a deep dive into your strengths, interests, and EQ. This isn't just a test — it's the foundation every decision after this one gets built on.",
+      desc: "We start with a deep dive into your strengths, interests, and EQ. This isn't just a test; it's the foundation every decision after this one gets built on.",
     },
     {
       num: "02",
       icon: <FaMapMarkedAlt />,
       title: "Pathway Goal Mapping",
-      desc: "Identifying the right destination for you — a competitive exam, a top Indian university, a course abroad, or a career direction you haven't considered yet — aligned to your long-term goals, not the default everyone else picked.",
+      desc: "Identifying the right destination for you (a competitive exam, a top Indian university, a course abroad, or a career direction you haven't considered yet) aligned to your long-term goals, not the default everyone else picked.",
     },
     {
       num: "03",
       icon: <FaGraduationCap />,
       title: "Best-Fit Matchmaking",
-      desc: "Comparing curricula, boards, institutions, and career tracks — in India or abroad — to find the fit that actually matches how you think and where you want to end up.",
+      desc: "Comparing curricula, boards, institutions, and career tracks (in India or abroad) to find the fit that actually matches how you think and where you want to end up.",
     },
     {
       num: "04",
       icon: <FaChartLine />,
       title: "Skill Gap Analysis",
-      desc: "If your profile is missing something — technical, academic, or soft skills — we close the gap through our bootcamps and bridge programs before it becomes a bottleneck.",
+      desc: "If your profile is missing something (technical, academic, or soft skills) we close the gap through our bootcamps and bridge programs before it becomes a bottleneck.",
     },
     {
       num: "05",
       icon: <FaPenNib />,
       title: "Story-Driven Applications",
-      desc: "Whether it's an SOP, a college application, or an exam-prep portfolio, we help you build a narrative that's genuinely yours — not a template everyone else is also submitting.",
+      desc: "Whether it's an SOP, a college application, or an exam-prep portfolio, we help you build a narrative that's genuinely yours, not a template everyone else is also submitting.",
     },
     {
       num: "06",
       icon: <FaFileInvoiceDollar />,
       title: "Financial Architecture",
-      desc: "Navigating scholarships, education loans, and budgeting — for a course in India or a degree abroad — so the plan is stress-free, not just ambitious.",
+      desc: "Navigating scholarships, education loans, and budgeting (for a course in India or a degree abroad) so the plan is stress-free, not just ambitious.",
     },
     {
       num: "07",
       icon: <FaPassport />,
       title: "The Gauntlet",
-      desc: "Meticulous prep and mock interviews for whatever gate stands between you and your goal — a board exam, a competitive entrance test, a college interview, or a visa. We drill for the one that's actually yours.",
+      desc: "Meticulous prep and mock interviews for whatever gate stands between you and your goal (a board exam, a competitive entrance test, a college interview, or a visa). We drill for the one that's actually yours.",
     },
     {
       num: "08",
       icon: <FaPlaneDeparture />,
       title: "Pre-Launch Orientation",
-      desc: "The practical playbook for your next transition — new city, new campus, new country — banking, logistics, and the survival skills for your first 30 days wherever that is.",
+      desc: "The practical playbook for your next transition, covering new city, new campus, new country, banking, logistics, and the survival skills for your first 30 days wherever that is.",
     },
     {
       num: "09",
       icon: <FaHome />,
       title: "Settling In",
-      desc: "Support through accommodation, orientation, and the first week of administrative hurdles — whether that's a hostel in another state or an apartment in another country.",
+      desc: "Support through accommodation, orientation, and the first week of administrative hurdles, whether that's a hostel in another state or an apartment in another country.",
     },
     {
       num: "10",
       icon: <FaHandsHelping />,
       title: "On-Going Mentorship",
-      desc: "We stay your partner through the degree, the first job search, or the next fork in the road — because a pathway isn't done the day you get in. It's done when you're actually living it.",
+      desc: "We stay your partner through the degree, the first job search, or the next fork in the road, because a pathway isn't done the day you get in. It's done when you're actually living it.",
     },
   ];
 
@@ -143,7 +143,7 @@ const HowItWorks = () => {
           <span className="badge">The Roadmap</span>
           <h1>Your 10-Step Journey <br /> <span>To a Life You Actually Chose</span></h1>
           <p className="hero-desc">
-            From the first spark of an idea to the day you're living the plan you built, we're with you every single step of the way — whether that plan ends in Delhi, Bangalore, Boston, or Berlin.
+            From the first spark of an idea to the day you're living the plan you built, we're with you every single step of the way, whether that plan ends in Delhi, Bangalore, Boston, or Berlin.
           </p>
         </div>
       </section>

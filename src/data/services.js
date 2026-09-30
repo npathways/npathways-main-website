@@ -28,11 +28,11 @@ export const consultancyServices = [
     id: 'academic-university-consulting',
     name: 'Academic & University Consulting',
     icon: null,
-    shortDescription: 'Course, college, and university shortlisting and admission support — in India or abroad',
+    shortDescription: 'Course, college, and university shortlisting and admission support (in India or abroad)',
     description: 'Academic & University Consulting is a premium, end-to-end service for students building toward the right institution.',
-    longDescription: 'Academic & University Consulting is a premium, end-to-end service for students building toward the right institution — whether that\'s a top-tier international university or a competitive Indian one. We go beyond simple applications by building a strategic profile that highlights your unique strengths and aligns with what admissions committees, in any country, are actually evaluating. From Ivy League and Russell Group institutions to India\'s top entrance-based colleges and deemed universities, we help you navigate the admissions landscape without guesswork.',
+    longDescription: 'Academic & University Consulting is a premium, end-to-end service for students building toward the right institution, whether that\'s a top-tier international university or a competitive Indian one. We go beyond simple applications by building a strategic profile that highlights your unique strengths and aligns with what admissions committees, in any country, are actually evaluating. From Ivy League and Russell Group institutions to India\'s top entrance-based colleges and deemed universities, we help you navigate the admissions landscape without guesswork.',
     features: [
-      'College and university shortlisting based on profile — India and abroad',
+      'College and university shortlisting based on profile in India and abroad',
       'Application strategy and planning',
       'SOP, LOR, and portfolio preparation',
       'Scholarship guidance',
@@ -56,7 +56,7 @@ export const consultancyServices = [
     icon: null,
     shortDescription: '1-on-1 personalized strategy sessions',
     description: 'Personalized career counseling to help you discover your strengths, clarify your goals, and create an actionable roadmap.',
-    longDescription: 'Career Guidance at nPathways is a reflective, analytical process — not a form to fill out. We help students and professionals identify their core interests and map them against real industry trends, so the choice of stream, major, or master\'s program isn\'t based on what\'s popular this year, but on long-term fit and genuine fulfillment. This is also where we start when a student has no idea yet — that\'s not a gap to fix before the session, it\'s the actual starting point of it.',
+    longDescription: 'Career Guidance at nPathways is a reflective, analytical process, not a form to fill out. We help students and professionals identify their core interests and map them against real industry trends, so the choice of stream, major, or master\'s program isn\'t based on what\'s popular this year, but on long-term fit and genuine fulfillment. This is also where we start when a student has no idea yet, that\'s not a gap to fix before the session, it\'s the actual starting point of it.',
     features: [
       'One-on-one counseling sessions',
       'Career and interest mapping (including for students who feel completely undecided)',
@@ -81,12 +81,12 @@ export const consultancyServices = [
     icon: null,
     shortDescription: '1-on-1 exam strategy layered on top of your existing coaching',
     description: 'Strategic counseling for exams like JEE, NEET, CAT, CLAT, CUET, and standardized tests.',
-    longDescription: 'Most students preparing for JEE, NEET, CAT, CLAT, CUET, or international tests like IELTS, SAT, GMAT, and GRE already have coaching. What they don\'t have is someone checking whether the exam itself is the right target, and whether the prep is actually converting into readiness — not just more hours. Competitive Exam Strategy sits above your existing coaching: we diagnose fit, build the attempt-cycle timeline, and read your mock-test data the way a strategist would, not a tutor.',
+    longDescription: 'Most students preparing for JEE, NEET, CAT, CLAT, CUET, or international tests like IELTS, SAT, GMAT, and GRE already have coaching. What they don\'t have is someone checking whether the exam itself is the right target, and whether the prep is actually converting into readiness, not just more hours. Competitive Exam Strategy sits above your existing coaching, as we diagnose fit, build the attempt-cycle timeline, and read your mock-test data the way a strategist would, not a tutor.',
     features: [
-      'Exam-fit diagnostic — aptitude vs. target exam, before more time is committed',
+      'Exam-fit diagnostic measuring aptitude vs. target exam before more time is committed',
       'Attempt-cycle and timeline planning, mapped to your school or college calendar',
       'Mock-test and score-trend analysis with concrete correction points',
-      'Coordination with your existing coaching institute — we complement, not replace',
+      'Coordination with your existing coaching institute (we complement, not replace)',
       'Interview and personal-interaction prep (for CAT, CLAT, and similar exams)',
       'Scenario planning across likely score bands, so no outcome is a total surprise'
     ],
@@ -105,9 +105,9 @@ export const consultancyServices = [
     id: 'visa-assistance',
     name: 'Visa & Study Abroad Assistance',
     icon: null,
-    shortDescription: 'End-to-end documentation and filing support — for the pathways that lead abroad',
+    shortDescription: 'End-to-end documentation and filing support (for the pathways that lead abroad)',
     description: 'Complete study visa support including documentation review, application filing, and interview prep.',
-    longDescription: 'When a student\'s roadmap points beyond India, the visa process is often the most stressful part of getting there. Our team stays current on immigration policy and documentation requirements for major destinations — the US, UK, Canada, Australia, and Europe — and makes sure every file is meticulous, because a single technical error is often the difference between an approval and a delay.',
+    longDescription: 'When a student\'s roadmap points beyond India, the visa process is often the most stressful part of getting there. Our team stays current on immigration policy and documentation requirements for major destinations (the US, UK, Canada, Australia, and Europe) and makes sure every file is meticulous, because a single technical error is often the difference between an approval and a delay.',
     features: [
       'Visa eligibility assessment',
       'Document preparation and review',
@@ -135,7 +135,7 @@ export const supportServices = [
     icon: null,
     shortDescription: 'Hands-on upskilling for the gaps a syllabus doesn\'t cover',
     description: 'Intensive short-term workshops and bootcamps to close specific academic, technical, or soft-skill gaps.',
-    longDescription: 'A strong transcript gets a student considered. It doesn\'t automatically make them ready — for an interview, an internship, an application, or a first year in a new environment. Skill & Bootcamp Programs are short, focused sessions built to close the exact gap a student\'s roadmap has already flagged, rather than offering the same generic curriculum to everyone in the room.',
+    longDescription: 'A strong transcript gets a student considered. It doesn\'t automatically make them ready for an interview, an internship, an application, or a first year in a new environment. Skill & Bootcamp Programs are short, focused sessions built to close the exact gap a student\'s roadmap has already flagged, rather than offering the same generic curriculum to everyone in the room.',
     features: [
       'Technical skill bootcamps, matched to the student\'s target field',
       'Communication and interview-readiness workshops',
@@ -160,7 +160,7 @@ export const supportServices = [
     icon: null,
     shortDescription: 'Safety and clarity for families, whatever the pathway',
     description: 'Financial planning, destination audits, and progress tracking designed for peace of mind.',
-    longDescription: 'Every major academic decision is a family decision — not just the ones that involve a passport. Whether the plan is a competitive exam, a college in another city, or a university abroad, we give parents the tools, information, and support to feel confident in it: financial clarity, safety where relevant, and a clear view of what their child is actually walking toward.',
+    longDescription: 'Every major academic decision is a family decision, not just the ones that involve a passport. Whether the plan is a competitive exam, a college in another city, or a university abroad, we give parents the tools, information, and support to feel confident in it, with financial clarity, safety where relevant, and a clear view of what their child is actually walking toward.',
     features: [
       'Safety and destination audits (for pathways that involve relocation, in India or abroad)',
       'Financial planning and cost transparency, including forex guidance where relevant',
@@ -183,9 +183,9 @@ export const supportServices = [
     id: 'for-schools',
     name: 'For Schools',
     icon: null,
-    shortDescription: 'Institutional success — academic outcomes, exam results, and global exposure',
+    shortDescription: 'Institutional success in academic outcomes, exam results, and global exposure',
     description: 'Curriculum alignment, counselor training, and on-campus university fairs for K-12 partners.',
-    longDescription: 'We partner with K-12 institutions to build genuine readiness into their curriculum — not just international exposure, but stronger outcomes across the board: competitive exam performance, career clarity, and academic pathway planning, alongside global readiness for the students who want it. From setting up dedicated academic and international wings to counselor training and university fairs, we help schools raise outcomes across every kind of pathway their students actually choose.',
+    longDescription: 'We partner with K-12 institutions to build genuine readiness into their curriculum, not just international exposure, but stronger outcomes across the board: competitive exam performance, career clarity, and academic pathway planning, alongside global readiness for the students who want it. From setting up dedicated academic and international wings to counselor training and university fairs, we help schools raise outcomes across every kind of pathway their students actually choose.',
     features: [
       'Academic and international wing setup consulting',
       'Professional development for teachers and in-house counselors',
@@ -210,13 +210,13 @@ export const supportServices = [
     icon: null,
     shortDescription: 'Stronger student outcomes, and a trusted pipeline of ready applicants',
     description: 'Employability bootcamps, counseling cells, and recruitment partnerships for higher-ed.',
-    longDescription: 'Colleges and universities don\'t need the same support schools do — the students have already arrived. What they need is help on both ends: getting current students genuinely placement-ready before they graduate, and, for institutions actively recruiting, a pipeline of applicants who are a real fit rather than just a filled seat. We partner with institutions on both fronts — running employability and skill-readiness programs for final-year students, and, where relevant, connecting our own students to the right college or university partners as part of their pathway.',
+    longDescription: 'Colleges and universities don\'t need the same support schools do, since the students have already arrived. What they need is help on both ends: getting current students genuinely placement-ready before they graduate, and, for institutions actively recruiting, a pipeline of applicants who are a real fit rather than just a filled seat. We partner with institutions on both fronts: running employability and skill-readiness programs for final-year students, and, where relevant, connecting our own students to the right college or university partners as part of their pathway.',
     features: [
       'Employability and placement-readiness bootcamps for final-year students',
       'Structured career-guidance support for the institution\'s own counseling cell',
       'Skill-gap workshops aligned to current industry and admissions expectations',
       'Recruitment and pipeline partnerships for institutions seeking well-matched applicants',
-      'Outcome tracking and reporting — placement rates, admit rates, and student readiness over time'
+      'Outcome tracking and reporting of placement rates, admit rates, and student readiness over time'
     ],
     benefits: [
       { title: 'Better Placement Outcomes', description: 'Students graduate genuinely job-ready, not just credentialed.' },

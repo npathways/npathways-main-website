@@ -13,7 +13,7 @@ const CurricularBasedPathways = () => {
           <nav className="breadcrumb">
             <Link to="/">Home</Link>
             <span>/</span>
-            <Link to="/services">Pathways</Link>
+            <Link to="/services">Services</Link>
             <span>/</span>
             <span className="text-black font-medium">Curricular-Based Pathways</span>
           </nav>
@@ -49,16 +49,16 @@ const CurricularBasedPathways = () => {
           <main className="service-main-content">
             <section className="service-intro mb-12">
               <span className="badge-yellow mb-2 block text-xs font-bold uppercase tracking-wider text-amber-500">Every Board. One Strategy.</span>
-              <h2>For the decision that gets made two years too early — board and subject choice, whichever board you're on.</h2>
+              <h2>For the decision that gets made two years too early, board and subject choice, whichever board you're on.</h2>
               
               <div className="content-block my-6">
-                <h3>What it is:</h3>
+                <h3>What it is</h3>
                 <p className="text-xl text-gray-700">
-                  Long before "which college," there's a quieter decision that shapes everything after it: which board, and which subjects. Curricular-Based Pathways is board-specific strategy — CBSE, ICSE, State Boards, IB, IGCSE/Cambridge, and NIOS — built around where the student is actually headed, not just what their current syllabus happens to allow.
+                  Long before "which college," there's a quieter decision that shapes everything after it: which board, and which subjects. Curricular-Based Pathways is board-specific strategy (CBSE, ICSE, State Boards, IB, IGCSE/Cambridge, and NIOS) built around where the student is actually headed, not just what their current syllabus happens to allow.
                 </p>
               </div>
 
-              <h3>Who it's for:</h3>
+              <h3>Who it's for</h3>
               <ul className="check-list space-y-4 mb-10">
                 <li className="flex gap-3 items-start">
                   <span className="flex-shrink-0" style={{ display: "inline-flex", alignItems: "center", marginTop: "4px" }}>
@@ -66,7 +66,7 @@ const CurricularBasedPathways = () => {
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                   </span>
-                  <span>Students at the 9th-to-10th or 10th-to-11th fork, choosing subjects or streams — on any board</span>
+                  <span>Students at the 9th-to-10th or 10th-to-11th fork, choosing subjects or streams on any board</span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <span className="flex-shrink-0" style={{ display: "inline-flex", alignItems: "center", marginTop: "4px" }}>
@@ -96,11 +96,11 @@ const CurricularBasedPathways = () => {
             </section>
 
             <section className="benefits-section mb-12">
-              <h3>What we actually do:</h3>
+              <h3>What we actually do</h3>
               <div className="benefits-grid">
                 <div className="benefit-card">
                   <h4>Board Selection Trade-offs</h4>
-                  <p>Advise on board selection and board-switch trade-offs across all major systems — Indian and international.</p>
+                  <p>Advise on board selection and board-switch trade-offs across all major systems, both Indian and international.</p>
                 </div>
                 <div className="benefit-card">
                   <h4>Subject-Combination Strategy</h4>
@@ -108,7 +108,7 @@ const CurricularBasedPathways = () => {
                 </div>
                 <div className="benefit-card">
                   <h4>Specific Assessment Strategy</h4>
-                  <p>Design board-specific exam and assessment strategy — board exams, IB IAs and EE, IGCSE coursework — not generic study tips.</p>
+                  <p>Design board-specific exam and assessment strategy (board exams, IB IAs and EE, IGCSE coursework) not generic study tips.</p>
                 </div>
                 <div className="benefit-card">
                   <h4>Eligibility Translation</h4>
@@ -118,7 +118,7 @@ const CurricularBasedPathways = () => {
             </section>
 
             <div className="quote-block bg-gray-100 p-6 rounded-lg italic border-l-4 border-amber-500 mb-8">
-              "The board doesn't decide the outcome. The strategy underneath it does — and that strategy shouldn't change just because the board is unfamiliar to us. It isn't."
+              "The board doesn't decide the outcome. The strategy underneath it does, and that strategy shouldn't change just because the board is unfamiliar to us. It isn't."
             </div>
           </main>
         </div>

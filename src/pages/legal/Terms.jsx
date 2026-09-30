@@ -33,7 +33,7 @@ const Terms = () => {
             <h2>5. Disclaimer of Warranties; Limitation of Liability</h2>
             <p>We do not guarantee, represent or warrant that your use of our service will be uninterrupted, timely, secure or error-free. We do not warrant that the results that may be obtained from the use of the service will be accurate or reliable.</p>
             <p className="highlight-box">
-              <strong>Notice regarding Visa and Admissions:</strong> NPathways Global provides guidance and documentation support. We do not guarantee visa approval or university admission, as these decisions are at the sole discretion of the respective authorities.
+              <strong>Notice regarding Visa and Admissions</strong> NPathways Global provides guidance and documentation support. We do not guarantee visa approval or university admission, as these decisions are at the sole discretion of the respective authorities.
             </p>
           </section>
 
@@ -44,7 +44,7 @@ const Terms = () => {
 
           <section>
             <h2>7. Contact Us</h2>
-            <p>If you have any questions about these Terms, please contact us at info@npathways.global.</p>
+            <p>If you have any questions about these Terms, please contact us at talktous@npathways.world.</p>
           </section>
         </div>
       </div>
