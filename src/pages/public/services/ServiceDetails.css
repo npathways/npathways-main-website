@@ -74,154 +74,20 @@
 /* Split Layout */
 .service-layout-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 3rem;
   align-items: start;
   max-width: 80% !important;
   width: 80% !important;
-  margin: 0 auto !important;
+  margin: 3rem auto !important;
   padding: 0 !important;
-}
-
-/* SIDEBAR - Horizontal Top Switcher */
-.service-sidebar {
-  grid-column: 1 / span 2;
-  grid-row: 1;
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  position: static;
-  max-height: none;
-  overflow-y: visible;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 2.5rem;
-  width: 100%;
-}
-
-.service-sidebar .sidebar-widget {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  width: 100%;
-}
-
-.service-sidebar .widget-title {
-  display: none; /* Hide vertical title */
-}
-
-/* Navigation Widget */
-.sidebar-nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  gap: 0.75rem;
-  overflow-x: auto;
-  width: 100%;
-  scrollbar-width: none; /* Hide scrollbars */
-  padding: 0.5rem 0;
-}
-
-.sidebar-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.sidebar-nav-item {
-  margin-bottom: 0;
-  flex-shrink: 0;
-}
-
-.sidebar-nav-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.75rem;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 50px; /* Capsule pills */
-  color: #4b5563;
-  text-decoration: none;
-  font-weight: 700;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.01);
-  font-size: 0.9rem;
-}
-
-.sidebar-nav-link span {
-  display: none; /* Hide right arrow in capsules */
-}
-
-.sidebar-nav-link:hover, 
-.sidebar-nav-link.active {
-  background: var(--color-brand-tertiary, #e3a008);
-  border-color: var(--color-brand-tertiary, #e3a008);
-  color: #000000;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(227, 160, 8, 0.2);
-}
-
-/* Download Widget */
-.download-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.25rem;
-  border: 1px solid #919191;
-  border-radius: 2px;
-  margin-bottom: 1rem;
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.3s;
-}
-
-.download-item:hover {
-  border-color: var(--color-brand-tertiary);
-}
-
-.download-icon {
-  font-size: 1.5rem;
-}
-
-.download-info span {
-  display: block;
-}
-
-.download-name {
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.download-size {
-  font-size: 0.75rem;
-  color: #999;
-}
-
-/* Contact Widget */
-.contact-widget {
-  background: #000;
-  color: #fff;
-  text-align: center;
-}
-
-.contact-widget .widget-title {
-  border-bottom-color: #fff;
-  color: #fff;
-}
-
-.contact-widget p {
-  color: #ccc;
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
 }
 
 .service-image-panel {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 1;
   position: sticky;
-  top: 120px;
+  top: 150px;
   background: #f3f4f6;
   overflow: hidden;
   border-radius: 16px;
@@ -234,7 +100,6 @@
 .service-image-panel img {
   width: 100%;
   height: 350px;
-  /* Fixed height for image */
   object-fit: cover;
   filter: grayscale(100%);
   transition: filter 0.5s ease;
@@ -253,7 +118,7 @@
 
 .service-main-content {
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 1;
   background: #ffffff;
   overflow-y: visible;
   padding: 4rem;
@@ -463,6 +328,23 @@
 }
 
 @media (max-width: 768px) {
+  .service-detail-page .container,
+  .service-layout-grid {
+    max-width: 95% !important;
+    width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .service-hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .service-image-panel {
     height: 40vh;
   }

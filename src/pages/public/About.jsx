@@ -1,12 +1,34 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./about/AboutGeneral.css";
 import "./About.css";
 
 const About = () => {
+  const location = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (location.hash) {
+      const id = location.hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        const timer = setTimeout(() => {
+          const headerHeight = 110; // offset for sticky header
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = element.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - headerHeight;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }, 200);
+        return () => clearTimeout(timer);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
   const leadership = [
     {
@@ -84,7 +106,7 @@ const About = () => {
       </section>
 
       {/* Statistics Grid */}
-      <section style={{ backgroundColor: "#f9f9f9", padding: "8rem 0" }}>
+      <section style={{ backgroundColor: "#f9f9f9", padding: "3.5rem 0" }}>
         <div className="about-container">
           <div className="about-grid-3" style={{ textAlign: "center" }}>
             <div>
@@ -230,7 +252,7 @@ const About = () => {
       {/* Partners Banner */}
       <section
         style={{
-          padding: "6rem 0",
+          padding: "3rem 0",
           borderTop: "1px solid #f0f0f0",
           borderBottom: "1px solid #f0f0f0",
         }}
@@ -242,6 +264,90 @@ const About = () => {
             <div className="partner-logo-item">GLOBAL ACCREDITED</div>
             <div className="partner-logo-item">EDUCATION FIRST</div>
             <div className="partner-logo-item">CAREER HUB</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Core Philosophy Section */}
+      <section id="philosophy" style={{ padding: "8rem 0", backgroundColor: "#ffffff", borderBottom: "1px solid #f0f0f0" }}>
+        <div className="about-container">
+          <div className="about-section-header">
+            <span className="badge">Our Philosophy</span>
+            <h2>Built on Three Ideas Older Than Us</h2>
+            <p>
+              The principles that govern how we listen, how we map, and how we mentor.
+            </p>
+          </div>
+
+          <div className="philosophy-alternating-rows">
+            {/* Row 1: Ikigai */}
+            <div id="ikigai" className="philosophy-row">
+              <div className="row-info-col">
+                <span className="zen-number">01</span>
+                <div className="concept-header">
+                  <h3>Ikigai</h3>
+                  <span className="concept-japanese-inline">生き甲斐</span>
+                  <span className="concept-definition">your reason for being</span>
+                </div>
+              </div>
+              <div className="row-desc-col">
+                <p className="concept-desc">
+                  The point where what you love, what you're good at, what the world needs, and what sustains you overlap.
+                </p>
+                <div className="concept-how-we-use">
+                  <h5>How we use it:</h5>
+                  <p>
+                    Most career advice optimizes for one corner of that overlap  usually "what pays." We map all four, every time, for every student. It's the actual method behind Clarity Compass™: not "what should you do," but "where do these four things meet for you specifically." A pathway that only satisfies one corner isn't a pathway.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 2: Kiku */}
+            <div id="kiku" className="philosophy-row philosophy-row-reversed">
+              <div className="row-info-col">
+                <span className="zen-number">02</span>
+                <div className="concept-header">
+                  <h3>Kiku</h3>
+                  <span className="concept-japanese-inline">聴く</span>
+                  <span className="concept-definition">to truly listen</span>
+                </div>
+              </div>
+              <div className="row-desc-col">
+                <p className="concept-desc">
+                  Not just hearing what's said, but listening for what a student hasn't figured out how to say yet.
+                </p>
+                <div className="concept-how-we-use">
+                  <h5>How we use it:</h5>
+                  <p>
+                    Most consultations start with a form. Ours start with a conversation  because the real answer rarely arrives in the first sentence. Kiku is the principle behind Step 1, the Clarity Compass™ assessment  we don't map a pathway until we've actually heard the whole thing, including the parts said quietly, or not said at all.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 3: Kaizen */}
+            <div id="kaizen" className="philosophy-row">
+              <div className="row-info-col">
+                <span className="zen-number">03</span>
+                <div className="concept-header">
+                  <h3>Kaizen</h3>
+                  <span className="concept-japanese-inline">改善</span>
+                  <span className="concept-definition">continuous improvement</span>
+                </div>
+              </div>
+              <div className="row-desc-col">
+                <p className="concept-desc">
+                  Progress made in small, honest steps  not one big leap, and never standing still.
+                </p>
+                <div className="concept-how-we-use">
+                  <h5>How we use it:</h5>
+                  <p>
+                    This is why the journey is ten steps and not one decision. A roadmap isn't a document you hand over and walk away from  it's something we keep recalibrating as the student, the syllabus, the exam landscape, or the goal itself shifts. Step 10 exists because of this principle: mentorship ends when the plan stops needing adjustment  which is never.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

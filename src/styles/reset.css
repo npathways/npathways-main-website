@@ -67,6 +67,16 @@ h6 {
 p {
   margin-bottom: var(--spacing-4);
   color: var(--color-text-secondary);
+  text-align: justify;
+}
+
+.text-center, 
+.text-center p, 
+p.text-center, 
+p.section-subtitle, 
+.section-header-premium p, 
+.about-section-header p {
+  text-align: center;
 }
 
 a {

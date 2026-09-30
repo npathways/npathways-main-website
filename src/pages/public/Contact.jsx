@@ -30,12 +30,13 @@ const Contact = () => {
   ];
 
   const programsList = [
-    { label: 'Study Abroad', desc: 'Global admissions guidance', icon: <FiBookOpen size={20} /> },
-    { label: 'Test Preparation', desc: 'CAT, GMAT, GRE coaching & prep', icon: <FiAward size={20} /> },
-    { label: 'Admissions Consulting', desc: 'Essays, resume & profiles', icon: <FiUserCheck size={20} /> },
-    { label: 'Skills & Bootcamps', desc: 'Intensive tech & business courses', icon: <FiBookOpen size={20} /> },
-    { label: 'Visa Assistance', desc: 'Step-by-step visa documentation', icon: <FiAward size={20} /> },
-    { label: 'Career Counseling', desc: 'One-on-one professional guidance', icon: <FiPhoneCall size={20} /> }
+    { label: 'Academic & University Consulting', desc: 'Course, college, and university shortlisting', icon: <FiBookOpen size={20} /> },
+    { label: 'Career Guidance', desc: '1-on-1 personalized Ikigai mapping & career strategy', icon: <FiPhoneCall size={20} /> },
+    { label: 'Curricular-Based Strategy', desc: 'Board selection & subject combination planning', icon: <FiBookOpen size={20} /> },
+    { label: 'Pathway Programs (Bridge Courses)', desc: 'Transition support & targeted bridge courses', icon: <FiAward size={20} /> },
+    { label: 'Competitive Exam Strategy', desc: 'JEE, NEET, CAT, GMAT, GRE coaching & prep strategy', icon: <FiAward size={20} /> },
+    { label: 'Skills & Bootcamp Programs', desc: 'Intensive technology, business & upskilling bootcamps', icon: <FiBookOpen size={20} /> },
+    { label: 'Study Abroad & Visa Assistance', desc: 'End-to-end global admissions, visa & student support', icon: <FiAward size={20} /> }
   ];
 
   const toggleFaq = (index) => {
@@ -272,13 +273,13 @@ const Contact = () => {
                           </div>
                           <div className="contact-wizard-field" style={{ marginTop: '1.5rem' }}>
                             <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '700', fontSize: '0.85rem' }}>Phone Number</label>
-                            <div style={{ display: 'flex', gap: '10px' }}>
+                            <div style={{ display: 'flex', gap: '10px', marginBottom: '1.5rem' }}>
                               <select
                                 name="countryCode"
                                 value={formData.countryCode}
                                 onChange={handleChange}
                                 className="contact-wizard-select"
-                                style={{ width: '120px' }}
+                                style={{ width: '150px', marginBottom: 0 }}
                               >
                                 <option value="+91">+91 (IN)</option>
                                 <option value="+1">+1 (US)</option>
@@ -293,7 +294,7 @@ const Contact = () => {
                                 value={formData.phone}
                                 onChange={handleChange}
                                 className="contact-wizard-input"
-                                style={{ flex: 1 }}
+                                style={{ flex: 1, marginBottom: 0 }}
                                 required
                               />
                             </div>

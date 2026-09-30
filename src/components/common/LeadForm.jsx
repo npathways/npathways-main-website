@@ -17,14 +17,13 @@ const LeadForm = ({ source = "General", variant = "dark", initialProgram = "", o
   const [formAlert, setFormAlert] = useState({ type: "", text: "" });
 
   const programs = [
-    "Study Abroad",
-    "Test Preparation",
-    "Admissions Consulting",
-    "Skills & Bootcamps",
-    "Internships & Research",
-    "Career Counseling",
-    "Visa Assistance",
-    "School Programs",
+    "Academic & University Consulting",
+    "Career Guidance",
+    "Curricular-Based Strategy",
+    "Pathway Programs (Bridge Courses)",
+    "Competitive Exam Strategy",
+    "Skills & Bootcamp Programs",
+    "Study Abroad & Visa Assistance"
   ];
 
   const categories = ["Parent", "Student", "Working Professional", "Just Looking Around"];

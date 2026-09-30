@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { consultancyServices, supportServices } from "../../../data/services";
 import Button from "../../../components/common/Button";
-import ServiceSidebar from "../../../components/common/ServiceSidebar";
+import PathwayTopNav from "../../../components/services/PathwayTopNav";
 import "./ServiceDetails.css";
 
 const EducationConsulting = () => {
-  const service = consultancyServices.find((s) => s.id === "global-education-consulting");
+  const service = consultancyServices.find((s) => s.id === "academic-university-consulting");
   const location = useLocation();
 
   if (!service) return null;
@@ -31,10 +31,10 @@ const EducationConsulting = () => {
         </div>
       </section>
 
+      <PathwayTopNav />
+
       <div className="container">
         <div className="service-layout-grid">
-          {/* Sidebar */}
-          <ServiceSidebar />
 
           {/* Fixed Image Panel */}
           <div className="service-image-panel">
